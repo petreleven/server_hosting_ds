@@ -80,11 +80,14 @@ async def get_pool() -> Pool | None:
                     logger.error("NEON_URL environment variable not set")
                     raise
 
-                pool = await asyncpg.create_pool(dsn=NEON_URL)
+                #pool = await asyncpg.create_pool(dsn=NEON_URL)
+                PG_LOCAL = os.getenv("PG_LOCAL")
+                pool = await asyncpg.create_pool(dsn=PG_LOCAL)
                 logger.info("Database connection pool created")
             except Exception as e:
                 logger.error(f"Failed to create connection pool: {str(e)}")
-                return None
+                raise RuntimeError(f"Failed to create connection pool: {str(e)}")
+
     return pool
 
 
@@ -99,6 +102,7 @@ async def db_createalldbs() -> bool:
         async with pool.acquire() as conn:
             async with conn.transaction():
                 await conn.execute(f"""
+                    CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
                     {SQL_QUERIES["CreateUserTable"]}
                     {SQL_QUERIES["CreateGameTable"]}
                     {SQL_QUERIES["CreatePlansTable"]}

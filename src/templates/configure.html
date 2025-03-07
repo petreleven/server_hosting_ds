@@ -1,25 +1,18 @@
-
-<div class="max-w-4xl mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-emerald-500 mb-8 border-b border-emerald-600 pb-3 glow">
-        <span id="config-title">Game Server Configuration</span>
-    </h1>
-
-    <form id="game-config-form" hx-post="/save-config" hx-target="#form-response"
-          class="glass-card shadow-lg rounded-xl p-8 space-y-8">
-
-        <!-- Dynamic form will be generated here -->
-        <div id="form-container" class="space-y-6"></div>
-
-        <div class="pt-4">
-            <button type="submit"
-                    class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition">
-                Save Configuration
-            </button>
-        </div>
-
-        <div id="form-response" class="pt-2 text-sm text-gray-400"></div>
-    </form>
-
+<h1 class="text-lg font-bold text-emerald-500 mb-8 border-b border-emerald-600 pb-3 glow">
+<span id="config-title">Game Server Configuration</span>
+</h1>
+<form id="game-config-form" hx-post="/save-config" hx-target="#form-response"
+    class="glass-card shadow-lg rounded-xl p-8 space-y-8">
+    <!-- Dynamic form will be generated here -->
+    <div id="form-container" class="space-y-6"></div>
+    <div class="pt-4">
+        <button type="submit"
+        class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition">
+        Save Configuration
+        </button>
+    </div>
+    <div id="form-response" class="pt-2 text-sm text-gray-400"></div>
+</form>
 
 
     <script>
@@ -287,4 +280,3 @@
         };
     </script>
 
-</div>

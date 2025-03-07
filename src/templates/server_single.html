@@ -102,7 +102,7 @@
             {% endif %}
             "
             {% if current_sub.status != 'provisioning' %}
-                hx-get="/configure?subscription_id={{ current_sub.id }}"
+                hx-get="/panel?subscription_id={{ current_sub.id }}"
                 hx-target="#allservers"
                 hx-swap="innerHTML"
                 hx-indicator="#spinner-{{ current_sub.id }}"
@@ -111,7 +111,7 @@
                 disabled
             {% endif %}
             >
-            <span>Configure Server</span>
+            <span>Panel</span>
             <div class="loading-blocks ml-2 htmx-indicator" id="spinner-{{ current_sub.id }}">
                 <div class="loading-block bg-gray-400"></div>
                 <div class="loading-block bg-gray-400"></div>

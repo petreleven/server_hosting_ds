@@ -3,7 +3,91 @@
     Dashboard
 {% endblock %}
 {% block content %}
-    {% include 'dashboard_partial.html' %}
-    <main class="h-full">
-    </main>
-    {%endblock%}
+    <div class="flex min-h-screen bg-[#1e1e2e] text-white overflow-x-auto">
+        <!-- Sidebar (Desktop) -->
+        <aside class="w-64 bg-gray-900 border-r border-gray-800 hidden md:flex flex-col min-h-screen">
+            <div class="p-6 flex flex-col space-y-6">
+                <div>
+                    <h2 class="text-sm uppercase text-gray-500 tracking-wider mb-4">Navigation</h2>
+                    <nav>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/dashboard" class="flex items-center px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-lime-500 transition group">
+                                    <i class="fas fa-home mr-3 text-lg group-hover:text-lime-500"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/servers" class="flex items-center px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-lime-500 transition group">
+                                    <i class="fas fa-server mr-3 text-lg group-hover:text-lime-500"></i>
+                                    <span>My Servers</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/billing" class="flex items-center px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-lime-500 transition group">
+                                    <i class="fas fa-credit-card mr-3 text-lg group-hover:text-lime-500"></i>
+                                    <span>Billing</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/support" class="flex items-center px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-lime-500 transition group">
+                                    <i class="fas fa-life-ring mr-3 text-lg group-hover:text-lime-500"></i>
+                                    <span>Support</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col min-h-screen relative">
+            <!-- Mobile Sidebar -->
+            <div id="mobile-sidebar" class="fixed inset-0 z-50 bg-gray-900 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+                <div class="p-6 relative h-full overflow-y-auto">
+                    <button id="mobile-menu-close" class="absolute top-4 right-4 text-white">
+                    <i class="fas fa-times text-2xl"></i>
+                    </button>
+                    <nav class="mt-8">
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="/dashboard" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-home mr-3 group-hover:text-lime-500"></i>Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/servers" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-server mr-3 group-hover:text-lime-500"></i>My Servers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/billing" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-credit-card mr-3 group-hover:text-lime-500"></i>Billing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/support" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-life-ring mr-3 group-hover:text-lime-500"></i>Support
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/account" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-user mr-3 group-hover:text-lime-500"></i>Account
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout" class="flex items-center text-red-400 hover:text-red-300 transition">
+                                    <i class="fas fa-sign-out-alt mr-3"></i>Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- Content Area -->
+            <section class="flex-1 mx-auto px-4 py-8 overflow-scroll" hx-get="/dashboardservers" hx-trigger="load" hx-swap="innerHTML">
+                <!-- Content will be loaded here -->
+            </section>
+        </div>
+    </div>
+{% endblock %}

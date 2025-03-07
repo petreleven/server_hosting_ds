@@ -360,6 +360,13 @@ async def server_status(subscription_id: str):
             "server_single.html", current_sub=None, error="Failed to load server status"
         )
 
+@userblueprint.route("/panel", methods=["GET", "POST"])
+@login_required
+async def panel():
+    args = request.args
+    subscription_id = args.get("subscription_id")
+    return await render_template("panel.html",subscription_id=subscription_id)
+
 
 @userblueprint.route("/configure", methods=["GET", "POST"])
 @login_required
@@ -372,7 +379,7 @@ async def configure():
     Returns:
         HTML template with configuration options
     """
-
+    print("yohh")
     try:
         args = request.args
         subscription_id = args.get("subscription_id")
