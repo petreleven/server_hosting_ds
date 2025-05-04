@@ -1,0 +1,10 @@
+services:
+  valheim_base_server:
+    build:
+      context: .
+    container_name: valheim
+    ports:
+      - "2456:2456/udp"
+      - "2457:2457/udp"
+    env_file:
+      - .env
