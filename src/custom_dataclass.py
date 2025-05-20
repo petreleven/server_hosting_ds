@@ -15,5 +15,5 @@ class RegisterServerData:
 class RegisterUserData:
     email: EmailStr
     password: str
-    game_id: int
-    plan_id: int
+    game_id: str
+    plan_id: str

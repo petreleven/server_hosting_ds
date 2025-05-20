@@ -27,8 +27,8 @@ async def register():
     data = cdata.RegisterUserData(
         email=fields["email"][0],
         password=pwd_context.hash(fields["password"][0]),
-        game_id=int(fields["game_id"][0]),
-        plan_id=int(fields["plan_id"][0]),
+        game_id=fields["game_id"][0],
+        plan_id=fields["plan_id"][0],
     )
     u = await db.db_insert_user(data)
     if not u:
@@ -139,7 +139,7 @@ async def dashboardservers():
     if not user_id:
         return []
 
-    allsubs = await db.db_select_all_subscriptions(user_id=int(user_id))
+    allsubs = await db.db_select_all_subscriptions(user_id=user_id)
 
     subscriptions = []
     for record in allsubs:
@@ -149,10 +149,10 @@ async def dashboardservers():
     return await render_template("servers.html", subscriptions=subscriptions)
 
 
-@userblueprint.route("/server-status/<int:subscription_id>", methods=["GET", "POST"])
+@userblueprint.route("/server-status/<str:subscription_id>", methods=["GET", "POST"])
 @login_required
 async def server_status(subscription_id):
-    record = await db.db_select_subscription_by_id(sub_id=int(subscription_id))
+    record = await db.db_select_subscription_by_id(subscription_id)
     if not record:
         return {}
     sub = await extract_single_sub_record(record)
@@ -167,7 +167,7 @@ async def configure():
 
     if not subscription_id:
         return []
-    record = await db.db_select_servers_by_subscription(int(subscription_id))
+    record = await db.db_select_servers_by_subscription(subscription_id)
     if not record:
         return []
     config = json.loads(record.get("config"))

@@ -61,9 +61,12 @@ async def db_createalldbs() -> None:
         return
     # Users table
     async with pool.acquire() as conn:
+        await conn.execute('''
+            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+            ''')
         await conn.execute("""
         CREATE TABLE IF NOT EXISTS users (
-            id SERIAL PRIMARY KEY,
+            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
             email VARCHAR(255) UNIQUE,
             password VARCHAR(255),
             created_at TIMESTAMPTZ  DEFAULT  NOW(),
@@ -73,7 +76,7 @@ async def db_createalldbs() -> None:
         # Games table
         await conn.execute("""
         CREATE TABLE IF NOT EXISTS games (
-            id SERIAL PRIMARY KEY,
+            id   uuid  PRIMARY KEY DEFAULT uuid_generate_v4(),,
             game_name VARCHAR(100),
             description TEXT,
             image_url VARCHAR(255),
@@ -83,8 +86,8 @@ async def db_createalldbs() -> None:
         # Plans table
         await conn.execute("""
         CREATE TABLE IF NOT EXISTS plans (
-            id SERIAL PRIMARY KEY,
-            game_id INTEGER,
+            id   uuid   PRIMARY KEY DEFAULT uuid_generate_v4(),,
+            game_id uuid,
             plan_name VARCHAR(100),
             cpu_cores REAL,
             ram_gb REAL,
@@ -98,9 +101,9 @@ async def db_createalldbs() -> None:
         # Subscriptions table
         await conn.execute("""
         CREATE TABLE IF NOT EXISTS subscriptions (
-            id SERIAL PRIMARY KEY,
-            user_id INTEGER,
-            plan_id INTEGER,
+            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
+            user_id uuid,
+            plan_id uuid,
             status VARCHAR(50),
             created_at  TIMESTAMPTZ  DEFAULT  NOW(),
             expires_at TIMESTAMPTZ,
@@ -113,7 +116,7 @@ async def db_createalldbs() -> None:
         # BAREMETAL table
         await conn.execute("""
         CREATE TABLE IF NOT EXISTS baremetal (
-            id SERIAL PRIMARY KEY,
+            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
             hostname VARCHAR(255),
             ip_address VARCHAR(45) UNIQUE,
             status VARCHAR(50),
@@ -124,8 +127,8 @@ async def db_createalldbs() -> None:
         # Servers table
         await conn.execute("""
         CREATE TABLE IF NOT EXISTS servers (
-            id SERIAL PRIMARY KEY,
-            subscription_id INTEGER,
+            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
+            subscription_id uuid,
             status VARCHAR(50),
             ip_address VARCHAR(45),
             ports TEXT,
@@ -138,9 +141,9 @@ async def db_createalldbs() -> None:
         # Transactions table
         await conn.execute("""
         CREATE TABLE IF NOT EXISTS transactions (
-            id SERIAL PRIMARY KEY,
-            user_id INTEGER,
-            subscription_id INTEGER,
+            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
+            user_id uuid,
+            subscription_id uuid,
             amount REAL,
             description TEXT,
             created_at TIMESTAMPTZ  DEFAULT  NOW(),
@@ -189,8 +192,8 @@ async def db_insert_user(data: cdata.RegisterUserData) -> asyncpg.Record | None:
 
 
 async def db_insert_subscription(
-    user_id: int,
-    plan_id: int,
+    user_id: str,
+    plan_id: str,
     status: str,
     expires_at: datetime.datetime,
     next_billing_date: datetime.datetime,
@@ -217,7 +220,7 @@ async def db_insert_subscription(
 
 
 async def db_insert_server(
-    subscription_id: int,
+    subscription_id: str,
     status: str,
     ip_address: str,
     ports: str,
@@ -279,7 +282,7 @@ async def db_select_all_baremetals() -> list[asyncpg.Record]:
         )
 
 
-async def db_select_all_subscriptions(user_id: int) -> list[asyncpg.Record]:
+async def db_select_all_subscriptions(user_id: str) -> list[asyncpg.Record]:
     """Get all bare metal servers."""
     pool = await get_pool()
     if not pool:
@@ -295,7 +298,7 @@ async def db_select_all_subscriptions(user_id: int) -> list[asyncpg.Record]:
         )
 
 
-async def db_select_plan_by_id(plan_id: int) -> asyncpg.Record | None:
+async def db_select_plan_by_id(plan_id: str) -> asyncpg.Record | None:
     """Get a plan by its ID."""
     pool = await get_pool()
     if not pool:
@@ -311,7 +314,7 @@ async def db_select_plan_by_id(plan_id: int) -> asyncpg.Record | None:
         )
 
 
-async def db_select_game_by_id(game_id: int) -> asyncpg.Record | None:
+async def db_select_game_by_id(game_id: str) -> asyncpg.Record | None:
     """Get a game by its ID."""
     pool = await get_pool()
     if not pool:
@@ -328,7 +331,7 @@ async def db_select_game_by_id(game_id: int) -> asyncpg.Record | None:
 
 
 # ----- OPTIONAL ADDITIONAL SELECTS -----
-async def db_select_subscription_by_id(sub_id: int) -> Optional[asyncpg.Record]:
+async def db_select_subscription_by_id(sub_id: str) -> Optional[asyncpg.Record]:
     """List all subscriptions for a given user."""
     pool = await get_pool()
     if not pool:
@@ -344,7 +347,7 @@ async def db_select_subscription_by_id(sub_id: int) -> Optional[asyncpg.Record]:
         )
 
 
-async def db_select_subscription_by_user(user_id: int) -> list[asyncpg.Record]:
+async def db_select_subscription_by_user(user_id: str) -> list[asyncpg.Record]:
     """List all subscriptions for a given user."""
     pool = await get_pool()
     if not pool:
@@ -362,7 +365,7 @@ async def db_select_subscription_by_user(user_id: int) -> list[asyncpg.Record]:
 
 
 async def db_select_servers_by_subscription(
-    subscription_id: int,
+    subscription_id: str,
 ) -> asyncpg.Record | None:
     """List all servers under a specific subscription."""
     pool = await get_pool()
@@ -383,7 +386,7 @@ async def db_select_servers_by_subscription(
 async def db_update_server_status(
     status: str,
     docker_container_id: str,
-    subscription_id: int,
+    subscription_id: str,
 ) -> asyncpg.Record | None:
     pool = await get_pool()
     if not pool:
@@ -403,7 +406,7 @@ async def db_update_server_status(
 
 
 async def db_update_subscription_status(
-    subscription_id: int,
+    subscription_id: str,
     status: str,
     last_billing_date: datetime.datetime,
     next_billing_date: datetime.datetime,

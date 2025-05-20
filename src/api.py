@@ -23,12 +23,12 @@ async def register_server():
     await db.db_update_server_status(
         status=data["status"],
         docker_container_id=data["container_id"],
-        subscription_id=int(data["subscription_id"]),
+        subscription_id=data["subscription_id"],
     )
     now = datetime.datetime.now(datetime.UTC)
     next_billing_date = now + datetime.timedelta(days=30)
     await db.db_update_subscription_status(
-        subscription_id=int(data["subscription_id"]),
+        subscription_id=data["subscription_id"],
         status=data["status"],
         last_billing_date=now,
         next_billing_date=next_billing_date,
