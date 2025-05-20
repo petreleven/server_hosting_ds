@@ -1,10 +1,17 @@
 services:
   valheim_base_server:
-    build:
-      context: .
-    container_name: valheim
+    image: petreleven11/valheim_server:v0.0.1
+    container_name: "valheim_${SUBSCRIPTION_ID}"
     ports:
-      - "2456:2456/udp"
-      - "2457:2457/udp"
+      - "${SUBSCRIPTION_PORT_0}:2456/udp"
+      - "${SUBSCRIPTION_PORT_1}:2457/udp"
     env_file:
-      - .env
+      - ".valheim_${SUBSCRIPTION_ID}_env"
+    deploy:
+      resources:
+        limits:
+          cpus: "${CPU_LIMIT}"
+          memory: "${MEMORY_LIMIT}"
+    volumes:
+      - "/home/peter/valheim/valheim_${SUBSCRIPTION_ID}/valheim-saves:/valheim/valheim-saves"
+      - "/home/peter/valheim/valheim_${SUBSCRIPTION_ID}/valheim_server_Data:/valheim/valheim_server_Data"

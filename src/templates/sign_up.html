@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BlockForge Hosting | Premium Minecraft Server Hosting | Zero Lag, 24/7 Uptime</title>
+        <meta name="description" content="Launch your Minecraft server in 60 seconds! BlockForge offers premium lag-free Minecraft hosting with 99.9% uptime, instant setup, and 24/7 support. Try risk-free with our 24-hour free trial, no credit card required.">
+        <meta name="keywords" content="minecraft server hosting, minecraft hosting, game server, lag-free minecraft, minecraft multiplayer, modded minecraft hosting, minecraft server provider">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.4/htmx.min.js" integrity="sha512-2kIcAizYXhIn8TzUvqzEDZNuDZ+aW7yE/+f1HJHXFjQcGNfv1kqzJSTBRBSlOgp6B/KZsz1K0a3ZTqP9dnxioQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+        font-family: 'Poppins', sans-serif;
+        }
+        @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+        }
+        .float-animation {
+        animation: float 4s ease-in-out infinite;
+        }
+        . {
+        letter-spacing: 1px;
+        font-weight: 700;
+        }
+        .bg-blur {
+        backdrop-filter: blur(8px);
+        }
+        .glow {
+        text-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
+        }
+        .hero-gradient {
+        background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.9) 100%);
+        }
+        .glass-card {
+        background: rgba(31, 41, 55, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .pulse-button {
+        box-shadow: 0 0 0 rgba(59, 130, 246, 0.7);
+        animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+        0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+        }
+        70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+        }
+        100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+        }
+        }
+        .server-card {
+        transition: all 0.3s ease;
+        }
+        .server-card:hover {
+        transform: translateY(-5px);
+        }
+        .minecraft-block {
+        image-rendering: pixelated;
+        }
+        </style>
+    </head>
+    <body class="bg-gray-900 text-white">
+        <!-- Navigation -->
+        <nav class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="text-2xl font-bold ">
+                            <span class="text-lime-500">Block</span><span class="text-amber-500">Forge</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex space-x-10">
+                        <a href="#features" class="text-gray-300 hover:text-blue-400 transition font-medium">Features</a>
+                        <a href="#plans" class="text-gray-300 hover:text-blue-400 transition font-medium">Plans</a>
+                        <a href="#mods" class="text-gray-300 hover:text-blue-400 transition font-medium">Mod Support</a>
+                        <a href="#faq" class="text-gray-300 hover:text-blue-400 transition font-medium">FAQ</a>
+                    </div>
+                    <a href="#plans" class="hidden md:inline-block px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-md shadow-lg shadow-blue-600/30 transition">
+                        Get Started
+                    </a>
+                    <button class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Server Creation Section -->
+    <section id="server-creation" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold  mb-4">Create Your <span class="text-lime-500">Dream</span> Server</h2>
+                <p class="text-xl text-gray-300">Configure and launch your Minecraft server in three simple steps</p>
+            </div>
+            <!-- Server Configuration Preview -->
+            <div class="bg-gray-900 rounded-lg shadow-xl border border-gray-700 overflow-hidden">
+                <div class="bg-gray-800 py-4 px-6 border-b border-gray-700">
+                    <h3 class="text-xl font-bold text-white">Server Configuration</h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Left Column - Configuration Options -->
+                        <div>
+                            <div class="mb-6">
+                                <label class="block text-gray-400 text-sm mb-1">Email</label>
+                                <input type="email" placeholder="you@example.com" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 text-sm mb-1">Server Name</label>
+                                <input type="password"  class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-300 mb-2 font-medium">Server Plan</label>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <button class="bg-gray-700 border border-gray-600 hover:bg-gray-600 rounded py-2 px-4 text-white font-medium">
+                                    Basic
+                                    </button>
+                                    <button class="bg-blue-600 border border-blue-700 hover:bg-blue-700 rounded py-2 px-4 text-white font-medium">
+                                    Standard
+                                    </button>
+                                    <button class="bg-gray-700 border border-gray-600 hover:bg-gray-600 rounded py-2 px-4 text-white font-medium">
+                                    Premium
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-300 mb-2 font-medium">Server Location</label>
+                                <select class="w-full bg-gray-700 border border-gray-600 rounded py-2 px-4 text-white">
+                                    <option>North America (East)</option>
+                                    <option>North America (West)</option>
+                                    <option>Europe (London)</option>
+                                    <option>Asia (Singapore)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Right Column - Price and Launch Button -->
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col">
+                            <div class="mb-6">
+                                <div class="text-gray-400 mb-1">Selected Plan:</div>
+                                <div class="text-2xl font-bold text-white mb-2">Standard Plan</div>
+                                <ul class="text-gray-300 space-y-2 mb-4">
+                                    <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    10GB RAM
+                                </li>
+                                <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                10 Players
+                            </li>
+                            <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Mod support
+                        </li>
+                        <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Premium Support
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-auto">
+                <div class="flex items-baseline mb-4">
+                    <span class="text-3xl font-bold text-white">$14.99</span>
+                    <span class="text-gray-400 ml-2">/month</span>
+                </div>
+                <a href="#free-trial" class="block w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-md text-center shadow-lg transition">
+                    Launch Server Now
+                </a>
+                <div class="text-center mt-3 text-gray-400 text-sm">7-day free trial, no credit card required</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Badges -->
+<div class="mt-12 text-center">
+<p class="text-gray-400 mb-4">Trusted by over 100,000 Minecraft server owners</p>
+<div class="flex flex-wrap justify-center items-center gap-8">
+<div class="bg-gray-700 rounded-lg px-4 py-2 flex items-center space-x-2">
+<svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+<span class="text-white font-medium">99.9% Uptime</span>
+</div>
+<div class="bg-gray-700 rounded-lg px-4 py-2 flex items-center space-x-2">
+<svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+<span class="text-white font-medium">DDoS Protection</span>
+</div>
+<div class="bg-gray-700 rounded-lg px-4 py-2 flex items-center space-x-2">
+<svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path></svg>
+<span class="text-white font-medium">24/7 Support</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 border-t border-gray-800 py-12">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+<div>
+<div class="text-2xl font-bold text-blue-400  mb-4">
+<span class="text-lime-500">Block</span><span class="text-amber-500">Forge</span>
+</div>
+<p class="text-gray-400 mb-4">Premium Minecraft server hosting optimized for serious gamers.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-blue-400 transition">
+<i class="fab fa-discord text-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-blue-400 transition">
+<i class="fab fa-twitter text-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-blue-400 transition">
+<i class="fab fa-twitch text-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-blue-400 transition">
+<i class="fab fa-youtube text-lg"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-4">Our Services</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Minecraft Hosting</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Mod Installation</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Server Migration</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Custom Plugins</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Server Management</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Resources</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Knowledge Base</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Server Setup Guide</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Modding Tutorials</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Community Forums</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Status Page</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Company</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Privacy Policy</a></li>
+<li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+<p>© 2025 BlockForge Hosting. All rights reserved. Not affiliated with Mojang AB.</p>
+</div>
+</div>
+</footer>
+<!-- Schema.org Structured Data for SEO -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "BlockForge Minecraft Server Hosting",
+"description": "Premium Minecraft server hosting with instant setup, lag-free gameplay, and 24/7 support.",
+"offers": {
+"@type": "AggregateOffer",
+"lowPrice": "4.99",
+"highPrice": "24.99",
+"priceCurrency": "USD"
+},
+"aggregateRating": {
+"@type": "AggregateRating",
+"ratingValue": "4.9",
+"reviewCount": "1245"
+}
+}
+</script>
+</body>
+</html>

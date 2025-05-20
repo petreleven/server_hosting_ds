@@ -1,0 +1,112 @@
+<div class="max-w-4xl mx-auto px-4" id="servers-container">
+    <h1 class="text-3xl font-bold mb-8 text-lime-500 flex items-center">
+    <!-- icon -->
+    Your Servers
+    </h1>
+        {% for sub in subscriptions %}
+            <div
+                id="server-card-{{ sub.id }}"
+                hx-get="/server-status/{{ sub.id }}"
+                hx-trigger="every 5s"
+                hx-target="this"
+                hx-swap="outerHTML"
+                class="glass-card rounded-lg p-6 mb-8 glow-hover relative transition-all duration-300
+                {% if sub.status == 'provisioning' %}border-l-4 border-l-blue-500{% endif %}">
+                <!-- Expiring soon warning -->
+                {% if sub.is_expiring_soon and sub.status != 'provisioning' %}
+                    <div class="bg-red-900/30 border border-red-700 rounded-lg p-5 mb-6 animate-pulse-subtle">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                            <div class="flex items-start gap-3">
+                                <!-- icon and message -->
+                                <div>
+                                    <h3 class="text-2xl font-bold text-red-400" id="countdown-{{ sub.id }}"></h3>
+                                    <p class="text-red-300 text-sm mt-1">
+                                        Your server will be <span class="font-bold">deleted</span> after the timer expires.
+                                    </p>
+                                </div>
+                            </div>
+                            <button
+                            class="bg-gradient-to-r from-lime-600 to-green-700 hover:from-lime-500 hover:to-green-600
+                            text-white px-6 py-3 rounded-lg transition font-bold text-lg shadow-lg hover:shadow-green-500/30
+                            transform hover:-translate-y-1 flex-shrink-0 w-full md:w-auto"
+                            hx-post="/billing/pay/{{ sub.id }}"
+                            hx-target="#server-{{ sub.id }}"
+                            hx-swap="outerHTML"
+                            >Pay Now</button>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- Provisioning message -->
+                {% if sub.status == 'provisioning' %}
+                    <div class="bg-blue-900/30 border border-blue-700 rounded-lg p-5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="loading-spinner"></div>
+                            <div>
+                                <h3 class="text-lg font-bold text-blue-400">Server is being provisioned</h3>
+                                <p class="text-blue-300 text-sm mt-1">This may take a few minutes.</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- Main server info -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <div class="mb-4 md:mb-0">
+                        <h2 class="text-xl font-bold mb-2 flex items-center">
+                        <!-- icon -->
+                        Server
+                        </h2>
+                        <p class="text-gray-300 flex items-center">
+                            Status:
+                            <span class="{% if sub.status == 'running' %}text-green-500{% elif sub.status == 'provisioning' %}text-blue-500{% else %}text-red-500{% endif %} ml-2 flex items-center">
+                            <!-- status dot -->
+                            {{ sub.status|title }}
+                        </span>
+                    </p>
+                </div>
+                <div class="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-4 w-full md:w-auto">
+                    <div class="text-right md:border-r md:border-gray-600 md:pr-4 w-full md:w-auto">
+                        <p class="text-sm text-gray-400">Expires</p>
+                        <p class="font-medium text-lime-300">{{ sub.expires_at.strftime('%B %d, %Y') }}</p>
+                    </div>
+                    <button
+                    class="{% if sub.status == 'provisioning' %}
+                        bg-blue-700/50 cursor-not-allowed text-gray-300
+                    {% else %}
+                        bg-blue-700 hover:bg-blue-600 text-white hover:shadow-blue-500/20 transform hover:-translate-y-1
+                    {% endif %}
+                    px-5 py-3 rounded-lg transition shadow-md w-full md:w-auto"
+                    {% if sub.status != 'provisioning' %}
+                        hx-get="/configure?subscription_id={{ sub.id }}"
+                        hx-target="main"
+                        hx-swap="innerHTML"
+                    {% else %}
+                        disabled
+                    {% endif %}
+                    >
+                    Configure Server
+                    </button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% if not subscriptions %}
+        <div class="glass-card rounded-lg p-10 text-center border border-gray-700 backdrop-blur-md shadow-xl">
+            <!-- icon -->
+            <h2 class="text-2xl font-bold mb-4">No Servers Yet</h2>
+            <p class="text-gray-400 mb-8 max-w-md mx-auto">Create your first server and start playing with friends in minutes!</p>
+            <button
+            class="bg-gradient-to-r from-lime-600 to-green-700 hover:from-lime-500 hover:to-green-600
+            text-white text-lg px-8 py-4 rounded-lg transition shadow-lg hover:shadow-lime-500/30
+            inline-flex items-center transform hover:-translate-y-1"
+            hx-get="/create-server"
+            hx-target="main"
+            hx-swap="innerHTML"
+            >
+            <!-- icon -->
+            Create Server
+            </button>
+        </div>
+    {% endif %}
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/timer.js') }}"></script>
+

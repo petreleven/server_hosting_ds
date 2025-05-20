@@ -1,0 +1,224 @@
+import base64
+import json
+import os
+import secrets
+import sys
+
+import jsonschema
+
+from game_jobs.abstract_provisioner import AbstractProvisioner
+
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+
+
+class ValheimProvisioner(AbstractProvisioner):
+    def __init__(self):
+        super().__init__()
+        self.schema = {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$id": "https://example.com/schemas/valheim.json",
+            "title": "Valheim Server Config",
+            "description": "Configuration schema for spinning up a Valheim dedicated server. See support guide: https://www.valheimgame.com/support/a-guide-to-dedicated-servers/",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The display name for your server (-name)",
+                    "default": "My server",
+                },
+                "port": {
+                    "type": "integer",
+                    "minimum": 1024,
+                    "maximum": 65535,
+                    "default": 2456,
+                    "description": "UDP port the server listens on (-port)",
+                },
+                "world": {
+                    "type": "string",
+                    "minLength": 1,
+                    "default": "Dedicated",
+                    "description": "Name of the world to load or create (-world)",
+                },
+                "password": {
+                    "type": "string",
+                    "minLength": 0,
+                    "description": "Optional password (leave blank for none) (-password)",
+                    "default": "",
+                },
+                "savedir": {
+                    "type": "string",
+                    "default": "./valheim_saves",
+                    "description": "Path where worlds and permission files are stored (-savedir)",
+                },
+                "public": {
+                    "type": "integer",
+                    "enum": [0, 1],
+                    "default": 1,
+                    "description": "0 = private, 1 = publicly listed on Steam (-public)",
+                },
+                "logFile": {
+                    "type": "string",
+                    "default": "./valheim.log",
+                    "description": "File path to save server logs (-logFile)",
+                },
+                "saveinterval": {
+                    "type": "integer",
+                    "minimum": 60,
+                    "default": 1800,
+                    "description": "Interval between world saves in seconds (-saveinterval)",
+                },
+                "backups": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 4,
+                    "description": "How many automatic backups to keep (-backups)",
+                },
+                "backupshort": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 7200,
+                    "description": "Interval (in seconds) until the first automatic backup (-backupshort)",
+                },
+                "backuplong": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 43200,
+                    "description": "Interval (in seconds) for subsequent automatic backups (-backuplong)",
+                },
+                "crossplay": {
+                    "type": "boolean",
+                    "default": False,
+                    "description": "Enable crossplay backend (-crossplay)",
+                },
+                "instanceid": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 1,
+                    "description": "Unique identifier when hosting multiple servers on the same IP/port (-instanceid)",
+                },
+                "preset": {
+                    "type": "string",
+                    "enum": [
+                        "Normal",
+                        "Casual",
+                        "Easy",
+                        "Hard",
+                        "Hardcore",
+                        "Immersive",
+                        "Hammer",
+                    ],
+                    "default": "Normal",
+                    "description": "Sets world modifier preset. Setting a preset will overwrite any other previous modifiers. Valid values are: Normal, Casual, Easy, Hard, Hardcore, Immersive, Hammer. (-preset)",
+                },
+                "modifiers": {
+                    "type": "object",
+                    "properties": {
+                        "Combat": {
+                            "type": "string",
+                            "enum": ["veryeasy", "easy", "hard", "veryhard"],
+                            "default": "easy",
+                        },
+                        "DeathPenalty": {
+                            "type": "string",
+                            "enum": ["casual", "veryeasy", "easy", "hard", "hardcore"],
+                            "default": "easy",
+                        },
+                        "Resources": {
+                            "type": "string",
+                            "enum": ["muchless", "less", "more", "muchmore", "most"],
+                            "default": "less",
+                        },
+                        "Raids": {
+                            "type": "string",
+                            "enum": ["none", "muchless", "less", "more", "muchmore"],
+                            "default": "less",
+                        },
+                        "Portals": {
+                            "type": "string",
+                            "enum": ["casual", "hard", "veryhard"],
+                            "default": "casual",
+                        },
+                    },
+                },
+                # Individual setkey boolean fields
+                "nomap": {
+                    "type": "boolean",
+                    "default": False,
+                    "description": "Disable map exploration overlays (setkey nomap)",
+                },
+                "playerevents": {
+                    "type": "boolean",
+                    "default": False,
+                    "description": "Enable player events (setkey playerevents)",
+                },
+                "passivemobs": {
+                    "type": "boolean",
+                    "default": False,
+                    "description": "Enable passive mobs (setkey passivemobs)",
+                },
+                "nobuildcost": {
+                    "type": "boolean",
+                    "default": False,
+                    "description": "Disable build costs (setkey nobuildcost)",
+                },
+            },
+            "required": ["name", "port", "world"],
+        }
+
+    async def job_update_config(
+        self,
+        server_id: int,
+        game_server_ip: str,
+        game_name: str,
+        subscription_id: int,
+        config_values: dict,
+    ) -> None:
+        """Implementation of configuration update for Valheim servers."""
+        if not await self.validate_config(config_values):
+            return
+
+        queue = f"badger:pending:{game_server_ip}"
+
+        raw = json.dumps(config_values, separators=(",", ":"))
+        encoded = base64.b64encode(raw.encode("utf-8")).decode("ascii")
+
+        payload = (
+            f"python setup_server.py "
+            f"-u {subscription_id} "
+            f"-g {game_name} "
+            f"-cfg-json {encoded} "
+            f"updateConfig"
+        )
+        await self.redisClient.lpush(queue, payload)
+
+    async def get_default_config(self) -> str:
+        """Get the default configuration for Valheim servers."""
+        properties: dict = {}
+        for key, value in self.schema["properties"].items():
+            if value["type"] != "object":
+                properties[key] = value["default"]
+            else:
+                for k, v in value["properties"].items():
+                    properties[f"{key}_{k}"] = v["default"]
+        properties["password"] = secrets.token_urlsafe(nbytes=4)
+
+        # Validate the default config
+        await self.validate_config(properties)
+
+        return json.dumps(properties)
+
+    def get_required_ports(self) -> list[int]:
+        """Get the required ports for Valheim servers."""
+        # Valheim requires two consecutive UDP ports
+        # The server binds to the first port, and the second port is port+1
+        return [2456, 2457]
+
+    async def validate_config(self, config_values: dict) -> bool:
+        """Validate the provided configuration against the Valheim schema."""
+        try:
+            jsonschema.validate(config_values, self.schema)
+            return True
+        except jsonschema.ValidationError:
+            self.logger.error("Json Validation for valheim config failed")
+            return False

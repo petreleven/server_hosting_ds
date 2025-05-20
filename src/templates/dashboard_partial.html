@@ -1,0 +1,91 @@
+ <div class="flex flex-1 h-[100vh]">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-900 border-r border-gray-800 hidden md:block">
+            <div class="p-6">
+                <nav>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/dashboard" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                <i class="fas fa-home mr-3 group-hover:text-lime-500"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/servers" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                <i class="fas fa-server mr-3 group-hover:text-lime-500"></i>
+                                My Servers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/billing" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                <i class="fas fa-credit-card mr-3 group-hover:text-lime-500"></i>
+                                Billing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/support" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                <i class="fas fa-life-ring mr-3 group-hover:text-lime-500"></i>
+                                Support
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Mobile Sidebar (off-canvas) -->
+            <div id="mobile-sidebar" class="fixed inset-0 z-50 bg-gray-900 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+                <div class="p-6 relative">
+                    <button id="mobile-menu-close" class="absolute top-4 right-4 text-white">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                    <nav>
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="/dashboard" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-home mr-3 group-hover:text-lime-500"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/servers" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-server mr-3 group-hover:text-lime-500"></i>
+                                    My Servers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/billing" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-credit-card mr-3 group-hover:text-lime-500"></i>
+                                    Billing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/support" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-life-ring mr-3 group-hover:text-lime-500"></i>
+                                    Support
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/account" class="flex items-center text-gray-300 hover:text-lime-500 transition group">
+                                    <i class="fas fa-user mr-3 group-hover:text-lime-500"></i>
+                                    Account
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout" class="flex items-center text-red-400 hover:text-red-300 transition">
+                                    <i class="fas fa-sign-out-alt mr-3"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <section class="flex-1 p-6 md:p-10" hx-get="/dashboardservers" hx-trigger="load" hx-swap="innerHTML">
+            </section>
+        </div>
+    </div>

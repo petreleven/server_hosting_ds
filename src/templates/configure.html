@@ -1,0 +1,450 @@
+<div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-emerald-700 pb-4 mb-6 border-b-2 border-emerald-500">
+            <span id="config-title">Game Server Configuration</span>
+        </h1>
+
+        <form id="game-config-form" hx-post="/save-config" hx-target="#form-response"
+              class="glass-card shadow-md rounded-lg p-6">
+
+            <!-- Dynamic form will be generated here -->
+            <div id="form-container"></div>
+
+            <div class="mt-8">
+                <button type="submit"
+                        class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-6 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-colors">
+                    Save Configuration
+                </button>
+            </div>
+
+            <div id="form-response" class="mt-4"></div>
+        </form>
+    </div>
+
+    <script>
+        /**
+         * Generate HTML form elements from a JSON schema
+         */
+        class SchemaFormGenerator {
+            constructor(schema, formContainer) {
+                this.schema = schema;
+                this.formContainer = formContainer;
+                this.advancedFields = [];
+                this.basicFields = ['name', 'port', 'world', 'password']; // Common fields across game servers
+            }
+
+            init() {
+                // Set page title
+                if (this.schema.title) {
+                    document.getElementById('config-title').textContent = this.schema.title;
+                }
+
+                // Generate form fields for properties
+                if (this.schema.properties) {
+                    this.generateBasicFields();
+                    this.generateAdvancedFields();
+                }
+            }
+
+            generateBasicFields() {
+                const basicFieldsContainer = document.createElement('div');
+                basicFieldsContainer.className = 'mb-6';
+
+                // Process properties
+                for (const [key, prop] of Object.entries(this.schema.properties)) {
+                    if (this.basicFields.includes(key)) {
+                        basicFieldsContainer.appendChild(this.createField(key, prop));
+                    }
+                }
+
+                this.formContainer.appendChild(basicFieldsContainer);
+            }
+
+            generateAdvancedFields() {
+                const advancedContainer = document.createElement('div');
+                advancedContainer.className = 'mb-6';
+
+                const details = document.createElement('details');
+                details.className = 'border border-gray-200 rounded-md';
+
+                const summary = document.createElement('summary');
+                summary.className = 'bg-gray-100 px-4 py-3 font-medium text-emerald-700 cursor-pointer hover:bg-gray-200';
+                summary.textContent = 'Advanced Settings';
+
+                const content = document.createElement('div');
+                content.className = 'p-4 bg-gray-50';
+
+                // Process properties
+                for (const [key, prop] of Object.entries(this.schema.properties)) {
+                    if (!this.basicFields.includes(key)) {
+                        // Handle nested objects separately
+                        if (prop.type === 'object') {
+                            content.appendChild(this.createObjectField(key, prop));
+                        } else {
+                            content.appendChild(this.createField(key, prop));
+                        }
+                    }
+                }
+
+                details.appendChild(summary);
+                details.appendChild(content);
+                advancedContainer.appendChild(details);
+                this.formContainer.appendChild(advancedContainer);
+            }
+
+            createField(name, schema) {
+                const fieldContainer = document.createElement('div');
+                fieldContainer.className = 'mb-6';
+
+                // Special handling for boolean types (checkboxes)
+                if (schema.type === 'boolean') {
+                    return this.createCheckboxField(name, schema);
+                }
+
+                // Create label
+                const label = document.createElement('label');
+                label.setAttribute('for', name);
+                label.className = 'block font-medium mb-1';
+                label.textContent = this.formatLabel(name) + ':';
+                fieldContainer.appendChild(label);
+
+                // Create description if available
+                if (schema.description) {
+                    const description = document.createElement('p');
+                    description.className = 'text-sm text-gray-500 mb-2';
+                    description.textContent = schema.description;
+                    fieldContainer.appendChild(description);
+                }
+
+                // Create input based on type
+                let input;
+                const inputClasses = 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-gray-800 text-white';
+
+                if (schema.type === 'integer' || schema.type === 'number') {
+                    input = document.createElement('input');
+                    input.type = 'number';
+                    input.id = name;
+                    input.name = name;
+
+                    if (schema.minimum !== undefined) input.min = schema.minimum;
+                    if (schema.maximum !== undefined) input.max = schema.maximum;
+                    if (schema.default !== undefined) input.value = schema.default;
+
+                } else if (schema.type === 'string' && schema.enum) {
+                    input = document.createElement('select');
+                    input.id = name;
+                    input.name = name;
+
+                    schema.enum.forEach(value => {
+                        const option = document.createElement('option');
+                        option.value = value;
+                        option.textContent = value;
+                        if (schema.default === value) option.selected = true;
+                        input.appendChild(option);
+                    });
+
+                } else {
+                    // Default to text input
+                    input = document.createElement('input');
+                    input.type = name.toLowerCase().includes('password') ? 'password' : 'text';
+                    input.id = name;
+                    input.name = name;
+
+                    if (schema.minLength !== undefined) input.minLength = schema.minLength;
+                    if (schema.default !== undefined) input.value = schema.default;
+                }
+
+                // Add common attributes
+                input.className = inputClasses;
+                if (this.schema.required && this.schema.required.includes(name)) {
+                    input.required = true;
+                }
+
+                fieldContainer.appendChild(input);
+                return fieldContainer;
+            }
+
+            createCheckboxField(name, schema) {
+                const fieldContainer = document.createElement('div');
+                fieldContainer.className = 'mb-2';
+
+                const label = document.createElement('label');
+                label.className = 'flex items-center';
+
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.id = name;
+                input.name = name;
+                input.className = 'h-5 w-5 text-emerald-600 rounded focus:ring-emerald-500';
+
+                if (schema.default === true) {
+                    input.checked = true;
+                }
+
+                const span = document.createElement('span');
+                span.className = 'ml-2';
+                span.textContent = schema.description || this.formatLabel(name);
+
+                label.appendChild(input);
+                label.appendChild(span);
+                fieldContainer.appendChild(label);
+
+                return fieldContainer;
+            }
+
+            createObjectField(name, schema) {
+                const sectionContainer = document.createElement('div');
+                sectionContainer.className = 'border border-gray-200 rounded-md p-4 mb-6';
+
+                const heading = document.createElement('h3');
+                heading.className = 'font-medium mb-3';
+                heading.textContent = this.formatLabel(name);
+                sectionContainer.appendChild(heading);
+
+                // Process nested properties
+                if (schema.properties) {
+                    for (const [key, prop] of Object.entries(schema.properties)) {
+                        const fieldName = `${name}[${key}]`;
+
+                        if (prop.type === 'boolean') {
+                            sectionContainer.appendChild(this.createCheckboxField(fieldName, prop));
+                        } else if (prop.type === 'string' && prop.enum) {
+                            const fieldContainer = document.createElement('div');
+                            fieldContainer.className = 'mb-4';
+
+                            const label = document.createElement('label');
+                            label.setAttribute('for', fieldName);
+                            label.className = 'block font-medium mb-1';
+                            label.textContent = this.formatLabel(key) + ':';
+                            fieldContainer.appendChild(label);
+
+                            const select = document.createElement('select');
+                            select.id = fieldName;
+                            select.name = fieldName;
+                            select.className = 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500';
+
+                            prop.enum.forEach(value => {
+                                const option = document.createElement('option');
+                                option.value = value;
+                                option.textContent = this.formatOptionLabel(value);
+                                if (prop.default === value) option.selected = true;
+                                select.appendChild(option);
+                            });
+
+                            fieldContainer.appendChild(select);
+                            sectionContainer.appendChild(fieldContainer);
+                        } else {
+                            sectionContainer.appendChild(this.createField(fieldName, prop));
+                        }
+                    }
+                }
+
+                return sectionContainer;
+            }
+
+            formatLabel(text) {
+                // Convert camelCase or snake_case to Title Case
+                return text
+                    .replace(/([A-Z])/g, ' $1') // Insert space before capital letters
+                    .replace(/_/g, ' ') // Replace underscores with spaces
+                    .replace(/^\w/, c => c.toUpperCase()) // Capitalize first letter
+                    .trim();
+            }
+
+            formatOptionLabel(text) {
+                // Convert enum values to more readable format
+                return text
+                    .replace(/([A-Z])/g, ' $1') // Insert space before capital letters
+                    .replace(/_/g, ' ') // Replace underscores with spaces
+                    .replace(/^\w/, c => c.toUpperCase()) // Capitalize first letter
+                    .replace(/muchless/i, 'Much Less')
+                    .replace(/muchmore/i, 'Much More')
+                    .replace(/veryeasy/i, 'Very Easy')
+                    .replace(/veryhard/i, 'Very Hard')
+                    .trim();
+            }
+        }
+        create();
+        // Example usage
+        function create() {
+            // In production, fetch the schema from the server
+            // For example: fetch('/api/game-schema/valheim')
+            //    .then(response => response.json())
+            //    .then(schema => {
+            //        const formGenerator = new SchemaFormGenerator(schema, document.getElementById('form-container'));
+            //        formGenerator.init();
+            //    });
+
+            // For demonstration, we'll use the Valheim schema directly
+            const valheimSchema = {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "$id": "https://example.com/schemas/valheim.json",
+                "title": "Valheim Server Config",
+                "description": "Configuration schema for spinning up a Valheim dedicated server.",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The display name for your server (-name)",
+                        "default": "My server",
+                    },
+                    "port": {
+                        "type": "integer",
+                        "minimum": 1024,
+                        "maximum": 65535,
+                        "default": 2456,
+                        "description": "UDP port the server listens on (-port)",
+                    },
+                    "world": {
+                        "type": "string",
+                        "minLength": 1,
+                        "default": "Dedicated",
+                        "description": "Name of the world to load or create (-world)",
+                    },
+                    "password": {
+                        "type": "string",
+                        "minLength": 0,
+                        "description": "Optional password (leave blank for none) (-password)",
+                        "default": "",
+                    },
+                    "savedir": {
+                        "type": "string",
+                        "default": "./valheim_saves",
+                        "description": "Path where worlds and permission files are stored (-savedir)",
+                    },
+                    "public": {
+                        "type": "integer",
+                        "enum": [0, 1],
+                        "default": 1,
+                        "description": "0 = private, 1 = publicly listed on Steam (-public)",
+                    },
+                    "logFile": {
+                        "type": "string",
+                        "default": "./valheim.log",
+                        "description": "File path to save server logs (-logFile)",
+                    },
+                    "saveinterval": {
+                        "type": "integer",
+                        "minimum": 60,
+                        "default": 1800,
+                        "description": "Interval between world saves in seconds (-saveinterval)",
+                    },
+                    "backups": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "default": 4,
+                        "description": "How many automatic backups to keep (-backups)",
+                    },
+                    "backupshort": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "default": 7200,
+                        "description": "Interval (in seconds) until the first automatic backup (-backupshort)",
+                    },
+                    "backuplong": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "default": 43200,
+                        "description": "Interval (in seconds) for subsequent automatic backups (-backuplong)",
+                    },
+                    "crossplay": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Enable crossplay backend (-crossplay)",
+                    },
+                    "instanceid": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "default": 1,
+                        "description": "Unique identifier when hosting multiple servers on the same IP/port (-instanceid)",
+                    },
+                    "preset": {
+                        "type": "string",
+                        "enum": [
+                            "Normal",
+                            "Casual",
+                            "Easy",
+                            "Hard",
+                            "Hardcore",
+                            "Immersive",
+                            "Hammer",
+                        ],
+                        "default": "Normal",
+                        "description": "Sets world modifier preset. Setting a preset will overwrite any other previous modifiers. (-preset)",
+                    },
+                    "modifiers": {
+                        "type": "object",
+                        "properties": {
+                            "Combat": {
+                                "type": "string",
+                                "enum": ["veryeasy", "easy", "hard", "veryhard"],
+                                "default": "easy",
+                            },
+                            "DeathPenalty": {
+                                "type": "string",
+                                "enum": ["casual", "veryeasy", "easy", "hard", "hardcore"],
+                                "default": "easy",
+                            },
+                            "Resources": {
+                                "type": "string",
+                                "enum": ["muchless", "less", "more", "muchmore", "most"],
+                                "default": "less",
+                            },
+                            "Raids": {
+                                "type": "string",
+                                "enum": ["none", "muchless", "less", "more", "muchmore"],
+                                "default": "less",
+                            },
+                            "Portals": {
+                                "type": "string",
+                                "enum": ["casual", "hard", "veryhard"],
+                                "default": "casual",
+                            },
+                        },
+                    },
+                    "nomap": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Disable map exploration overlays (setkey nomap)",
+                    },
+                    "playerevents": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Enable player events (setkey playerevents)",
+                    },
+                    "passivemobs": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Enable passive mobs (setkey passivemobs)",
+                    },
+                    "nobuildcost": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Disable build costs (setkey nobuildcost)",
+                    },
+                },
+                "required": ["name", "port", "world"],
+            };
+
+            // Initialize form generator
+            const formGenerator = new SchemaFormGenerator(valheimSchema, document.getElementById('form-container'));
+            formGenerator.init();
+
+            // Fetch games list for dropdown (in production)
+            // Example function to switch between game schemas
+            function loadGameSchema(gameId) {
+                fetch(`/api/game-schema/${gameId}`)
+                    .then(response => response.json())
+                    .then(schema => {
+                        // Clear existing form
+                        const container = document.getElementById('form-container');
+                        container.innerHTML = '';
+
+                        // Generate new form
+                        const formGenerator = new SchemaFormGenerator(schema, container);
+                        formGenerator.init();
+                    });
+            }
+        };
+    </script>
+</div>

@@ -1,0 +1,791 @@
+2025-05-19 10:41:37,816 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 10:41:45,861 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 10:41:47,537 - server - ERROR - Exception on request GET /dashboardservers
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 68, in dashboardservers
+    allsubs = await db.db_select_all_subscriptions(user_id=int(user_id))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 279, in db_select_all_subscriptions
+    return await conn.fetch(
+           ^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 690, in fetch
+    return await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1863, in _execute
+    with self._stmt_exclusive_section:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2625, in __enter__
+    raise exceptions.InterfaceError(
+        'cannot perform operation: another operation is in progress')
+asyncpg.exceptions._base.InterfaceError: cannot perform operation: another operation is in progress
+2025-05-19 10:41:50,334 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 39 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 10:43:45,887 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 10:43:59,431 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 10:44:05,489 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 10:44:07,182 - server - ERROR - Exception on request GET /dashboardservers
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 69, in dashboardservers
+    allsubs = await db.db_select_all_subscriptions(user_id=int(user_id))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 279, in db_select_all_subscriptions
+    return await conn.fetch(
+           ^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 690, in fetch
+    return await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1863, in _execute
+    with self._stmt_exclusive_section:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2625, in __enter__
+    raise exceptions.InterfaceError(
+        'cannot perform operation: another operation is in progress')
+asyncpg.exceptions._base.InterfaceError: cannot perform operation: another operation is in progress
+2025-05-19 10:44:09,906 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 40 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 10:55:18,761 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 10:55:44,203 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 10:55:52,786 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 41 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 11:03:25,244 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:04:01,223 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:04:36,094 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 11:04:43,573 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 42 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 11:05:47,031 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:11:02,175 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:11:45,132 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:12:11,418 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 11:12:19,213 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 43 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 11:40:22,907 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:40:30,447 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:40:42,107 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:40:51,197 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 11:40:59,343 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 44 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 11:41:43,045 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 11:41:46,340 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 45 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 11:41:59,874 - backendlogger - INFO - {'action': 'start', 'success': False, 'subscription_id': '45', 'error': "Failed to start server: unable to get image 'petreleven11/valheim_server:v0.0.1': Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?\n", 'status': 'failed'}
+2025-05-19 11:41:59,875 - root - WARNING - Failed to start server: unable to get image 'petreleven11/valheim_server:v0.0.1': Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+2025-05-19 11:44:21,399 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:46:06,971 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 11:46:15,090 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 46 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 11:46:21,215 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '46', 'container_id': '7ed7c2d7ab02d9e0d94fb6cce1a4708e51a4038fd2b8b915536fa6505523dbb2', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-19 11:47:51,474 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 11:48:40,044 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 11:48:47,622 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 47 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 11:48:56,838 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '47', 'container_id': '73ddf9c12ef581ead5f89f5376ba8004a04570da0f39f3355f2f5ac54e0c6613', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-19 12:03:00,468 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:07:03,679 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:08:04,928 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:50:48,985 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:51:18,836 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:52:01,873 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:52:09,433 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:52:11,931 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:52:27,598 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:53:10,691 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:55:39,784 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:56:07,337 - server - ERROR - Exception on request POST /login
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 101, in login
+    (res, errors) = await verify_user(fields)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 88, in verify_user
+    res = pwd_context.verify(password, record.get("password", ""))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/context.py", line 2343, in verify
+    record = self._get_or_identify_record(hash, scheme, category)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/context.py", line 2031, in _get_or_identify_record
+    return self._identify_record(hash, category)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/context.py", line 1132, in identify_record
+    raise exc.UnknownHashError("hash could not be identified")
+passlib.exc.UnknownHashError: hash could not be identified
+2025-05-19 12:57:53,895 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:58:16,674 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:58:25,139 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:58:53,766 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 12:58:53,768 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 29, in register
+    password=pwd_context.hash(fields["password"][0]),
+             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/context.py", line 2258, in hash
+    return record.hash(secret, **kwds)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/utils/handlers.py", line 779, in hash
+    self.checksum = self._calc_checksum(secret)
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/handlers/bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/utils/handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/utils/handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/utils/handlers.py", line 2176, in set_backend
+    raise default_error
+passlib.exc.MissingBackendError: bcrypt: no backends available -- recommend you install one (e.g. 'pip install bcrypt')
+2025-05-19 12:59:16,411 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 12:59:19,327 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 12:59:19,330 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-05-19 12:59:26,405 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 48 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 13:01:32,026 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:01:42,188 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-05-19 13:01:58,835 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:02:16,083 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-05-19 13:02:41,805 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:07:57,278 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:07:59,856 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:08:05,428 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:09:04,711 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 13:09:08,948 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 49 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 13:10:19,008 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:10:28,614 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:12:01,415 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:14:32,538 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:17:00,726 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 13:17:06,454 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 50 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 13:20:18,215 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:20:39,060 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-19 13:20:48,773 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 51 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-19 13:22:34,320 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:22:52,008 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:23:02,656 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:23:11,213 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:23:43,990 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:23:58,660 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 13:24:01,135 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 14:52:40,875 - server - ERROR - Exception on request GET /configure
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 159, in configure
+    record = await db.db_select_servers_by_subscription(int(subscription_id))
+                                                        ~~~^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '=51'
+2025-05-19 14:53:21,028 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 14:53:31,865 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 14:55:03,675 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 15:22:42,353 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 15:24:31,817 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 15:26:54,928 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-19 15:30:14,243 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 08:36:48,788 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 08:38:18,310 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 08:38:23,850 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 08:45:10,861 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 08:45:32,336 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 08:46:22,384 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 08:47:31,525 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 08:48:21,319 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 08:48:40,887 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 09:55:14,555 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 09:58:38,857 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 09:58:46,667 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 52 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 10:03:44,050 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:04:03,624 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:04:07,046 - server - ERROR - Exception on request GET /dashboard
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 53, in dashboard
+    return await render_template("dashboard.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: dashboard.html
+2025-05-20 10:06:31,892 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:06:35,605 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:06:43,446 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 32, in register
+    u = await db.db_insert_user(data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 179, in db_insert_user
+    return await conn.fetchrow(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 748, in fetchrow
+    data = await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 206, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(aba@gmail.com) already exists.
+2025-05-20 10:06:49,071 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:06:53,379 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 54 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 10:08:25,986 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:08:38,844 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:08:46,019 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 55 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 10:13:42,362 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:13:58,910 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:14:06,388 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 56 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 10:15:04,513 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:15:15,810 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:15:23,130 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 57 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 10:15:45,295 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:16:00,401 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:16:03,987 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 32, in register
+    u = await db.db_insert_user(data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 179, in db_insert_user
+    return await conn.fetchrow(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 748, in fetchrow
+    data = await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 206, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(aba@gmail.com) already exists.
+2025-05-20 10:16:04,666 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:16:08,698 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 58 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 10:20:42,394 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:20:50,007 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:20:50,008 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 27, in register
+    email=fields["email"][0],
+          ~~~~~~^^^^^^^^^
+KeyError: 'email'
+2025-05-20 10:21:04,934 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:21:12,420 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 59 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 10:22:06,010 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:22:08,939 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 60 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 10:32:50,196 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:33:49,381 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:34:29,183 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:36:54,148 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:37:24,810 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:40:28,278 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:41:22,624 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:43:47,454 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:43:54,862 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 61 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 10:45:00,795 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 10:45:15,696 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 10:45:22,723 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 62 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 12:39:42,865 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 12:52:35,574 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 13:08:07,403 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 13:12:20,429 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 13:12:24,657 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 63 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 13:12:29,389 - backendlogger - INFO - {'action': 'start', 'success': False, 'subscription_id': '63', 'error': "Failed to start server: unable to get image 'petreleven11/valheim_server:v0.0.1': Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?\n", 'status': 'failed'}
+2025-05-20 13:12:29,389 - backendlogger - WARNING - Failed to start server: unable to get image 'petreleven11/valheim_server:v0.0.1': Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+2025-05-20 13:14:51,597 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 13:14:55,181 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 64 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 13:15:07,896 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '64', 'container_id': '60716c5ff2bf4c9fc26adc25cc369343837ac48d4501f7b56816d9d28d70e1f0', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-20 13:21:20,298 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 13:53:20,396 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 13:53:45,952 - server - ERROR - Exception on request GET /dashboardservers
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 149, in dashboardservers
+    return await render_template("servers.html", subscriptions=subscriptions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/servers.html", line 182, in template
+    {% endfor %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+2025-05-20 13:55:03,460 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 13:55:21,574 - server - ERROR - Exception on request GET /server-status/51
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 158, in server_status
+    sub = await extract_single_sub_record(record)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 116, in extract_single_sub_record
+    expires_at = record.get("expires_at")
+                 ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+2025-05-20 13:55:26,382 - server - ERROR - Exception on request GET /server-status/51
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 158, in server_status
+    sub = await extract_single_sub_record(record)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 116, in extract_single_sub_record
+    expires_at = record.get("expires_at")
+                 ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+2025-05-20 13:56:06,237 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 13:56:25,073 - server - ERROR - Exception on request GET /server-status/51
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 159, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 50, in top-level template code
+    Server #{{ loop.index }}
+    ^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'loop' is undefined
+2025-05-20 13:56:29,769 - server - ERROR - Exception on request GET /server-status/51
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 159, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 50, in top-level template code
+    Server #{{ loop.index }}
+    ^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'loop' is undefined
+2025-05-20 13:57:29,822 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 13:58:26,388 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 13:58:51,710 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 13:58:58,972 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 65 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 13:59:13,420 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '65', 'container_id': 'cfe36cb84f46b1727ad987eaec8ddbfc59d21c07412a2582bbe42bb3ca9e090a', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-20 14:03:13,171 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 14:03:51,069 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 14:03:58,188 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 66 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 14:04:12,911 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '66', 'container_id': 'c08d501958a8c67f2e9df14561f4e387b1484876b1c98b6260eab0caa1ca4275', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-20 14:34:15,583 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 14:35:02,924 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 14:35:06,799 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 67 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 14:35:26,998 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '67', 'container_id': '17266142ef8632405765a58d65d8dd8e439f7624d847edec16d88563e45968d8', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-20 14:37:48,607 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 14:38:08,881 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 14:38:15,831 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 68 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 14:39:24,765 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 14:39:37,825 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 14:39:45,432 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 69 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 14:40:03,123 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '69', 'container_id': '0431c6e03fc4e4e1054bb4df4d85faff03ea6afefab9d4c7e87a5bfc98f0c8e6', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-20 14:43:18,758 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 14:43:52,757 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 14:43:59,898 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 70 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 14:44:12,949 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '70', 'container_id': '3e8cd95fe15811c8312dc8a7a0f39964e744d8d2a14b01c326c60ecc4ddcd5ed', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-20 14:46:59,658 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 14:47:14,468 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 14:47:21,525 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 71 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 14:47:34,051 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '71', 'container_id': '65a794cfbd6c98cd105bbed8307834a48900a7c8e160885730443d44008366e8', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-20 14:50:49,406 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 14:51:02,981 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 14:51:10,187 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 72 -p 2456 2457 -g valheim -m 8.0g -c 4.0 start
+2025-05-20 14:51:20,735 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': '72', 'container_id': 'f09fffc93c505dc4abe42d2b14e05c0f6e4fdb8941872e2abc080fafcaef65ed', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-20 15:18:39,854 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 15:18:43,106 - server - ERROR - Exception on request GET /
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 59, in home
+    return await render_template("home.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 202, in template
+    <script type="application/ld+json" src="{% url_for(static, filename='seo.json') %}"></script>
+    ^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'url_for'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-05-20 15:20:19,851 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 15:20:21,572 - server - ERROR - Exception on request GET /
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 59, in home
+    return await render_template("home.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 202, in template
+    <script type="application/ld+json" src="{% url_for('static', filename='seo.json') %}"></script>
+    ^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'url_for'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-05-20 15:21:42,940 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 15:23:56,730 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 15:24:00,023 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 15:26:00,229 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 15:27:03,232 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 15:28:28,283 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 15:31:38,537 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)

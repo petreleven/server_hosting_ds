@@ -1,16 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 set -e
-echo "Installing/updating valheim server...."
 
+echo "Installing/updating Valheim server..."
 INSTALL_DIR=/valheim
-/home/steam/server/script.sh  +@sSteamCmdForcePlatformType linux \
+
+# Use the full path to steamcmd provided by the base image
+/home/steam/steamcmd/steamcmd.sh +force_install_dir "$INSTALL_DIR" \
     +login anonymous \
-    +force_install_dir "$INSTALL_DIR" \
     +app_update 896660 validate \
     +quit
 
-echo "Copying BepInEx into game folder..."
-cp /home/steam/server/BepInEX/*  "$INSTALL_DIR"
 
-echo "Launching Valheim server with BepInEx..."
-exec /home/steam/server/scripts/start.sh
+echo "Valheim server installation complete!"
