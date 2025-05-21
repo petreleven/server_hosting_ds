@@ -1,5 +1,6 @@
 import logging
 from abc import ABC, abstractmethod
+from typing import Dict, Any
 
 from db import db
 
@@ -61,4 +62,13 @@ class AbstractProvisioner(ABC):
         Returns:
             True if the configuration is valid, False otherwise
 
+        """
+    @abstractmethod
+    async def generate_config_view_schema(self, cfg : Dict[str, Any])->Dict[str, Any]:
+        """
+        This generates the schema to be handed over to js based on saved configs from database
+        Args:
+            cfg : json loaded config values from db
+        Returns:
+            Dict[str, Any] a dictionary of the schema
         """

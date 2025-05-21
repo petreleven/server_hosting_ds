@@ -1,5 +1,6 @@
 import datetime
 import logging
+from typing import Any, Dict,Optional
 
 import asyncpg
 
@@ -230,3 +231,28 @@ class MainProvisioner:
             f"python3 setup_server.py -u {user_id} -p {port_args}"
             f" -g {game_name} -m {ram_gb}g -c {cpu_cores} start"
         )
+
+    async def generate_config_view_schema(self, cfg : Dict[str, Any], subscription_id : str) ->Optional[Dict[str, Any]]:
+        record, err = await db.db_select_subscription_by_id(sub_id=subscription_id)
+        if not record:
+            self.logger.info("Unable to get subscription_record id:%s err:%s", record,err)
+            return None
+
+        plan_id = record.get("plan_id")
+        plan = await self._get_plan(str(plan_id))
+        if plan is None:
+            self.logger.error("Plan %s not found", plan_id)
+            return
+
+        game_name = await self._get_game_name(plan.get("game_id"))
+        if not game_name:
+            self.logger.error("Game not found for plan %s", plan_id)
+            return
+        provisioner = ProvisionerFactory.get_provisioner(game_name=game_name)
+        if not provisioner:
+            return None
+
+        return await provisioner.generate_config_view_schema(cfg)
+
+
+

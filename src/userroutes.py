@@ -385,7 +385,11 @@ async def configure():
                 "configure.html", config=None, error="No servers found"
             )
 
-        config = json.loads(record.get("config", "{}"))
+        provisioner = MainProvisioner()
+        db_cfg : Dict[str , Any] = json.loads(record.get("config", "{}"))
+        config = await provisioner.generate_config_view_schema(db_cfg, subscription_id)
+
+
         return await render_template("configure.html", config=config)
     except json.JSONDecodeError:
         logger.error(f"Invalid JSON config for subscription: {subscription_id}")

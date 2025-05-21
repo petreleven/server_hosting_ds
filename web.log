@@ -2654,3 +2654,124 @@ AttributeError: 'tuple' object has no attribute 'get'
 2025-05-21 11:34:54,397 - backendlogger - INFO - Registered provisioner for game: valheim
 2025-05-21 11:34:55,125 - userroutes - INFO - User registered successfully: a113@g.com
 2025-05-21 11:34:58,714 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 3829a3c6-3812-4e71-a547-041a99f77cae -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-05-21 13:22:03,591 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:22:05,796 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:22:05,799 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:22:31,981 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 13:22:33,250 - userroutes - INFO - User registered successfully: jules@g.com
+2025-05-21 13:22:36,813 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u f52e8a0c-eb3b-4963-bb35-10eb7a62d6bb -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-05-21 13:22:49,468 - backendlogger - INFO - Server report received: {'action': 'start', 'success': False, 'subscription_id': 'f52e8a0c-eb3b-4963-bb35-10eb7a62d6bb', 'error': "Failed to start server: unable to get image 'petreleven11/valheim_server:v0.0.1': Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?\n", 'status': 'failed'}
+2025-05-21 13:22:49,468 - backendlogger - ERROR - Server error reported: Failed to start server: unable to get image 'petreleven11/valheim_server:v0.0.1': Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+2025-05-21 13:25:23,115 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:25:23,725 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:25:23,729 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:27:42,158 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 13:27:42,991 - userroutes - INFO - User registered successfully: jules2@c.com
+2025-05-21 13:27:48,810 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u ae583ccc-5265-4f40-b472-441dc583d41f -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-05-21 13:27:55,508 - backendlogger - INFO - Server report received: {'action': 'start', 'success': True, 'subscription_id': 'ae583ccc-5265-4f40-b472-441dc583d41f', 'container_id': 'a9df327a17412defa60d725f3ca281ab0e72f6c1a6e1ec3400fb7dc10e788267', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-21 13:27:56,362 - backendlogger - INFO - Server status updated for subscription: ae583ccc-5265-4f40-b472-441dc583d41f
+2025-05-21 13:27:56,818 - backendlogger - INFO - Subscription updated for ID: ae583ccc-5265-4f40-b472-441dc583d41f, next billing: 2025-06-20 10:27:56.362442+00:00
+2025-05-21 13:33:58,988 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:33:59,707 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:33:59,711 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:35:56,543 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:35:57,205 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:35:57,209 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:36:45,490 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:36:46,264 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:36:46,270 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:38:12,920 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:38:13,656 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:38:13,659 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:40:40,182 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:40:40,968 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:40:40,972 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:41:16,715 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:41:17,524 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:41:17,526 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:42:02,018 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:42:02,785 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:42:02,793 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:43:59,314 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:44:00,034 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:44:00,038 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:45:32,444 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:45:33,101 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:45:33,105 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 13:53:25,333 - backendlogger - INFO - Database connection pool created
+2025-05-21 13:53:26,106 - backendlogger - INFO - All database tables created successfully
+2025-05-21 13:53:26,110 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:36:56,036 - backendlogger - INFO - Database connection pool created
+2025-05-21 14:36:56,817 - backendlogger - INFO - All database tables created successfully
+2025-05-21 14:36:56,821 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:37:08,691 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 14:37:08,740 - userroutes - ERROR - Error loading server configuration: Unable to serialize unknown type: <class 'coroutine'>
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_schema/extension.py", line 130, in default
+    return super().default(object_)
+           ^^^^^^^^^^^^^^^
+TypeError: super(type, obj): obj (instance of coroutine) is not an instance or subtype of type (JSONProvider).
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 392, in configure
+    return await render_template("configure.html", config=config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/configure.html", line 278, in top-level template code
+    const serverConfig = JSON.parse('{{ config | tojson | safe }}');
+    ^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/filters.py", line 1721, in do_tojson
+    return htmlsafe_json_dumps(value, dumps=dumps, **kwargs)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/utils.py", line 669, in htmlsafe_json_dumps
+    dumps(obj, **kwargs)
+    ~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/flask/json/provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_schema/extension.py", line 133, in default
+    return to_jsonable_python(object_)
+pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'coroutine'>
+2025-05-21 14:37:36,425 - backendlogger - INFO - Database connection pool created
+2025-05-21 14:37:37,163 - backendlogger - INFO - All database tables created successfully
+2025-05-21 14:37:37,166 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:37:47,808 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 14:38:11,444 - backendlogger - INFO - Database connection pool created
+2025-05-21 14:38:12,185 - backendlogger - INFO - All database tables created successfully
+2025-05-21 14:38:12,188 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:38:17,202 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 14:39:24,890 - backendlogger - INFO - Database connection pool created
+2025-05-21 14:39:25,708 - backendlogger - INFO - All database tables created successfully
+2025-05-21 14:39:25,710 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:40:09,507 - backendlogger - INFO - Database connection pool created
+2025-05-21 14:40:10,253 - backendlogger - INFO - All database tables created successfully
+2025-05-21 14:40:10,255 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:40:16,499 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 14:45:50,838 - backendlogger - INFO - Database connection pool created
+2025-05-21 14:46:29,199 - backendlogger - INFO - Database connection pool created
+2025-05-21 14:46:29,853 - backendlogger - INFO - All database tables created successfully
+2025-05-21 14:46:29,855 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:46:40,805 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 14:51:05,871 - backendlogger - INFO - Database connection pool created
+2025-05-21 14:51:06,643 - backendlogger - INFO - All database tables created successfully
+2025-05-21 14:51:06,649 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:51:12,274 - backendlogger - INFO - Registered provisioner for game: valheim

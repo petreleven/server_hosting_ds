@@ -79,12 +79,18 @@
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
     }
+    .glass-color{
+        background-color: rgba(17, 25, 40, 0.75);
+    }
     .glass-card {
         background-color: rgba(17, 25, 40, 0.75);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
+         transition: all 0.3s ease;
     }
-
+     .glass-card:hover {
+        transform: translateY(-1px);
+    }
     .animate-pulse-subtle {
         animation: pulse-subtle 3s infinite;
     }
@@ -129,14 +135,9 @@
         100% { transform: rotate(360deg); }
     }
 
-    /* Enhance hover effects */
-    .glass-card {
-        transition: all 0.3s ease;
-    }
 
-    .glass-card:hover {
-        transform: translateY(-3px);
-    }
+
+
     </style>
 </head>
 <body class="bg-[#1e1e2e] text-white main-font h-full">

@@ -1,3 +1,4 @@
+<section id="allservers">
 <div class="max-w-4xl mx-auto px-4" id="servers-container">
     <h1 class="text-3xl font-bold mb-8 text-lime-500 flex items-center">
     <!-- icon -->
@@ -77,7 +78,7 @@
                     px-5 py-3 rounded-lg transition shadow-md w-full md:w-auto"
                     {% if sub.status != 'provisioning' %}
                         hx-get="/configure?subscription_id={{ sub.id }}"
-                        hx-target="main"
+                        hx-target="#allservers"
                         hx-swap="innerHTML"
                     {% else %}
                         disabled
@@ -110,3 +111,4 @@
 </div>
 <script type="text/javascript" src="{{ url_for('static', filename='js/timer.js') }}"></script>
 
+</section>
