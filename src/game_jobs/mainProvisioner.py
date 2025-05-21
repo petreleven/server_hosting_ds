@@ -21,10 +21,10 @@ class MainProvisioner:
 
     async def job_update_config(
         self,
-        server_id: int,
+        server_id: str,
         game_server_ip: str,
         game_name: str,
-        subscription_id: int,
+        subscription_id: str,
         config_values: dict,
     ) -> None:
         """Update the configuration for a running game server.
@@ -66,6 +66,7 @@ class MainProvisioner:
             data: The registration data for the user
 
         """
+        print(data)
         user_id = await self._get_user_id(data.email)
         if user_id is None:
             self.logger.warning("User not found for email %s", data.email)
@@ -109,39 +110,41 @@ class MainProvisioner:
             cfg=cfg,
         )
 
-    async def _get_user_id(self, email: str) -> int | None:
+    async def _get_user_id(self, email: str) -> str | None:
         """Get the user ID for the given email."""
-        record = await db.db_select_user_by_email(email)
+        record,err = await db.db_select_user_by_email(email)
         if not record:
             return None
         user_id = record.get("id")
-        return int(user_id) if user_id else None
+        return user_id if user_id else None
 
     async def _create_subscription(
         self,
-        user_id: int,
-        plan_id: int,
+        user_id: str,
+        plan_id: str,
     ) -> asyncpg.Record | None:
         """Create a subscription for the user."""
         now = datetime.datetime.now(datetime.UTC)
         expire_at = now + datetime.timedelta(hours=12)
-        return await db.db_insert_subscription(
+        res , _=await db.db_insert_subscription(
             user_id=user_id,
             plan_id=plan_id,
             status="provisioning",
             expires_at=expire_at,
             next_billing_date=now,
         )
+        return res
 
-    async def _get_plan(self, plan_id: int) -> asyncpg.Record | None:
+    async def _get_plan(self, plan_id: str) -> asyncpg.Record | None:
         """Get the plan for the given plan ID."""
-        return await db.db_select_plan_by_id(plan_id)
+        res, _=await db.db_select_plan_by_id(plan_id)
+        return res
 
-    async def _get_game_name(self, game_id: int | None) -> str | None:
+    async def _get_game_name(self, game_id: str | None) -> str | None:
         """Get the game name for the given game ID."""
         if game_id is None:
             return None
-        record = await db.db_select_game_by_id(int(game_id))
+        record,_ = await db.db_select_game_by_id(game_id)
         return record.get("game_name") if record else None
 
     async def _find_available_baremetal(
@@ -151,7 +154,7 @@ class MainProvisioner:
         """Find an available baremetal server with enough capacity."""
         if ram_needed is None:
             return None
-        baremetals: list[asyncpg.Record] = await db.db_select_all_baremetals()
+        baremetals , _= await db.db_select_all_baremetals()
         for bm in baremetals:
             total = bm.get("capacity_total") or 0
             used = bm.get("capacity_used") or 0
@@ -161,7 +164,7 @@ class MainProvisioner:
 
     async def _provision_server(
         self,
-        subscription_id: int,
+        subscription_id: str,
         baremetal: asyncpg.Record,
         game_name: str,
         plan: asyncpg.Record,
@@ -187,7 +190,7 @@ class MainProvisioner:
         # Get required ports from the game provisioner
         ports = provisioner.get_required_ports()
 
-        server = await db.db_insert_server(
+        server, _ = await db.db_insert_server(
             subscription_id=subscription_id,
             status="provisioning",
             ip_address=ip,
@@ -215,7 +218,7 @@ class MainProvisioner:
 
     def _build_payload(
         self,
-        user_id: int,
+        user_id: str,
         ports: list[int],
         game_name: str,
         ram_gb: int,

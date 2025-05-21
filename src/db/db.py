@@ -1,25 +1,31 @@
 import datetime
 import logging
+import re
 import os
+import sys
 import threading
-from typing import Optional
+from typing import Dict, List, Tuple
 
 import asyncpg
 import dotenv
 from asyncpg import Pool
 from redis.asyncio import Redis
+from pathlib import Path
 
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 import custom_dataclass as cdata
 
 dotenv.load_dotenv()
 
+# Configure logger
+logger = logging.getLogger("backendlogger")
 
 # Database connection parameters
 NEON_URL = os.getenv("NEON_URL")
 REDIS_URL = os.getenv("REDIS_URL")
 REDIS_PORT = os.getenv("REDIS_PORT")
 REDIS_CLIENT: Redis | None = None
-
+SQL_QUERIES: Dict[str, str] = {}
 
 pool: Pool | None = None
 _conn_lock = threading.Lock()
@@ -28,167 +34,111 @@ _conn_lock = threading.Lock()
 def get_redis_client() -> Redis:
     global REDIS_CLIENT
     if REDIS_CLIENT is None:
-        REDIS_CLIENT = Redis(
-            host=str(REDIS_URL),
-            port=int(REDIS_PORT),
-            max_connections=20,
-        )
+        try:
+            REDIS_CLIENT = Redis(
+                host=str(REDIS_URL),
+                port=int(REDIS_PORT),
+                max_connections=20,
+            )
+        except Exception as e:
+            logger.error(f"Failed to create Redis client: {str(e)}")
+            raise
     return REDIS_CLIENT
 
 
+def load_sql_queries() -> None:
+    """Load SQL queries from files into memory."""
+    try:
+        models_path = str(Path(__file__).parent) + "/schema/models.sql"
+        queries_path = str(Path(__file__).parent) + "/query/query.sql"
+        allpaths = [models_path, queries_path]
+
+        for p in allpaths:
+            if not Path(p).exists():
+                logger.error(f"SQL file not found: {p}")
+                raise
+
+            data: str = Path(p).read_text().strip()
+            allstatements = re.split("-- name: (.*)", data)[1:]
+            for i in range(0, len(allstatements) - 1, 2):
+                SQL_QUERIES[allstatements[i].strip()] = allstatements[i + 1].strip()
+
+        logger.info(f"Loaded {len(SQL_QUERIES)} SQL queries")
+    except Exception as e:
+        logger.error(f"Error loading SQL queries: {str(e)}")
+        raise
+
+
 async def get_pool() -> Pool | None:
+    """Get or create a database connection pool."""
     global pool
 
     with _conn_lock:
         if pool is None:
-            pool = await asyncpg.create_pool(dsn=NEON_URL)
+            try:
+                if not NEON_URL:
+                    logger.error("NEON_URL environment variable not set")
+                    raise
+
+                pool = await asyncpg.create_pool(dsn=NEON_URL)
+                logger.info("Database connection pool created")
+            except Exception as e:
+                logger.error(f"Failed to create connection pool: {str(e)}")
+                return None
     return pool
 
 
-async def db_createalldbs() -> None:
-    await db_drop_table("subscriptions")
-    await db_drop_table("servers")
-    await db_drop_table("users")
-    await db_drop_table("games")
-    await db_drop_table("plans")
-    await db_drop_table("baremetal")
-    await db_drop_table("transactions")
-
-    """Create all database tables if they don't exist"""
-    pool: Pool | None = await get_pool()
-
-    if not pool:
-        return
-    # Users table
-    async with pool.acquire() as conn:
-        await conn.execute('''
-            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-            ''')
-        await conn.execute("""
-        CREATE TABLE IF NOT EXISTS users (
-            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
-            email VARCHAR(255) UNIQUE,
-            password VARCHAR(255),
-            created_at TIMESTAMPTZ  DEFAULT  NOW(),
-            updated_at TIMESTAMPTZ  DEFAULT  NOW()
-        );""")
-
-        # Games table
-        await conn.execute("""
-        CREATE TABLE IF NOT EXISTS games (
-            id   uuid  PRIMARY KEY DEFAULT uuid_generate_v4(),,
-            game_name VARCHAR(100),
-            description TEXT,
-            image_url VARCHAR(255),
-            active BOOLEAN  DEFAULT  TRUE
-        );""")
-
-        # Plans table
-        await conn.execute("""
-        CREATE TABLE IF NOT EXISTS plans (
-            id   uuid   PRIMARY KEY DEFAULT uuid_generate_v4(),,
-            game_id uuid,
-            plan_name VARCHAR(100),
-            cpu_cores REAL,
-            ram_gb REAL,
-            storage_gb REAL,
-            price_monthly REAL,
-            max_players INTEGER,
-            active BOOLEAN DEFAULT  TRUE,
-            FOREIGN KEY(game_id) REFERENCES games(id)
-        );""")
-
-        # Subscriptions table
-        await conn.execute("""
-        CREATE TABLE IF NOT EXISTS subscriptions (
-            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
-            user_id uuid,
-            plan_id uuid,
-            status VARCHAR(50),
-            created_at  TIMESTAMPTZ  DEFAULT  NOW(),
-            expires_at TIMESTAMPTZ,
-            last_billing_date   TIMESTAMPTZ  DEFAULT  NOW(),
-            next_billing_date TIMESTAMPTZ,
-            FOREIGN KEY(user_id) REFERENCES users(id),
-            FOREIGN KEY(plan_id) REFERENCES plans(id)
-        );""")
-
-        # BAREMETAL table
-        await conn.execute("""
-        CREATE TABLE IF NOT EXISTS baremetal (
-            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
-            hostname VARCHAR(255),
-            ip_address VARCHAR(45) UNIQUE,
-            status VARCHAR(50),
-            capacity_total REAL,
-            capacity_used REAL
-        );""")
-
-        # Servers table
-        await conn.execute("""
-        CREATE TABLE IF NOT EXISTS servers (
-            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
-            subscription_id uuid,
-            status VARCHAR(50),
-            ip_address VARCHAR(45),
-            ports TEXT,
-            docker_container_id VARCHAR(100),
-            created_at TIMESTAMPTZ  DEFAULT  NOW(),
-            config JSONB,
-            FOREIGN KEY(subscription_id) REFERENCES subscriptions(id)
-        );""")
-
-        # Transactions table
-        await conn.execute("""
-        CREATE TABLE IF NOT EXISTS transactions (
-            id   uuid        PRIMARY KEY DEFAULT uuid_generate_v4(),,
-            user_id uuid,
-            subscription_id uuid,
-            amount REAL,
-            description TEXT,
-            created_at TIMESTAMPTZ  DEFAULT  NOW(),
-            payment_method VARCHAR(50),
-            payment_status VARCHAR(50),
-            FOREIGN KEY(user_id) REFERENCES users(id),
-            FOREIGN KEY(subscription_id) REFERENCES subscriptions(id)
-        );""")
-
-
-# ----- DROP -----
-
-
-async def db_drop_table(table: str) -> None:
-    """Drop a specific table if it exists."""
-    pool = await get_pool()
-    if not pool:
-        return
+async def db_createalldbs() -> bool:
+    """Create all database tables."""
     try:
+        pool: Pool | None = await get_pool()
+        if not pool:
+            logger.error("Failed to get database pool")
+            return False
+
         async with pool.acquire() as conn:
-            await conn.execute(f"DROP TABLE IF EXISTS {table};")
+            async with conn.transaction():
+                await conn.execute(f"""
+                    {SQL_QUERIES["CreateUserTable"]}
+                    {SQL_QUERIES["CreateGameTable"]}
+                    {SQL_QUERIES["CreatePlansTable"]}
+                    {SQL_QUERIES["CreateSubscriptionsTable"]}
+                    {SQL_QUERIES["CreateBaremetalTable"]}
+                    {SQL_QUERIES["CreateServersTable"]}
+                    {SQL_QUERIES["CreateTransactionsTable"]}
+                    """)
+        logger.info("All database tables created successfully")
+        return True
     except Exception as e:
-        logger = logging.getLogger("backendlogger")
-        logger.error(f"Unable to drop table {table} ", e)
-        pass
+        logger.error(f"Error creating database tables: {str(e)}")
+        raise
 
 
-# ----- INSERT OPERATIONS -----
-
-
-async def db_insert_user(data: cdata.RegisterUserData) -> asyncpg.Record | None:
+async def db_insert_user(
+    data: cdata.RegisterUserData,
+) -> Tuple[asyncpg.Record | None, str | None]:
     """Insert a new user into the database and return the new record."""
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            INSERT INTO users (email, password)
-            VALUES ($1, $2)
-            RETURNING id, email, created_at;
-            """,
-            data.email,
-            data.password,
-        )
+    try:
+        if not data.email or not data.password:
+            return None, "Email and password are required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['InsertUser']}",
+                data.email,
+                data.password,
+            )
+            return result, None
+    except asyncpg.UniqueViolationError:
+        logger.warning(f"Attempt to create duplicate user: {data.email}")
+        return None, "User with that email already exists"
+    except Exception as e:
+        logger.error(f"Error inserting user: {str(e)}")
+        return None, f"Database error: {str(e)}"
 
 
 async def db_insert_subscription(
@@ -197,26 +147,34 @@ async def db_insert_subscription(
     status: str,
     expires_at: datetime.datetime,
     next_billing_date: datetime.datetime,
-) -> asyncpg.Record | None:
+) -> Tuple[asyncpg.Record | None, str | None]:
     """Insert a new subscription and return its record."""
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            INSERT INTO subscriptions
-            (user_id, plan_id, status, expires_at, next_billing_date)
-            VALUES ($1, $2, $3, $4, $5)
-            RETURNING
-            id, user_id, plan_id, status, expires_at, next_billing_date;
-            """,
-            user_id,
-            plan_id,
-            status,
-            expires_at,
-            next_billing_date,
+    try:
+        if not user_id or not plan_id:
+            return None, "User ID and plan ID are required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['InsertSubscription']}",
+                user_id,
+                plan_id,
+                status,
+                expires_at,
+                next_billing_date,
+            )
+            return result, None
+    except asyncpg.ForeignKeyViolationError:
+        logger.warning(
+            f"Foreign key violation on subscription insert: user_id={user_id}, plan_id={plan_id}"
         )
+        return None, "User or plan does not exist"
+    except Exception as e:
+        logger.error(f"Error inserting subscription: {str(e)}")
+        return None, f"Database error: {str(e)}"
 
 
 async def db_insert_server(
@@ -226,160 +184,215 @@ async def db_insert_server(
     ports: str,
     docker_container_id: str,
     cfg: str,
-) -> asyncpg.Record | None:
+) -> Tuple[asyncpg.Record | None, str | None]:
     """Insert a new server and return its record."""
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            INSERT INTO servers
-            (subscription_id, status, ip_address, ports, docker_container_id, config)
-            VALUES ($1, $2, $3, $4, $5, $6)
-            RETURNING
-            id, subscription_id, status, ip_address, ports, docker_container_id, config;
-            """,
-            subscription_id,
-            status,
-            ip_address,
-            ports,
-            docker_container_id,
-            cfg,
+    try:
+        if not subscription_id:
+            return None, "Subscription ID is required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['InsertServer']}",
+                subscription_id,
+                status,
+                ip_address,
+                ports,
+                docker_container_id,
+                cfg,
+            )
+            return result, None
+    except asyncpg.ForeignKeyViolationError:
+        logger.warning(
+            f"Foreign key violation on server insert: subscription_id={subscription_id}"
         )
+        return None, "Subscription does not exist"
+    except Exception as e:
+        logger.error(f"Error inserting server: {str(e)}")
+        return None, f"Database error: {str(e)}"
 
 
 # ----- SELECT OPERATIONS -----
 
 
-async def db_select_user_by_email(email: str) -> asyncpg.Record | None:
+async def db_select_user_by_email(
+    email: str,
+) -> Tuple[asyncpg.Record | None, str | None]:
     """Select a user by email address."""
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            SELECT id, email, password, created_at
-            FROM users
-            WHERE email = $1;
-            """,
-            email,
-        )
+    try:
+        if not email:
+            return None, "Email is required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['SelectUserByEmail']}",
+                email,
+            )
+            return result, None
+    except Exception as e:
+        logger.error(f"Error selecting user by email: {str(e)}")
+        return None, f"Database error: {str(e)}"
 
 
-async def db_select_all_baremetals() -> list[asyncpg.Record]:
+async def db_select_all_baremetals() -> Tuple[List[asyncpg.Record], str | None]:
     """Get all bare metal servers."""
-    pool = await get_pool()
-    if not pool:
-        return []
-    async with pool.acquire() as conn:
-        return await conn.fetch(
-            """
-            SELECT *
-            FROM baremetal;
-            """,
-        )
+    try:
+        pool = await get_pool()
+        if not pool:
+            return [], "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetch(f"{SQL_QUERIES['SelectAllBaremetals']}")
+            return result, None
+    except Exception as e:
+        logger.error(f"Error selecting all baremetals: {str(e)}")
+        return [], f"Database error: {str(e)}"
 
 
-async def db_select_all_subscriptions(user_id: str) -> list[asyncpg.Record]:
-    """Get all bare metal servers."""
-    pool = await get_pool()
-    if not pool:
-        return []
-    async with pool.acquire() as conn:
-        return await conn.fetch(
-            """
-            SELECT *
-            FROM subscriptions
-            WHERE user_id=$1;
-            """,
-            user_id,
-        )
+async def db_select_all_subscriptions(
+    user_id: str,
+) -> Tuple[List[asyncpg.Record], str | None]:
+    """Get all subscriptions for a user."""
+    try:
+        if not user_id:
+            return [], "User ID is required"
+
+        pool = await get_pool()
+        if not pool:
+            return [], "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetch(
+                f"{SQL_QUERIES['SelectAllSubscriptions']}",
+                user_id,
+            )
+            return result, None
+    except Exception as e:
+        logger.error(f"Error selecting all subscriptions: {str(e)}")
+        return [], f"Database error: {str(e)}"
 
 
-async def db_select_plan_by_id(plan_id: str) -> asyncpg.Record | None:
+async def db_select_plan_by_id(
+    plan_id: str,
+) -> Tuple[asyncpg.Record | None, str | None]:
     """Get a plan by its ID."""
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            SELECT *
-            FROM plans
-            WHERE id = $1;
-            """,
-            plan_id,
-        )
+    try:
+        if not plan_id:
+            return None, "Plan ID is required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['SelectPlanById']}",
+                plan_id,
+            )
+            return result, None
+    except Exception as e:
+        logger.error(f"Error selecting plan by ID: {str(e)}")
+        return None, f"Database error: {str(e)}"
 
 
-async def db_select_game_by_id(game_id: str) -> asyncpg.Record | None:
+async def db_select_game_by_id(
+    game_id: str,
+) -> Tuple[asyncpg.Record | None, str | None]:
     """Get a game by its ID."""
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            SELECT *
-            FROM games
-            WHERE id = $1;
-            """,
-            game_id,
-        )
+    try:
+        if not game_id:
+            return None, "Game ID is required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['SelectGameById']}",
+                game_id,
+            )
+            return result, None
+    except Exception as e:
+        logger.error(f"Error selecting game by ID: {str(e)}")
+        return None, f"Database error: {str(e)}"
 
 
 # ----- OPTIONAL ADDITIONAL SELECTS -----
-async def db_select_subscription_by_id(sub_id: str) -> Optional[asyncpg.Record]:
-    """List all subscriptions for a given user."""
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            SELECT *
-            FROM subscriptions
-            WHERE id = $1;
-            """,
-            sub_id,
-        )
+async def db_select_subscription_by_id(
+    sub_id: str,
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Get a subscription by its ID."""
+    try:
+        if not sub_id:
+            return None, "Subscription ID is required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['SelectSubscriptionById']}",
+                sub_id,
+            )
+            return result, None
+    except Exception as e:
+        logger.error(f"Error selecting subscription by ID: {str(e)}")
+        return None, f"Database error: {str(e)}"
 
 
-async def db_select_subscription_by_user(user_id: str) -> list[asyncpg.Record]:
+async def db_select_subscription_by_user(
+    user_id: str,
+) -> Tuple[List[asyncpg.Record], str | None]:
     """List all subscriptions for a given user."""
-    pool = await get_pool()
-    if not pool:
-        return []
-    async with pool.acquire() as conn:
-        return await conn.fetch(
-            """
-            SELECT *
-            FROM subscriptions
-            WHERE user_id = $1
-            ORDER BY created_at DESC;
-            """,
-            user_id,
-        )
+    try:
+        if not user_id:
+            return [], "User ID is required"
+
+        pool = await get_pool()
+        if not pool:
+            return [], "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetch(
+                f"{SQL_QUERIES['SelectSubscriptionsByUser']}",
+                user_id,
+            )
+            return result, None
+    except Exception as e:
+        logger.error(f"Error selecting subscriptions by user: {str(e)}")
+        return [], f"Database error: {str(e)}"
 
 
 async def db_select_servers_by_subscription(
     subscription_id: str,
-) -> asyncpg.Record | None:
+) -> Tuple[asyncpg.Record | None, str | None]:
     """List all servers under a specific subscription."""
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            SELECT *
-            FROM servers
-            WHERE subscription_id = $1;
-            """,
-            subscription_id,
-        )
+    try:
+        if not subscription_id:
+            return None, "Subscription ID is required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['SelectServersBySubscription']}",
+                subscription_id,
+            )
+            return result, None
+    except Exception as e:
+        logger.error(f"Error selecting servers by subscription: {str(e)}")
+        return None, f"Database error: {str(e)}"
 
 
 # ------------UPDATES--------------
@@ -387,22 +400,29 @@ async def db_update_server_status(
     status: str,
     docker_container_id: str,
     subscription_id: str,
-) -> asyncpg.Record | None:
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            UPDATE servers
-            SET status=$1 , docker_container_id=$2
-            WHERE subscription_id=$3
-            RETURNING *;
-            """,
-            status,
-            docker_container_id,
-            subscription_id,
-        )
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Update server status by subscription ID."""
+    try:
+        if not subscription_id:
+            return None, "Subscription ID is required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['UpdateServerStatus']}",
+                status,
+                docker_container_id,
+                subscription_id,
+            )
+            if not result:
+                return None, "Server not found"
+            return result, None
+    except Exception as e:
+        logger.error(f"Error updating server status: {str(e)}")
+        return None, f"Database error: {str(e)}"
 
 
 async def db_update_subscription_status(
@@ -410,20 +430,35 @@ async def db_update_subscription_status(
     status: str,
     last_billing_date: datetime.datetime,
     next_billing_date: datetime.datetime,
-) -> asyncpg.Record | None:
-    pool = await get_pool()
-    if not pool:
-        return None
-    async with pool.acquire() as conn:
-        return await conn.fetchrow(
-            """
-            UPDATE subscriptions
-            SET status=$1, last_billing_date=$2, next_billing_date=$3
-            WHERE id = $4
-            RETURNING *
-            """,
-            status,
-            last_billing_date,
-            next_billing_date,
-            subscription_id,
-        )
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Update subscription status and billing dates."""
+    try:
+        if not subscription_id:
+            return None, "Subscription ID is required"
+
+        pool = await get_pool()
+        if not pool:
+            return None, "Database connection failed"
+
+        async with pool.acquire() as conn:
+            result = await conn.fetchrow(
+                f"{SQL_QUERIES['UpdateSubscriptionStatus']}",
+                status,
+                last_billing_date,
+                next_billing_date,
+                subscription_id,
+            )
+            if not result:
+                return None, "Subscription not found"
+            return result, None
+    except Exception as e:
+        logger.error(f"Error updating subscription status: {str(e)}")
+        return None, f"Database error: {str(e)}"
+
+
+# Initialize SQL queries on module load
+try:
+    load_sql_queries()
+except Exception as e:
+    logger.critical(f"Failed to load SQL queries: {str(e)}")
+    sys.exit(1)

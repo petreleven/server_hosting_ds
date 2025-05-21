@@ -57,20 +57,30 @@
                         <h3 class="text-2xl font-bold text-white">&gt; Sign up for <span class="text-blue-400">Free</span></h3>
                         <p class="text-gray-300 text-sm">No credit card required</p>
                     </div>
-                    <form class="space-y-4">
+                    <form class="space-y-4" method="post" action="/register" id="register-form">
                         <div>
                             <label class="block text-gray-400 text-sm mb-1">Email</label>
-                            <input name="email" type="email" placeholder="you@example.com" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white">
+                            <input name="email" type="email" placeholder="you@example.com" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white" required>
                             <input type="number" name="game_id" style="display:none;" value="1">
+                            {% if errors.email_errors %}
+                                {%for e in errors.email_errors%}
+                                <span class="text-sm text-red-500">{{e}}</span>
+                                {%endfor%}
+                            {% endif %}
                         </div>
                         <div>
                             <label class="block text-gray-400 text-sm mb-1">Password</label>
-                            <input name="password" type="password" placeholder="Something secret" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white">
+                            <input name="password" type="password" placeholder="Something secret" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white" required>
+                            {% if errors.password_errors %}
+                                {%for e in errors.password_errors%}
+                                <span class="text-sm text-red-500">{{e}}</span>
+                                {%endfor%}
+                            {% endif %}
                         </div>
                         <div>
                             <label class="block text-gray-400 text-sm mb-1">Plan</label>
                             <select name="plan_id" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white">
-                                <option value="1">Basic -$11/month</option>
+                                <option value="89dfb33b-5bda-4953-8109-e95a60659fca">Basic -$11/month</option>
                                 <option value="2">Huge -$22/month</option>
                             </select>
                         </div>
@@ -85,14 +95,14 @@
                         </div>
                         <button type="submit" class="w-full p-3  bg-green-500      hover:bg-green-500     text-[#1e1e2e]
                         font-bold shadow-lg shadow-blue-600/30 transition"
+                        hx-post="/register"
                         hx-trigger="click"
-                        hx-target="main"
-                        hx-post="register"
-                        hx-swap="innerHTML"
-                        hx-push-url=true>
+                        hx-target="body"
+                        >
                         Create My Server (24h free)
                         </button>
                     </form>
+
                     <p class="mt-4 text-xs text-center text-gray-400">
                     </p>
                 </div>

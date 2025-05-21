@@ -1,5 +1,6 @@
 import logging
 import os
+from pathlib import Path
 import secrets
 import sys
 
@@ -24,47 +25,32 @@ logging.basicConfig(
     ],
 )
 
-backendlogger = logging.getLogger("backendlogger")
-redisClient = db.get_redis_client()
+BACKENDLOGGER = logging.getLogger("backendlogger")
+STATIC_FOLDER = os.path.join(str(Path(__file__).parent) + "/static")
 # globals
 app = Quart(__name__)
-app._static_folder = os.path.join(os.path.dirname(__file__), "static")
-auth = QuartAuth(
-    app,
-)
-app.secret_key = secrets.token_urlsafe(16)
+app._static_folder = STATIC_FOLDER
+app.secret_key = "38b1c9fa-9c2b-467b-ae42-960d3e1593c1"
+#extensions
+QuartAuth(app)
 QuartSchema(app)
 # registering blueprint
 app.register_blueprint(apiblueprint)
 app.register_blueprint(userblueprint)
 
 
-def get_app():
-    return app
 
 
 @app.before_serving
 async def connect():
-    x = {
-        "name": "awesomeserver",
-        "port": 2456,
-        "world": "westworld",
-        "password": "7777",
-        "public": 1,
-        "saveinterval": 1800,
-        "backups": 4,
-        "backupshort": 7200,
-        "backuplong": 43200,
-        "crossplay": True,
-    }
+
     try:
-        # await db.db_createalldbs()
+        redisClient = db.get_redis_client()
+        await db.db_createalldbs()
         await redisClient.ping()
-        vp = valheimprovisioner.ValheimProvisioner()
-        await vp.job_update_config(2, "0.0.0.0", "valheim", 34, x)
     except Exception as e:
-        backendlogger.warning(f"Unable to connect to Redis @{db.REDIS_PORT}:", e)
-        sys.exit(0)
+        BACKENDLOGGER.warning("error in startup:", e)
+        raise
 
 
 app.run(debug=False, host="127.0.0.1", port=8000)

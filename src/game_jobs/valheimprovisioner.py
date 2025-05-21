@@ -168,10 +168,10 @@ class ValheimProvisioner(AbstractProvisioner):
 
     async def job_update_config(
         self,
-        server_id: int,
+        server_id: str,
         game_server_ip: str,
         game_name: str,
-        subscription_id: int,
+        subscription_id: str,
         config_values: dict,
     ) -> None:
         """Implementation of configuration update for Valheim servers."""

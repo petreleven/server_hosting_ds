@@ -789,3 +789,1868 @@ jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'url_for'. Jinja 
 2025-05-20 15:27:03,232 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
 2025-05-20 15:28:28,283 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
 2025-05-20 15:31:38,537 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:21:33,245 - asyncio - ERROR - _GatheringFuture exception was never retrieved
+future: <_GatheringFuture finished exception=CancelledError()>
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/hypercorn/asyncio/__init__.py", line 44, in serve
+    await worker_serve(
+        wrap_app(app, config.wsgi_max_body_size, mode), config, shutdown_trigger=shutdown_trigger
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/hypercorn/asyncio/run.py", line 84, in worker_serve
+    await lifespan.wait_for_startup()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/hypercorn/asyncio/lifespan.py", line 94, in wait_for_startup
+    await asyncio.wait_for(self.startup.wait(), timeout=self.config.startup_timeout)
+  File "/usr/lib64/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+2025-05-20 16:21:33,287 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-3' coro=<Lifespan.handle_lifespan() done, defined at /home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/hypercorn/asyncio/lifespan.py:42> exception=SystemExit(0)>
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/server.py", line 61, in connect
+    await db.db_createalldbs()
+  File "/home/peter/Code/quartApp/src/db/db.py", line 67, in db_createalldbs
+    await conn.execute("""
+    ...<6 lines>...
+    );""")
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 349, in execute
+    result = await self._protocol.query(query, timeout)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 375, in query
+asyncpg.exceptions.PostgresSyntaxError: syntax error at or near ","
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/server.py", line 71, in <module>
+    app.run(debug=False, host="127.0.0.1", port=8000)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 878, in run
+    loop.run_until_complete(asyncio.gather(*tasks))
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 712, in run_until_complete
+    self.run_forever()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 683, in run_forever
+    self._run_once()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 2040, in _run_once
+    handle._run()
+    ~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/asyncio/events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/hypercorn/asyncio/lifespan.py", line 55, in handle_lifespan
+    await self.app(
+    ...<5 lines>...
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/hypercorn/app_wrappers.py", line 34, in __call__
+    await self.app(scope, receive, send)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1735, in __call__
+    await self.asgi_app(scope, receive, send)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1761, in asgi_app
+    await asgi_handler(receive, send)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/asgi.py", line 365, in __call__
+    await self.app.startup()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 68, in connect
+    sys.exit(0)
+    ~~~~~~~~^^^
+SystemExit: 0
+2025-05-20 16:22:24,753 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:23:01,818 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:23:28,240 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:23:46,772 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:24:35,309 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:28:05,739 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:28:32,469 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:28:51,363 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:28:53,223 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:28:53,394 - server - ERROR - Request finalizing errored
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:28:54,320 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg/pgproto/./codecs/uuid.pyx", line 20, in asyncpg.pgproto.pgproto.uuid_encode
+AttributeError: 'int' object has no attribute 'bytes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 74, in job_order_new_server
+    subscription = await self._create_subscription(user_id, data.plan_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 128, in _create_subscription
+    return await db.db_insert_subscription(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 206, in db_insert_subscription
+    return await conn.fetchrow(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 748, in fetchrow
+    data = await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 185, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: 45197094486935387834308833675613277088 ('int' object has no attribute 'bytes')
+2025-05-20 16:30:13,176 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:30:43,077 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:30:54,342 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:31:05,506 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:31:07,144 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:31:08,012 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:31:08,016 - server - ERROR - Request finalizing errored
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:31:09,424 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg/pgproto/./codecs/uuid.pyx", line 20, in asyncpg.pgproto.pgproto.uuid_encode
+AttributeError: 'int' object has no attribute 'bytes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 74, in job_order_new_server
+    subscription = await self._create_subscription(user_id, data.plan_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 128, in _create_subscription
+    return await db.db_insert_subscription(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 206, in db_insert_subscription
+    return await conn.fetchrow(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 748, in fetchrow
+    data = await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 185, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: 104886447511365464776016085484766119410 ('int' object has no attribute 'bytes')
+2025-05-20 16:33:09,323 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:33:26,468 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:33:27,374 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:33:27,378 - server - ERROR - Request finalizing errored
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:33:28,200 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg/pgproto/./codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+  File "asyncpg/pgproto/./uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+ValueError: invalid UUID '1': length must be between 32..36 characters, got 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 74, in job_order_new_server
+    subscription = await self._create_subscription(user_id, data.plan_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 128, in _create_subscription
+    return await db.db_insert_subscription(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 206, in db_insert_subscription
+    return await conn.fetchrow(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 748, in fetchrow
+    data = await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 185, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $2: '1' (invalid UUID '1': length must be between 32..36 characters, got 1)
+2025-05-20 16:34:29,645 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:34:39,988 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:34:46,841 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:34:47,762 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:34:47,767 - server - ERROR - Request finalizing errored
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:34:48,784 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg/pgproto/./codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+  File "asyncpg/pgproto/./uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+ValueError: invalid UUID '1': length must be between 32..36 characters, got 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 75, in job_order_new_server
+    subscription = await self._create_subscription(user_id, data.plan_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 129, in _create_subscription
+    return await db.db_insert_subscription(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 206, in db_insert_subscription
+    return await conn.fetchrow(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 748, in fetchrow
+    data = await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 185, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $2: '1' (invalid UUID '1': length must be between 32..36 characters, got 1)
+2025-05-20 16:36:16,043 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:36:21,723 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:36:22,690 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 33, in register
+    u = await db.db_insert_user(data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 183, in db_insert_user
+    return await conn.fetchrow(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 748, in fetchrow
+    data = await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 206, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(aaaaa@g.com) already exists.
+2025-05-20 16:39:58,351 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:40:21,495 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:40:32,065 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:40:33,465 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:40:33,468 - server - ERROR - Request finalizing errored
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:40:37,050 - backendlogger - WARNING - No baremetal with enough capacity
+2025-05-20 16:41:41,059 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:41:41,366 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:41:42,284 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:41:42,289 - server - ERROR - Request finalizing errored
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-20 16:41:45,355 - backendlogger - WARNING - No baremetal with enough capacity
+2025-05-20 16:44:23,684 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:44:31,458 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:44:41,876 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:44:46,400 - backendlogger - WARNING - No baremetal with enough capacity
+2025-05-20 16:46:21,842 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 16:46:28,591 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:46:34,331 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 5981f0c0-f8fd-45ae-a64e-b0b6f69e692a -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-05-20 16:48:25,229 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:48:39,469 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:49:18,028 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-20 16:49:24,612 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u cab92f49-402d-4a34-87ac-ff449392d295 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-05-20 16:49:50,692 - backendlogger - INFO - {'action': 'start', 'success': True, 'subscription_id': 'cab92f49-402d-4a34-87ac-ff449392d295', 'container_id': 'af776d39823cae10aa9f9ee383c9b52a800994213c74e2804fc73660c24e2089', 'container_ip': '192.168.0.2', 'status': 'running'}
+2025-05-20 16:50:58,025 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:30:18,337 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:30:19,156 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:30:19,373 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:30:26,605 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:30:27,348 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:30:27,357 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:36:40,289 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:36:41,008 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:36:41,022 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 302, in connect_check_health
+    await self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect()
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/retry.py", line 71, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 759, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib64/python3.13/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 1174, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+        ', '.join(str(exc) for exc in exceptions)))
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 50, in connect
+    await redisClient.ping()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/client.py", line 673, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1143, in get_connection
+    await self.ensure_connection(connection)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1176, in ensure_connection
+    await connection.connect()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 310, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-05-21 10:38:17,199 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:38:17,783 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:38:17,787 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:38:46,387 - userroutes - ERROR - Exception during login: 'tuple' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 223, in login
+    (is_verified, errors, user_id) = await verify_user(fields)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 191, in verify_user
+    hashed_password = record.get("password", "")
+                      ^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'get'
+2025-05-21 10:40:07,625 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:40:08,268 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:40:08,271 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:40:12,876 - userroutes - ERROR - Exception during login: 'tuple' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 224, in login
+    (is_verified, errors, user_id) = await verify_user(fields)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 191, in verify_user
+    hashed_password = record.get("password", "")
+                      ^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'get'
+2025-05-21 10:43:39,688 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:43:40,442 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:43:40,446 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:43:48,115 - userroutes - INFO - User logged in: a@g.com
+2025-05-21 10:43:48,116 - server - ERROR - Exception on request POST /login
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-21 10:43:48,181 - server - ERROR - Request finalizing errored
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1503, in full_dispatch_request
+    return await self.finalize_request(result, request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1630, in finalize_request
+    response = await self.process_response(response, request_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1691, in process_response
+    response = await self.ensure_async(function)(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 247, in after_request
+    token = self.dump_token(user.auth_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/extension.py", line 202, in dump_token
+    return serializer.dumps(auth_id)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 316, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+                         ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/url_safe.py", line 56, in dump_payload
+    json = super().dump_payload(obj)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/serializer.py", line 278, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/itsdangerous/_json.py", line 18, in dumps
+    return _json.dumps(obj, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-05-21 10:44:36,334 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:44:37,070 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:44:37,072 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:44:47,624 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:44:48,857 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:44:48,862 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:44:57,406 - userroutes - INFO - User logged in: a@g.com
+2025-05-21 10:45:10,916 - userroutes - INFO - User logged in: aa@g.com
+2025-05-21 10:47:26,248 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:47:27,055 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:47:27,058 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:47:27,406 - server - ERROR - Exception on request GET /login
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 235, in login
+    return await render_template("login.html", errors=errors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/login.html", line 18, in template
+    {%for e in email.password_errors}
+    
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-21 10:47:28,493 - server - ERROR - Exception on request GET /login
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 235, in login
+    return await render_template("login.html", errors=errors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/login.html", line 18, in template
+    {%for e in email.password_errors}
+    
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-21 10:47:29,455 - server - ERROR - Exception on request GET /login
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 235, in login
+    return await render_template("login.html", errors=errors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/login.html", line 18, in template
+    {%for e in email.password_errors}
+    
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-21 10:47:49,366 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:47:50,198 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:47:50,203 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:48:16,305 - userroutes - ERROR - Exception during login: 'email_errors'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 224, in login
+    (is_verified, errors, user_id) = await verify_user(fields)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 186, in verify_user
+    errors["email_errors"].append("No user by that email exists")
+    ~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'email_errors'
+2025-05-21 10:49:20,137 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:49:20,925 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:49:20,928 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:49:42,554 - userroutes - WARNING - Login attempt for non-existent user: 88@g.com
+2025-05-21 10:49:42,556 - server - ERROR - Exception on request POST /login
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 235, in login
+    return await render_template("login.html", errors=errors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/login.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/peter/Code/quartApp/src/templates/base.html", line 198, in top-level template code
+    {% block content %}
+  File "/home/peter/Code/quartApp/src/templates/login.html", line 18, in block 'content'
+    {%for e in email.password_errors%}
+    
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'email' is undefined
+2025-05-21 10:50:44,253 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:50:45,098 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:50:45,100 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:50:49,092 - userroutes - WARNING - Login attempt for non-existent user: 88@g.com
+2025-05-21 10:51:01,375 - userroutes - WARNING - Login attempt for non-existent user: 77@c.com
+2025-05-21 10:51:45,253 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:51:46,027 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:51:46,031 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:51:55,136 - userroutes - WARNING - Login attempt for non-existent user: 11@c.com
+2025-05-21 10:53:35,615 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:53:36,416 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:53:36,419 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:53:42,150 - userroutes - WARNING - Login attempt for non-existent user: 11@c.com
+2025-05-21 10:54:22,047 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:54:22,803 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:54:22,806 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:54:35,587 - userroutes - WARNING - Login attempt for non-existent user: 11@c.com
+2025-05-21 10:55:27,936 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:55:28,749 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:55:28,753 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:55:35,200 - userroutes - WARNING - Login attempt for non-existent user: 11@c.com
+2025-05-21 10:55:47,756 - userroutes - WARNING - Failed login attempt for user: a@g.com
+2025-05-21 10:56:03,870 - server - ERROR - Exception on request GET /signup
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 151, in signup
+    return await render_template("signup.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: signup.html
+2025-05-21 10:56:12,411 - userroutes - INFO - User logged in: a@g.com
+2025-05-21 10:58:13,395 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:58:14,127 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:58:14,131 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:58:14,911 - server - ERROR - Exception on request GET /
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 140, in home
+    return await render_template("home.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/peter/Code/quartApp/src/templates/base.html", line 198, in top-level template code
+    {% block content %}
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 65, in block 'content'
+    {% if errors.email_errors %}
+    
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'errors' is undefined
+2025-05-21 10:58:16,102 - server - ERROR - Exception on request GET /
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 140, in home
+    return await render_template("home.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/peter/Code/quartApp/src/templates/base.html", line 198, in top-level template code
+    {% block content %}
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 65, in block 'content'
+    {% if errors.email_errors %}
+    
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'errors' is undefined
+2025-05-21 10:58:18,390 - server - ERROR - Exception on request GET /
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 140, in home
+    return await render_template("home.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/peter/Code/quartApp/src/templates/base.html", line 198, in top-level template code
+    {% block content %}
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 65, in block 'content'
+    {% if errors.email_errors %}
+    
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'errors' is undefined
+2025-05-21 10:59:44,930 - backendlogger - INFO - Database connection pool created
+2025-05-21 10:59:45,672 - backendlogger - INFO - All database tables created successfully
+2025-05-21 10:59:45,678 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 10:59:48,138 - server - ERROR - Exception on request GET /
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 140, in home
+    return await render_template("home.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/peter/Code/quartApp/src/templates/base.html", line 198, in top-level template code
+    {% block content %}
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 65, in block 'content'
+    {% if errors.email_errors %}
+    
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'errors' is undefined
+2025-05-21 11:00:30,921 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:00:31,753 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:00:31,755 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:00:37,898 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:00:38,717 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:00:38,719 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:00:42,337 - server - ERROR - Exception on request GET /
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 140, in home
+    return await render_template("home.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/peter/Code/quartApp/src/templates/base.html", line 198, in top-level template code
+    {% block content %}
+  File "/home/peter/Code/quartApp/src/templates/home.html", line 65, in block 'content'
+    {% if errors.email_errors %}
+    
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'errors' is undefined
+2025-05-21 11:01:20,344 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:01:21,212 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:01:21,217 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:01:30,932 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:01:31,857 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:01:31,857 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:02:40,609 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:02:41,392 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:02:41,397 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:03:03,687 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:03:04,432 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:03:04,434 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:03:16,303 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:03:17,227 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:03:17,228 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:05:42,776 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:05:43,563 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:05:43,567 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:05:45,265 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:05:46,226 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:05:46,226 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:06:07,551 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:06:08,345 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:06:08,347 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:06:09,155 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:06:10,085 - backendlogger - WARNING - Attempt to create duplicate user: aa@g.com
+2025-05-21 11:06:10,085 - userroutes - ERROR - Failed to create user for email: aa@g.com
+2025-05-21 11:06:16,913 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:06:32,060 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:06:32,061 - userroutes - ERROR - Exception during registration: 'password_errors'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 69, in register
+    errors[f"{field}_errors"].append(f"Missing required field: {field}")
+    ~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'password_errors'
+2025-05-21 11:07:12,297 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:07:13,057 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:07:13,057 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:10:55,568 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:10:56,398 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:10:56,401 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:11:15,630 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:11:16,566 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:11:16,566 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:11:33,279 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:11:33,974 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:11:33,974 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:12:33,495 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:12:34,186 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:12:34,186 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:13:09,493 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:13:10,236 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:13:10,241 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:13:14,662 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:13:20,314 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:13:21,756 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:13:22,125 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:13:22,462 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:26:42,561 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:26:43,298 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:26:43,301 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:26:43,536 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:29:39,633 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:29:47,732 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:29:48,542 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:29:48,546 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:29:56,161 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:29:57,144 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:29:57,144 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:30:25,582 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:30:26,322 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:30:26,323 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:30:57,721 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:30:58,374 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:30:58,374 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:31:33,401 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:31:34,117 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:31:34,121 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:31:36,864 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:31:37,804 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:31:37,804 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:31:45,264 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:31:45,990 - backendlogger - WARNING - Attempt to create duplicate user: a@g.com
+2025-05-21 11:31:45,991 - userroutes - ERROR - Failed to create user for email: a@g.com
+2025-05-21 11:31:55,612 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:31:56,297 - userroutes - INFO - User registered successfully: aj@
+2025-05-21 11:31:56,845 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 70, in job_order_new_server
+    user_id = await self._get_user_id(data.email)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 118, in _get_user_id
+    user_id = record.get("id")
+              ^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'get'
+2025-05-21 11:33:04,936 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:33:06,175 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:33:06,181 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:33:18,441 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:33:19,283 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:33:19,287 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:33:25,020 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:33:25,836 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:33:25,838 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:33:56,530 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:33:57,273 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:33:57,278 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:34:21,388 - backendlogger - INFO - Database connection pool created
+2025-05-21 11:34:22,566 - backendlogger - INFO - All database tables created successfully
+2025-05-21 11:34:22,568 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 11:34:31,214 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:34:32,187 - backendlogger - WARNING - Attempt to create duplicate user: aa@g.com
+2025-05-21 11:34:32,187 - userroutes - ERROR - Failed to create user for email: aa@g.com
+2025-05-21 11:34:47,746 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:34:48,469 - backendlogger - WARNING - Attempt to create duplicate user: aa@g.com
+2025-05-21 11:34:48,469 - userroutes - ERROR - Failed to create user for email: aa@g.com
+2025-05-21 11:34:54,397 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 11:34:55,125 - userroutes - INFO - User registered successfully: a113@g.com
+2025-05-21 11:34:58,714 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 3829a3c6-3812-4e71-a547-041a99f77cae -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
