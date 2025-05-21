@@ -171,4 +171,5 @@ async def configure():
     if not record:
         return []
     config = json.loads(record.get("config"))
-    return await render_template("configure.html")
+    # Ensure 'config' is passed to the template
+    return await render_template("configure.html", config=config)

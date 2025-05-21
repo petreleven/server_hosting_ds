@@ -25,8 +25,8 @@
          * Generate HTML form elements from a JSON schema
          */
         class SchemaFormGenerator {
-            constructor(schema, formContainer) {
-                this.schema = schema;
+            constructor(config, formContainer) { // Modified constructor
+                this.config = config; // Store the whole config object
                 this.formContainer = formContainer;
                 this.advancedFields = [];
                 this.basicFields = ['name', 'port', 'world', 'password']; // Common fields across game servers
@@ -34,12 +34,12 @@
 
             init() {
                 // Set page title
-                if (this.schema.title) {
-                    document.getElementById('config-title').textContent = this.schema.title;
+                if (this.config.title) {
+                    document.getElementById('config-title').textContent = this.config.title;
                 }
 
                 // Generate form fields for properties
-                if (this.schema.properties) {
+                if (this.config.properties) {
                     this.generateBasicFields();
                     this.generateAdvancedFields();
                 }
@@ -50,7 +50,7 @@
                 basicFieldsContainer.className = 'mb-6';
 
                 // Process properties
-                for (const [key, prop] of Object.entries(this.schema.properties)) {
+                for (const [key, prop] of Object.entries(this.config.properties)) { // Iterate over this.config.properties
                     if (this.basicFields.includes(key)) {
                         basicFieldsContainer.appendChild(this.createField(key, prop));
                     }
@@ -74,7 +74,7 @@
                 content.className = 'p-4 bg-gray-50';
 
                 // Process properties
-                for (const [key, prop] of Object.entries(this.schema.properties)) {
+                for (const [key, prop] of Object.entries(this.config.properties)) { // Iterate over this.config.properties
                     if (!this.basicFields.includes(key)) {
                         // Handle nested objects separately
                         if (prop.type === 'object') {
@@ -91,13 +91,13 @@
                 this.formContainer.appendChild(advancedContainer);
             }
 
-            createField(name, schema) {
+            createField(name, prop) { // Changed schema to prop
                 const fieldContainer = document.createElement('div');
                 fieldContainer.className = 'mb-6';
 
                 // Special handling for boolean types (checkboxes)
-                if (schema.type === 'boolean') {
-                    return this.createCheckboxField(name, schema);
+                if (prop.type === 'boolean') {
+                    return this.createCheckboxField(name, prop);
                 }
 
                 // Create label
@@ -108,10 +108,10 @@
                 fieldContainer.appendChild(label);
 
                 // Create description if available
-                if (schema.description) {
+                if (prop.description) {
                     const description = document.createElement('p');
                     description.className = 'text-sm text-gray-500 mb-2';
-                    description.textContent = schema.description;
+                    description.textContent = prop.description;
                     fieldContainer.appendChild(description);
                 }
 
@@ -119,26 +119,33 @@
                 let input;
                 const inputClasses = 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-gray-800 text-white';
 
-                if (schema.type === 'integer' || schema.type === 'number') {
+                if (prop.type === 'integer' || prop.type === 'number') {
                     input = document.createElement('input');
                     input.type = 'number';
                     input.id = name;
                     input.name = name;
 
-                    if (schema.minimum !== undefined) input.min = schema.minimum;
-                    if (schema.maximum !== undefined) input.max = schema.maximum;
-                    if (schema.default !== undefined) input.value = schema.default;
+                    if (prop.minimum !== undefined) input.min = prop.minimum;
+                    if (prop.maximum !== undefined) input.max = prop.maximum;
+                    // Use prop.value if available, otherwise prop.default
+                    input.value = prop.value !== undefined ? prop.value : (prop.default !== undefined ? prop.default : '');
 
-                } else if (schema.type === 'string' && schema.enum) {
+
+                } else if (prop.type === 'string' && prop.enum) {
                     input = document.createElement('select');
                     input.id = name;
                     input.name = name;
 
-                    schema.enum.forEach(value => {
+                    prop.enum.forEach(enumValue => { // Changed value to enumValue to avoid conflict
                         const option = document.createElement('option');
-                        option.value = value;
-                        option.textContent = value;
-                        if (schema.default === value) option.selected = true;
+                        option.value = enumValue;
+                        option.textContent = enumValue;
+                        // Use prop.value if available for selection, otherwise prop.default
+                        if (prop.value !== undefined && prop.value === enumValue) {
+                            option.selected = true;
+                        } else if (prop.value === undefined && prop.default === enumValue) {
+                            option.selected = true;
+                        }
                         input.appendChild(option);
                     });
 
@@ -149,13 +156,14 @@
                     input.id = name;
                     input.name = name;
 
-                    if (schema.minLength !== undefined) input.minLength = schema.minLength;
-                    if (schema.default !== undefined) input.value = schema.default;
+                    if (prop.minLength !== undefined) input.minLength = prop.minLength;
+                    // Use prop.value if available, otherwise prop.default
+                    input.value = prop.value !== undefined ? prop.value : (prop.default !== undefined ? prop.default : '');
                 }
 
                 // Add common attributes
                 input.className = inputClasses;
-                if (this.schema.required && this.schema.required.includes(name)) {
+                if (this.config.required && this.config.required.includes(name)) { // Check this.config.required
                     input.required = true;
                 }
 
@@ -163,7 +171,7 @@
                 return fieldContainer;
             }
 
-            createCheckboxField(name, schema) {
+            createCheckboxField(name, prop) { // Changed schema to prop
                 const fieldContainer = document.createElement('div');
                 fieldContainer.className = 'mb-2';
 
@@ -176,13 +184,13 @@
                 input.name = name;
                 input.className = 'h-5 w-5 text-emerald-600 rounded focus:ring-emerald-500';
 
-                if (schema.default === true) {
-                    input.checked = true;
-                }
+                // Use prop.value if available, otherwise prop.default
+                input.checked = prop.value !== undefined ? prop.value : (prop.default === true);
+
 
                 const span = document.createElement('span');
                 span.className = 'ml-2';
-                span.textContent = schema.description || this.formatLabel(name);
+                span.textContent = prop.description || this.formatLabel(name);
 
                 label.appendChild(input);
                 label.appendChild(span);
@@ -191,7 +199,7 @@
                 return fieldContainer;
             }
 
-            createObjectField(name, schema) {
+            createObjectField(name, prop) { // Changed schema to prop
                 const sectionContainer = document.createElement('div');
                 sectionContainer.className = 'border border-gray-200 rounded-md p-4 mb-6';
 
@@ -201,13 +209,15 @@
                 sectionContainer.appendChild(heading);
 
                 // Process nested properties
-                if (schema.properties) {
-                    for (const [key, prop] of Object.entries(schema.properties)) {
-                        const fieldName = `${name}[${key}]`;
+                if (prop.properties) { // Check prop.properties
+                    for (const [key, nestedProp] of Object.entries(prop.properties)) { // Changed prop to nestedProp
+                        const fieldName = `${name}[${key}]`; // This might need adjustment based on how form data is submitted for nested objects
 
-                        if (prop.type === 'boolean') {
-                            sectionContainer.appendChild(this.createCheckboxField(fieldName, prop));
-                        } else if (prop.type === 'string' && prop.enum) {
+                        if (nestedProp.type === 'boolean') {
+                            // Pass the specific value for the nested property if available
+                            const valueProp = { ...nestedProp, value: (prop.value && prop.value[key] !== undefined) ? prop.value[key] : nestedProp.default };
+                            sectionContainer.appendChild(this.createCheckboxField(fieldName, valueProp));
+                        } else if (nestedProp.type === 'string' && nestedProp.enum) {
                             const fieldContainer = document.createElement('div');
                             fieldContainer.className = 'mb-4';
 
@@ -221,19 +231,24 @@
                             select.id = fieldName;
                             select.name = fieldName;
                             select.className = 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500';
+                            
+                            // Pass the specific value for the nested property if available
+                            const currentVal = (prop.value && prop.value[key] !== undefined) ? prop.value[key] : nestedProp.default;
 
-                            prop.enum.forEach(value => {
+                            nestedProp.enum.forEach(enumValue => {
                                 const option = document.createElement('option');
-                                option.value = value;
-                                option.textContent = this.formatOptionLabel(value);
-                                if (prop.default === value) option.selected = true;
+                                option.value = enumValue;
+                                option.textContent = this.formatOptionLabel(enumValue);
+                                if (currentVal === enumValue) option.selected = true;
                                 select.appendChild(option);
                             });
 
                             fieldContainer.appendChild(select);
                             sectionContainer.appendChild(fieldContainer);
                         } else {
-                            sectionContainer.appendChild(this.createField(fieldName, prop));
+                            // Pass the specific value for the nested property if available
+                             const valueProp = { ...nestedProp, value: (prop.value && prop.value[key] !== undefined) ? prop.value[key] : nestedProp.default };
+                            sectionContainer.appendChild(this.createField(fieldName, valueProp));
                         }
                     }
                 }
@@ -266,182 +281,31 @@
         create();
         // Example usage
         function create() {
-            // In production, fetch the schema from the server
-            // For example: fetch('/api/game-schema/valheim')
-            //    .then(response => response.json())
-            //    .then(schema => {
-            //        const formGenerator = new SchemaFormGenerator(schema, document.getElementById('form-container'));
-            //        formGenerator.init();
-            //    });
+            // Get the config data passed from the server
+            // The '{{ config | tojson | safe }}' part will be rendered by the template engine
+            // Ensure that 'config' is properly passed to this template from your server-side route
+            const serverConfig = JSON.parse('{{ config | tojson | safe }}');
 
-            // For demonstration, we'll use the Valheim schema directly
-            const valheimSchema = {
-                "$schema": "http://json-schema.org/draft-07/schema#",
-                "$id": "https://example.com/schemas/valheim.json",
-                "title": "Valheim Server Config",
-                "description": "Configuration schema for spinning up a Valheim dedicated server.",
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "minLength": 1,
-                        "description": "The display name for your server (-name)",
-                        "default": "My server",
-                    },
-                    "port": {
-                        "type": "integer",
-                        "minimum": 1024,
-                        "maximum": 65535,
-                        "default": 2456,
-                        "description": "UDP port the server listens on (-port)",
-                    },
-                    "world": {
-                        "type": "string",
-                        "minLength": 1,
-                        "default": "Dedicated",
-                        "description": "Name of the world to load or create (-world)",
-                    },
-                    "password": {
-                        "type": "string",
-                        "minLength": 0,
-                        "description": "Optional password (leave blank for none) (-password)",
-                        "default": "",
-                    },
-                    "savedir": {
-                        "type": "string",
-                        "default": "./valheim_saves",
-                        "description": "Path where worlds and permission files are stored (-savedir)",
-                    },
-                    "public": {
-                        "type": "integer",
-                        "enum": [0, 1],
-                        "default": 1,
-                        "description": "0 = private, 1 = publicly listed on Steam (-public)",
-                    },
-                    "logFile": {
-                        "type": "string",
-                        "default": "./valheim.log",
-                        "description": "File path to save server logs (-logFile)",
-                    },
-                    "saveinterval": {
-                        "type": "integer",
-                        "minimum": 60,
-                        "default": 1800,
-                        "description": "Interval between world saves in seconds (-saveinterval)",
-                    },
-                    "backups": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "default": 4,
-                        "description": "How many automatic backups to keep (-backups)",
-                    },
-                    "backupshort": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "default": 7200,
-                        "description": "Interval (in seconds) until the first automatic backup (-backupshort)",
-                    },
-                    "backuplong": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "default": 43200,
-                        "description": "Interval (in seconds) for subsequent automatic backups (-backuplong)",
-                    },
-                    "crossplay": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "Enable crossplay backend (-crossplay)",
-                    },
-                    "instanceid": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "default": 1,
-                        "description": "Unique identifier when hosting multiple servers on the same IP/port (-instanceid)",
-                    },
-                    "preset": {
-                        "type": "string",
-                        "enum": [
-                            "Normal",
-                            "Casual",
-                            "Easy",
-                            "Hard",
-                            "Hardcore",
-                            "Immersive",
-                            "Hammer",
-                        ],
-                        "default": "Normal",
-                        "description": "Sets world modifier preset. Setting a preset will overwrite any other previous modifiers. (-preset)",
-                    },
-                    "modifiers": {
-                        "type": "object",
-                        "properties": {
-                            "Combat": {
-                                "type": "string",
-                                "enum": ["veryeasy", "easy", "hard", "veryhard"],
-                                "default": "easy",
-                            },
-                            "DeathPenalty": {
-                                "type": "string",
-                                "enum": ["casual", "veryeasy", "easy", "hard", "hardcore"],
-                                "default": "easy",
-                            },
-                            "Resources": {
-                                "type": "string",
-                                "enum": ["muchless", "less", "more", "muchmore", "most"],
-                                "default": "less",
-                            },
-                            "Raids": {
-                                "type": "string",
-                                "enum": ["none", "muchless", "less", "more", "muchmore"],
-                                "default": "less",
-                            },
-                            "Portals": {
-                                "type": "string",
-                                "enum": ["casual", "hard", "veryhard"],
-                                "default": "casual",
-                            },
-                        },
-                    },
-                    "nomap": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "Disable map exploration overlays (setkey nomap)",
-                    },
-                    "playerevents": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "Enable player events (setkey playerevents)",
-                    },
-                    "passivemobs": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "Enable passive mobs (setkey passivemobs)",
-                    },
-                    "nobuildcost": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "Disable build costs (setkey nobuildcost)",
-                    },
-                },
-                "required": ["name", "port", "world"],
-            };
-
-            // Initialize form generator
-            const formGenerator = new SchemaFormGenerator(valheimSchema, document.getElementById('form-container'));
+            // Initialize form generator with the server-provided config
+            const formGenerator = new SchemaFormGenerator(serverConfig, document.getElementById('form-container'));
             formGenerator.init();
 
-            // Fetch games list for dropdown (in production)
-            // Example function to switch between game schemas
+            // Fetch games list for dropdown (in production) - This part can be kept if needed for other functionalities
+            // Example function to switch between game schemas - This part can be kept if needed for other functionalities
+            // However, if this page is solely for the current 'config', this function might not be directly used here.
             function loadGameSchema(gameId) {
-                fetch(`/api/game-schema/${gameId}`)
+                fetch(`/api/game-schema/${gameId}`) // This would fetch a schema, not a config with values
                     .then(response => response.json())
                     .then(schema => {
                         // Clear existing form
                         const container = document.getElementById('form-container');
                         container.innerHTML = '';
 
-                        // Generate new form
-                        const formGenerator = new SchemaFormGenerator(schema, container);
+                        // Generate new form. If this function is to be used,
+                        // it should ideally fetch a full config object (schema + values)
+                        // or you'd need a separate mechanism to get current values for the new schema.
+                        // For now, assuming it re-initializes with a schema which might only have defaults.
+                        const formGenerator = new SchemaFormGenerator(schema, container); // This would use schema, not serverConfig with values
                         formGenerator.init();
                     });
             }
