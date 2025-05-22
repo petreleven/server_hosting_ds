@@ -5,10 +5,11 @@ This module provides routes for user registration, login, dashboard access,
 and server management functionality.
 """
 
+import asyncio
 import datetime
 import json
 import logging
-from typing import Dict, Tuple, Optional, List, Any
+from typing import Dict, Tuple, List, Any
 from urllib.parse import parse_qs
 
 import asyncpg
@@ -35,8 +36,7 @@ SECRET = "ygQpJHb0MNDCK0Loa1OeN.wiJH0cuiGOdZnAwW4fQlw5iqo6luZrS"
 
 @userblueprint.route("/register", methods=["GET", "POST"])
 async def register():
-    """
-    User registration route.
+    """User registration route.
 
     Handles user registration by processing form data, creating a user in the database,
     and provisioning a new game server.
@@ -45,7 +45,7 @@ async def register():
         HTML response or redirect
     """
     if request.method == "GET":
-        return await render_template("home.html",errors={})
+        return await render_template("home.html", errors={})
 
     errors = {
         "email_errors": [],
@@ -163,7 +163,11 @@ async def verify_user(
         - Dictionary of error messages
         - User ID if successful, "-1" otherwise
     """
-    errors: Dict[str, List[str]] = {"email_errors":[], "password_errors":[], "general_errors":[]}
+    errors: Dict[str, List[str]] = {
+        "email_errors": [],
+        "password_errors": [],
+        "general_errors": [],
+    }
 
     # Validate fields
     if not fields.get("email") or not fields["email"][0]:
@@ -178,7 +182,7 @@ async def verify_user(
     password = fields["password"][0]
 
     # Look up user by email
-    record, err= await db.db_select_user_by_email(email=email)
+    record, err = await db.db_select_user_by_email(email=email)
     if not record:
         errors["email_errors"].append("No user by that email exists")
         logger.warning(f"Login attempt for non-existent user: {email}")
@@ -206,8 +210,8 @@ async def login():
     Handles user login by verifying credentials and creating a session.
 
     Returns:
-        Login page template or redirect to dashboard
-    """
+        Login page template or redirect to dashboard"""
+
     errors: Dict[str, List[str]] = {
         "email_errors": [],
         "password_errors": [],
@@ -305,7 +309,7 @@ async def dashboardservers():
         return await render_template("servers.html", subscriptions=[])
 
     try:
-        all_subs,err = await db.db_select_all_subscriptions(user_id=user_id)
+        all_subs, err = await db.db_select_all_subscriptions(user_id=user_id)
 
         subscriptions = []
         for record in all_subs:
@@ -338,22 +342,22 @@ async def server_status(subscription_id: str):
     try:
         if not subscription_id:
             return await render_template(
-                "server_single.html", sub=None, error="Invalid subscription ID"
+                "server_single.html", current_sub=None, error="Invalid subscription ID"
             )
 
         record, err = await db.db_select_subscription_by_id(subscription_id)
         if not record:
             logger.warning(f"Subscription not found: {subscription_id}")
             return await render_template(
-                "server_single.html", sub=None, error="Subscription not found"
+                "server_single.html", current_sub=None, error="Subscription not found"
             )
 
-        sub = await extract_single_sub_record(record)
-        return await render_template("server_single.html", sub=sub)
+        current_sub = await extract_single_sub_record(record)
+        return await render_template("server_single.html", current_sub=current_sub)
     except Exception as e:
         logger.exception(f"Error retrieving server status: {str(e)}")
         return await render_template(
-            "server_single.html", sub=None, error="Failed to load server status"
+            "server_single.html", current_sub=None, error="Failed to load server status"
         )
 
 
@@ -368,6 +372,7 @@ async def configure():
     Returns:
         HTML template with configuration options
     """
+
     try:
         args = request.args
         subscription_id = args.get("subscription_id")
@@ -378,7 +383,7 @@ async def configure():
                 "configure.html", config=None, error="Missing subscription ID"
             )
 
-        record,err = await db.db_select_servers_by_subscription(subscription_id)
+        record, err = await db.db_select_servers_by_subscription(subscription_id)
         if not record:
             logger.warning(f"No servers found for subscription: {subscription_id}")
             return await render_template(
@@ -386,9 +391,8 @@ async def configure():
             )
 
         provisioner = MainProvisioner()
-        db_cfg : Dict[str , Any] = json.loads(record.get("config", "{}"))
+        db_cfg: Dict[str, Any] = json.loads(record.get("config", "{}"))
         config = await provisioner.generate_config_view_schema(db_cfg, subscription_id)
-
 
         return await render_template("configure.html", config=config)
     except json.JSONDecodeError:

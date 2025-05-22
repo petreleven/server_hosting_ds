@@ -11,7 +11,6 @@ from quart_schema import QuartSchema
 
 from api import apiblueprint
 from db import db
-from game_jobs import valheimprovisioner
 from userroutes import userblueprint
 
 # envs
@@ -31,7 +30,7 @@ STATIC_FOLDER = os.path.join(str(Path(__file__).parent) + "/static")
 app = Quart(__name__)
 app._static_folder = STATIC_FOLDER
 app.secret_key = "38b1c9fa-9c2b-467b-ae42-960d3e1593c1"
-#extensions
+# extensions
 QuartAuth(app)
 QuartSchema(app)
 # registering blueprint
@@ -39,11 +38,8 @@ app.register_blueprint(apiblueprint)
 app.register_blueprint(userblueprint)
 
 
-
-
 @app.before_serving
 async def connect():
-
     try:
         redisClient = db.get_redis_client()
         await db.db_createalldbs()

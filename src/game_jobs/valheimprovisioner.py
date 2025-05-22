@@ -224,20 +224,16 @@ class ValheimProvisioner(AbstractProvisioner):
             self.logger.error("Json Validation for valheim config failed")
             return False
 
-    async def generate_config_view_schema(self, cfg : Dict[str, Any])->Dict[str, Any]:
+    async def generate_config_view_schema(self, cfg: Dict[str, Any]) -> Dict[str, Any]:
         schema_copy = self.schema.copy()
         for key, value in cfg.items():
             if key in schema_copy["properties"].keys():
-                if  schema_copy["properties"][key]["type"] != "object":
+                if schema_copy["properties"][key]["type"] != "object":
                     schema_copy["properties"][key]["value"] = value
             else:
                 for k in schema_copy["properties"].keys():
                     if schema_copy["properties"][k]["type"] == "object":
                         r = key.lower().split("_")
-                        if len(r)>1 and r[0] == k:
+                        if len(r) > 1 and r[0] == k:
                             schema_copy["properties"][k][r[1]] = value
         return schema_copy
-
-
-
-

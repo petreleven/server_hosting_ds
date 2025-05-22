@@ -63,8 +63,9 @@ class AbstractProvisioner(ABC):
             True if the configuration is valid, False otherwise
 
         """
+
     @abstractmethod
-    async def generate_config_view_schema(self, cfg : Dict[str, Any])->Dict[str, Any]:
+    async def generate_config_view_schema(self, cfg: Dict[str, Any]) -> Dict[str, Any]:
         """
         This generates the schema to be handed over to js based on saved configs from database
         Args:

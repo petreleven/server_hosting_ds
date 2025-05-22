@@ -1,6 +1,6 @@
 import datetime
 import logging
-from typing import Any, Dict,Optional
+from typing import Any, Dict, Optional
 
 import asyncpg
 
@@ -113,7 +113,7 @@ class MainProvisioner:
 
     async def _get_user_id(self, email: str) -> str | None:
         """Get the user ID for the given email."""
-        record,err = await db.db_select_user_by_email(email)
+        record, err = await db.db_select_user_by_email(email)
         if not record:
             return None
         user_id = record.get("id")
@@ -127,7 +127,7 @@ class MainProvisioner:
         """Create a subscription for the user."""
         now = datetime.datetime.now(datetime.UTC)
         expire_at = now + datetime.timedelta(hours=12)
-        res , _=await db.db_insert_subscription(
+        res, _ = await db.db_insert_subscription(
             user_id=user_id,
             plan_id=plan_id,
             status="provisioning",
@@ -138,14 +138,14 @@ class MainProvisioner:
 
     async def _get_plan(self, plan_id: str) -> asyncpg.Record | None:
         """Get the plan for the given plan ID."""
-        res, _=await db.db_select_plan_by_id(plan_id)
+        res, _ = await db.db_select_plan_by_id(plan_id)
         return res
 
     async def _get_game_name(self, game_id: str | None) -> str | None:
         """Get the game name for the given game ID."""
         if game_id is None:
             return None
-        record,_ = await db.db_select_game_by_id(game_id)
+        record, _ = await db.db_select_game_by_id(game_id)
         return record.get("game_name") if record else None
 
     async def _find_available_baremetal(
@@ -155,7 +155,7 @@ class MainProvisioner:
         """Find an available baremetal server with enough capacity."""
         if ram_needed is None:
             return None
-        baremetals , _= await db.db_select_all_baremetals()
+        baremetals, _ = await db.db_select_all_baremetals()
         for bm in baremetals:
             total = bm.get("capacity_total") or 0
             used = bm.get("capacity_used") or 0
@@ -232,10 +232,14 @@ class MainProvisioner:
             f" -g {game_name} -m {ram_gb}g -c {cpu_cores} start"
         )
 
-    async def generate_config_view_schema(self, cfg : Dict[str, Any], subscription_id : str) ->Optional[Dict[str, Any]]:
+    async def generate_config_view_schema(
+        self, cfg: Dict[str, Any], subscription_id: str
+    ) -> Optional[Dict[str, Any]]:
         record, err = await db.db_select_subscription_by_id(sub_id=subscription_id)
         if not record:
-            self.logger.info("Unable to get subscription_record id:%s err:%s", record,err)
+            self.logger.info(
+                "Unable to get subscription_record id:%s err:%s", record, err
+            )
             return None
 
         plan_id = record.get("plan_id")
@@ -253,6 +257,3 @@ class MainProvisioner:
             return None
 
         return await provisioner.generate_config_view_schema(cfg)
-
-
-

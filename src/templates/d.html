@@ -10,12 +10,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.4/htmx.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
+        
         .main-font {
             font-family: 'JetBrains Mono', monospace;
             letter-spacing: 1px;
         }
-
+        
         .glass-card {
             background: rgba(17, 24, 39, 0.8);
             backdrop-filter: blur(12px);
@@ -23,7 +23,7 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
-
+        
         .glass-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -60,11 +60,11 @@
         .loading-block:nth-child(4) { animation-delay: 0.6s; }
 
         @keyframes blockPulse {
-            0%, 80%, 100% {
+            0%, 80%, 100% { 
                 transform: scale(0.8);
                 opacity: 0.5;
             }
-            40% {
+            40% { 
                 transform: scale(1.2);
                 opacity: 1;
             }
@@ -101,9 +101,9 @@
 
         /* Shimmer Effect */
         .shimmer {
-            background: linear-gradient(90deg,
-                rgba(255,255,255,0.0) 0%,
-                rgba(255,255,255,0.1) 50%,
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.0) 0%, 
+                rgba(255,255,255,0.1) 50%, 
                 rgba(255,255,255,0.0) 100%);
             background-size: 200% 100%;
             animation: shimmer 2s infinite;
@@ -127,9 +127,9 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg,
-                transparent,
-                rgba(255,255,255,0.2),
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.2), 
                 transparent);
             animation: buttonShimmer 1.5s infinite;
         }
@@ -175,14 +175,17 @@
             }
         }
 
-
+        /* Countdown Animation */
+        .countdown-urgent {
+            animation: countdownPulse 1.5s ease-in-out infinite;
+        }
 
         @keyframes countdownPulse {
-            0%, 100% {
+            0%, 100% { 
                 transform: scale(1);
                 text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
             }
-            50% {
+            50% { 
                 transform: scale(1.05);
                 text-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
             }
@@ -190,9 +193,9 @@
 
         /* Skeleton Loading */
         .skeleton {
-            background: linear-gradient(90deg,
-                rgba(255,255,255,0.05) 25%,
-                rgba(255,255,255,0.1) 50%,
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.05) 25%, 
+                rgba(255,255,255,0.1) 50%, 
                 rgba(255,255,255,0.05) 75%);
             background-size: 200% 100%;
             animation: skeleton 2s infinite;
@@ -229,66 +232,109 @@
         }
     </style>
 </head>
-<body class="bg-[#1e1e2e] text-white main-font h-full min-h-screen">
-    <!-- Navigation Bar -->
-    <nav class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="/" class="text-2xl font-bold">
-                        <span class="text-lime-500">Block</span><span class="text-amber-500">Forge</span>
-                    </a>
+<body class="bg-gray-900 text-white main-font min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        
+
+
+        <!-- Active Server Card (Demo) -->
+        <div class="glass-card rounded-lg p-6 mb-8 relative transition-all duration-300">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-bold mb-2 flex items-center">
+                        <i class="fas fa-server text-green-400 mr-2"></i>
+                        Minecraft Server #2
+                    </h2>
+                    <p class="text-gray-300 flex items-center">
+                        Status:
+                        <span class="text-green-500 ml-2 flex items-center">
+                            <div class="status-dot running"></div>
+                            Running
+                        </span>
+                    </p>
                 </div>
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="/dashboard" class="text-gray-300 hover:text-blue-400 transition font-medium py-2">Dashboard</a>
-                    <a href="/servers" class="text-gray-300 hover:text-blue-400 transition font-medium py-2">Servers</a>
-                    <a href="/billing" class="text-gray-300 hover:text-blue-400 transition font-medium py-2">Billing</a>
-                    <a href="/support" class="text-gray-300 hover:text-blue-400 transition font-medium py-2">Support</a>
+                
+                <div class="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-4 w-full md:w-auto">
+                    <div class="text-right md:border-r md:border-gray-600 md:pr-4 w-full md:w-auto">
+                        <p class="text-sm text-gray-400">Expires</p>
+                        <p class="font-medium text-lime-300">January 15, 2025</p>
+                    </div>
+                    
+                    <!-- Interactive Configure Button -->
+                    <button id="demo-config-btn" class="group relative bg-blue-700 hover:bg-blue-600 text-white
+                        px-5 py-3 rounded-lg transition shadow-md w-full md:w-auto flex items-center justify-center gap-2
+                        hover:shadow-blue-500/30 transform hover:-translate-y-1">
+                        <span class="btn-text">Configure Server</span>
+                        <i class="fas fa-cog"></i>
+                        <span class="htmx-indicator flex items-center gap-2 absolute inset-0 bg-blue-700 rounded-lg justify-center">
+                            <svg class="w-5 h-5 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+                            </svg>
+                            <span>Loading...</span>
+                        </span>
+                    </button>
                 </div>
-                <!-- User Actions -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="/account" class="px-4 py-2 text-gray-300 hover:text-blue-400 transition font-medium">
-                        <i class="fas fa-user mr-2"></i>Account
-                    </a>
-                    <a href="/logout" class="px-4 py-2 text-red-400 hover:text-red-300 transition">
-                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
-                    </a>
-                </div>
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-toggle" class="md:hidden text-white focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-                </button>
             </div>
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="md:hidden hidden py-3 mt-3 border-t border-gray-700">
-                <div class="flex flex-col space-y-2">
-                    <a href="/dashboard" class="text-gray-300 hover:text-blue-400 transition font-medium py-2">Dashboard</a>
-                    <a href="/servers" class="text-gray-300 hover:text-blue-400 transition font-medium py-2">Servers</a>
-                    <a href="/billing" class="text-gray-300 hover:text-blue-400 transition font-medium py-2">Billing</a>
-                    <a href="/support" class="text-gray-300 hover:text-blue-400 transition font-medium py-2">Support</a>
-                    <div class="pt-2 border-t border-gray-700">
-                        <a href="/account" class="block py-2 text-gray-300 hover:text-blue-400 transition font-medium">
-                            <i class="fas fa-user mr-2"></i>Account
-                        </a>
-                        <a href="/logout" class="block py-2 text-red-400 hover:text-red-300 transition">
-                            <i class="fas fa-sign-out-alt mr-2"></i>Logout
-                        </a>
+        </div>
+
+        <!-- Loading State Examples -->
+        <div class="glass-card rounded-lg p-6 mb-8">
+            <h3 class="text-xl font-bold mb-4">Loading State Examples</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Skeleton Card -->
+                <div class="bg-gray-800/50 rounded-lg p-4">
+                    <div class="skeleton h-4 rounded mb-3"></div>
+                    <div class="skeleton h-3 rounded mb-2 w-3/4"></div>
+                    <div class="skeleton h-3 rounded w-1/2"></div>
+                </div>
+                
+                <!-- Shimmer Card -->
+                <div class="bg-gray-800/50 rounded-lg p-4 shimmer">
+                    <div class="h-4 bg-gray-700 rounded mb-3"></div>
+                    <div class="h-3 bg-gray-700 rounded mb-2"></div>
+                    <div class="h-3 bg-gray-700 rounded w-2/3"></div>
+                </div>
+                
+                <!-- Loading Blocks -->
+                <div class="bg-gray-800/50 rounded-lg p-4 flex items-center justify-center">
+                    <div class="loading-blocks">
+                        <div class="loading-block"></div>
+                        <div class="loading-block"></div>
+                        <div class="loading-block"></div>
+                        <div class="loading-block"></div>
+                        <div class="loading-block"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </nav>
-    {% block content %}
-    {% endblock %}
+    </div>
+
     <script>
-    // Mobile menu toggle functionality
-    const toggleBtn = document.getElementById("mobile-menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-    toggleBtn.addEventListener("click", function() {
-    mobileMenu.classList.toggle("hidden");
-    });
+        // Demo button interaction
+        document.getElementById('demo-config-btn').addEventListener('click', function() {
+            const btn = this;
+            btn.classList.add('htmx-request');
+            
+            setTimeout(() => {
+                btn.classList.remove('htmx-request');
+            }, 3000);
+        });
+
+        // Countdown timer simulation
+        function updateCountdown() {
+            const countdownEl = document.querySelector('.countdown-urgent');
+            if (countdownEl) {
+                // This would be replaced with actual countdown logic
+                const text = countdownEl.textContent;
+                if (text.includes('2h 34m')) {
+                    countdownEl.textContent = '⏰ 2h 33m 58s';
+                }
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>

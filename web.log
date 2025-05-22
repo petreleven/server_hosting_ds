@@ -2775,3 +2775,728 @@ pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unk
 2025-05-21 14:51:06,643 - backendlogger - INFO - All database tables created successfully
 2025-05-21 14:51:06,649 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
 2025-05-21 14:51:12,274 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:01:12,190 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:01:12,958 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:01:12,960 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:01:26,572 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:05:37,028 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:05:37,703 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:05:37,706 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:05:49,953 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:41:27,516 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:41:28,289 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:41:28,291 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:41:37,910 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:42:10,882 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:45:00,775 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:45:01,590 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:45:01,594 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:45:13,361 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:45:26,980 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:48:33,374 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:48:34,174 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:48:34,176 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:48:46,457 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:49:05,891 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:49:06,635 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:49:06,637 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:49:09,707 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:49:31,923 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:49:58,342 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:50:29,611 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:50:30,297 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:50:30,299 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:50:39,917 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:51:05,339 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:51:05,928 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:51:05,930 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:51:18,830 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:51:35,009 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 15:52:26,666 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:52:27,443 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:52:27,447 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:53:15,989 - backendlogger - INFO - Database connection pool created
+2025-05-21 15:53:16,801 - backendlogger - INFO - All database tables created successfully
+2025-05-21 15:53:16,804 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 15:53:27,547 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-21 16:12:52,473 - backendlogger - INFO - Database connection pool created
+2025-05-21 16:12:53,246 - backendlogger - INFO - All database tables created successfully
+2025-05-21 16:12:53,251 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:10:12,891 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:10:13,699 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:10:13,703 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:10:44,935 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:13:53,212 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:13:54,169 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:13:54,171 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:14:03,526 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:14:13,415 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:14:38,196 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:14:57,780 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:14:58,578 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:14:58,582 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:15:08,372 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:15:39,232 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:15:39,992 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:15:39,995 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:15:45,233 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:15:57,557 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:16:32,793 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:16:33,511 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:16:33,516 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:17:32,852 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:17:45,599 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:17:46,413 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:17:46,415 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:17:54,801 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:17:56,141 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:17:56,143 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:18:06,071 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:18:49,831 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:18:50,618 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:18:50,624 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:19:00,819 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:22:03,418 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:22:04,054 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:22:04,057 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:22:11,120 - userroutes - ERROR - Error retrieving server status: unexpected '}'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-22 11:22:11,131 - server - ERROR - Exception on request GET /server-status/ae583ccc-5265-4f40-b472-441dc583d41f
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 359, in server_status
+    return await render_template(
+           ^^^^^^^^^^^^^^^^^^^^^^
+        "server_single.html", sub=None, error="Failed to load server status"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-22 11:22:15,419 - userroutes - ERROR - Error retrieving server status: unexpected '}'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-22 11:22:15,432 - server - ERROR - Exception on request GET /server-status/ae583ccc-5265-4f40-b472-441dc583d41f
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 359, in server_status
+    return await render_template(
+           ^^^^^^^^^^^^^^^^^^^^^^
+        "server_single.html", sub=None, error="Failed to load server status"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-22 11:22:20,436 - userroutes - ERROR - Error retrieving server status: unexpected '}'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-22 11:22:20,440 - server - ERROR - Exception on request GET /server-status/ae583ccc-5265-4f40-b472-441dc583d41f
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 359, in server_status
+    return await render_template(
+           ^^^^^^^^^^^^^^^^^^^^^^
+        "server_single.html", sub=None, error="Failed to load server status"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-22 11:22:25,454 - userroutes - ERROR - Error retrieving server status: unexpected '}'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-22 11:22:25,458 - server - ERROR - Exception on request GET /server-status/ae583ccc-5265-4f40-b472-441dc583d41f
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", sub=sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 359, in server_status
+    return await render_template(
+           ^^^^^^^^^^^^^^^^^^^^^^
+        "server_single.html", sub=None, error="Failed to load server status"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 113, in template
+    let btn = document.getElementById("config-button-{{ sub.id }")
+    ^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2025-05-22 11:22:43,466 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:22:45,014 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:22:45,019 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:24:34,174 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:24:34,993 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:24:34,996 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:24:44,565 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:25:36,549 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:25:37,355 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:25:37,357 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:25:47,657 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:28:57,537 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:28:58,249 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:28:58,254 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:29:08,150 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:36:14,493 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:36:15,154 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:36:15,157 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:36:56,788 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:36:57,603 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:36:57,605 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:39:53,425 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:39:54,245 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:39:54,251 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:40:34,592 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:40:35,410 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:40:35,413 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:41:35,516 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:41:36,338 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:41:36,342 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:42:20,408 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:42:21,190 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:42:21,192 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:44:29,944 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:44:30,727 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:44:30,731 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:45:28,092 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:45:28,892 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:45:28,897 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:45:33,819 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:45:40,360 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:45:51,214 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:46:23,874 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:46:24,699 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:46:24,704 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:46:34,165 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:46:52,672 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:46:53,371 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:46:53,376 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:47:05,491 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:47:25,008 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:47:35,555 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:50:19,673 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:50:20,426 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:50:20,430 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:50:30,552 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:51:17,090 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:51:17,873 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:51:17,875 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:51:31,163 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:52:58,017 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:52:58,635 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:52:58,637 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:54:18,303 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:54:19,122 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:54:19,125 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:57:10,151 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:57:10,848 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:57:10,854 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:57:54,791 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:57:55,598 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:57:55,600 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:58:44,466 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:58:45,262 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:58:45,264 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:59:06,108 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 11:59:22,932 - backendlogger - INFO - Database connection pool created
+2025-05-22 11:59:23,765 - backendlogger - INFO - All database tables created successfully
+2025-05-22 11:59:23,770 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 11:59:33,565 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:00:09,826 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:00:10,562 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:00:10,564 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:00:15,204 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:00:38,527 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:00:39,236 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:00:39,238 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:01:28,928 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:01:30,128 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:01:30,132 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:01:53,804 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:01:54,601 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:01:54,604 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:02:02,961 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:06:05,160 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:06:05,893 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:06:05,897 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:06:09,070 - userroutes - ERROR - Error retrieving server data: expected token 'end of statement block', got 'with'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 320, in dashboardservers
+    return await render_template("servers.html", subscriptions=subscriptions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/servers.html", line 8, in template
+    {% include 'server_single.html' with sub=sub %}
+    ^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got 'with'
+2025-05-22 12:06:09,078 - server - ERROR - Exception on request GET /dashboardservers
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 320, in dashboardservers
+    return await render_template("servers.html", subscriptions=subscriptions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/servers.html", line 8, in template
+    {% include 'server_single.html' with sub=sub %}
+    ^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got 'with'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 323, in dashboardservers
+    return await render_template(
+           ^^^^^^^^^^^^^^^^^^^^^^
+        "servers.html", subscriptions=[], error="Failed to load servers"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/servers.html", line 8, in template
+    {% include 'server_single.html' with sub=sub %}
+    ^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got 'with'
+2025-05-22 12:10:03,907 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:10:04,692 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:10:04,694 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:10:43,355 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:10:44,116 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:10:44,121 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:10:52,276 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:10:55,892 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:11:49,281 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:11:49,960 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:11:49,966 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:12:27,005 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:12:27,746 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:12:27,748 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:15:30,864 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:15:31,658 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:15:31,661 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:15:38,693 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:16:58,592 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:36:09,489 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:36:10,299 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:36:10,301 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:36:32,359 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:38:11,345 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:38:12,157 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:38:12,162 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:39:51,588 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:39:52,406 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:39:52,410 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:40:11,418 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:40:35,921 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:40:44,461 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-22 12:41:31,367 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:41:32,145 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:41:32,147 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:42:02,455 - backendlogger - INFO - Database connection pool created
+2025-05-22 12:42:03,276 - backendlogger - INFO - All database tables created successfully
+2025-05-22 12:42:03,281 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-22 12:42:07,526 - backendlogger - INFO - Registered provisioner for game: valheim
