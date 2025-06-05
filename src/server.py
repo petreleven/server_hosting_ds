@@ -1,7 +1,7 @@
+import asyncio
 import logging
 import os
 from pathlib import Path
-import secrets
 import sys
 
 from dotenv import load_dotenv
@@ -11,6 +11,7 @@ from quart_schema import QuartSchema
 
 from api import apiblueprint
 from db import db
+from game_jobs import mainProvisioner
 from userroutes import userblueprint
 
 # envs
@@ -41,12 +42,23 @@ app.register_blueprint(userblueprint)
 @app.before_serving
 async def connect():
     try:
-        redisClient = db.get_redis_client()
+        redis_Client = db.get_redis_client()
+        if await redis_Client.json().get("pending_servers", "$") is None:
+            await redis_Client.json().set("pending_servers", "$", [])
         await db.db_createalldbs()
-        await redisClient.ping()
+        await redis_Client.ping()
+        #app.add_background_task(check_pending_servers)
     except Exception as e:
         BACKENDLOGGER.warning("error in startup:", e)
         raise
 
 
-app.run(debug=False, host="127.0.0.1", port=8000)
+async def check_pending_servers():
+    pv = mainProvisioner.MainProvisioner()
+    await pv.job_repeating_check_pending_servers()
+    while True:
+        await pv.job_repeating_check_pending_servers()
+        await asyncio.sleep(30)
+
+
+app.run(debug=False, host="127.0.0.1", port=8000,)

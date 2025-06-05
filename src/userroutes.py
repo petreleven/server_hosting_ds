@@ -5,7 +5,6 @@ This module provides routes for user registration, login, dashboard access,
 and server management functionality.
 """
 
-import asyncio
 import datetime
 import json
 import logging
@@ -57,6 +56,8 @@ async def register():
     app = current_app
     provisioner = MainProvisioner()
 
+    req_data: bytearray = await request.body
+    fields: Dict[str, List[str]] = parse_qs(req_data.decode("utf-8"))
     try:
         # Parse form data
         req_data: bytearray = await request.body
@@ -78,6 +79,7 @@ async def register():
         )
 
         # Insert user into database
+        logger.info(data)
         user_record, err = await db.db_insert_user(data)
 
         if not user_record:
@@ -190,7 +192,6 @@ async def verify_user(
 
     # Verify password
     hashed_password = record.get("password", "")
-    print(hashed_password)
     is_verified = (
         pwd_context.verify(password, hashed_password) if hashed_password else False
     )
@@ -232,7 +233,6 @@ async def login():
         except Exception as e:
             errors["general_errors"].append("An error occurred during login")
             logger.exception(f"Exception during login: {str(e)}")
-    print(errors)
     return await render_template("login.html", errors=errors)
 
 
@@ -360,12 +360,13 @@ async def server_status(subscription_id: str):
             "server_single.html", current_sub=None, error="Failed to load server status"
         )
 
+
 @userblueprint.route("/panel", methods=["GET", "POST"])
 @login_required
 async def panel():
     args = request.args
     subscription_id = args.get("subscription_id")
-    return await render_template("panel.html",subscription_id=subscription_id)
+    return await render_template("panel.html", subscription_id=subscription_id)
 
 
 @userblueprint.route("/configure", methods=["GET", "POST"])
@@ -379,18 +380,16 @@ async def configure():
     Returns:
         HTML template with configuration options
     """
-    print("yohh")
+    args = request.args
+    subscription_id = args.get("subscription_id")
     try:
-        args = request.args
-        subscription_id = args.get("subscription_id")
-
         if not subscription_id:
             logger.warning("Missing subscription_id in configure route")
             return await render_template(
                 "configure.html", config=None, error="Missing subscription ID"
             )
 
-        record, err = await db.db_select_servers_by_subscription(subscription_id)
+        record, err = await db.db_select_server_by_subscription(subscription_id)
         if not record:
             logger.warning(f"No servers found for subscription: {subscription_id}")
             return await render_template(
@@ -401,7 +400,7 @@ async def configure():
         db_cfg: Dict[str, Any] = json.loads(record.get("config", "{}"))
         config = await provisioner.generate_config_view_schema(db_cfg, subscription_id)
 
-        return await render_template("configure.html", config=config)
+        return await render_template("configure.html", config=config, subscription_id=subscription_id)
     except json.JSONDecodeError:
         logger.error(f"Invalid JSON config for subscription: {subscription_id}")
         return await render_template(
@@ -412,3 +411,86 @@ async def configure():
         return await render_template(
             "configure.html", config=None, error="Failed to load configuration"
         )
+
+
+@userblueprint.route("/save-config", methods=["POST"])
+@login_required
+async def save_config():
+    provisioner = MainProvisioner()
+    subscription_id = request.args.get("subscription_id", "")
+    error_html = "<p>Error updating the configuration</p>"
+    success_html="<p>Success</p>"
+
+    server, err = await db.db_select_server_by_subscription(
+        subscription_id=subscription_id
+    )
+    def log_error(err):
+        logger.error (f"Error when updating configuration server:{server} of subscription_id:{subscription_id} err:{err} ")
+
+    if not server or not subscription_id:
+        log_error(err)
+        return error_html
+
+    subscription, err = await db.db_select_subscription_by_id(sub_id=subscription_id)
+    if not subscription:
+        log_error(err)
+        return error_html
+
+    plan, err = await db.db_select_plan_by_id(str(subscription.get("plan_id", "")))
+    if not plan:
+        log_error(err)
+        return error_html
+
+    game,err = await db.db_select_game_by_id(str(plan.get("game_id", "")))
+    if not game or not game.get("game_name", None):
+        log_error(err)
+        return error_html
+
+    ip = server.get("ip_address", "")
+    game_name = game.get("game_name", "")
+
+    # take care of nestings 1level and ints
+    raw_config_values = await request.form
+    config_values = {}
+    for key, value in raw_config_values.items():
+        v = value
+        try:
+            v = int(v)
+        except ValueError:
+            pass
+        if "[" in key and "]" in key:
+            top_level_name = key.split("[")[0]
+            second_level_name = (key.split("[")[1]).split("]")[0]
+            if not config_values.get(top_level_name, None):
+                config_values[top_level_name] = {}
+            config_values[top_level_name][second_level_name] = v
+            continue
+        config_values[key] = v
+
+    result, _ = await db.db_update_server_config(
+        config=json.dumps(config_values), server_id=str(server.get("id", ""))
+    )
+    await provisioner.job_update_config(
+        game_server_ip=ip,
+        game_name=game_name,
+        subscription_id=subscription_id,
+        config_values=config_values,
+    )
+
+    return success_html
+
+@userblueprint.route("/mods_n_backups", methods=["GET"])
+@login_required
+async def mods_n_backups():
+    subscription_id = request.args.get("subscription_id", "")
+    server, err = await db.db_select_server_by_subscription(subscription_id)
+    if not server:
+        return await render_template("mods_n_backups.html",
+                                     sftp_username=None,
+                                     sftp_password=None)
+
+    sftp_username = server.get("sftp_username", "")
+    sftp_password = server.get("sftp_password", "")
+    return await render_template("mods_n_backups.html",
+                                 sftp_username=sftp_username,
+                                 sftp_password=sftp_password)

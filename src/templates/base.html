@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BlockForge - Enhanced Loading</title>
         <meta name="description" content="Launch your Minecraft server in 60 seconds! BlockForge offers premium lag-free Minecraft hosting with 99.9% uptime, instant setup, and 24/7 support.">
-        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="{{ url_for('static', filename='js/tailwind.js') }}"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.4/htmx.min.js"></script>
+        <script src="{{ url_for('static', filename='js/htmx.js') }}"></script>
         <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
         .main-font {
@@ -22,7 +22,6 @@
         transition: all 0.3s ease;
         }
         .glass-card:hover {
-        transform: translateY(-2px);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         /* Enhanced Loading Spinner */
@@ -192,10 +191,7 @@
         .float-animation {
         animation: float 4s ease-in-out infinite;
         }
-        @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-8px) rotate(1deg); }
-        }
+
         /* HTMX Loading States */
         .htmx-indicator {
         opacity: 0;

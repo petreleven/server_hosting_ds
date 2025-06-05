@@ -61,19 +61,28 @@ SELECT *
 FROM subscriptions
 WHERE user_id = $1
 ORDER BY created_at DESC;
--- name: SelectServersBySubscription
+-- name: SelectServerBySubscription
 SELECT *
 FROM servers
 WHERE subscription_id = $1;
 -- name: UpdateServerStatus
 UPDATE servers
 SET status = $1,
-             docker_container_id = $2
-WHERE subscription_id = $3 RETURNING *;
+             docker_container_id = $2,
+             ports = $3
+WHERE subscription_id = $4 RETURNING *;
 -- name: UpdateSubscriptionStatus
 UPDATE subscriptions
 SET status = $1,
              last_billing_date = $2,
                                  next_billing_date = $3
 WHERE id = $4 RETURNING *;
-
+-- name: UpdateServerConfig
+UPDATE servers
+SET config = $1
+WHERE id = $2 RETURNING *;
+-- name: UpdateServerSftp
+UPDATE servers
+SET sftp_username = $1,
+    sftp_password = $2
+WHERE id = $3 RETURNING *;

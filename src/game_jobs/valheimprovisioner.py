@@ -169,7 +169,6 @@ class ValheimProvisioner(AbstractProvisioner):
 
     async def job_update_config(
         self,
-        server_id: str,
         game_server_ip: str,
         game_name: str,
         subscription_id: str,
@@ -183,12 +182,11 @@ class ValheimProvisioner(AbstractProvisioner):
 
         raw = json.dumps(config_values, separators=(",", ":"))
         encoded = base64.b64encode(raw.encode("utf-8")).decode("ascii")
-
         payload = (
             f"python setup_server.py "
             f"-u {subscription_id} "
             f"-g {game_name} "
-            f"-cfg-json {encoded} "
+            f"--cfg-json {encoded} "
             f"updateConfig"
         )
         await self.redisClient.lpush(queue, payload)
@@ -220,8 +218,8 @@ class ValheimProvisioner(AbstractProvisioner):
         try:
             jsonschema.validate(config_values, self.schema)
             return True
-        except jsonschema.ValidationError:
-            self.logger.error("Json Validation for valheim config failed")
+        except jsonschema.ValidationError as e:
+            self.logger.error("Json Validation for valheim config failed:", str(e))
             return False
 
     async def generate_config_view_schema(self, cfg: Dict[str, Any]) -> Dict[str, Any]:
@@ -236,4 +234,5 @@ class ValheimProvisioner(AbstractProvisioner):
                         r = key.lower().split("_")
                         if len(r) > 1 and r[0] == k:
                             schema_copy["properties"][k][r[1]] = value
+
         return schema_copy

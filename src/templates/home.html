@@ -52,16 +52,17 @@
             </div>
             <!-- Right Sign-up Card (Desktop Only) -->
             <div class="hidden md:block md:w-2/5 mt-10 md:mt-0">
-                <div class="glass-card p-6 rounded-xl shadow-2xl shadow-blue-900/20 border border-blue-500/10 hover:scale-105 transition duration-500">
+                <div class="glass-card p-6 rounded-xl shadow-2xl shadow-blue-900/20 border border-blue-500/10  transition duration-500">
                     <div class="text-center mb-4">
                         <h3 class="text-2xl font-bold text-white">&gt; Sign up for <span class="text-blue-400">Free</span></h3>
                         <p class="text-gray-300 text-sm">No credit card required</p>
                     </div>
                     <form class="space-y-4" method="post" action="/register" id="register-form">
                         <div>
-                            <label class="block text-gray-400 text-sm mb-1">Email</label>
+                            <label class="block text-gray-400 text-sm mb-1" for="email">Email</label>
                             <input name="email" type="email" placeholder="you@example.com" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white" required>
-                            <input type="number" name="game_id" style="display:none;" value="1">
+                            <label for="game_id"></label>
+                            <input type="text" name="game_id" style="display:none;" value="c96bce5a-00c9-46a4-8b05-98c05bf23893">
                             {% if errors.email_errors %}
                                 {%for e in errors.email_errors%}
                                 <span class="text-sm text-red-500">{{e}}</span>
@@ -80,7 +81,7 @@
                         <div>
                             <label class="block text-gray-400 text-sm mb-1">Plan</label>
                             <select name="plan_id" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white">
-                                <option value="89dfb33b-5bda-4953-8109-e95a60659fca">Basic -$11/month</option>
+                                <option value="996c903a-a19e-4b1a-aecf-59ed985cb32e">Basic -$11/month</option>
                                 <option value="2">Huge -$22/month</option>
                             </select>
                         </div>

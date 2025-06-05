@@ -5414,3 +5414,1851 @@ redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 111] Connect
 2025-03-07 03:16:03,903 - backendlogger - INFO - Database connection pool created
 2025-03-07 03:16:03,905 - backendlogger - INFO - All database tables created successfully
 2025-03-07 03:16:03,910 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:18:09,542 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:18:09,544 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:18:09,549 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:18:30,292 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:18:30,294 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:18:30,299 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:21:01,336 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:21:01,441 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:21:01,446 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:28:21,428 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:28:21,430 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:28:21,434 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:29:13,569 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:29:13,570 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:29:13,574 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:43:06,917 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:43:06,919 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:43:06,922 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:44:10,777 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:50:26,941 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:50:54,118 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:51:37,294 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:51:37,296 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:51:37,299 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:51:43,182 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:51:57,944 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:52:19,475 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:52:19,477 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:52:19,481 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:52:27,792 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:52:37,317 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:52:53,306 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:52:53,308 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:52:53,312 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:52:56,897 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:53:03,193 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:53:42,333 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:53:42,335 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:53:42,339 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:53:49,727 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:54:50,675 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:54:50,677 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:54:50,681 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:54:53,447 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:55:06,214 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:55:55,934 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:55:55,936 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:55:55,940 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:55:58,018 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:56:09,138 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:57:57,752 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:59:43,309 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:01:47,910 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:01:47,912 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:01:47,916 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:01:56,420 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:01:56,885 - userroutes - INFO - RegisterUserData(email='aba@gmaial.com', password='$2b$12$8mSRFFSynUaZoltWIaju1.hLJShFPbD4VcsSTfcakPbmi8CpN2C56', game_id='f12e9f73-4a0f-444f-959c-db048e81df14', plan_id='4d7c6c33-8f6e-4d5e-a3ee-1101d0da42c8')
+2025-03-07 05:01:56,886 - backendlogger - ERROR - Error inserting user: Expected unicode, got tuple
+2025-03-07 05:01:56,886 - userroutes - ERROR - Failed to create user for email: aba@gmaial.com
+2025-05-30 17:00:45,301 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:00:45,471 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:00:45,658 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 302, in connect_check_health
+    await self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect()
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/retry.py", line 71, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 759, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib64/python3.13/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 1174, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+        ', '.join(str(exc) for exc in exceptions)))
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 45, in connect
+    await redisClient.ping()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/client.py", line 673, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1143, in get_connection
+    await self.ensure_connection(connection)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1176, in ensure_connection
+    await connection.connect()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 310, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-05-30 17:01:02,213 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:01:02,215 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:01:02,226 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 302, in connect_check_health
+    await self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect()
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/retry.py", line 71, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 759, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib64/python3.13/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 1174, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+        ', '.join(str(exc) for exc in exceptions)))
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 45, in connect
+    await redisClient.ping()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/client.py", line 673, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1143, in get_connection
+    await self.ensure_connection(connection)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1176, in ensure_connection
+    await connection.connect()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 310, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-05-30 17:01:29,865 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:01:29,866 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:01:29,871 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:04:12,457 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:04:12,459 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:04:12,463 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:04:28,860 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-30 17:04:29,283 - userroutes - INFO - RegisterUserData(email='a113@g.com', password='$2b$12$RFuPyazMjTqcHVxbyKmX1.VcLkQmF9n/N23o5HENW9YplBe.AEtFC', game_id='3353460c-c2e2-41a3-afe0-850356f5e5e3', plan_id='77382dd8-1d3f-45bf-9427-06e6a1c4a460')
+2025-05-30 17:04:29,284 - backendlogger - ERROR - Error inserting user: Expected unicode, got tuple
+2025-05-30 17:04:29,284 - userroutes - ERROR - Failed to create user for email: a113@g.com
+2025-05-30 17:04:56,380 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:04:56,381 - backendlogger - ERROR - Error creating database tables: asyncpg.connection.Connection.execute() argument after ** must be a mapping, not tuple
+2025-05-30 17:04:56,386 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 44, in connect
+    await db.db_createalldbs()
+  File "/home/peter/Code/quartApp/src/db/db.py", line 136, in db_createalldbs
+    await conn_manager(QUERY_TYPE.EXECUTE, True, qs)
+  File "/home/peter/Code/quartApp/src/db/db.py", line 120, in conn_manager
+    return await run(conn)
+           ^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 110, in run
+    return await conn.execute(**args)
+                 ~~~~~~~~~~~~^^^^^^^^
+TypeError: asyncpg.connection.Connection.execute() argument after ** must be a mapping, not tuple
+2025-05-30 17:06:05,996 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:06:05,998 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:06:06,002 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:06:21,174 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-30 17:06:21,520 - userroutes - INFO - RegisterUserData(email='a113@g.com', password='$2b$12$PBcQLf9uf.w8V7ThTb7Ro.cGfbA0u0ubPC8w7.UhoPindq4cy/UiG', game_id='3353460c-c2e2-41a3-afe0-850356f5e5e3', plan_id='77382dd8-1d3f-45bf-9427-06e6a1c4a460')
+2025-05-30 17:06:21,520 - backendlogger - ERROR - Error inserting user: Expected unicode, got tuple
+2025-05-30 17:06:21,520 - userroutes - ERROR - Failed to create user for email: a113@g.com
+2025-05-30 17:08:20,100 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:08:20,102 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:08:20,105 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:11:12,122 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:11:12,124 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:11:12,129 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:11:37,934 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:11:37,936 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:11:37,941 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:14:45,331 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:14:45,333 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:14:45,337 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:15:16,193 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:15:16,195 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:15:16,199 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:15:26,342 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:15:26,344 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:15:26,348 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:15:54,624 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:15:54,627 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:15:54,631 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:16:48,286 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-30 17:16:48,646 - userroutes - INFO - RegisterUserData(email='aba@gmaial.com', password='$2b$12$G/C9GMQhkclzeLHxh175y.syNJE9h5ypY.KcX/Xeic09Cz2ZSfMzG', game_id='3353460c-c2e2-41a3-afe0-850356f5e5e3', plan_id='77382dd8-1d3f-45bf-9427-06e6a1c4a460')
+2025-05-30 17:16:48,731 - userroutes - INFO - User registered successfully: aba@gmaial.com
+2025-05-30 17:16:48,910 - backendlogger - WARNING - No baremetal with enough capacity
+2025-05-30 17:18:47,444 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:18:47,446 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:18:47,450 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:18:56,009 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:18:56,011 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:18:56,015 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:19:14,815 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:19:14,817 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:19:14,821 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:19:39,572 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:19:39,574 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:19:39,579 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:21:06,250 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:21:06,252 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:21:06,256 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:21:27,062 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:21:27,065 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:21:27,069 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:21:30,617 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:21:30,619 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:21:30,623 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:22:41,060 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:22:41,063 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:22:41,067 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:24:16,844 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:24:16,846 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:24:16,850 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:29:43,797 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:29:43,800 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:29:43,804 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:42:36,057 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:42:36,059 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:42:36,063 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:44:19,686 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:44:19,688 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:44:19,692 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 17:47:37,416 - backendlogger - INFO - Database connection pool created
+2025-05-30 17:47:37,418 - backendlogger - INFO - All database tables created successfully
+2025-05-30 17:47:37,422 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 18:04:28,609 - backendlogger - INFO - Database connection pool created
+2025-05-30 18:04:28,683 - backendlogger - INFO - All database tables created successfully
+2025-05-30 18:04:28,746 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 18:04:53,630 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-30 18:04:54,015 - userroutes - INFO - RegisterUserData(email='avatar@gmail.com', password='$2b$12$OrONDAhX5FdPzxl4rSS8ZeHBXdN7jmXlWVQGEhej5Bz5rJEyklEgu', game_id='3353460c-c2e2-41a3-afe0-850356f5e5e3', plan_id='77382dd8-1d3f-45bf-9427-06e6a1c4a460')
+2025-05-30 18:04:54,956 - userroutes - INFO - User registered successfully: avatar@gmail.com
+2025-05-30 18:04:55,051 - backendlogger - WARNING - No baremetal with enough capacity
+2025-05-30 18:06:12,338 - backendlogger - INFO - Database connection pool created
+2025-05-30 18:06:12,340 - backendlogger - INFO - All database tables created successfully
+2025-05-30 18:06:12,345 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 18:06:59,251 - userroutes - ERROR - Error loading server configuration: module 'db.db' has no attribute 'db_select_servers_by_subscription'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 393, in configure
+    record, err = await db.db_select_servers_by_subscription(subscription_id)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'db.db' has no attribute 'db_select_servers_by_subscription'. Did you mean: 'db_select_server_by_subscription'?
+2025-05-30 18:07:51,124 - backendlogger - INFO - Database connection pool created
+2025-05-30 18:07:51,126 - backendlogger - INFO - All database tables created successfully
+2025-05-30 18:07:51,130 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 18:08:13,061 - backendlogger - ERROR - Error selecting servers by subscription: 'SelectServerBySubscription'
+2025-05-30 18:08:13,061 - userroutes - WARNING - No servers found for subscription: e39fdf77-744c-436a-860d-bf381de3ccd9
+2025-05-30 18:09:44,807 - backendlogger - INFO - Database connection pool created
+2025-05-30 18:09:44,809 - backendlogger - INFO - All database tables created successfully
+2025-05-30 18:09:44,813 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-30 18:10:22,727 - backendlogger - INFO - Database connection pool created
+2025-05-30 18:10:22,729 - backendlogger - INFO - All database tables created successfully
+2025-05-30 18:10:22,733 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-31 07:37:10,764 - backendlogger - INFO - Database connection pool created
+2025-05-31 07:37:10,902 - backendlogger - INFO - All database tables created successfully
+2025-05-31 07:37:11,111 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 302, in connect_check_health
+    await self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect()
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/retry.py", line 71, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 759, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib64/python3.13/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 1174, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+        ', '.join(str(exc) for exc in exceptions)))
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 45, in connect
+    await redisClient.ping()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/client.py", line 673, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1143, in get_connection
+    await self.ensure_connection(connection)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1176, in ensure_connection
+    await connection.connect()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 310, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-05-31 07:37:28,454 - backendlogger - INFO - Database connection pool created
+2025-05-31 07:37:28,457 - backendlogger - INFO - All database tables created successfully
+2025-05-31 07:37:28,461 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-31 07:43:12,150 - backendlogger - ERROR - Failed to create connection pool: [Errno 104] Connection reset by peer
+2025-05-31 07:43:12,150 - backendlogger - ERROR - Error creating database tables: Failed to create connection pool: [Errno 104] Connection reset by peer
+2025-05-31 07:43:12,385 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/db/db.py", line 86, in get_pool
+    pool = await asyncpg.create_pool(dsn=PG_LOCAL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 418, in _async__init__
+    await self._initialize()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 445, in _initialize
+    await first_ch.connect()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 132, in connect
+    self._con = await self._pool._get_new_connection()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 517, in _get_new_connection
+    con = await self._connect(
+          ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2421, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<20 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 1075, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+    ...<2 lines>...
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 1049, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 886, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 931, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 810, in _create_ssl_connection
+    do_ssl_upgrade = await pr.on_data
+                     ^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/selector_events.py", line 1005, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 44, in connect
+    await db.db_createalldbs()
+  File "/home/peter/Code/quartApp/src/db/db.py", line 137, in db_createalldbs
+    await conn_manager(QUERY_TYPE.EXECUTE, True, qs)
+  File "/home/peter/Code/quartApp/src/db/db.py", line 102, in conn_manager
+    pool = await get_pool()
+           ^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 90, in get_pool
+    raise RuntimeError(f"Failed to create connection pool: {str(e)}")
+RuntimeError: Failed to create connection pool: [Errno 104] Connection reset by peer
+2025-05-31 07:43:22,136 - backendlogger - INFO - Database connection pool created
+2025-05-31 07:43:22,320 - backendlogger - INFO - All database tables created successfully
+2025-05-31 07:43:22,325 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-31 07:43:35,914 - backendlogger - INFO - Database connection pool created
+2025-05-31 07:43:35,916 - backendlogger - INFO - All database tables created successfully
+2025-05-31 07:43:35,920 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-31 07:45:42,862 - backendlogger - INFO - Database connection pool created
+2025-05-31 07:45:42,864 - backendlogger - INFO - All database tables created successfully
+2025-05-31 07:45:42,868 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-31 07:46:56,255 - backendlogger - INFO - Database connection pool created
+2025-05-31 07:46:56,257 - backendlogger - INFO - All database tables created successfully
+2025-05-31 07:46:56,262 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-31 07:47:21,457 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-31 07:47:21,875 - userroutes - INFO - RegisterUserData(email='aba@gmaial.com', password='$2b$12$b5H1DENX.7qAEPuymbLyPeEbG9V5hnvyYZ759jPeuhbPh6gIJOl46', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-05-31 07:47:21,992 - userroutes - INFO - User registered successfully: aba@gmaial.com
+2025-05-31 07:47:22,198 - backendlogger - WARNING - No baremetal with enough capacity
+2025-05-31 07:47:27,793 - userroutes - ERROR - Error retrieving server data: Encountered unknown tag 'endif'.
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 320, in dashboardservers
+    return await render_template("servers.html", subscriptions=subscriptions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/servers.html", line 10, in top-level template code
+    {% include 'server_single.html' with context %}
+    ^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 161, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endif'.
+2025-05-31 07:47:30,068 - userroutes - ERROR - Error retrieving server data: Encountered unknown tag 'endif'.
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 320, in dashboardservers
+    return await render_template("servers.html", subscriptions=subscriptions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/servers.html", line 10, in top-level template code
+    {% include 'server_single.html' with context %}
+    ^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 161, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endif'.
+2025-05-31 07:48:14,545 - userroutes - ERROR - Error retrieving server data: Encountered unknown tag 'endif'.
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 320, in dashboardservers
+    return await render_template("servers.html", subscriptions=subscriptions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/servers.html", line 10, in top-level template code
+    {% include 'server_single.html' with context %}
+    ^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 161, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endif'.
+2025-05-31 07:49:01,836 - backendlogger - INFO - Database connection pool created
+2025-05-31 07:49:01,838 - backendlogger - INFO - All database tables created successfully
+2025-05-31 07:49:01,842 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-31 07:49:06,269 - userroutes - ERROR - Error retrieving server data: Encountered unknown tag 'endif'.
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 320, in dashboardservers
+    return await render_template("servers.html", subscriptions=subscriptions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/servers.html", line 10, in top-level template code
+    {% include 'server_single.html' with context %}
+    ^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 161, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endif'.
+2025-05-31 07:52:14,760 - backendlogger - INFO - Database connection pool created
+2025-05-31 07:52:14,763 - backendlogger - INFO - All database tables created successfully
+2025-05-31 07:52:14,767 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-31 07:52:22,682 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-05-31 07:52:23,025 - userroutes - INFO - RegisterUserData(email='avatar@gmail.com', password='$2b$12$rkbkfPgSQECtr4SnUo4lIOtNTTjrAKBjUUssbhp4S1tXU396wo3aG', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-05-31 07:52:23,136 - userroutes - INFO - User registered successfully: avatar@gmail.com
+2025-05-31 07:52:23,227 - backendlogger - WARNING - No baremetal with enough capacity
+2025-05-31 07:56:14,681 - backendlogger - INFO - Database connection pool created
+2025-05-31 07:56:14,684 - backendlogger - INFO - All database tables created successfully
+2025-05-31 07:56:14,688 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 11:41:07,579 - backendlogger - ERROR - Failed to create connection pool: [Errno 111] Connect call failed ('127.0.0.1', 5432)
+2025-06-02 11:41:07,595 - backendlogger - ERROR - Error creating database tables: Failed to create connection pool: [Errno 111] Connect call failed ('127.0.0.1', 5432)
+2025-06-02 11:41:07,793 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/db/db.py", line 87, in get_pool
+    pool = await asyncpg.create_pool(dsn=PG_LOCAL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 418, in _async__init__
+    await self._initialize()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 445, in _initialize
+    await first_ch.connect()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 132, in connect
+    self._con = await self._pool._get_new_connection()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 517, in _get_new_connection
+    con = await self._connect(
+          ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2421, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<20 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 1075, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+    ...<2 lines>...
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 1049, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 886, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 931, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 802, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        host, port)
+        ^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 1166, in create_connection
+    raise exceptions[0]
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 1141, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 1044, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib64/python3.13/asyncio/selector_events.py", line 641, in sock_connect
+    return await fut
+           ^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/selector_events.py", line 681, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 5432)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 44, in connect
+    await db.db_createalldbs()
+  File "/home/peter/Code/quartApp/src/db/db.py", line 138, in db_createalldbs
+    await conn_manager(QUERY_TYPE.EXECUTE, True, qs)
+  File "/home/peter/Code/quartApp/src/db/db.py", line 103, in conn_manager
+    pool = await get_pool()
+           ^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 91, in get_pool
+    raise RuntimeError(f"Failed to create connection pool: {str(e)}")
+RuntimeError: Failed to create connection pool: [Errno 111] Connect call failed ('127.0.0.1', 5432)
+2025-06-02 11:45:47,638 - backendlogger - ERROR - Failed to create connection pool: [Errno 104] Connection reset by peer
+2025-06-02 11:45:47,639 - backendlogger - ERROR - Error creating database tables: Failed to create connection pool: [Errno 104] Connection reset by peer
+2025-06-02 11:45:47,648 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/db/db.py", line 87, in get_pool
+    pool = await asyncpg.create_pool(dsn=PG_LOCAL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 418, in _async__init__
+    await self._initialize()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 445, in _initialize
+    await first_ch.connect()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 132, in connect
+    self._con = await self._pool._get_new_connection()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/pool.py", line 517, in _get_new_connection
+    con = await self._connect(
+          ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2421, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<20 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 1075, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+    ...<2 lines>...
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 1049, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 886, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 931, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connect_utils.py", line 810, in _create_ssl_connection
+    do_ssl_upgrade = await pr.on_data
+                     ^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/selector_events.py", line 1005, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 44, in connect
+    await db.db_createalldbs()
+  File "/home/peter/Code/quartApp/src/db/db.py", line 138, in db_createalldbs
+    await conn_manager(QUERY_TYPE.EXECUTE, True, qs)
+  File "/home/peter/Code/quartApp/src/db/db.py", line 103, in conn_manager
+    pool = await get_pool()
+           ^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/db/db.py", line 91, in get_pool
+    raise RuntimeError(f"Failed to create connection pool: {str(e)}")
+RuntimeError: Failed to create connection pool: [Errno 104] Connection reset by peer
+2025-06-02 11:45:57,193 - backendlogger - INFO - Database connection pool created
+2025-06-02 11:45:57,378 - backendlogger - INFO - All database tables created successfully
+2025-06-02 11:45:57,454 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 11:46:04,040 - backendlogger - INFO - Database connection pool created
+2025-06-02 11:46:04,042 - backendlogger - INFO - All database tables created successfully
+2025-06-02 11:46:04,045 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 11:46:14,209 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 11:46:14,588 - userroutes - INFO - RegisterUserData(email='aba@gmaial.com', password='$2b$12$VJh.VRhuK2MwtGeWpnfPU.5c4lUwQ887VPF9ZMSlPQ1x2WXyHrQtW', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 11:46:14,863 - backendlogger - WARNING - Attempt to create duplicate user: aba@gmaial.com
+2025-06-02 11:46:14,864 - userroutes - ERROR - Failed to create user for email: aba@gmaial.com
+2025-06-02 11:46:19,978 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 11:46:20,327 - userroutes - INFO - RegisterUserData(email='ada@g.com', password='$2b$12$Nm8DFieWfWJSdnEj908zrOsOBgad1mp4Yqe6Eei8/9AENblkSHrjy', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 11:46:20,424 - userroutes - INFO - User registered successfully: ada@g.com
+2025-06-02 11:46:20,907 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 11:48:06,053 - backendlogger - INFO - Database connection pool created
+2025-06-02 11:48:06,054 - backendlogger - INFO - All database tables created successfully
+2025-06-02 11:48:06,059 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 11:53:15,558 - backendlogger - INFO - Database connection pool created
+2025-06-02 11:53:15,560 - backendlogger - INFO - All database tables created successfully
+2025-06-02 11:53:15,564 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 11:56:40,894 - backendlogger - INFO - Database connection pool created
+2025-06-02 11:56:40,897 - backendlogger - INFO - All database tables created successfully
+2025-06-02 11:56:40,901 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 11:56:44,358 - userroutes - ERROR - Error retrieving server status: unexpected 'end of statement block'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", current_sub=current_sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 122, in template
+    {% if current_sub.status == 'running' or %}
+    ^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected 'end of statement block'
+2025-06-02 11:56:44,424 - server - ERROR - Exception on request GET /server-status/c9de6d9c-6589-4688-909d-f480bd625d87
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 356, in server_status
+    return await render_template("server_single.html", current_sub=current_sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 122, in template
+    {% if current_sub.status == 'running' or %}
+    ^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected 'end of statement block'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart_auth/globals.py", line 64, in wrapper
+    return await current_app.ensure_async(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 359, in server_status
+    return await render_template(
+           ^^^^^^^^^^^^^^^^^^^^^^
+        "server_single.html", current_sub=None, error="Failed to load server status"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 57, in render_template
+    template = current_app.jinja_env.get_or_select_template(template_name_or_list)  # type: ignore
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 122, in template
+    {% if current_sub.status == 'running' or %}
+    ^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected 'end of statement block'
+2025-06-02 11:56:51,968 - userroutes - ERROR - Error retrieving server data: unexpected 'end of statement block'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/userroutes.py", line 320, in dashboardservers
+    return await render_template("servers.html", subscriptions=subscriptions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 58, in render_template
+    return await _render(template, context, current_app._get_current_object())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/templating.py", line 80, in _render
+    rendered_template = await template.render_async(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/servers.html", line 10, in top-level template code
+    {% include 'server_single.html' with context %}
+    ^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/peter/Code/quartApp/src/templates/server_single.html", line 122, in template
+    {% if current_sub.status == 'running' or %}
+    ^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected 'end of statement block'
+2025-06-02 11:57:06,483 - backendlogger - INFO - Database connection pool created
+2025-06-02 11:57:06,487 - backendlogger - INFO - All database tables created successfully
+2025-06-02 11:57:06,491 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 11:58:02,531 - backendlogger - INFO - Database connection pool created
+2025-06-02 11:58:02,534 - backendlogger - INFO - All database tables created successfully
+2025-06-02 11:58:02,537 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:06:34,891 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:06:34,894 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:06:34,898 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:07:05,932 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:07:05,934 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:07:05,940 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:08:00,999 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:08:01,001 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:08:01,005 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:08:04,474 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:08:04,476 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:08:04,480 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:08:14,505 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:08:14,508 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:08:14,514 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:09:37,216 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:09:37,219 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:09:37,222 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:15:32,987 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:15:32,990 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:15:32,995 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:16:06,750 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:16:06,753 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:16:06,757 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:16:20,331 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:16:20,333 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:16:20,337 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:17:16,456 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:17:16,458 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:17:16,462 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 12:39:23,134 - backendlogger - INFO - Database connection pool created
+2025-06-02 12:39:23,136 - backendlogger - INFO - All database tables created successfully
+2025-06-02 12:39:23,140 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:05:57,336 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:05:58,079 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:05:58,084 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:25:30,877 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:25:30,894 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:25:30,942 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:25:44,785 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 13:25:53,229 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 13:25:53,652 - userroutes - INFO - RegisterUserData(email='aa@g.com', password='$2b$12$z2Nx/kv5N9ddylFlEa4WY.Pli61MxVg0cTADGIDSbhvMG5.VAjV5W', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 13:25:54,153 - userroutes - INFO - User registered successfully: aa@g.com
+2025-06-02 13:25:54,364 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 13:25:54,622 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 117, in job_order_new_server
+    await self._add_order_to_queue(
+    ...<4 lines>...
+        )
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 152, in _add_order_to_queue
+    self.redisClient.json().set("pending_servers", "$", json.dumps(payload))
+                                                        ~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-06-02 13:27:44,980 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:27:44,983 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:27:44,987 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:27:50,989 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 13:27:51,345 - userroutes - INFO - RegisterUserData(email='avatar@gmail.com', password='$2b$12$4se2jD2rXYL2DglrkYGW2eRZr7mfy/ZdeBQOwGD.l1VsyZvMFuf5W', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 13:27:51,720 - userroutes - INFO - User registered successfully: avatar@gmail.com
+2025-06-02 13:27:51,888 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 13:27:52,347 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 117, in job_order_new_server
+    await self._add_order_to_queue(
+    ...<4 lines>...
+        )
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 153, in _add_order_to_queue
+    self.redisClient.json().set("pending_servers", "$", json.dumps(payload))
+                                                        ~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type UUID is not JSON serializable
+2025-06-02 13:28:16,872 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:28:16,875 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:28:16,893 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:28:21,970 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:28:21,972 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:28:21,978 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:28:39,086 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 13:28:39,434 - userroutes - INFO - RegisterUserData(email='buda@gmail.com', password='$2b$12$1GfJ3vk0OyBnY8hSUoP/D.dAlSe./anVccjPp3W41nD8ruQhGCeJW', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 13:28:40,224 - userroutes - INFO - User registered successfully: buda@gmail.com
+2025-06-02 13:28:40,367 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 13:28:40,550 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 117, in job_order_new_server
+    await self._add_order_to_queue(
+    ...<4 lines>...
+        )
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 153, in _add_order_to_queue
+    self.redisClient.json().set("pending_servers", "$", json.dumps(payload))
+                                                        ~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-02 13:29:14,148 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:29:14,150 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:29:14,154 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:29:18,960 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:29:18,962 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:29:18,966 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:29:27,218 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 13:29:27,567 - userroutes - INFO - RegisterUserData(email='ka@gmail.com', password='$2b$12$mWzFBpTzcNErpUUzt2cZ1epcuyE5DJzdVg1BstluuoBZb1qfYGZ5y', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 13:29:27,719 - userroutes - INFO - User registered successfully: ka@gmail.com
+2025-06-02 13:29:27,884 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 13:30:09,003 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:30:09,006 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:30:09,010 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:30:27,255 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 13:30:27,612 - userroutes - INFO - RegisterUserData(email='mamoush@g.com', password='$2b$12$W6OsMENnCfoal5hFF42Dy../VHMgAh4FKQDnbTtaBVXycVwYDmHZa', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 13:30:27,783 - userroutes - INFO - User registered successfully: mamoush@g.com
+2025-06-02 13:30:27,938 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 13:33:59,193 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:33:59,195 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:33:59,199 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:34:11,893 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:34:11,896 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:34:11,900 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:35:36,294 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:35:36,296 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:35:36,299 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:36:37,490 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:36:37,491 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:36:37,495 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:41:12,974 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:41:12,976 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:41:12,980 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:42:26,373 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:42:26,375 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:42:26,379 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:45:00,645 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:45:00,647 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:45:00,651 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:47:24,765 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:47:24,767 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:47:24,771 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:47:43,416 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:47:43,418 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:47:43,422 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:52:46,238 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:52:46,240 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:52:46,244 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:52:49,721 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:52:49,723 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:52:49,727 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:53:20,496 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:53:20,498 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:53:20,502 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:54:29,737 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:54:29,739 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:54:29,743 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 13:57:42,502 - backendlogger - INFO - Database connection pool created
+2025-06-02 13:57:42,505 - backendlogger - INFO - All database tables created successfully
+2025-06-02 13:57:42,510 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 14:03:07,650 - backendlogger - INFO - Database connection pool created
+2025-06-02 14:03:07,652 - backendlogger - INFO - All database tables created successfully
+2025-06-02 14:03:07,656 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 14:04:44,201 - backendlogger - INFO - Database connection pool created
+2025-06-02 14:04:44,204 - backendlogger - INFO - All database tables created successfully
+2025-06-02 14:04:44,207 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 14:06:05,605 - backendlogger - INFO - Database connection pool created
+2025-06-02 14:06:05,608 - backendlogger - INFO - All database tables created successfully
+2025-06-02 14:06:05,612 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 14:08:20,631 - backendlogger - INFO - Database connection pool created
+2025-06-02 14:08:20,633 - backendlogger - INFO - All database tables created successfully
+2025-06-02 14:08:20,637 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 14:08:29,289 - backendlogger - INFO - Database connection pool created
+2025-06-02 14:08:29,291 - backendlogger - INFO - All database tables created successfully
+2025-06-02 14:08:29,295 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 14:56:20,623 - backendlogger - INFO - Database connection pool created
+2025-06-02 14:56:20,625 - backendlogger - INFO - All database tables created successfully
+2025-06-02 14:56:20,626 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 15:57:26,267 - backendlogger - INFO - Database connection pool created
+2025-06-02 15:57:26,269 - backendlogger - INFO - All database tables created successfully
+2025-06-02 15:57:26,464 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 15:57:26,465 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 15:58:00,918 - backendlogger - INFO - Database connection pool created
+2025-06-02 15:58:00,920 - backendlogger - INFO - All database tables created successfully
+2025-06-02 15:58:00,957 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 15:58:00,957 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 15:58:29,763 - backendlogger - INFO - Database connection pool created
+2025-06-02 15:58:29,765 - backendlogger - INFO - All database tables created successfully
+2025-06-02 15:58:29,801 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 15:58:29,802 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 15:58:41,330 - backendlogger - INFO - Database connection pool created
+2025-06-02 15:58:41,332 - backendlogger - INFO - All database tables created successfully
+2025-06-02 15:58:41,367 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 15:58:41,368 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 15:59:19,765 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 15:59:20,132 - userroutes - INFO - RegisterUserData(email='kamui@c.com', password='$2b$12$36FlRpqG7b9JxREPlMvMVegzwV7Hn8sGTpN0TBLDsnn6ZuV.qlWJW', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 15:59:20,292 - userroutes - INFO - User registered successfully: kamui@c.com
+2025-06-02 15:59:20,298 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 72, in job_order_new_server
+    user_id = user.get("id")
+              ^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'get'
+2025-06-02 16:02:45,430 - backendlogger - INFO - Database connection pool created
+2025-06-02 16:02:45,433 - backendlogger - INFO - All database tables created successfully
+2025-06-02 16:02:45,466 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 16:02:45,467 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 16:03:12,330 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 16:03:12,685 - userroutes - INFO - RegisterUserData(email='naruto@g.com', password='$2b$12$goGUO4O3uziX/wcrTUuCmOAMPXZunY/83dy.saBwPP.bfow2cwn/S', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 16:03:12,840 - userroutes - INFO - User registered successfully: naruto@g.com
+2025-06-02 16:03:12,987 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 16:03:13,134 - backendlogger - ERROR - Failed to add order to queue: could not perform this operation on a key that doesn't exist
+2025-06-02 16:04:09,147 - backendlogger - INFO - Database connection pool created
+2025-06-02 16:04:09,149 - backendlogger - INFO - All database tables created successfully
+2025-06-02 16:04:09,186 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 16:04:09,187 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 16:04:28,450 - backendlogger - INFO - Database connection pool created
+2025-06-02 16:04:28,453 - backendlogger - INFO - All database tables created successfully
+2025-06-02 16:04:28,488 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 16:04:28,489 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 16:04:47,171 - backendlogger - INFO - Database connection pool created
+2025-06-02 16:04:47,173 - backendlogger - INFO - All database tables created successfully
+2025-06-02 16:04:47,210 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 16:04:47,211 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 16:05:06,062 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 16:05:06,410 - userroutes - INFO - RegisterUserData(email='sasuke@g.com', password='$2b$12$SES/fBDnPxeqOrbAbCOKJOCwZ35CFv9Hu4hka.QK2a/A3XXBnACw.', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 16:05:06,572 - userroutes - INFO - User registered successfully: sasuke@g.com
+2025-06-02 16:05:06,728 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 16:05:06,884 - backendlogger - INFO - Added subscription c586df93-ee51-42c4-9cf1-48e6a7ffc4cc to pending queue
+2025-06-02 21:04:17,557 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:04:17,653 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:04:18,145 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:04:18,148 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:12:26,777 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:12:26,779 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:12:26,813 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:12:26,814 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:12:32,286 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:12:32,288 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:12:32,322 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:12:32,322 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:13:17,284 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:13:17,286 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:13:17,321 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:13:17,322 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:13:18,751 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:13:18,754 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:13:18,787 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:13:18,788 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:13:20,228 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:13:20,230 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:13:20,264 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:13:20,265 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:13:47,983 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:13:47,985 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:13:48,019 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:13:48,019 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:14:29,957 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:14:29,959 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:14:29,993 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:14:29,994 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:14:33,555 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:14:33,557 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:14:33,599 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:14:33,600 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:15:13,630 - backendlogger - ERROR - Failed to process subscription_id job c586df93-ee51-42c4-9cf1-48e6a7ffc4cc: 'MainProvisioner' object has no attribute '_get_plan'
+2025-06-02 21:15:13,632 - backendlogger - WARNING - Removed problematic job from queue
+2025-06-02 21:22:45,601 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:22:45,603 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:22:45,638 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:22:45,639 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:22:58,612 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:22:58,998 - userroutes - INFO - RegisterUserData(email='human@g.com', password='$2b$12$GAlCnp0oO1Iv5CY0KsR3FuMt8aXqWXZ5s7tAfIenTwvRaLl50lXy2', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 21:22:59,319 - userroutes - INFO - User registered successfully: human@g.com
+2025-06-02 21:23:00,371 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u d83b8e9c-bb2b-4ee7-9e44-03e960731166 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-02 21:24:14,017 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:24:14,341 - userroutes - INFO - RegisterUserData(email='abaa@gmaial.com', password='$2b$12$5P.zmFc8ikrkPRvGl1C9.OBzkLR8ILMHF1T6OiiFFUfRhMNrr8WI.', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 21:24:14,549 - userroutes - INFO - User registered successfully: abaa@gmaial.com
+2025-06-02 21:24:14,809 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 21:24:15,019 - backendlogger - INFO - Added subscription 25d5f806-a571-4aec-9162-03200d07902d to pending queue
+2025-06-02 21:25:06,284 - backendlogger - ERROR - Failed to provision server for subscription 25d5f806-a571-4aec-9162-03200d07902d: 'tuple' object has no attribute 'get'
+2025-06-02 21:25:16,723 - backendlogger - ERROR - Failed to provision server for subscription 25d5f806-a571-4aec-9162-03200d07902d: 'tuple' object has no attribute 'get'
+2025-06-02 21:25:27,329 - backendlogger - ERROR - Failed to provision server for subscription 25d5f806-a571-4aec-9162-03200d07902d: 'tuple' object has no attribute 'get'
+2025-06-02 21:27:36,266 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:27:36,268 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:27:36,315 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:27:36,316 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:27:42,277 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:27:42,664 - userroutes - INFO - RegisterUserData(email='buda@gmail.com', password='$2b$12$Lv0ag6iPFyWbjcI.4/g.cuDmK4Bb3cTQB5HOSy9CcWySCtMFfwdKa', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 21:27:42,668 - backendlogger - WARNING - Attempt to create duplicate user: buda@gmail.com
+2025-06-02 21:27:42,668 - userroutes - ERROR - Failed to create user for email: buda@gmail.com
+2025-06-02 21:27:55,925 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:27:56,260 - userroutes - INFO - RegisterUserData(email='hgo@g.com', password='$2b$12$/K2TaAeNwmo7oLV2mi.SPu.cfUIGgqYqyiQXeT3bAW9.b1n2jIRqu', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 21:27:56,513 - userroutes - INFO - User registered successfully: hgo@g.com
+2025-06-02 21:27:56,775 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-02 21:27:57,249 - backendlogger - INFO - Added subscription 23c93d4e-41d0-432b-982d-ada9495fe787 to pending queue
+2025-06-02 21:28:56,936 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 25d5f806-a571-4aec-9162-03200d07902d -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-02 21:28:56,936 - backendlogger - INFO - Successfully provisioned server for subscription 25d5f806-a571-4aec-9162-03200d07902d
+2025-06-02 21:28:56,938 - backendlogger - INFO - Successfully processed and removed job for subscription 25d5f806-a571-4aec-9162-03200d07902d
+2025-06-02 21:28:57,917 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 23c93d4e-41d0-432b-982d-ada9495fe787 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-02 21:28:57,917 - backendlogger - INFO - Successfully provisioned server for subscription 23c93d4e-41d0-432b-982d-ada9495fe787
+2025-06-02 21:28:57,918 - backendlogger - INFO - Successfully processed and removed job for subscription 23c93d4e-41d0-432b-982d-ada9495fe787
+2025-06-02 21:28:57,918 - backendlogger - INFO - Processed 2 pending server orders
+2025-06-02 21:30:10,180 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:30:10,183 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:30:10,235 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:30:10,237 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:31:02,442 - backendlogger - INFO - Database connection pool created
+2025-06-02 21:31:02,444 - backendlogger - INFO - All database tables created successfully
+2025-06-02 21:31:02,493 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:31:02,494 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-02 21:37:42,768 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-02 21:37:43,125 - userroutes - INFO - RegisterUserData(email='a2aba@gmail.com', password='$2b$12$2.i4sfv4YAymppcMi9.uiuPPOCdm/JLc1N/G1tE1JAZt.u46PY7iy', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-02 21:37:43,332 - userroutes - INFO - User registered successfully: a2aba@gmail.com
+2025-06-02 21:37:43,882 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 543336cd-e8c4-4a40-a25e-47491fbb0d28 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-03 13:49:22,709 - backendlogger - INFO - Database connection pool created
+2025-06-03 13:49:22,783 - backendlogger - INFO - All database tables created successfully
+2025-06-03 13:49:23,464 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 13:49:23,465 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 13:52:30,172 - backendlogger - INFO - Database connection pool created
+2025-06-03 13:52:30,175 - backendlogger - INFO - All database tables created successfully
+2025-06-03 13:52:30,213 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 13:52:30,213 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 13:53:41,455 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 13:53:41,901 - userroutes - INFO - RegisterUserData(email='truman@g.com', password='$2b$12$vNQInn1.6SWx1tXshkiI5O5.FsC9iTB1TqG1Sbzc42FkIkWoKfAQC', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-03 13:53:42,343 - userroutes - INFO - User registered successfully: truman@g.com
+2025-06-03 13:53:42,889 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 5d2c1671-b93d-4457-a72d-8f21e01a63b3 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-03 13:54:20,331 - backendlogger - INFO - Server report received: {'action': 'start', 'success': True, 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'running', 'container_id': '63e470f9064a61f8c82fd422f5b119c2af8e4afcc629232e4114c45b50ebde2a', 'container_ip': '192.168.64.2', 'ports': [2300, 2301]}
+2025-06-03 13:54:20,632 - backendlogger - INFO - Server status updated for subscription: 5d2c1671-b93d-4457-a72d-8f21e01a63b3
+2025-06-03 13:54:21,154 - backendlogger - INFO - Subscription updated for ID: 5d2c1671-b93d-4457-a72d-8f21e01a63b3, next billing: 2025-07-03 10:54:20.632754+00:00
+2025-06-03 14:01:40,391 - backendlogger - ERROR - Error selecting servers by subscription: 'SelectServerBySubscription'
+2025-06-03 14:01:40,392 - userroutes - WARNING - No servers found for subscription: 5d2c1671-b93d-4457-a72d-8f21e01a63b3
+2025-06-03 14:04:39,734 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:04:39,736 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:04:39,833 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:04:39,834 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:04:49,293 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:04:49,296 - backendlogger - ERROR - Game not found for plan 996c903a-a19e-4b1a-aecf-59ed985cb32e
+2025-06-03 14:08:54,400 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:08:54,403 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:08:54,438 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:08:54,439 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:09:31,709 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:18:04,429 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:18:04,431 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:18:04,467 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:18:04,467 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:18:17,001 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:18:17,003 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:18:17,039 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:18:17,039 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:18:26,555 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:18:26,557 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:18:26,588 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:18:26,589 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:19:06,209 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:19:06,213 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:19:06,257 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:19:06,258 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:19:13,302 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:21:21,182 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:21:21,184 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:21:21,223 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:21:21,224 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:21:26,156 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:26:27,329 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:26:27,331 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:26:27,374 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:26:27,375 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:26:30,699 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:26:51,991 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:26:51,994 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:26:52,031 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:26:52,031 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:26:59,595 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:26:59,597 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:26:59,632 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:26:59,633 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:27:43,691 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:27:43,693 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:27:43,728 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:27:43,729 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:27:45,894 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:28:21,604 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:28:21,607 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:28:21,645 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:28:21,646 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:29:36,951 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:29:36,954 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:29:36,990 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:29:36,991 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:52:54,184 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:52:54,186 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:52:54,228 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:52:54,229 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:52:59,572 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:53:06,641 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:53:06,649 - backendlogger - ERROR - Json Validation for valheim config failed
+2025-06-03 14:54:06,464 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:54:06,466 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:54:06,501 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:54:06,502 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:54:11,055 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:59:20,863 - backendlogger - INFO - Database connection pool created
+2025-06-03 14:59:20,866 - backendlogger - INFO - All database tables created successfully
+2025-06-03 14:59:20,906 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 14:59:20,907 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 14:59:28,511 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:00:11,258 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:00:11,260 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:00:11,298 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:00:11,298 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:00:13,319 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:01:08,100 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:01:08,102 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:01:08,146 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:01:08,147 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:01:11,382 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:02:45,896 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:02:45,899 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:02:45,938 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:02:45,939 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:03:15,848 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:16:44,281 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:16:44,283 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:16:44,319 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:16:44,320 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:16:49,505 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:17:45,435 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:17:45,436 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:17:45,471 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:17:45,472 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:17:51,342 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:18:00,469 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:18:00,471 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:18:00,507 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:18:00,508 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:18:03,379 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:21:14,960 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:21:14,962 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:21:15,005 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:21:15,007 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:21:26,638 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:21:48,858 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:21:48,861 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:21:48,919 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:21:48,920 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:21:53,066 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:21:53,068 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:21:53,111 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:21:53,112 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:21:56,100 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:24:47,844 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:27:24,380 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:27:24,382 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:27:24,423 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:27:38,716 - backendlogger - INFO - Database connection pool created
+2025-06-03 15:27:38,718 - backendlogger - INFO - All database tables created successfully
+2025-06-03 15:27:38,756 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:27:38,757 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 15:27:44,781 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:27:47,278 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:27:47,485 - backendlogger - INFO - Server report received: {'action': 'configure', 'success': True, 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-06-03 15:27:47,485 - backendlogger - WARNING - Missing required field in server report: container_id
+2025-06-03 15:29:39,300 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:29:39,522 - backendlogger - INFO - Server report received: {'action': 'configure', 'success': True, 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-06-03 15:29:39,522 - backendlogger - WARNING - Missing required field in server report: container_id
+2025-06-03 15:33:41,820 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 15:33:42,038 - backendlogger - INFO - Server report received: {'action': 'configure', 'success': True, 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-06-03 15:33:42,038 - backendlogger - WARNING - Missing required field in server report: container_id
+2025-06-03 21:43:15,544 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:43:15,622 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:43:16,193 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:43:16,194 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:43:25,954 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:43:47,381 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:43:47,384 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:43:47,420 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:43:47,421 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:43:52,984 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:43:52,986 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:43:53,023 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:43:53,024 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:44:10,584 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:44:10,587 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:44:10,623 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:44:10,623 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:44:33,268 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:44:33,270 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:44:33,307 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:44:33,308 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:44:46,844 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:44:46,846 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:44:46,884 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:44:46,885 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:44:57,436 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:44:57,438 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:44:57,473 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:44:57,474 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:45:18,924 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:45:18,926 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:45:18,965 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:45:18,966 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:45:24,342 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:45:29,194 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:45:29,200 - backendlogger - ERROR - Error updating config of Server {"name": "My server", "password": "XIeQCg", "port": 2456, "world": "Dedicated", "backuplong": 43200, "backups": 4, "backupshort": 7200, "instanceid": 1, "logFile": "./valheim.log", "modifiers": {"Combat": "easy", "DeathPenalty": "easy", "Portals": "casual", "Raids": "less", "Resources": "less"}, "preset": "Normal", "public": 1, "savedir": "./valheim_saves", "saveinterval": 1800}: column "config" of relation "subscriptions" does not exist
+2025-06-03 21:46:54,519 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:46:54,521 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:46:54,560 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:46:54,561 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:47:07,490 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:47:07,492 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:47:07,532 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:47:07,533 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:47:13,070 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:47:15,781 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:47:15,789 - backendlogger - ERROR - Error updating config of Server 007d74cb-fb6a-4ca9-b1f9-b8c303bba9e8: column "config" of relation "subscriptions" does not exist
+2025-06-03 21:48:00,782 - backendlogger - INFO - Database connection pool created
+2025-06-03 21:48:00,784 - backendlogger - INFO - All database tables created successfully
+2025-06-03 21:48:00,820 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:48:00,821 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-03 21:48:17,639 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:49:04,325 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-03 21:49:26,754 - backendlogger - INFO - Server report received: {'action': 'configure', 'success': True, 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-06-03 21:49:26,754 - backendlogger - WARNING - Missing required field in server report: container_id
+2025-06-03 21:49:26,755 - backendlogger - INFO - Server report received: {'action': 'configure', 'success': True, 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-06-03 21:49:26,755 - backendlogger - WARNING - Missing required field in server report: container_id
+2025-06-03 21:49:26,757 - backendlogger - INFO - Server report received: {'action': 'configure', 'success': True, 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-06-03 21:49:26,758 - backendlogger - WARNING - Missing required field in server report: container_id
+2025-06-03 21:49:26,759 - backendlogger - INFO - Server report received: {'action': 'configure', 'success': True, 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-06-03 21:49:26,759 - backendlogger - WARNING - Missing required field in server report: container_id
+2025-03-07 04:06:58,592 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:06:58,750 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:06:59,201 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:06:59,202 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:08:36,031 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:08:36,532 - userroutes - INFO - RegisterUserData(email='goldenkamui@g.com', password='$2b$12$7wbH.1WYENLqNG89.OAoDOiPk72I3d1IRhCID4Di2u0D/3BkSj1di', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 04:08:38,219 - userroutes - INFO - User registered successfully: goldenkamui@g.com
+2025-03-07 04:08:40,575 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u daaa4790-aac5-46d2-a020-0ebb82ad64f4 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-03-07 04:09:09,996 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'daaa4790-aac5-46d2-a020-0ebb82ad64f4', 'status': 'running', 'container_id': '82a15f0f14e8945d2b02cdec7a841692505ea169520de5ad4efae00048f89ce0', 'container_ip': '192.168.64.2', 'ports': [2300, 2301]}
+2025-03-07 04:09:09,997 - backendlogger - ERROR - Unexpected error in server_report: RegisterHandler._start_handler() missing 1 required positional argument: 'data'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/api.py", line 217, in register_server
+    success, err = rh.handle_report(action=action)
+                   ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/api.py", line 39, in handle_report
+    return self.registry[action]()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: RegisterHandler._start_handler() missing 1 required positional argument: 'data'
+2025-03-07 04:11:49,729 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:11:49,731 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:11:49,764 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:11:49,765 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:12:18,428 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:12:18,775 - userroutes - INFO - RegisterUserData(email='gojo@g.com', password='$2b$12$zBUlOYlICpIMC7KQ7dmjLefBg/jFIRyKcjNfZtY1.ErX.Ad/PvqhG', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 04:12:18,865 - userroutes - INFO - User registered successfully: gojo@g.com
+2025-03-07 04:12:19,133 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u d18adcba-6907-4a62-8454-cc54b8adfa71 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-03-07 04:12:36,281 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'd18adcba-6907-4a62-8454-cc54b8adfa71', 'status': 'running', 'container_id': '29949c11513b6443d2045840c24ceb848c60fc24d38736d0065dbeb4e7de574d', 'container_ip': '192.168.64.2', 'ports': [2300, 2301]}
+2025-03-07 04:12:36,321 - backendlogger - ERROR - Unexpected error in server_report: cannot unpack non-iterable coroutine object
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/api.py", line 217, in register_server
+    success, err = rh.handle_report(action=action, data=data)
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable coroutine object
+2025-03-07 04:14:25,480 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:14:25,482 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:14:25,519 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:14:25,519 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:14:42,486 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:14:42,835 - userroutes - INFO - RegisterUserData(email='sukuna@gmail.com', password='$2b$12$aeo0baR61fDVHOrNrPt5E.pfTp/yxZ8/wxktp1TNQTQRJxu8O59gu', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 04:14:42,937 - userroutes - INFO - User registered successfully: sukuna@gmail.com
+2025-03-07 04:14:43,183 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u b9648e6d-20e7-4adc-a584-18bf69787fbb -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-03-07 04:15:00,858 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'b9648e6d-20e7-4adc-a584-18bf69787fbb', 'status': 'running', 'container_id': 'da30f5eb06cab8616ee744c8b8a6ec7770ce00941a8dd0a3f751396507012bda', 'container_ip': '192.168.64.2', 'ports': [2300, 2301]}
+2025-03-07 04:15:01,058 - backendlogger - INFO - Server status updated for subscription: b9648e6d-20e7-4adc-a584-18bf69787fbb
+2025-03-07 04:15:01,521 - backendlogger - INFO - Subscription updated for ID: b9648e6d-20e7-4adc-a584-18bf69787fbb, next billing: 2025-04-06 01:15:01.059192+00:00
+2025-03-07 04:16:38,519 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:16:39,325 - backendlogger - INFO - Server report received: {'action': 'configure', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 04:19:25,970 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:19:25,973 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:19:26,015 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:19:26,016 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:19:36,274 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:19:36,632 - backendlogger - INFO - Server report received: {'action': 'configure', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 04:20:04,316 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:20:04,318 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:20:04,358 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:20:04,359 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:20:09,631 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:20:09,982 - backendlogger - INFO - Server report received: {'action': 'configure', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 04:22:07,677 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:22:07,679 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:22:07,720 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:22:07,720 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:22:16,870 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:22:17,379 - backendlogger - INFO - Server report received: {'action': 'configure', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 04:22:34,552 - backendlogger - INFO - Database connection pool created
+2025-03-07 04:22:34,554 - backendlogger - INFO - All database tables created successfully
+2025-03-07 04:22:34,598 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:22:34,598 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 04:22:51,061 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:22:51,423 - backendlogger - INFO - Server report received: {'action': 'configure', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 04:25:12,259 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:25:12,636 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 04:25:12,636 - backendlogger - INFO - Server config update done for subscription: 5d2c1671-b93d-4457-a72d-8f21e01a63b3
+2025-03-07 04:26:08,842 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:26:09,252 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 04:26:09,252 - backendlogger - INFO - Server config update done for subscription: 5d2c1671-b93d-4457-a72d-8f21e01a63b3
+2025-03-07 04:53:08,318 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:53:29,502 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 04:53:29,849 - userroutes - INFO - RegisterUserData(email='ombachi@gmail.com', password='$2b$12$vpYR24LSa6jdvye2JBO7De1H9UqvQVaJuU31SuHqVIKTCc.fp4S5G', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 04:53:29,974 - userroutes - INFO - User registered successfully: ombachi@gmail.com
+2025-03-07 04:53:30,254 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 718c48bf-1957-4d91-bd5f-5dc017d32504 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-03-07 04:53:47,988 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '718c48bf-1957-4d91-bd5f-5dc017d32504', 'status': 'running', 'container_id': '53237eda9e9ba3ecdad570fedc448afea013bc599982f5fec4730ef58f4560cb', 'container_ip': '192.168.64.2', 'ports': [2300, 2301]}
+2025-03-07 04:53:48,226 - backendlogger - INFO - Server status updated for subscription: 718c48bf-1957-4d91-bd5f-5dc017d32504
+2025-03-07 04:53:48,414 - backendlogger - INFO - Subscription updated for ID: 718c48bf-1957-4d91-bd5f-5dc017d32504, next billing: 2025-04-06 01:53:48.226629+00:00
+2025-03-07 05:04:12,483 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:04:12,797 - userroutes - INFO - RegisterUserData(email='joth@g.com', password='$2b$12$vCcp08WUjoBYoWRpKIw51eoLkDraxF3VA3bGFhldR9JLMuumBFPum', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 05:04:12,916 - userroutes - INFO - User registered successfully: joth@g.com
+2025-03-07 05:04:13,229 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u fde6940e-d337-41cd-9f33-0bead0585336 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-03-07 05:04:32,675 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'fde6940e-d337-41cd-9f33-0bead0585336', 'status': 'running', 'container_id': '1e41874eac33a4bb4dc8ff03298fdfe9ea78851e608f3adb98c7351ba13f7d72', 'container_ip': '192.168.64.2', 'ports': [2300, 2301]}
+2025-03-07 05:04:33,032 - backendlogger - INFO - Server status updated for subscription: fde6940e-d337-41cd-9f33-0bead0585336
+2025-03-07 05:04:33,364 - backendlogger - INFO - Subscription updated for ID: fde6940e-d337-41cd-9f33-0bead0585336, next billing: 2025-04-06 02:04:33.033163+00:00
+2025-03-07 05:06:12,869 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:06:13,266 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 05:06:13,266 - backendlogger - INFO - Server config update done for subscription: 5d2c1671-b93d-4457-a72d-8f21e01a63b3
+2025-03-07 05:08:23,538 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:08:23,911 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 05:08:23,911 - backendlogger - INFO - Server config update done for subscription: 5d2c1671-b93d-4457-a72d-8f21e01a63b3
+2025-03-07 05:12:40,876 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:12:41,383 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 05:12:41,383 - backendlogger - INFO - Server config update done for subscription: 5d2c1671-b93d-4457-a72d-8f21e01a63b3
+2025-03-07 05:13:59,040 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:13:59,405 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '5d2c1671-b93d-4457-a72d-8f21e01a63b3', 'status': 'configured'}
+2025-03-07 05:13:59,405 - backendlogger - INFO - Server config update done for subscription: 5d2c1671-b93d-4457-a72d-8f21e01a63b3
+2025-03-07 05:18:36,973 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:18:36,982 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:18:37,119 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:18:37,120 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:19:31,868 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:19:32,245 - userroutes - INFO - RegisterUserData(email='human@g.com', password='$2b$12$8BP9AOUVBcONk7dhzYDwg.RxPOAs4vhzVw3GzVPmLJYTEGUNxFsLO', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 05:19:32,248 - backendlogger - WARNING - Attempt to create duplicate user: human@g.com
+2025-03-07 05:19:32,249 - userroutes - ERROR - Failed to create user for email: human@g.com
+2025-03-07 05:19:45,882 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:19:46,203 - userroutes - INFO - RegisterUserData(email='humangasoe@g.com', password='$2b$12$QuUh5W14p8vD2HX7Z87JpOsy5jIkqLd1jzTDcYZ0/jurJ5AJcgIsK', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 05:19:46,254 - userroutes - INFO - User registered successfully: humangasoe@g.com
+2025-03-07 05:19:46,522 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u b00f1d9a-635a-46f4-b7e2-6333f7307a90 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-03-07 05:20:02,275 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'b00f1d9a-635a-46f4-b7e2-6333f7307a90', 'status': 'running', 'container_id': 'e57f10249fd53f63c01887e68d37399ebe4e239ec777ee02eb5ed50fcc84c8ca', 'container_ip': '192.168.64.2', 'ports': [2300, 2301]}
+2025-03-07 05:20:02,474 - backendlogger - INFO - Server status updated for subscription: b00f1d9a-635a-46f4-b7e2-6333f7307a90
+2025-03-07 05:20:02,620 - backendlogger - INFO - Subscription updated for ID: b00f1d9a-635a-46f4-b7e2-6333f7307a90, next billing: 2025-04-06 02:20:02.475078+00:00
+2025-03-07 05:27:14,634 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:27:15,135 - userroutes - INFO - RegisterUserData(email='gojo@satoru.com', password='$2b$12$u.kt9VS///dc4ldvEU0Mn.dMO5qZ06VXc5WDyd/D5K2Ug2SIx2Fsu', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 05:27:15,955 - userroutes - INFO - User registered successfully: gojo@satoru.com
+2025-03-07 05:27:16,327 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u fac21771-e953-4ee4-86ac-80570e5d0917 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-03-07 05:27:41,405 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'fac21771-e953-4ee4-86ac-80570e5d0917', 'status': 'running', 'container_id': '9a59f082a5f546119afa3dc87acdc115484dcdf427440b52587c2c3f769450a0', 'container_ip': '192.168.64.2', 'ports': [2300, 2301]}
+2025-03-07 05:27:41,628 - backendlogger - INFO - Server status updated for subscription: fac21771-e953-4ee4-86ac-80570e5d0917
+2025-03-07 05:27:41,948 - backendlogger - INFO - Subscription updated for ID: fac21771-e953-4ee4-86ac-80570e5d0917, next billing: 2025-04-06 02:27:41.628260+00:00
+2025-03-07 05:29:47,437 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:29:47,758 - userroutes - INFO - RegisterUserData(email='sasuke@n.com', password='$2b$12$bEoPCislzjvhSaYrBxjUPuo/ERiCqhRXygE/xZhyYTSEtjCYQmmhS', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 05:29:47,859 - userroutes - INFO - User registered successfully: sasuke@n.com
+2025-03-07 05:29:48,227 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 7564e45b-af5a-46ef-87fc-c0ba6f9af7c4 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-03-07 05:30:17,348 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '7564e45b-af5a-46ef-87fc-c0ba6f9af7c4', 'status': 'running', 'container_id': 'f08b050ddeeb81cb30eb4c4b283b7598fe73c58ad412716f2824d1392ed1993f', 'container_ip': '192.168.64.2', 'ports': [2300, 2301]}
+2025-03-07 05:30:17,570 - backendlogger - INFO - Server status updated for subscription: 7564e45b-af5a-46ef-87fc-c0ba6f9af7c4
+2025-03-07 05:30:18,670 - backendlogger - INFO - Subscription updated for ID: 7564e45b-af5a-46ef-87fc-c0ba6f9af7c4, next billing: 2025-04-06 02:30:17.570842+00:00
+2025-03-07 05:32:19,298 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:38:06,301 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:42:19,914 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:42:19,918 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:42:20,151 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:42:20,152 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:42:25,423 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:43:15,687 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:43:15,690 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:43:15,732 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:43:15,732 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:43:19,639 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:44:17,649 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:44:17,651 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:44:17,695 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:44:17,697 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:44:45,731 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:44:45,909 - backendlogger - ERROR - Error selecting servers by subscription: syntax error at or near "RETURNING"
+2025-03-07 05:46:46,901 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:46:46,903 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:46:46,943 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:46:46,943 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:46:59,575 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:47:54,813 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:47:54,815 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:47:54,858 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:47:54,859 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:47:57,658 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:48:09,883 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:49:31,886 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:49:31,888 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:49:31,937 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:49:31,937 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:49:44,246 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:49:44,248 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:49:44,292 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:49:44,293 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:49:45,998 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:50:15,883 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:50:15,885 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:50:15,924 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:50:15,925 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:53:12,244 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:53:12,246 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:53:12,285 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:53:12,286 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:53:50,472 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:53:50,476 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:53:50,530 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:53:50,531 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:56:50,909 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:56:50,911 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:56:50,956 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 05:56:50,957 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 05:58:00,263 - backendlogger - INFO - Database connection pool created
+2025-03-07 05:58:00,265 - backendlogger - INFO - All database tables created successfully
+2025-03-07 05:58:00,268 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 06:00:27,545 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 06:00:54,212 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 06:02:35,031 - backendlogger - INFO - Database connection pool created
+2025-03-07 06:02:35,033 - backendlogger - INFO - All database tables created successfully
+2025-03-07 06:02:35,034 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 06:02:53,828 - backendlogger - INFO - Database connection pool created
+2025-03-07 06:02:53,830 - backendlogger - INFO - All database tables created successfully
+2025-03-07 06:02:53,831 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 06:03:15,040 - backendlogger - INFO - Database connection pool created
+2025-03-07 06:03:15,042 - backendlogger - INFO - All database tables created successfully
+2025-03-07 06:03:15,043 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 06:03:40,818 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 06:03:45,859 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 06:03:46,219 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '7564e45b-af5a-46ef-87fc-c0ba6f9af7c4', 'status': 'configured'}
+2025-03-07 06:03:46,219 - backendlogger - INFO - Server config update done for subscription: 7564e45b-af5a-46ef-87fc-c0ba6f9af7c4
+2025-03-07 06:04:31,764 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 06:04:32,100 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '7564e45b-af5a-46ef-87fc-c0ba6f9af7c4', 'status': 'configured'}
+2025-03-07 06:04:32,100 - backendlogger - INFO - Server config update done for subscription: 7564e45b-af5a-46ef-87fc-c0ba6f9af7c4
+2025-03-07 06:05:46,844 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 06:05:47,329 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '7564e45b-af5a-46ef-87fc-c0ba6f9af7c4', 'status': 'configured'}
+2025-03-07 06:05:47,330 - backendlogger - INFO - Server config update done for subscription: 7564e45b-af5a-46ef-87fc-c0ba6f9af7c4
+2025-03-07 06:07:44,947 - backendlogger - INFO - Database connection pool created
+2025-03-07 06:07:44,950 - backendlogger - INFO - All database tables created successfully
+2025-03-07 06:07:44,951 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-03-07 06:09:59,295 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 06:09:59,673 - userroutes - INFO - RegisterUserData(email='aa@g.com', password='$2b$12$Pp22kSxvLwir8WOkb2s0Fe3caC71O0B2eBeO/xRcBmoTlqJO1VXCa', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-03-07 06:09:59,800 - userroutes - INFO - User registered successfully: aa@g.com
+2025-03-07 06:10:00,200 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u ec77f71b-1b9d-4148-9ac2-e0726e898525 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-03-07 06:10:30,850 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'ec77f71b-1b9d-4148-9ac2-e0726e898525', 'status': 'running', 'container_id': '544cf06eb52a6b530e573699b703a5c14ccd25ff4c6e0b09cc5d0edf200ccbb2', 'container_ip': '192.168.64.2', 'ports': [2302, 2303]}
+2025-03-07 06:10:31,131 - backendlogger - INFO - Server status updated for subscription: ec77f71b-1b9d-4148-9ac2-e0726e898525
+2025-03-07 06:10:31,352 - backendlogger - INFO - Subscription updated for ID: ec77f71b-1b9d-4148-9ac2-e0726e898525, next billing: 2025-04-06 03:10:31.131427+00:00
+2025-03-07 06:11:07,670 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 06:11:17,242 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-03-07 06:11:18,842 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'ec77f71b-1b9d-4148-9ac2-e0726e898525', 'status': 'configured'}
+2025-03-07 06:11:18,842 - backendlogger - INFO - Server config update done for subscription: ec77f71b-1b9d-4148-9ac2-e0726e898525
+2025-06-04 13:54:13,766 - backendlogger - INFO - Database connection pool created
+2025-06-04 13:54:14,049 - backendlogger - INFO - All database tables created successfully
+2025-06-04 13:54:14,051 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 13:55:15,420 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:55:15,854 - userroutes - INFO - RegisterUserData(email='petern@g.com', password='$2b$12$1eLOcrtaBLVqApoOsBBi7uEcUstk00OUHK1a5PZX4ttMjlyE2k2Cu', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-04 13:55:16,873 - userroutes - INFO - User registered successfully: petern@g.com
+2025-06-04 13:55:17,773 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u e3bb664b-ba6b-49c9-9b92-5566c9b5a308 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-04 13:55:47,992 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'e3bb664b-ba6b-49c9-9b92-5566c9b5a308', 'status': 'running', 'container_id': '7797f5457bc4208b75a8afbf6bd85fd887b734156967600d33a6c706eb3abe57', 'container_ip': '192.168.112.2', 'ports': [2300, 2301]}
+2025-06-04 13:55:48,148 - backendlogger - INFO - Server status updated for subscription: e3bb664b-ba6b-49c9-9b92-5566c9b5a308
+2025-06-04 13:55:48,269 - backendlogger - INFO - Subscription updated for ID: e3bb664b-ba6b-49c9-9b92-5566c9b5a308, next billing: 2025-07-04 10:55:48.148712+00:00
+2025-06-04 13:56:01,229 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:56:10,166 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:56:14,599 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'e3bb664b-ba6b-49c9-9b92-5566c9b5a308', 'status': 'configured'}
+2025-06-04 13:56:14,599 - backendlogger - INFO - Server config update done for subscription: e3bb664b-ba6b-49c9-9b92-5566c9b5a308
+2025-06-04 13:56:23,918 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:56:40,056 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:56:41,000 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'e3bb664b-ba6b-49c9-9b92-5566c9b5a308', 'status': 'configured'}
+2025-06-04 13:56:41,001 - backendlogger - INFO - Server config update done for subscription: e3bb664b-ba6b-49c9-9b92-5566c9b5a308
+2025-06-04 13:56:45,645 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:57:22,380 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:57:24,415 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'e3bb664b-ba6b-49c9-9b92-5566c9b5a308', 'status': 'configured'}
+2025-06-04 13:57:24,415 - backendlogger - INFO - Server config update done for subscription: e3bb664b-ba6b-49c9-9b92-5566c9b5a308
+2025-06-04 13:58:09,586 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:58:09,954 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'e3bb664b-ba6b-49c9-9b92-5566c9b5a308', 'status': 'configured'}
+2025-06-04 13:58:09,954 - backendlogger - INFO - Server config update done for subscription: e3bb664b-ba6b-49c9-9b92-5566c9b5a308
+2025-06-04 13:58:15,037 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:58:57,383 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 13:58:57,783 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'e3bb664b-ba6b-49c9-9b92-5566c9b5a308', 'status': 'configured'}
+2025-06-04 13:58:57,784 - backendlogger - INFO - Server config update done for subscription: e3bb664b-ba6b-49c9-9b92-5566c9b5a308
+2025-06-04 14:03:13,871 - backendlogger - INFO - Database connection pool created
+2025-06-04 14:03:13,918 - backendlogger - INFO - All database tables created successfully
+2025-06-04 14:03:13,919 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 14:04:47,230 - backendlogger - INFO - Database connection pool created
+2025-06-04 14:04:47,232 - backendlogger - INFO - All database tables created successfully
+2025-06-04 14:04:47,233 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 14:05:29,617 - backendlogger - INFO - Database connection pool created
+2025-06-04 14:05:29,619 - backendlogger - INFO - All database tables created successfully
+2025-06-04 14:05:29,620 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 14:06:41,638 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 14:06:42,007 - userroutes - INFO - RegisterUserData(email='gmoney@c.com', password='$2b$12$Fe2MfiOqNHb88qwvpQCFOufuH4j3aKOT0cXOen5dr2i5PBGEthWHu', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-04 14:06:42,645 - userroutes - INFO - User registered successfully: gmoney@c.com
+2025-06-04 14:06:43,155 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u dfd00ba8-a2fd-4f26-8509-c89c4474e997 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-04 14:07:20,646 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'dfd00ba8-a2fd-4f26-8509-c89c4474e997', 'status': 'running', 'container_id': '6997c1b08b41d0c5294536f244517c076c99686f91e0f438564a294283397e59', 'container_ip': '192.168.128.2', 'ports': [2302, 2303]}
+2025-06-04 14:07:20,859 - backendlogger - INFO - Server status updated for subscription: dfd00ba8-a2fd-4f26-8509-c89c4474e997
+2025-06-04 14:07:21,447 - backendlogger - INFO - Subscription updated for ID: dfd00ba8-a2fd-4f26-8509-c89c4474e997, next billing: 2025-07-04 11:07:20.859505+00:00
+2025-06-04 14:08:38,993 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 14:08:55,261 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 14:09:00,708 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'dfd00ba8-a2fd-4f26-8509-c89c4474e997', 'status': 'configured'}
+2025-06-04 14:09:00,709 - backendlogger - INFO - Server config update done for subscription: dfd00ba8-a2fd-4f26-8509-c89c4474e997
+2025-06-04 14:27:36,577 - backendlogger - INFO - Database connection pool created
+2025-06-04 14:27:36,581 - backendlogger - INFO - All database tables created successfully
+2025-06-04 14:27:36,582 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 14:27:52,953 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 14:27:53,377 - userroutes - INFO - RegisterUserData(email='io@io.com', password='$2b$12$El/ERJvNFYQXfeSprjHKCOVQ1x/MGEH6n5N1fwsRZRdaR0gpluPpO', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-04 14:27:54,324 - userroutes - INFO - User registered successfully: io@io.com
+2025-06-04 14:27:54,726 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u be3182a5-584f-444f-b150-68b4f75d7817 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-04 14:28:23,452 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'be3182a5-584f-444f-b150-68b4f75d7817', 'status': 'running', 'container_id': '7f364f9fe03d0ba9c096dce272e599efb01bee085fe6962dd08b6f6b13d8f76a', 'container_ip': '192.168.144.2', 'ports': [2300, 2301]}
+2025-06-04 14:28:23,627 - backendlogger - INFO - Server status updated for subscription: be3182a5-584f-444f-b150-68b4f75d7817
+2025-06-04 14:28:23,982 - backendlogger - INFO - Subscription updated for ID: be3182a5-584f-444f-b150-68b4f75d7817, next billing: 2025-07-04 11:28:23.627543+00:00
+2025-06-04 14:31:55,606 - backendlogger - INFO - Database connection pool created
+2025-06-04 14:31:55,608 - backendlogger - INFO - All database tables created successfully
+2025-06-04 14:31:55,609 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 14:32:41,652 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 14:32:41,994 - userroutes - INFO - RegisterUserData(email='furin@g.com', password='$2b$12$dHovn2DeLYzEK13r48FaaeGdmNWQBhOXXFFNnfugGI6pOeoH0984u', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-04 14:32:42,103 - userroutes - INFO - User registered successfully: furin@g.com
+2025-06-04 14:32:42,381 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 2585c4c9-e5d2-4fbf-bde0-7159029814d1 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-04 14:33:06,348 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '2585c4c9-e5d2-4fbf-bde0-7159029814d1', 'status': 'running', 'container_id': '05f14e5865a38d26d1dcd2942654fd387bb47124d9da156d2201ef46ba38199e', 'container_ip': '192.168.160.2', 'metrics': {'username': '2585c4c9-e5d2-4fbf-bde0-7159029814d1', 'password': 'EOiIMMYTdGGP', 'mount_path': '/home/2585c4c9-e5d2-4fbf-bde0-7159029814d1/valheim', 'server_path': '/srv/allservers/2585c4c9-e5d2-4fbf-bde0-7159029814d1'}, 'ports': [2300, 2301]}
+2025-06-04 14:33:06,489 - backendlogger - INFO - Server status updated for subscription: 2585c4c9-e5d2-4fbf-bde0-7159029814d1
+2025-06-04 14:33:06,578 - backendlogger - INFO - Subscription updated for ID: 2585c4c9-e5d2-4fbf-bde0-7159029814d1, next billing: 2025-07-04 11:33:06.489567+00:00
+2025-06-04 14:34:29,681 - backendlogger - INFO - Database connection pool created
+2025-06-04 14:34:29,683 - backendlogger - INFO - All database tables created successfully
+2025-06-04 14:34:29,684 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 15:32:20,817 - backendlogger - INFO - Database connection pool created
+2025-06-04 15:32:20,819 - backendlogger - INFO - All database tables created successfully
+2025-06-04 15:32:20,820 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 15:32:35,528 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 15:32:35,880 - userroutes - INFO - RegisterUserData(email='abapreach@gmail.com', password='$2b$12$ehuzR7heuDElW6iSqv5VzuEEPql7RCGne.37JEo85fJE.p5.CQHsO', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-04 15:32:36,023 - userroutes - INFO - User registered successfully: abapreach@gmail.com
+2025-06-04 15:32:36,347 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 69fc1161-a668-4875-a254-5e26eb52dc1e -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-04 15:32:56,426 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '69fc1161-a668-4875-a254-5e26eb52dc1e', 'status': 'running', 'container_id': '9d5a611a370985c9cda5b6d96c0d963b66cd3eafc6af1fe2a7aa621d595cfd7e', 'container_ip': '192.168.176.2', 'metrics': {'username': '69fc1161-a668-4875-a254-5e26eb52dc1e', 'password': 'N5huQIN0hVkV', 'mount_path': '/home/69fc1161-a668-4875-a254-5e26eb52dc1e/valheim', 'server_path': '/srv/allservers/69fc1161-a668-4875-a254-5e26eb52dc1e'}, 'ports': [2300, 2301]}
+2025-06-04 15:32:56,736 - backendlogger - INFO - Server status updated for subscription: 69fc1161-a668-4875-a254-5e26eb52dc1e
+2025-06-04 15:32:56,902 - backendlogger - INFO - Subscription updated for ID: 69fc1161-a668-4875-a254-5e26eb52dc1e, next billing: 2025-07-04 12:32:56.736268+00:00
+2025-06-04 15:38:11,714 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 15:38:12,046 - userroutes - INFO - RegisterUserData(email='gmoney11@c.com', password='$2b$12$Wy.mknDIj43fpagBwx5HZeOk9Y09SAcAQvAg06zvTPgeWRivPGnQm', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='996c903a-a19e-4b1a-aecf-59ed985cb32e')
+2025-06-04 15:38:12,185 - userroutes - INFO - User registered successfully: gmoney11@c.com
+2025-06-04 15:38:12,531 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u c33bce1e-bdf7-4b4f-98a6-c8a2dd938407 -p 2456 2457 -g valheim -m 6.0g -c 4.0 start
+2025-06-04 15:38:32,534 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'c33bce1e-bdf7-4b4f-98a6-c8a2dd938407', 'status': 'running', 'container_id': 'd269af5da31ceb607be507f881d80a100e379adc280b6f69cacef2331bae6886', 'container_ip': '192.168.192.2', 'metrics': {'username': 'c33b', 'password': '1E09LNk0Nemc', 'mount_path': '/home/c33bce1e-bdf7-4b4f-98a6-c8a2dd938407/valheim', 'server_path': '/srv/allservers/c33bce1e-bdf7-4b4f-98a6-c8a2dd938407'}, 'ports': [2300, 2301]}
+2025-06-04 15:38:32,800 - backendlogger - INFO - Server status updated for subscription: c33bce1e-bdf7-4b4f-98a6-c8a2dd938407
+2025-06-04 15:38:33,010 - backendlogger - INFO - Subscription updated for ID: c33bce1e-bdf7-4b4f-98a6-c8a2dd938407, next billing: 2025-07-04 12:38:32.800777+00:00
+2025-06-04 20:37:25,374 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 302, in connect_check_health
+    await self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect()
+    )
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/retry.py", line 71, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 759, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib64/python3.13/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 1174, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+        ', '.join(str(exc) for exc in exceptions)))
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 46, in connect
+    if await redis_Client.json().get("pending_servers", "$") is None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/client.py", line 673, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1143, in get_connection
+    await self.ensure_connection(connection)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 1176, in ensure_connection
+    await connection.connect()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 310, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-06-04 20:42:41,532 - backendlogger - INFO - Database connection pool created
+2025-06-04 20:42:41,704 - backendlogger - INFO - All database tables created successfully
+2025-06-04 20:42:41,705 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 20:45:08,887 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 20:51:50,340 - backendlogger - INFO - Database connection pool created
+2025-06-04 20:51:50,342 - backendlogger - INFO - All database tables created successfully
+2025-06-04 20:51:50,343 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 20:52:31,418 - backendlogger - INFO - Database connection pool created
+2025-06-04 20:52:31,420 - backendlogger - INFO - All database tables created successfully
+2025-06-04 20:52:31,421 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 20:54:20,097 - backendlogger - INFO - Database connection pool created
+2025-06-04 20:54:20,099 - backendlogger - INFO - All database tables created successfully
+2025-06-04 20:54:20,100 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 20:54:27,526 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:03:58,448 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:03:58,450 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:03:58,452 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:04:12,493 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:05:06,050 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:05:06,052 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:05:06,053 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:05:10,072 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:06:27,240 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:06:27,242 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:06:27,244 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:08:18,129 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:08:18,131 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:08:18,132 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:08:40,472 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:10:45,726 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:10:45,728 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:10:45,729 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:11:06,297 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:13:09,930 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:13:09,933 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:13:09,934 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:13:20,334 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:17:43,754 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:17:43,756 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:17:43,757 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:18:35,906 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:18:35,908 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:18:35,909 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:18:39,997 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:19:23,132 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:19:23,134 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:19:23,135 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:19:35,930 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:20:00,201 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:20:00,204 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:20:00,205 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:20:04,236 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:20:53,171 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:20:53,173 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:20:53,174 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:20:57,125 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:23:11,351 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:23:11,354 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:23:11,355 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:23:14,627 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:23:29,743 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:23:29,745 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:23:29,746 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:23:33,109 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:28:21,908 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:28:21,910 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:28:21,911 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:28:25,636 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:29:14,430 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:29:37,712 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:29:37,715 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:29:37,716 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:30:32,019 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:30:32,021 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:30:32,022 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:30:35,103 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:32:56,230 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:32:56,232 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:32:56,233 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:33:05,039 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:33:45,932 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:33:45,935 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:33:45,936 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:33:50,384 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:34:18,543 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:34:22,093 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'c33bce1e-bdf7-4b4f-98a6-c8a2dd938407', 'status': 'configured'}
+2025-06-04 21:34:22,096 - backendlogger - INFO - Server config update done for subscription: c33bce1e-bdf7-4b4f-98a6-c8a2dd938407
+2025-06-04 21:34:23,246 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:34:23,679 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'c33bce1e-bdf7-4b4f-98a6-c8a2dd938407', 'status': 'configured'}
+2025-06-04 21:34:23,679 - backendlogger - INFO - Server config update done for subscription: c33bce1e-bdf7-4b4f-98a6-c8a2dd938407
+2025-06-04 21:34:26,584 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:36:34,831 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:36:34,833 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:36:34,835 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:36:37,680 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:50:45,071 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:50:45,073 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:50:45,074 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:53:34,707 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:53:34,709 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:53:34,710 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:53:40,659 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:54:28,173 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:54:28,181 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:54:28,184 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:54:32,725 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:55:35,955 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:55:35,957 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:55:35,958 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:59:23,339 - backendlogger - INFO - Database connection pool created
+2025-06-04 21:59:23,342 - backendlogger - INFO - All database tables created successfully
+2025-06-04 21:59:23,343 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-04 21:59:26,427 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 21:59:34,707 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-04 22:01:43,969 - backendlogger - INFO - Registered provisioner for game: valheim

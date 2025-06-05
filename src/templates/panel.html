@@ -1,42 +1,43 @@
     <!-- Navigation Tabs -->
     <div class="mb-8">
         <nav class="flex space-x-8 border-b border-gray-700">
-            <button hx-get="/configure?subscription_id={{ subscription_id }}" hx-target="#content-area"
-            hx-trigger="load click"
-            hx-indicator="#panel-spinner"
-            hx-disabled-elt="this"
-                    class="tab-active py-2 px-1 font-medium text-sm transition-colors duration-200">
+            <button
+                    hx-get="/configure?subscription_id={{ subscription_id }}"
+                    hx-target="#content-area"
+                    hx-trigger="load,click"
+                    hx-indicator="#panel-spinner"
+                    hx-disabled-elt="this"
+                    class="tab-active py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer">
                 Configuration
             </button>
-            <button hx-get="/servers" hx-target="#content-area"
-                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200">
-                My Servers
-            </button>
-            <button hx-get="/console" hx-target="#content-area"
-                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200">
-                Console
-            </button>
-            <button hx-get="/backups" hx-target="#content-area"
-                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200">
-                Backups
+            <button
+                    hx-get="/mods_n_backups?subscription_id={{ subscription_id }}"
+                    hx-target="#content-area"
+                    hx-trigger="click"
+                    hx-indicator="#panel-spinner"
+                    hx-disabled-elt="this"
+                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer">
+                Mods and Backups
             </button>
             <button hx-get="/monitoring" hx-target="#content-area"
-                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200">
+                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer">
                 Monitoring
             </button>
             <button hx-get="/billing" hx-target="#content-area"
-                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200">
+                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer">
                 Billing
             </button>
         </nav>
     </div>
        <!-- Content Area -->
-    <section class="flex justify-center">
-        <div id="content-area">
+    <section class=" flex justify-center w-full flex-col">
+        <div id="content-area" class="w-full">
         </div>
+        <div class="flex justify-center ">
          <div class="loading-blocks ml-2 htmx-indicator" id="panel-spinner">
                 <div class="loading-block bg-gray-400"></div>
                 <div class="loading-block bg-gray-400"></div>
                 <div class="loading-block bg-gray-400"></div>
+        </div>
         </div>
     </section>

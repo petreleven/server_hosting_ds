@@ -26,7 +26,7 @@ function updateCountdown(expiresAtStr, countdownElementId, status) {
         const seconds = Math.floor((diff / 1000) % 60);
 
         countdownElement.textContent =
-          `${hours}h ${minutes < 10 ? '0' : ''}${minutes}m ${seconds < 10 ? '0' : ''}${seconds}s`;
+            `${hours}h ${minutes < 10 ? '0' : ''}${minutes}m ${seconds < 10 ? '0' : ''}${seconds}s`;
 
     }
 
@@ -36,11 +36,9 @@ function updateCountdown(expiresAtStr, countdownElementId, status) {
 
 // Handle HTMX content replacement
 document.body.addEventListener('htmx:afterSwap', (event) => {
-    console.log("triggered")
     // Only proceed if a server card was updated
     const newContent = event.target;
     const countdowns = newContent.querySelectorAll('[id^="countdown-"]');
-    console.log(countdowns)
 
     countdowns.forEach((el) => {
         const id = el.id;

@@ -17,7 +17,6 @@ class AbstractProvisioner(ABC):
     @abstractmethod
     async def job_update_config(
         self,
-        server_id: str,
         game_server_ip: str,
         game_name: str,
         subscription_id: str,
@@ -26,7 +25,6 @@ class AbstractProvisioner(ABC):
         """Update the configuration for a running game server.
 
         Args:
-            server_id: The ID of the server in the database
             game_server_ip: The IP address of the game server
             game_name: The name of the game
             subscription_id: The subscription ID associated with the server
