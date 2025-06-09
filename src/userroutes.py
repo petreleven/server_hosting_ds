@@ -8,7 +8,7 @@ and server management functionality.
 import datetime
 import json
 import logging
-from typing import Dict, Tuple, List, Any
+from typing import Dict, Optional, Tuple, List, Any
 from urllib.parse import parse_qs
 
 import asyncpg
@@ -325,9 +325,9 @@ async def dashboardservers():
         )
 
 
-@userblueprint.route("/server-status/<string:subscription_id>", methods=["GET", "POST"])
+@userblueprint.route("/subscription-status/<string:subscription_id>", methods=["GET", "POST"])
 @login_required
-async def server_status(subscription_id: str):
+async def subscription_status(subscription_id: str):
     """
     Server status route.
 
@@ -359,6 +359,19 @@ async def server_status(subscription_id: str):
         return await render_template(
             "server_single.html", current_sub=None, error="Failed to load server status"
         )
+
+@userblueprint.route("/server-status", methods=["GET", "POST"])
+@login_required
+async def server_status():
+    args = request.args
+    subscription_id = args.get("subscription_id","")
+    server, err = await db.db_select_server_by_subscription(subscription_id)
+    if not server:
+        return "Error getting server status"
+
+    data = {"status":server.get("status","")}
+    return data
+
 
 
 @userblueprint.route("/panel", methods=["GET", "POST"])
@@ -399,8 +412,17 @@ async def configure():
         provisioner = MainProvisioner()
         db_cfg: Dict[str, Any] = json.loads(record.get("config", "{}"))
         config = await provisioner.generate_config_view_schema(db_cfg, subscription_id)
+        ip_address = record.get("ip_address", None)
+        ports = record.get("ports", "")
+        main_port = ports.split(",")[0]
 
-        return await render_template("configure.html", config=config, subscription_id=subscription_id)
+        return await render_template(
+            "configure.html",
+            ip_address=ip_address,
+            main_port=main_port,
+            config=config,
+            subscription_id=subscription_id,
+        )
     except json.JSONDecodeError:
         logger.error(f"Invalid JSON config for subscription: {subscription_id}")
         return await render_template(
@@ -419,13 +441,16 @@ async def save_config():
     provisioner = MainProvisioner()
     subscription_id = request.args.get("subscription_id", "")
     error_html = "<p>Error updating the configuration</p>"
-    success_html="<p>Success</p>"
+    success_html = "<p>Success</p>"
 
     server, err = await db.db_select_server_by_subscription(
         subscription_id=subscription_id
     )
+
     def log_error(err):
-        logger.error (f"Error when updating configuration server:{server} of subscription_id:{subscription_id} err:{err} ")
+        logger.error(
+            f"Error when updating configuration server:{server} of subscription_id:{subscription_id} err:{err} "
+        )
 
     if not server or not subscription_id:
         log_error(err)
@@ -441,7 +466,7 @@ async def save_config():
         log_error(err)
         return error_html
 
-    game,err = await db.db_select_game_by_id(str(plan.get("game_id", "")))
+    game, err = await db.db_select_game_by_id(str(plan.get("game_id", "")))
     if not game or not game.get("game_name", None):
         log_error(err)
         return error_html
@@ -479,18 +504,157 @@ async def save_config():
 
     return success_html
 
+
 @userblueprint.route("/mods_n_backups", methods=["GET"])
 @login_required
 async def mods_n_backups():
     subscription_id = request.args.get("subscription_id", "")
     server, err = await db.db_select_server_by_subscription(subscription_id)
     if not server:
-        return await render_template("mods_n_backups.html",
-                                     sftp_username=None,
-                                     sftp_password=None)
+        return await render_template(
+            "mods_n_backups.html", sftp_username=None, sftp_password=None
+        )
 
     sftp_username = server.get("sftp_username", "")
     sftp_password = server.get("sftp_password", "")
-    return await render_template("mods_n_backups.html",
-                                 sftp_username=sftp_username,
-                                 sftp_password=sftp_password)
+    return await render_template(
+        "mods_n_backups.html", sftp_username=sftp_username, sftp_password=sftp_password
+    )
+
+
+@userblueprint.route("/monitoring", methods=["GET"])
+@login_required
+async def monitoring():
+    subscription_id = request.args.get("subscription_id", "")
+    if not subscription_id:
+        return "Missing subscription_id", 400
+
+    # Fetch server linked to this subscription
+    res = await db.db_select_server_by_subscription(subscription_id)
+    server: Optional[asyncpg.Record] = res[0] if res else None
+
+    # Fetch subscription
+    res = await db.db_select_subscription_by_id(subscription_id)
+    subscription: Optional[asyncpg.Record] = res[0] if res else None
+
+    if not server or not subscription:
+        return "Invalid subscription or server not found", 404
+
+    # CPU/Memory usage — static placeholders (replace with actual call later)
+    cpu_usage_percent = 43  # Example static value
+    memory_usage_percent = 68  # Example static value
+
+    # Ports → comma-separated string
+    server_ports = []
+    if server.get("ports"):
+        server_ports = [
+            port.strip() for port in server["ports"].split(",") if port.strip()
+        ]
+
+    # Server running status
+    server_status = server["status"]
+
+    return await render_template(
+        "monitoring.html",
+        subscription_id=subscription_id,
+        cpu_usage_percent=cpu_usage_percent,
+        memory_usage_percent=memory_usage_percent,
+        server_ip=server["ip_address"],
+        server_ports=server_ports,  # List of ports
+        server_status=server_status,
+        subscription=subscription,
+    )
+
+
+@userblueprint.route("/restart_server", methods=["POST"])
+@login_required
+async def restart_server():
+    redis_Client = db.get_redis_client()
+    subscription_id = request.args.get("subscription_id", "")
+    # Enqueue restart action to Redis queue here
+    server, err = await db.db_select_server_by_subscription(subscription_id)
+    if not server:
+        return "Error when restarting server"
+    subsciption, err = await db.db_select_subscription_by_id(subscription_id)
+    if not subsciption:
+        return "Error when restarting server"
+    plan, err = await db.db_select_plan_by_id(str(subsciption.get("plan_id", "")))
+    if not plan:
+        return "Error when restarting server"
+    game, err = await db.db_select_game_by_id(str(plan.get("game_id", "")))
+    if not game:
+        return "Error when restarting server"
+    game_name = game.get("game_name", "")
+    await db.db_update_server_status(
+        status="restarting",
+        docker_container_id=server.get("docker_container_id", ""),
+        subscription_id=subscription_id,
+        ports=server.get("ports", ""),
+    )
+    ip = server.get("ip_address", "")
+    queueName = f"badger:pending:{ip}"
+    payload = f"python3 setup_server.py -u {subscription_id} -g  {game_name} restart"
+    await redis_Client.lpush(queueName, payload)
+    return "Restarting"
+
+@userblueprint.route("/backup_server", methods=["POST"])
+@login_required
+async def backup_server():
+    redis_Client = db.get_redis_client()
+    subscription_id = request.args.get("subscription_id", "")
+    # Enqueue restart action to Redis queue here
+    server, err = await db.db_select_server_by_subscription(subscription_id)
+    if not server:
+        return "Error when backing server"
+    subsciption, err = await db.db_select_subscription_by_id(subscription_id)
+    if not subsciption:
+        return "Error when backing server"
+    plan, err = await db.db_select_plan_by_id(str(subsciption.get("plan_id", "")))
+    if not plan:
+        return "Error when backing server"
+    game, err = await db.db_select_game_by_id(str(plan.get("game_id", "")))
+    if not game:
+        return "Error when backing server"
+    game_name = game.get("game_name", "")
+    await db.db_update_server_status(
+        status="backing up",
+        docker_container_id=server.get("docker_container_id", ""),
+        subscription_id=subscription_id,
+        ports=server.get("ports", ""),
+    )
+    ip = server.get("ip_address", "")
+    queueName = f"badger:pending:{ip}"
+    payload = f"python3 setup_server.py -u {subscription_id} -g  {game_name} backup"
+    await redis_Client.lpush(queueName, payload)
+    return "backing up"
+
+@userblueprint.route("/stop_server", methods=["POST"])
+@login_required
+async def stop_server():
+    redis_Client = db.get_redis_client()
+    subscription_id = request.args.get("subscription_id", "")
+    # Enqueue restart action to Redis queue here
+    server, err = await db.db_select_server_by_subscription(subscription_id)
+    if not server:
+        return "Error when stopping server"
+    subsciption, err = await db.db_select_subscription_by_id(subscription_id)
+    if not subsciption:
+        return "Error when stopping server"
+    plan, err = await db.db_select_plan_by_id(str(subsciption.get("plan_id", "")))
+    if not plan:
+        return "Error when stopping server"
+    game, err = await db.db_select_game_by_id(str(plan.get("game_id", "")))
+    if not game:
+        return "Error when stopping server"
+    game_name = game.get("game_name", "")
+    await db.db_update_server_status(
+        status="stopping",
+        docker_container_id=server.get("docker_container_id", ""),
+        subscription_id=subscription_id,
+        ports=server.get("ports", ""),
+    )
+    ip = server.get("ip_address", "")
+    queueName = f"badger:pending:{ip}"
+    payload = f"python3 setup_server.py -u {subscription_id} -g  {game_name} stop"
+    await redis_Client.lpush(queueName, payload)
+    return "stopping"

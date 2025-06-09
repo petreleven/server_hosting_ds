@@ -1,6 +1,108 @@
-<form class="glass-card shadow-lg rounded-xl p-8 space-y-8">
-    <label for="sftp_username">SFTP username</label>
-    <input name="sftp_username" id="sftp_username" value="{{ sftp_username }}" disabled>
-     <label for="sftp_password">SFTP password</label>
-    <input name="sftp_password" id="sftp_password" value="{{ sftp_password }}" disabled>
-</form>
+<!-- Wrapper Container -->
+<div class="max-w-4xl mx-auto px-4 py-8 space-y-12 text-white">
+  <!-- Intro Banner -->
+  <div class="bg-emerald-900/40 border border-emerald-500 backdrop-blur-md p-4 rounded-xl text-center shadow-md">
+    <p class="text-sm md:text-base text-emerald-200">
+      <strong class="text-emerald-300">Heads up:</strong> Mods and backups are handled via <span class="font-semibold">SFTP</span>.
+      Below are your connection details <em>and a step-by-step guide</em> on how to connect using FileZilla.
+    </p>
+  </div>
+  <!-- SFTP Credentials Card -->
+  <div class="bg-gray-900/90 border border-emerald-600 rounded-xl shadow-xl backdrop-blur-lg overflow-hidden">
+    <div class="px-6 py-4 border-b border-emerald-600 bg-gray-900/95">
+      <h2 class="text-xl font-semibold text-emerald-400">🔐 Your SFTP Connection Details</h2>
+    </div>
+    <div class="px-6 py-8 space-y-6">
+      <!-- Input Row Template -->
+      <div class="relative">
+        <label for="sftp_username" class="block text-sm font-medium text-gray-300 mb-1">Username</label>
+        <span id="sftp_username"
+          class="ml-2 select-all cursor-pointer border border-emerald-500 rounded-md px-2 py-1 text-sm bg-gray-800 text-emerald-300 shadow-sm hover:bg-gray-700 transition">
+          {{ sftp_username }}
+        </span>
+        <button onclick="copyToClipboard('sftp_username')" class="absolute top-7 right-3 text-sm text-emerald-300 hover:text-emerald-400 transition" id="sftp_username_btn" title="Copy">
+        Copy
+        </button>
+      </div>
+      <div class="relative">
+        <label for="sftp_password" class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+        <span id="sftp_password"
+        class="ml-2 select-all cursor-pointer border border-emerald-500 rounded-md px-2 py-1 text-sm bg-gray-800 text-emerald-300 shadow-sm hover:bg-gray-700 transition">
+          {{ sftp_password }}
+        </span>
+        <button onclick="copyToClipboard('sftp_password')" class="absolute top-7 right-3 text-sm text-emerald-300 hover:text-emerald-400 transition" id="sftp_password_btn" title="Copy">
+        Copy
+        </button>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="relative">
+          <label for="ip_address" class="block text-sm font-medium text-gray-300 mb-1">Host IP</label>
+          <span id="sftp_ip_address"
+          class="ml-2 select-all cursor-pointer border border-emerald-500 rounded-md px-2 py-1 text-sm bg-gray-800 text-emerald-300 shadow-sm hover:bg-gray-700 transition">
+            0.0.0.0
+          </span>
+          <button onclick="copyToClipboard('sftp_ip_address')" class="absolute top-7 right-3 text-sm text-emerald-300 hover:text-emerald-400 transition" id="sftp_ip_address_btn" title="Copy">
+          Copy
+          </button>
+        </div>
+        <div class="relative">
+          <label for="sftp_port" class="block text-sm font-medium text-gray-300 mb-1">Port</label>
+          <span id="sftp_port" class="ml-2 select-all cursor-pointer border border-emerald-500 rounded-md px-2 py-1 text-sm bg-gray-800 text-emerald-300 shadow-sm hover:bg-gray-700 transition">
+            0.0.0.0
+          </span>
+          <button onclick="copyToClipboard('sftp_port')" class="absolute top-7 right-3 text-sm text-emerald-300 hover:text-emerald-400 transition" id="sftp_port_btn" title="Copy">
+          Copy
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FileZilla Guide (unchanged) -->
+  <div class="bg-gray-800/80 border border-gray-600 rounded-xl shadow-md backdrop-blur-md">
+    <div class="px-6 py-4 border-b border-gray-600 bg-gray-800">
+      <h2 class="text-xl font-semibold text-emerald-300">💡 How to Connect via FileZilla</h2>
+    </div>
+    <div class="px-6 py-6 max-h-[70vh] overflow-y-auto text-gray-200 space-y-6 pr-2">
+      <ol class="list-decimal list-inside space-y-5 text-sm">
+        <li>
+          <strong>Download FileZilla:</strong> Go to
+          <a href="https://filezilla-project.org/" target="_blank" class="text-emerald-400 underline">filezilla-project.org</a>
+          and install the client.
+        </li>
+        <li>
+          <strong>Open Site Manager:</strong> Click <em>“File” → “Site Manager…”</em> or press <kbd>Ctrl+S</kbd>.
+        </li>
+        <li>
+          <strong>Create a New Site:</strong> Click <em>“New Site”</em> and name it <code class="bg-gray-700 px-1 rounded">MyGameServer</code>.
+        </li>
+        <li>
+          <strong>Configure the Connection:</strong>
+          <ul class="list-disc list-inside ml-4 mt-2 space-y-1 text-gray-400">
+            <li>Protocol: <code class="bg-gray-700 px-1 rounded">SFTP – SSH File Transfer Protocol</code></li>
+            <li>Host: <code class="bg-gray-700 px-1 rounded">0.0.0.0</code></li>
+            <li>Port: <code class="bg-gray-700 px-1 rounded">2222</code></li>
+          </ul>
+        </li>
+        <li>
+          <strong>Logon Type:</strong> Choose <code class="bg-gray-700 px-1 rounded">Normal</code>. Then fill in:
+          <ul class="list-disc list-inside ml-4 mt-2 space-y-1 text-gray-400">
+            <li>User: <code class="bg-gray-700 px-1 rounded">{{ sftp_username }}</code></li>
+            <li>Password: (from above)</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Connect:</strong> Click <em>“Connect”</em> and allow FileZilla to log in.
+        </li>
+        <li>
+          <strong>Navigate Files:</strong> Local files are on the left; server files on the right. Drag-and-drop to transfer.
+        </li>
+        <li>
+          <strong>(Optional)</strong> Save password via the <em>“Advanced”</em> tab for quicker logins.
+        </li>
+      </ol>
+      <p class="mt-4 text-xs text-gray-500 italic">
+        Having trouble? Double-check the IP, port, and credentials. Ensure firewall rules allow port 2222.
+      </p>
+    </div>
+  </div>
+</div>

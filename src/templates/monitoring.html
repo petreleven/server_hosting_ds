@@ -1,0 +1,147 @@
+<div class="w-full max-w-5xl mx-auto space-y-8 py-6">
+  <!-- Actions + Status -->
+  <div
+    class="bg-gray-900/80 backdrop-blur-md border border-emerald-700 rounded-xl shadow-lg p-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4"
+  >
+    <div class="flex items-center space-x-2">
+      <span class="text-lg font-bold text-emerald-400">Server Status:</span>
+      {% if server_status == 'running' %}
+      <span
+        class="px-2 py-1 rounded bg-green-600 text-white text-sm"
+        id="server-status"
+      >
+        Running
+      </span>
+      {% elif server_status == 'stopped' %}
+      <span
+        class="px-2 py-1 rounded bg-red-600 text-white text-sm"
+        id="server-status"
+      >
+        Stopped
+      </span>
+      {% else%}
+      <span
+        class="px-2 py-1 rounded bg-yellow-600 text-white text-sm"
+        id="server-status"
+      >
+        {{server_status | capitalize}}
+      </span>
+      {% endif %}
+    </div>
+    <div class="flex space-x-3">
+      <button
+        hx-post="/restart_server?subscription_id={{ subscription_id }}"
+        hx-target="#server-status"
+        hx-trigger="click"
+        onclick="restartServer()"
+        id="restart-button"
+        class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded shadow"
+      >
+        Restart
+      </button>
+      <button
+        onclick="backupServer()"
+        hx-post="/backup_server?subscription_id={{ subscription_id }}"
+        hx-target="#server-status"
+        hx-trigger="click"
+        id="backup-button"
+        class="bg-orange-700 hover:bg-orange-800 text-white font-semibold py-2 px-4 rounded shadow"
+      >
+        Backup
+      </button>
+      <button
+        hx-post="/stop_server?subscription_id={{ subscription_id }}"
+        hx-target="#server-status"
+        hx-trigger="click"
+        onclick="stopServer()"
+        id="stop-button"
+        class="bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-4 rounded shadow"
+      >
+        Stop
+      </button>
+    </div>
+  </div>
+  <!-- Vital Stats Snapshot -->
+  <div
+    class="bg-gray-800/90 backdrop-blur-sm border border-gray-700 rounded-xl shadow-lg p-6 space-y-6"
+  >
+    <h3 class="text-lg font-bold text-emerald-300">Server Snapshot</h3>
+    <!-- CPU Usage -->
+    <div>
+      <label class="block text-sm font-medium text-gray-300 mb-1"
+        >CPU Usage</label
+      >
+      <div class="w-full bg-gray-700 rounded h-4 overflow-hidden">
+        <div
+          class="bg-emerald-500 h-full"
+          style="width: {{ cpu_usage_percent }}%;"
+        ></div>
+      </div>
+      <p class="text-right text-sm text-gray-400 mt-1">
+        {{ cpu_usage_percent }}%
+      </p>
+    </div>
+    <!-- Memory Usage -->
+    <div>
+      <label class="block text-sm font-medium text-gray-300 mb-1"
+        >Memory Usage</label
+      >
+      <div class="w-full bg-gray-700 rounded h-4 overflow-hidden">
+        <div
+          class="bg-emerald-400 h-full"
+          style="width: {{ memory_usage_percent }}%;"
+        ></div>
+      </div>
+      <p class="text-right text-sm text-gray-400 mt-1">
+        {{ memory_usage_percent }}%
+      </p>
+    </div>
+    <!-- Simple Stats at Bottom -->
+    <div
+      class="bg-gray-900/80 backdrop-blur-md border border-gray-700 rounded-xl shadow-lg p-4 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm space-y-2 md:space-y-0 md:space-x-6"
+    >
+      <div>
+        <span class="font-semibold text-gray-300">Subscription Status:</span>
+        {{ subscription.status }}
+      </div>
+      <div>
+        <span class="font-semibold text-gray-300">Created:</span>
+        {{ subscription.created_at.strftime('%Y-%m-%d') }}
+      </div>
+      <div>
+        <span class="font-semibold text-gray-300">Expires:</span>
+        {{ subscription.expires_at.strftime('%Y-%m-%d') if
+        subscription.expires_at else 'N/A' }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  // Function to initialize button states based on server status
+  function initializeButtonStates() {
+    const serverStatus = "{{server_status}}";
+
+    if (serverStatus === "restarting") {
+      // Show spinner on restart button and disable stop button
+      showButtonSpinner("restart-button");
+      disableOppositeButton("restart");
+      // Start polling to track the restart progress
+      startPollingServerStatus("restart");
+    } else if (serverStatus === "stopping") {
+      // Show spinner on stop button and disable restart button
+      showButtonSpinner("stop-button");
+      disableOppositeButton("stop");
+      // Start polling to track the stop progress
+      startPollingServerStatus("stop");
+    }
+    // If status is "running" or "stopped", buttons should be in normal state (default)
+  }
+
+  // Initialize on page load
+  {% if server_status %}
+  document.addEventListener("htmx:afterSwap", function () {
+    initializeButtonStates();
+  });
+  {% endif %}
+</script>

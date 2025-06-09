@@ -47,7 +47,7 @@ async def connect():
             await redis_Client.json().set("pending_servers", "$", [])
         await db.db_createalldbs()
         await redis_Client.ping()
-        #app.add_background_task(check_pending_servers)
+        # app.add_background_task(check_pending_servers)
     except Exception as e:
         BACKENDLOGGER.warning("error in startup:", e)
         raise
@@ -61,4 +61,8 @@ async def check_pending_servers():
         await asyncio.sleep(30)
 
 
-app.run(debug=False, host="127.0.0.1", port=8000,)
+app.run(
+    debug=False,
+    host="127.0.0.1",
+    port=8000,
+)

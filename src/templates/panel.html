@@ -1,43 +1,504 @@
-    <!-- Navigation Tabs -->
-    <div class="mb-8">
-        <nav class="flex space-x-8 border-b border-gray-700">
-            <button
-                    hx-get="/configure?subscription_id={{ subscription_id }}"
-                    hx-target="#content-area"
-                    hx-trigger="load,click"
-                    hx-indicator="#panel-spinner"
-                    hx-disabled-elt="this"
-                    class="tab-active py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer">
-                Configuration
-            </button>
-            <button
-                    hx-get="/mods_n_backups?subscription_id={{ subscription_id }}"
-                    hx-target="#content-area"
-                    hx-trigger="click"
-                    hx-indicator="#panel-spinner"
-                    hx-disabled-elt="this"
-                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer">
-                Mods and Backups
-            </button>
-            <button hx-get="/monitoring" hx-target="#content-area"
-                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer">
-                Monitoring
-            </button>
-            <button hx-get="/billing" hx-target="#content-area"
-                    class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer">
-                Billing
-            </button>
-        </nav>
+<!-- Navigation Tabs -->
+<div class="mb-8">
+  <nav class="flex space-x-8 border-b border-gray-700">
+    <button
+      hx-get="/monitoring?subscription_id={{ subscription_id }}"
+      hx-target="#content-area"
+      hx-trigger="load,click"
+      class="tab-active py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer"
+    >
+      Control & Monitoring
+    </button>
+    <button
+      hx-get="/configure?subscription_id={{ subscription_id }}"
+      hx-target="#content-area"
+      hx-trigger="click"
+      hx-indicator="#panel-spinner"
+      hx-disabled-elt="this"
+      class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer"
+    >
+      Configuration
+    </button>
+    <button
+      hx-get="/mods_n_backups?subscription_id={{ subscription_id }}"
+      hx-target="#content-area"
+      hx-trigger="click"
+      hx-indicator="#panel-spinner"
+      hx-disabled-elt="this"
+      class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer"
+    >
+      Mods and Backups
+    </button>
+    <button
+      hx-get="/billing"
+      hx-target="#content-area"
+      class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer"
+    >
+      Billing
+    </button>
+  </nav>
+</div>
+<!-- Content Area -->
+<section class="flex justify-center w-full flex-col">
+  <div id="content-area" class="w-full mx-auto px-4">
+    <!-- Paste the “wrapper” code above here -->
+  </div>
+  <div class="flex justify-center">
+    <div class="loading-blocks ml-2 htmx-indicator" id="panel-spinner">
+      <div class="loading-block bg-gray-400"></div>
+      <div class="loading-block bg-gray-400"></div>
+      <div class="loading-block bg-gray-400"></div>
     </div>
-       <!-- Content Area -->
-    <section class=" flex justify-center w-full flex-col">
-        <div id="content-area" class="w-full">
-        </div>
-        <div class="flex justify-center ">
-         <div class="loading-blocks ml-2 htmx-indicator" id="panel-spinner">
-                <div class="loading-block bg-gray-400"></div>
-                <div class="loading-block bg-gray-400"></div>
-                <div class="loading-block bg-gray-400"></div>
-        </div>
-        </div>
-    </section>
+  </div>
+</section>
+
+<style>
+  .glow {
+    text-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
+  }
+
+  .status-dot.provisioning {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #22c55e;
+    border-radius: 9999px;
+    animation: pulse 2s infinite;
+    margin-right: 0.5rem;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+</style>
+
+<script>
+  class SchemaFormGenerator {
+    constructor(config, formContainer) {
+      this.config = config;
+      this.formContainer = formContainer;
+      this.advancedFields = [];
+      this.basicFields = ["name", "port", "world", "password"];
+    }
+
+    init() {
+      if (this.config.title) {
+        document.getElementById("config-title").textContent = this.config.title;
+      }
+      if (this.config.properties) {
+        this.generateBasicFields();
+        this.generateAdvancedFields();
+      }
+    }
+
+    generateBasicFields() {
+      const container = document.createElement("div");
+      container.className = "mb-6";
+      for (const [key, prop] of Object.entries(this.config.properties)) {
+        if (this.basicFields.includes(key)) {
+          container.appendChild(this.createField(key, prop));
+        }
+      }
+      this.formContainer.appendChild(container);
+    }
+
+    generateAdvancedFields() {
+      const advanced = document.createElement("div");
+      advanced.className = "mb-6";
+      const details = document.createElement("details");
+      details.className = "border border-gray-700 rounded-lg";
+
+      const summary = document.createElement("summary");
+      summary.className =
+        "bg-gray-800 px-4 py-3 font-medium text-emerald-400 cursor-pointer hover:bg-gray-700";
+      summary.textContent = "Advanced Settings";
+
+      const content = document.createElement("div");
+      content.className = "p-4 space-y-4";
+
+      for (const [key, prop] of Object.entries(this.config.properties)) {
+        if (!this.basicFields.includes(key)) {
+          if (prop.type === "object") {
+            content.appendChild(this.createObjectField(key, prop));
+          } else {
+            content.appendChild(this.createField(key, prop));
+          }
+        }
+      }
+
+      details.appendChild(summary);
+      details.appendChild(content);
+      advanced.appendChild(details);
+      this.formContainer.appendChild(advanced);
+    }
+
+    createField(name, prop) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "mb-4 space-y-1";
+
+      if (prop.type === "boolean") return this.createCheckboxField(name, prop);
+
+      const label = document.createElement("label");
+      label.setAttribute("for", name);
+      label.className = "block font-medium text-gray-200";
+      label.textContent = this.formatLabel(name) + ":";
+      wrapper.appendChild(label);
+
+      if (prop.description) {
+        const desc = document.createElement("p");
+        desc.className = "text-sm text-gray-400";
+        desc.textContent = prop.description;
+        wrapper.appendChild(desc);
+      }
+
+      let input;
+      const baseClasses =
+        "w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-600 focus:ring-2 focus:ring-emerald-500";
+
+      if (prop.type === "integer" || prop.type === "number") {
+        input = document.createElement("input");
+        input.type = "number";
+        input.min = prop.minimum ?? "";
+        input.max = prop.maximum ?? "";
+        input.value = prop.value ?? prop.default ?? "";
+      } else if (prop.enum) {
+        input = document.createElement("select");
+        prop.enum.forEach((opt) => {
+          const o = document.createElement("option");
+          o.value = opt;
+          o.textContent = opt;
+          if (prop.value === opt || (!prop.value && prop.default === opt))
+            o.selected = true;
+          input.appendChild(o);
+        });
+      } else {
+        input = document.createElement("input");
+        input.type = "text";
+        input.value = prop.value ?? prop.default ?? "";
+      }
+
+      input.name = name;
+      input.id = name;
+      input.className = baseClasses;
+      if (this.config.required?.includes(name)) input.required = true;
+
+      wrapper.appendChild(input);
+      return wrapper;
+    }
+
+    createCheckboxField(name, prop) {
+      const container = document.createElement("div");
+      const label = document.createElement("label");
+      label.className = "flex items-center space-x-2 text-gray-200";
+
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.name = name;
+      input.id = name;
+      input.className = "h-5 w-5 text-emerald-500 rounded";
+      input.checked = prop.value ?? prop.default === true;
+
+      const span = document.createElement("span");
+      span.textContent = prop.description || this.formatLabel(name);
+
+      label.appendChild(input);
+      label.appendChild(span);
+      container.appendChild(label);
+      return container;
+    }
+
+    createObjectField(name, prop) {
+      const container = document.createElement("div");
+      container.className =
+        "p-4 border border-gray-600 rounded-lg bg-gray-800 space-y-4";
+
+      const heading = document.createElement("h3");
+      heading.className = "text-emerald-400 font-semibold";
+      heading.textContent = this.formatLabel(name);
+      container.appendChild(heading);
+
+      if (prop.properties) {
+        for (const [key, nested] of Object.entries(prop.properties)) {
+          const fieldName = `${name}[${key}]`;
+          const nestedProp = {
+            ...nested,
+            value: prop.value?.[key] ?? nested.default,
+          };
+          container.appendChild(
+            nested.type === "boolean"
+              ? this.createCheckboxField(fieldName, nestedProp)
+              : this.createField(fieldName, nestedProp),
+          );
+        }
+      }
+      return container;
+    }
+
+    formatLabel(name) {
+      return name
+        .replace(/([A-Z])/g, " $1")
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, (l) => l.toUpperCase());
+    }
+  }
+  // Clipboard copy helper
+  function copyToClipboard(id) {
+    let text = document.getElementById(id)?.textContent;
+    if (text) {
+      text = text.trim();
+      navigator.clipboard.writeText(text);
+      const btn = event.target;
+      btn.textContent = "Copied!";
+      setTimeout(() => (btn.textContent = "Copy"), 1500);
+    }
+  }
+
+  (function () {
+    const tabButtons = document.querySelectorAll("nav button");
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        // Remove active class from all tabs
+        tabButtons.forEach((btn) => {
+          btn.classList.remove("tab-active");
+          btn.classList.add("tab-inactive");
+        });
+
+        // Add active class to clicked tab
+        this.classList.remove("tab-inactive");
+        this.classList.add("tab-active");
+      });
+    });
+  })();
+</script>
+
+<script type="text/javascript">
+  let pollInterval = null;
+
+  // Generic function to show spinner on any button
+  function showButtonSpinner(buttonId) {
+    const button = document.getElementById(buttonId);
+    if (!button) return;
+
+    // Store original content
+    button.setAttribute("data-original-content", button.innerHTML);
+    button.setAttribute("data-original-classes", button.className);
+
+    // Add spinner
+    button.innerHTML = `<div class="loader"></div>`;
+    // Disable button and update styles
+    button.disabled = true;
+    button.classList.add("opacity-75", "cursor-not-allowed");
+    // Remove hover classes
+    button.classList.remove(
+      "hover:bg-yellow-700",
+      "hover:bg-orange-800",
+      "hover:bg-red-800",
+    );
+  }
+
+  // Generic function to reset button
+  function resetButton(buttonId) {
+    const button = document.getElementById(buttonId);
+    if (!button) return;
+
+    const originalContent = button.getAttribute("data-original-content");
+    const originalClasses = button.getAttribute("data-original-classes");
+
+    if (originalContent) {
+      button.innerHTML = originalContent;
+    }
+    if (originalClasses) {
+      button.className = originalClasses;
+    }
+
+    button.disabled = false;
+    button.removeAttribute("data-original-content");
+    button.removeAttribute("data-original-classes");
+  }
+
+  // Function to disable the opposite button
+  function disableOppositeButton(operation) {
+    if (operation === "stop") {
+      const restartBtn = document.getElementById("restart-button");
+      if (restartBtn) {
+        restartBtn.disabled = true;
+        restartBtn.classList.add("cursor-not-allowed", "opacity-50");
+      }
+    } else if (operation === "restart") {
+      const stopBtn = document.getElementById("stop-button");
+      if (stopBtn) {
+        stopBtn.disabled = true;
+        stopBtn.classList.add("cursor-not-allowed", "opacity-50");
+      }
+    }
+  }
+
+  // Function to enable the opposite button
+  function enableOppositeButton(operation) {
+    if (operation === "stop") {
+      const restartBtn = document.getElementById("restart-button");
+      if (restartBtn) {
+        restartBtn.disabled = false;
+        restartBtn.classList.remove("cursor-not-allowed", "opacity-50");
+      }
+    } else if (operation === "restart") {
+      const stopBtn = document.getElementById("stop-button");
+      if (stopBtn) {
+        stopBtn.disabled = false;
+        stopBtn.classList.remove("cursor-not-allowed", "opacity-50");
+      }
+    }
+  }
+
+  // Restart server function
+  function restartServer() {
+    showButtonSpinner("restart-button");
+    disableOppositeButton("restart"); // Disable stop button
+
+    // Update server status immediately
+    const statusElement = document.getElementById("server-status");
+    if (statusElement) {
+      statusElement.innerText = "Restarting...";
+      statusElement.className =
+        "px-2 py-1 rounded bg-yellow-600 text-white text-sm";
+    }
+
+    startPollingServerStatus("restart");
+  }
+
+  // Backup server function
+  function backupServer() {
+    showButtonSpinner("backup-button");
+
+    setTimeout(() => {
+      resetButton("backup-button");
+    }, 3000);
+  }
+
+  // Stop server function
+  function stopServer() {
+    showButtonSpinner("stop-button");
+    disableOppositeButton("stop"); // Disable restart button
+
+    // Update server status immediately
+    const statusElement = document.getElementById("server-status");
+    if (statusElement) {
+      statusElement.innerText = "Stopping...";
+      statusElement.className =
+        "px-2 py-1 rounded bg-orange-600 text-white text-sm";
+    }
+
+    startPollingServerStatus("stop");
+  }
+
+  function startPollingServerStatus(operation = "restart") {
+    console.log(`Server ${operation} polling triggered`);
+    if (pollInterval) clearInterval(pollInterval);
+
+    pollInterval = setInterval(async () => {
+      try {
+        const resp = await fetch(
+          `/server-status?subscription_id={{ subscription_id }}`,
+        );
+        const data = await resp.json();
+        console.log("Server status:", data);
+
+        const statusElement = document.getElementById("server-status");
+
+        if (data.status === "running") {
+          clearInterval(pollInterval);
+
+          // Update status display
+          if (statusElement) {
+            statusElement.innerText = "Running";
+            statusElement.className =
+              "px-2 py-1 rounded bg-green-600 text-white text-sm";
+          }
+
+          // Reset appropriate button based on operation
+          if (operation === "restart") {
+            resetButton("restart-button");
+          } else if (operation === "stop") {
+            resetButton("stop-button");
+          }
+
+          // Re-enable the opposite button
+          enableOppositeButton(operation);
+
+          console.log(`Server ${operation} completed successfully`);
+        } else if (data.status === "stopped") {
+          clearInterval(pollInterval);
+
+          // Update status display
+          if (statusElement) {
+            statusElement.innerText = "Stopped";
+            statusElement.className =
+              "px-2 py-1 rounded bg-red-600 text-white text-sm";
+          }
+
+          // Reset appropriate button
+          if (operation === "stop") {
+            resetButton("stop-button");
+          } else if (operation === "restart") {
+            resetButton("restart-button");
+          }
+
+          // Re-enable the opposite button
+          enableOppositeButton(operation);
+
+          console.log(`Server ${operation} completed successfully`);
+        } else if (data.status === "restarting") {
+          // Keep showing restarting status
+          if (statusElement) {
+            statusElement.innerText = "Restarting...";
+            statusElement.className =
+              "px-2 py-1 rounded bg-yellow-600 text-white text-sm";
+          }
+        } else if (data.status === "stopping") {
+          // Keep showing stopping status
+          if (statusElement) {
+            statusElement.innerText = "Stopping...";
+            statusElement.className =
+              "px-2 py-1 rounded bg-orange-600 text-white text-sm";
+          }
+        }
+      } catch (error) {
+        console.error("Error polling server status:", error);
+
+        // After 5 failed attempts, reset the button
+        if (!startPollingServerStatus.failCount)
+          startPollingServerStatus.failCount = 0;
+        startPollingServerStatus.failCount++;
+
+        if (startPollingServerStatus.failCount >= 5) {
+          clearInterval(pollInterval);
+
+          // Reset appropriate button
+          if (operation === "restart") {
+            resetButton("restart-button");
+          } else if (operation === "stop") {
+            resetButton("stop-button");
+          }
+
+          // Re-enable the opposite button
+          enableOppositeButton(operation);
+
+          const statusElement = document.getElementById("server-status");
+          if (statusElement) {
+            statusElement.innerText = "Error";
+            statusElement.className =
+              "px-2 py-1 rounded bg-red-600 text-white text-sm";
+          }
+
+          startPollingServerStatus.failCount = 0;
+        }
+      }
+    }, 10000); // poll every 2 seconds
+  }
+</script>

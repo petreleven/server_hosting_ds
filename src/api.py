@@ -30,7 +30,9 @@ class RegisterHandler:
         self.registry["backup"] = self._backup_handler
         self.registry["updateConfig"] = self._update_config_handler
 
-    async def handle_report(self, action: str, data : Dict) -> Tuple[bool, Optional[str]]:
+    async def handle_report(
+        self, action: str, data: Dict
+    ) -> Tuple[bool, Optional[str]]:
         if action not in self.registry.keys():
             return (
                 False,
@@ -72,20 +74,18 @@ class RegisterHandler:
                 ports=ports,
             )
             if err:
-                return False , {
-                "status": "error",
-                "message": err
-                }
+                return False, {"status": "error", "message": err}
 
             if "metrics" in data.keys():
                 pwd = data["metrics"].get("password")
                 username = data["metrics"].get("username")
-                _, err = await db.db_update_server_sftp(sftp_username=username, sftp_password=pwd, server_id =str(server.get("id", "")))
+                _, err = await db.db_update_server_sftp(
+                    sftp_username=username,
+                    sftp_password=pwd,
+                    server_id=str(server.get("id", "")),
+                )
                 if err:
-                    return False , {
-                    "status": "error",
-                    "message": err
-                    }
+                    return False, {"status": "error", "message": err}
 
             logger.info(
                 f"Server status updated for subscription: {data['subscription_id']}"
@@ -149,9 +149,7 @@ class RegisterHandler:
                 f"Error when selecting updating server status in _stop_handler by subscription_id {data['subscription_id']} :{err}"
             )
             return False, {"status": "error", "message": "Error when stopping server"}
-        logger.info(
-                f"Server stoped for subscription: {data['subscription_id']}"
-            )
+        logger.info(f"Server stoped for subscription: {data['subscription_id']}")
         return True, None
 
     async def _status_handler(self, data: Dict) -> Tuple[bool, Optional[Dict]]:
@@ -166,8 +164,8 @@ class RegisterHandler:
                 "message": f"Missing required field: {missing_field}",
             }
         logger.info(
-                f"Server status obtained for subscription: {data['subscription_id']}"
-            )
+            f"Server status obtained for subscription: {data['subscription_id']}"
+        )
         return True, None
 
     async def _backup_handler(self, data: Dict) -> Tuple[bool, Optional[Dict]]:
@@ -181,9 +179,7 @@ class RegisterHandler:
                 "status": "error",
                 "message": f"Missing required field: {missing_field}",
             }
-        logger.info(
-                f"Server backup done for subscription: {data['subscription_id']}"
-            )
+        logger.info(f"Server backup done for subscription: {data['subscription_id']}")
         return True, None
 
     async def _update_config_handler(self, data: Dict) -> Tuple[bool, Optional[Dict]]:
@@ -200,8 +196,8 @@ class RegisterHandler:
             }
 
         logger.info(
-                f"Server config update done for subscription: {data['subscription_id']}"
-            )
+            f"Server config update done for subscription: {data['subscription_id']}"
+        )
         return True, None
 
 
@@ -250,4 +246,4 @@ async def register_server() -> Response:
         logger.exception(f"Unexpected error in server_report: {str(e)}")
         return Response({"status": "error", "message": "Internal server error"}, 500)
 
-    return Response({"status": "success", "action":action})
+    return Response({"status": "success", "action": action})

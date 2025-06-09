@@ -113,7 +113,6 @@ async def conn_manager(qt: QUERY_TYPE, transaction=False, *args) -> Any:
             case QUERY_TYPE.FETCHROW:
                 return await conn.fetchrow(*args)
 
-
     async with pool.acquire() as conn:
         if not transaction:
             return await run(conn)
@@ -358,7 +357,7 @@ async def db_select_server_by_subscription(
             QUERY_TYPE.FETCHROW,
             False,
             SQL_QUERIES["SelectServerBySubscription"],
-            subscription_id
+            subscription_id,
         ), None
     except Exception as e:
         logger.error(f"Error selecting servers by subscription: {str(e)}")
@@ -444,8 +443,10 @@ async def db_update_server_config(
         logger.error(f"Error updating config of Server {server_id}: {str(e)}")
         return None, f"Database error: {str(e)}"
 
-async def db_update_server_sftp(sftp_username, sftp_password, server_id
-    )-> Tuple[Optional[Record], Optional[str]]:
+
+async def db_update_server_sftp(
+    sftp_username, sftp_password, server_id
+) -> Tuple[Optional[Record], Optional[str]]:
     try:
         if not server_id:
             return None, "Server id is required"
