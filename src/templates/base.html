@@ -5,10 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BlockForge - Enhanced Loading</title>
         <meta name="description" content="Launch your Minecraft server in 60 seconds! BlockForge offers premium lag-free Minecraft hosting with 99.9% uptime, instant setup, and 24/7 support.">
-        <script src="{{ url_for('static', filename='js/tailwind.js') }}"></script>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <script src="{{ url_for('static', filename='js/htmx.js') }}"></script>
-         <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"></script>
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"></script>
+        <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/tailwind.js') }}"></script>
 
     </head>
     <body class="bg-[#1e1e2e] text-white main-font h-full min-h-screen text-base">

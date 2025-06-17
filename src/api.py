@@ -67,13 +67,17 @@ class RegisterHandler:
             if "ports" in data.keys():
                 for p in data["ports"]:
                     ports += str(p) + ","
+            if ports == "":#restart
+                s , err = await db.db_select_server_by_subscription(data["subscription_id"])
+                if s:
+                    ports=s.get("ports", "")
             server, err = await db.db_update_server_status(
                 status=data["status"],
                 docker_container_id=data["container_id"],
                 subscription_id=data["subscription_id"],
                 ports=ports,
             )
-            if err:
+            if err or not server:
                 return False, {"status": "error", "message": err}
 
             if "metrics" in data.keys():
@@ -138,11 +142,11 @@ class RegisterHandler:
                 "status": "error",
                 "message": f"Error when selecting server by subscription_id {data['subscription_id']}",
             }
-
         server, err = await db.db_update_server_status(
             status=data["status"],
             docker_container_id=server.get("docker_container_id", ""),
             subscription_id=data["subscription_id"],
+            ports=server.get("ports", "")
         )
         if err or not server:
             logger.warning(

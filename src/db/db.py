@@ -369,7 +369,7 @@ async def db_update_server_status(
     status: str,
     docker_container_id: str,
     subscription_id: str,
-    ports: str = "",
+    ports: str,
 ) -> Tuple[asyncpg.Record | None, str | None]:
     """Update server status by subscription ID."""
     try:

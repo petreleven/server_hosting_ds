@@ -1,7 +1,55 @@
-<div class="w-full max-w-5xl mx-auto space-y-8 py-6">
+<div class="mb-8 max-w-4xl mx-auto px-4">
+  <!-- CONNECTION DETAILS CARD -->
+  <section class="flex flex-col justify-center px-4 mb-2">
+    <div
+      class="bg-gray-900/70 backdrop-blur-md border border-emerald-700 rounded-2xl shadow-xl p-2 mb-2 space-y-4 max-w-4xl mx-auto"
+    >
+      <h3
+        class="text-2xl font-bold text-emerald-400 tracking-wide flex items-center mb-2"
+      >
+        <i class="fas fa-plug mr-3"></i> Your Connection Details
+      </h3>
+      <p class="text-gray-300 leading-relaxed">
+        To join your game server, open the game, go to the
+        <strong>Join Server</strong> section, and enter the IP address and port
+        below.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4 mt-6 text-sm text-gray-300">
+        <div
+          class="bg-gray-800 border border-gray-700 rounded-lg px-5 py-3 flex justify-between items-center"
+        >
+          <span class="font-semibold text-emerald-300">IP Address:</span>
+          <span id="server-ip" class="ml-2 select-all cursor-pointer">
+            {{ip_address}}
+          </span>
+          <button
+            onclick="copyToClipboard('server-ip')"
+            class="text-xs text-emerald-400 hover:underline ml-3"
+          >
+            Copy
+          </button>
+        </div>
+        <div
+          class="bg-gray-800 border border-gray-700 rounded-lg px-5 py-3 flex justify-between items-center"
+        >
+          <span class="font-semibold text-emerald-300">Port:</span>
+          <span id="server-port" class="ml-2 select-all cursor-pointer">
+            {{main_port}}
+          </span>
+          <button
+            onclick="copyToClipboard('server-port')"
+            class="text-xs text-emerald-400 hover:underline ml-3"
+          >
+            Copy
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Actions + Status -->
   <div
-    class="bg-gray-900/80 backdrop-blur-md border border-emerald-700 rounded-xl shadow-lg p-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4"
+    class="mb-2 bg-gray-900/80 backdrop-blur-md border border-emerald-700 rounded-xl shadow-lg p-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4"
   >
     <div class="flex items-center space-x-2">
       <span class="text-lg font-bold text-emerald-400">Server Status:</span>
@@ -61,6 +109,7 @@
       </button>
     </div>
   </div>
+
   <!-- Vital Stats Snapshot -->
   <div
     class="bg-gray-800/90 backdrop-blur-sm border border-gray-700 rounded-xl shadow-lg p-6 space-y-6"
@@ -123,19 +172,10 @@
     const serverStatus = "{{server_status}}";
 
     if (serverStatus === "restarting") {
-      // Show spinner on restart button and disable stop button
-      showButtonSpinner("restart-button");
-      disableOppositeButton("restart");
-      // Start polling to track the restart progress
-      startPollingServerStatus("restart");
+      restartServer();
     } else if (serverStatus === "stopping") {
-      // Show spinner on stop button and disable restart button
-      showButtonSpinner("stop-button");
-      disableOppositeButton("stop");
-      // Start polling to track the stop progress
-      startPollingServerStatus("stop");
+      stopServer();
     }
-    // If status is "running" or "stopped", buttons should be in normal state (default)
   }
 
   // Initialize on page load

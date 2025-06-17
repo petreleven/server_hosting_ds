@@ -13,8 +13,6 @@
       hx-get="/configure?subscription_id={{ subscription_id }}"
       hx-target="#content-area"
       hx-trigger="click"
-      hx-indicator="#panel-spinner"
-      hx-disabled-elt="this"
       class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer"
     >
       Configuration
@@ -305,6 +303,7 @@
   // Generic function to reset button
   function resetButton(buttonId) {
     const button = document.getElementById(buttonId);
+    console.log(button);
     if (!button) return;
 
     const originalContent = button.getAttribute("data-original-content");
@@ -410,7 +409,6 @@
         console.log("Server status:", data);
 
         const statusElement = document.getElementById("server-status");
-
         if (data.status === "running") {
           clearInterval(pollInterval);
 
@@ -420,8 +418,8 @@
             statusElement.className =
               "px-2 py-1 rounded bg-green-600 text-white text-sm";
           }
-
           // Reset appropriate button based on operation
+          console.log("operation===restart", operation === "restart");
           if (operation === "restart") {
             resetButton("restart-button");
           } else if (operation === "stop") {
@@ -499,6 +497,6 @@
           startPollingServerStatus.failCount = 0;
         }
       }
-    }, 10000); // poll every 2 seconds
+    }, 10000); // poll every 10 seconds
   }
 </script>

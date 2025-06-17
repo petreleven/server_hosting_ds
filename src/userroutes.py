@@ -412,14 +412,10 @@ async def configure():
         provisioner = MainProvisioner()
         db_cfg: Dict[str, Any] = json.loads(record.get("config", "{}"))
         config = await provisioner.generate_config_view_schema(db_cfg, subscription_id)
-        ip_address = record.get("ip_address", None)
-        ports = record.get("ports", "")
-        main_port = ports.split(",")[0]
+
 
         return await render_template(
             "configure.html",
-            ip_address=ip_address,
-            main_port=main_port,
             config=config,
             subscription_id=subscription_id,
         )
@@ -532,6 +528,10 @@ async def monitoring():
     # Fetch server linked to this subscription
     res = await db.db_select_server_by_subscription(subscription_id)
     server: Optional[asyncpg.Record] = res[0] if res else None
+    ip_address = res[0].get("ip_address", None)
+    ports = res[0].get("ports", "")
+    main_port = ports.split(",")[0]
+
 
     # Fetch subscription
     res = await db.db_select_subscription_by_id(subscription_id)
@@ -544,23 +544,16 @@ async def monitoring():
     cpu_usage_percent = 43  # Example static value
     memory_usage_percent = 68  # Example static value
 
-    # Ports → comma-separated string
-    server_ports = []
-    if server.get("ports"):
-        server_ports = [
-            port.strip() for port in server["ports"].split(",") if port.strip()
-        ]
-
     # Server running status
     server_status = server["status"]
 
     return await render_template(
         "monitoring.html",
+        main_port=main_port,
+        ip_address=ip_address,
         subscription_id=subscription_id,
         cpu_usage_percent=cpu_usage_percent,
         memory_usage_percent=memory_usage_percent,
-        server_ip=server["ip_address"],
-        server_ports=server_ports,  # List of ports
         server_status=server_status,
         subscription=subscription,
     )
@@ -651,7 +644,7 @@ async def stop_server():
         status="stopping",
         docker_container_id=server.get("docker_container_id", ""),
         subscription_id=subscription_id,
-        ports=server.get("ports", ""),
+        ports=server.get("ports","")
     )
     ip = server.get("ip_address", "")
     queueName = f"badger:pending:{ip}"
