@@ -13,6 +13,7 @@ from api import apiblueprint
 from db import db
 from game_jobs import mainProvisioner
 from userroutes import userblueprint
+from create_order import orderBlueprint
 
 # envs
 load_dotenv()
@@ -37,6 +38,7 @@ QuartSchema(app)
 # registering blueprint
 app.register_blueprint(apiblueprint)
 app.register_blueprint(userblueprint)
+app.register_blueprint(orderBlueprint)
 
 
 @app.before_serving

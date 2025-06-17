@@ -44,6 +44,10 @@ FROM baremetal;
 SELECT *
 FROM subscriptions
 WHERE user_id = $1;
+-- name: SelectAllPlansByGame
+SELECT *
+FROM plans
+WHERE game_id = $1;
 -- name: SelectPlanById
 SELECT *
 FROM plans
@@ -86,3 +90,4 @@ UPDATE servers
 SET sftp_username = $1,
     sftp_password = $2
 WHERE id = $3 RETURNING *;
+

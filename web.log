@@ -1043,3 +1043,187 @@ AttributeError: 'tuple' object has no attribute 'get'
 2025-06-17 10:01:24,842 - backendlogger - INFO - Subscription updated for ID: 01693f04-2162-4567-9078-4ec69f549437, next billing: 2025-07-17 07:01:24.720890+00:00
 2025-06-17 10:11:05,594 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'stopped'}
 2025-06-17 10:11:05,685 - backendlogger - INFO - Server stoped for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:38:20,459 - backendlogger - INFO - Database connection pool created
+2025-06-17 10:38:20,462 - backendlogger - INFO - All database tables created successfully
+2025-06-17 10:38:20,463 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 10:38:29,243 - backendlogger - INFO - Database connection pool created
+2025-06-17 10:38:29,246 - backendlogger - INFO - All database tables created successfully
+2025-06-17 10:38:29,247 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 10:38:51,783 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'running', 'container_id': 'b6fba2328cfe14a3049a735add0cb45ab986af36f9aabf583a155d41bc820e0d', 'container_ip': '192.168.208.2'}
+2025-06-17 10:38:51,929 - backendlogger - INFO - Server status updated for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:38:52,030 - backendlogger - INFO - Subscription updated for ID: 01693f04-2162-4567-9078-4ec69f549437, next billing: 2025-07-17 07:38:51.929848+00:00
+2025-06-17 10:39:22,795 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'stopped'}
+2025-06-17 10:39:22,882 - backendlogger - INFO - Server stoped for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:39:32,772 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:39:36,872 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:39:42,274 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'running', 'container_id': 'efd247c7efc54b8e1a43402cdfa1a63e3646c8ef8ec4228a8b897201bf8598fa', 'container_ip': '192.168.208.2'}
+2025-06-17 10:39:42,542 - backendlogger - INFO - Server status updated for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:39:42,698 - backendlogger - INFO - Subscription updated for ID: 01693f04-2162-4567-9078-4ec69f549437, next billing: 2025-07-17 07:39:42.542248+00:00
+2025-06-17 10:40:05,991 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:40:09,153 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:40:20,723 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:41:03,938 - backendlogger - INFO - Database connection pool created
+2025-06-17 10:41:03,941 - backendlogger - INFO - All database tables created successfully
+2025-06-17 10:41:03,943 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 10:41:16,829 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:41:25,959 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'running', 'container_id': '5cf26e7a1ac6c7cab174772e51100cd220d0a8c40c9362780091b23cf6a75cc0', 'container_ip': '192.168.208.2'}
+2025-06-17 10:41:26,108 - backendlogger - INFO - Server status updated for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:41:26,208 - backendlogger - INFO - Subscription updated for ID: 01693f04-2162-4567-9078-4ec69f549437, next billing: 2025-07-17 07:41:26.108579+00:00
+2025-06-17 10:41:52,858 - backendlogger - INFO - Database connection pool created
+2025-06-17 10:41:52,861 - backendlogger - INFO - All database tables created successfully
+2025-06-17 10:41:52,862 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 10:42:14,451 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:42:23,176 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'running', 'container_id': 'a1f96ffbc94c841ee104ce71681bcc319d2ea149cdcc1961ce6a0b8cca5048c9', 'container_ip': '192.168.208.2'}
+2025-06-17 10:42:23,288 - backendlogger - INFO - Server status updated for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:42:23,421 - backendlogger - INFO - Subscription updated for ID: 01693f04-2162-4567-9078-4ec69f549437, next billing: 2025-07-17 07:42:23.288313+00:00
+2025-06-17 10:43:04,713 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:43:08,741 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'stopped'}
+2025-06-17 10:43:08,810 - backendlogger - INFO - Server stoped for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:43:27,349 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:43:30,303 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'running', 'container_id': 'd0092bcf996e93426ac866e12792588c6c44731777886ae6ed354a4f86a40e04', 'container_ip': '192.168.208.2'}
+2025-06-17 10:43:30,376 - backendlogger - INFO - Server status updated for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:43:30,453 - backendlogger - INFO - Subscription updated for ID: 01693f04-2162-4567-9078-4ec69f549437, next billing: 2025-07-17 07:43:30.377015+00:00
+2025-06-17 10:44:32,263 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:44:38,946 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:44:39,413 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'configured'}
+2025-06-17 10:44:39,413 - backendlogger - INFO - Server config update done for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:44:56,989 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:44:57,374 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'configured'}
+2025-06-17 10:44:57,374 - backendlogger - INFO - Server config update done for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 10:45:12,273 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 10:46:07,337 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '01693f04-2162-4567-9078-4ec69f549437', 'status': 'stopped'}
+2025-06-17 10:46:07,428 - backendlogger - INFO - Server stoped for subscription: 01693f04-2162-4567-9078-4ec69f549437
+2025-06-17 11:01:48,142 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 11:01:51,671 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 11:43:02,471 - backendlogger - INFO - Database connection pool created
+2025-06-17 11:43:02,473 - backendlogger - INFO - All database tables created successfully
+2025-06-17 11:43:02,474 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 13:53:01,792 - backendlogger - INFO - Database connection pool created
+2025-06-17 13:53:01,794 - backendlogger - INFO - All database tables created successfully
+2025-06-17 13:53:01,795 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:29:27,190 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:29:27,192 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:29:27,193 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:30:21,909 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:30:21,911 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:30:21,912 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:30:29,777 - backendlogger - ERROR - Error selecting all plans: column "game_name" does not exist
+2025-06-17 14:33:30,410 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:33:30,413 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:33:30,414 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:33:40,978 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:33:40,980 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:33:40,981 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:33:49,411 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:33:49,414 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:33:49,415 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:33:51,473 - backendlogger - ERROR - Error selecting all plans: invalid input for query argument $1: "game_id='c96bce5a-00c9-46a4-8b05-98c05b... (invalid UUID "game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893'": length must be between 32..36 characters, got 46)
+2025-06-17 14:35:05,740 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:35:05,742 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:35:05,743 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:35:19,307 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:35:19,309 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:35:19,310 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:35:59,167 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:35:59,169 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:35:59,170 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:36:00,642 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:36:00,644 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:36:00,645 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:36:35,256 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:36:35,258 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:36:35,259 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:36:36,937 - server - ERROR - Exception on request GET /get_order_form
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_order_form() missing 1 required positional argument: 'game_id'
+2025-06-17 14:36:53,963 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:36:53,965 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:36:53,966 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:36:58,069 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:36:58,071 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:36:58,072 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:37:31,842 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:37:31,844 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:37:31,845 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 14:38:14,829 - backendlogger - INFO - Database connection pool created
+2025-06-17 14:38:14,831 - backendlogger - INFO - All database tables created successfully
+2025-06-17 14:38:14,832 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:07:32,586 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:07:32,588 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:07:32,589 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:10:23,648 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-17 15:10:24,087 - userroutes - INFO - RegisterUserData(email='j@c.com', password='$2b$12$Hn7EihWQqmRSnpw0Z.JnV.gPLC6Get.PZw/UA8RQ13VMGp5pkLgBe', game_id='c96bce5a-00c9-46a4-8b05-98c05bf23893', plan_id='e5844511-d872-4b01-b59c-eb7a74f28e25')
+2025-06-17 15:10:24,487 - userroutes - INFO - User registered successfully: j@c.com
+2025-06-17 15:10:25,001 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u d53b4438-bc76-4e8d-afd5-0bc41195317e -p 2456 2457 -g valheim -m 10.0g -c 4.0 start
+2025-06-17 15:10:25,003 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1374, in _wrapper
+    await self.ensure_async(func)(*args, **kwargs)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 142, in job_order_new_server
+    await self.update_exhausted_free_status(user_id)
+  File "/home/peter/Code/quartApp/src/game_jobs/mainProvisioner.py", line 431, in update_exhausted_free_status
+    await conn.execute("UPDATE  users SET exhausted_free=$1 WHERE id=$2",
+                        True,user_id)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 352, in execute
+    _, status, _ = await self._execute(
+                   ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 2004, in _do_execute
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/asyncpg/connection.py", line 432, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column "exhausted_free" of relation "users" does not exist
+2025-06-17 15:11:15,941 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'd53b4438-bc76-4e8d-afd5-0bc41195317e', 'status': 'running', 'container_id': '5cf95885781e4e7b89fb9ee5d74ee044537f643bae66ce38d0828a28751408f4', 'container_ip': '192.168.208.2', 'metrics': {'username': 'd53b', 'password': 'Dh3pHVkSFxoA', 'mount_path': '/home/d53b4438-bc76-4e8d-afd5-0bc41195317e/valheim', 'server_path': '/srv/allservers/d53b4438-bc76-4e8d-afd5-0bc41195317e'}, 'ports': [2300, 2301]}
+2025-06-17 15:11:16,789 - backendlogger - INFO - Server status updated for subscription: d53b4438-bc76-4e8d-afd5-0bc41195317e
+2025-06-17 15:11:17,378 - backendlogger - INFO - Subscription updated for ID: d53b4438-bc76-4e8d-afd5-0bc41195317e, next billing: 2025-07-17 12:11:16.789440+00:00
+2025-06-17 15:13:29,271 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': 'd53b4438-bc76-4e8d-afd5-0bc41195317e', 'status': 'stopped'}
+2025-06-17 15:13:29,615 - backendlogger - INFO - Server stoped for subscription: d53b4438-bc76-4e8d-afd5-0bc41195317e
+2025-06-17 15:33:15,420 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:33:15,424 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:33:15,425 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:34:14,259 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:34:14,262 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:34:14,263 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:35:15,130 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:35:15,132 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:35:15,134 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:35:50,754 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:35:50,756 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:35:50,758 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)

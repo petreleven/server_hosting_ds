@@ -128,6 +128,7 @@ class MainProvisioner:
                     ram_gb=int(ram_gb),
                     plan_id=data.plan_id,
                 )
+                await self.update_exhausted_free_status(user_id)
             return
 
         await self._provision_server(
@@ -138,6 +139,9 @@ class MainProvisioner:
             provisioner=provisioner,
             cfg=cfg,
         )
+        await self.update_exhausted_free_status(user_id)
+
+
 
     async def _add_order_to_queue(
         self,
@@ -418,3 +422,11 @@ class MainProvisioner:
         data = await provisioner.generate_config_view_schema(cfg)
         data["subscription_id"] = subscription_id
         return data
+
+    async def update_exhausted_free_status(self,user_id):
+        pool = await db.get_pool()
+        if not pool:
+            return
+        async with pool.acquire() as conn:
+            await conn.execute("UPDATE  users SET exhausted_free=$1 WHERE id=$2",
+                                True,user_id)

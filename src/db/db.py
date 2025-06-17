@@ -273,6 +273,22 @@ async def db_select_all_subscriptions(
         logger.error(f"Error selecting all subscriptions: {str(e)}")
         return [], f"Database error: {str(e)}"
 
+async def db_select_all_plans_by_game(
+    game_id: str,
+) -> Tuple[List[asyncpg.Record], str | None]:
+    """Get all subscriptions for a user."""
+    try:
+        if not game_id:
+            return [], "game_name is required"
+
+        return await conn_manager(
+            QUERY_TYPE.FETCH, False, SQL_QUERIES["SelectAllPlansByGame"], game_id
+        ), None
+
+    except Exception as e:
+        logger.error(f"Error selecting all plans: {str(e)}")
+        return [], f"Database error: {str(e)}"
+
 
 async def db_select_plan_by_id(
     plan_id: str,

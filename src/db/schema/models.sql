@@ -1,5 +1,5 @@
 -- name: CreateUserTable
-CREATE TABLE IF NOT EXISTS users (id uuid PRIMARY KEY DEFAULT uuid_generate_v4(), email VARCHAR(255) UNIQUE, password VARCHAR(255), created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW());
+CREATE TABLE IF NOT EXISTS users (id uuid PRIMARY KEY DEFAULT uuid_generate_v4(), email VARCHAR(255) UNIQUE, password VARCHAR(255), created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW(), exhausted_free BOOLEAN DEFAULT FALSE);
 -- name: CreateGameTable
 CREATE TABLE IF NOT EXISTS games (id uuid PRIMARY KEY DEFAULT uuid_generate_v4(), game_name VARCHAR(100), description TEXT, image_url VARCHAR(255), active BOOLEAN DEFAULT TRUE);
 -- name: CreatePlansTable

@@ -1,231 +1,342 @@
-{% extends 'base.html' %}
-{% block title %}
-    Home
-{% endblock %}
-{% block content %}
-    <main class="h-full">
-        <!-- Main Content -->
-        <div class="relative z-10 container mx-auto px-6 flex flex-col md:flex-row items-center justify-between mt-2">
-            <!-- Left Content -->
-            <div class="md:w-3/5 md:pr-8 md:mt-2 ">
-                <h1 class="text-4xl md:text-6xl lg:text-5xl font-bold leading-tight  mb-4">
-                <span class="text-white">Valheim Server Hosting </span><br>
-                </h1>
-                <p class="text-xl text-gray-300 max-w-xl mb-8">
-                    Launch your own Valheim server in just <span class="text-blue-400 font-bold">60 seconds</span>.
-                    Zero lag, 24/7 uptime, and full mod support guaranteed.
-                </p>
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#free-trial" class="px-8 py-4 bg-green-500      hover:bg-green-500     text-[#1e1e2e]
-                        rounded-lg text-center shadow-lg shadow-blue-600/30 transition transform hover:scale-105 flex items-center justify-center ">
-                        Start 24h Free Trial
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L12.586 11H5a1 1 0 010-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                </div>
-                <!-- Stats -->
-                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-gray-800 pt-6">
-                    <div class="text-center md:text-left">
-                        <div class="flex items-center justify-center md:justify-start">
-                            <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
-                            <span class="font-bold text-xl">99.9%</span>
-                        </div>
-                        <span class="text-gray-400 text-sm">Uptime</span>
-                    </div>
-                    <div class="text-center md:text-left">
-                        <div class="flex items-center justify-center md:justify-start">
-                            <i class="fas fa-bolt text-blue-500 mr-2"></i>
-                            <span class="font-bold text-xl">60s</span>
-                        </div>
-                        <span class="text-gray-400 text-sm">Setup Time</span>
-                    </div>
-                    <div class="text-center md:text-left">
-                        <div class="flex items-center justify-center md:justify-start">
-                            <i class="fas fa-headset text-blue-500 mr-2"></i>
-                            <span class="font-bold text-xl">24/7</span>
-                        </div>
-                        <span class="text-gray-400 text-sm">Live Support</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Right Sign-up Card (Desktop Only) -->
-            <div class="hidden md:block md:w-2/5 mt-10 md:mt-0">
-                <div class="glass-card p-6 rounded-xl shadow-2xl shadow-blue-900/20 border border-blue-500/10  transition duration-500">
-                    <div class="text-center mb-4">
-                        <h3 class="text-2xl font-bold text-white">&gt; Sign up for <span class="text-blue-400">Free</span></h3>
-                        <p class="text-gray-300 text-sm">No credit card required</p>
-                    </div>
-                    <form class="space-y-4" method="post" action="/register" id="register-form">
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-1" for="email">Email</label>
-                            <input name="email" type="email" placeholder="you@example.com" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white" required>
-                            <label for="game_id"></label>
-                            <input type="text" name="game_id" style="display:none;" value="c96bce5a-00c9-46a4-8b05-98c05bf23893">
-                            {% if errors.email_errors %}
-                                {%for e in errors.email_errors%}
-                                <span class="text-sm text-red-500">{{e}}</span>
-                                {%endfor%}
-                            {% endif %}
-                        </div>
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-1">Password</label>
-                            <input name="password" type="password" placeholder="Something secret" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white" required>
-                            {% if errors.password_errors %}
-                                {%for e in errors.password_errors%}
-                                <span class="text-sm text-red-500">{{e}}</span>
-                                {%endfor%}
-                            {% endif %}
-                        </div>
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-1">Plan</label>
-                            <select name="plan_id" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white">
-                                <option value="996c903a-a19e-4b1a-aecf-59ed985cb32e">Basic -$11/month</option>
-                                <option value="2">Huge -$22/month</option>
-                            </select>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-gray-300 mb-2 font-medium">Server Location</label>
-                            <select name="serverlocation" class="w-full bg-gray-700 border border-gray-600 rounded py-2 px-4 text-white">
-                                <option>North America (East)</option>
-                                <option>North America (West)</option>
-                                <option>Europe (London)</option>
-                                <option>Asia (Singapore)</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full p-3  bg-green-500      hover:bg-green-500     text-[#1e1e2e]
-                        font-bold shadow-lg shadow-blue-600/30 transition"
-                        hx-post="/register"
-                        hx-trigger="click"
-                        hx-target="body"
-                        >
-                        Create My Server (24h free)
-                        </button>
-                    </form>
+{% extends 'base.html' %} {% block title %} Home {% endblock %} {% block content
+%}
+<main class="h-full">
+  <!-- Main Content -->
+  <div
+    class="relative z-10 container mx-auto px-6 flex flex-col md:flex-row items-center justify-between mt-2"
+  >
+    <!-- Left Content -->
+    <div class="md:w-3/5 md:pr-8 md:mt-2">
+      <h1 class="text-4xl md:text-6xl lg:text-5xl font-bold leading-tight mb-4">
+        <span class="text-white">Valheim Server Hosting </span><br />
+      </h1>
+      <p class="text-xl text-gray-300 max-w-xl mb-8">
+        Launch your own Valheim server in just
+        <span class="text-blue-400 font-bold">60 seconds</span>. Zero lag, 24/7
+        uptime, and full mod support guaranteed.
+      </p>
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="#free-trial"
+          class="px-8 py-4 bg-green-500 hover:bg-green-500 text-[#1e1e2e] rounded-lg text-center shadow-lg shadow-blue-600/30 transition transform hover:scale-105 flex items-center justify-center"
+        >
+          Start 24h Free Trial
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 ml-2"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L12.586 11H5a1 1 0 010-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+      <!-- Stats -->
+      <div
+        class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-gray-800 pt-6"
+      >
+        <div class="text-center md:text-left">
+          <div class="flex items-center justify-center md:justify-start">
+            <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+            <span class="font-bold text-xl">99.9%</span>
+          </div>
+          <span class="text-gray-400 text-sm">Uptime</span>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="flex items-center justify-center md:justify-start">
+            <i class="fas fa-bolt text-blue-500 mr-2"></i>
+            <span class="font-bold text-xl">60s</span>
+          </div>
+          <span class="text-gray-400 text-sm">Setup Time</span>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="flex items-center justify-center md:justify-start">
+            <i class="fas fa-headset text-blue-500 mr-2"></i>
+            <span class="font-bold text-xl">24/7</span>
+          </div>
+          <span class="text-gray-400 text-sm">Live Support</span>
+        </div>
+      </div>
+    </div>
+    <!-- Right Sign-up Card (Desktop Only) -->
+    <div class="hidden md:block md:w-2/5 mt-10 md:mt-0">
+      <div
+        class="glass-card p-6 rounded-xl shadow-2xl shadow-blue-900/20 border border-blue-500/10 transition duration-500"
+      >
+        <div class="text-center mb-4">
+          <h3 class="text-2xl font-bold text-white">
+            &gt; Sign up for <span class="text-blue-400">Free</span>
+          </h3>
+          <p class="text-gray-300 text-sm">No credit card required</p>
+        </div>
+        <form
+          class="space-y-4"
+          method="post"
+          action="/register"
+          id="register-form"
+        >
+          <div>
+            <label class="block text-gray-400 text-sm mb-1" for="email"
+              >Email</label
+            >
+            <input
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white"
+              required
+            />
+            {% if errors.email_errors %} {%for e in errors.email_errors%}
+            <span class="text-sm text-red-500">{{e}}</span>
+            {%endfor%} {% endif %}
+          </div>
+          <div>
+            <label class="block text-gray-400 text-sm mb-1">Password</label>
+            <input
+              name="password"
+              type="password"
+              placeholder="Something secret"
+              class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white"
+              required
+            />
+            {% if errors.password_errors %} {%for e in errors.password_errors%}
+            <span class="text-sm text-red-500">{{e}}</span>
+            {%endfor%} {% endif %}
+          </div>
+          <div>
+            <label class="block text-gray-400 text-sm mb-1">Plan</label>
+            <select
+              name="game_id"
+              class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white"
+            >
+              <option
+                hx-get="/get_order_form?game_id=c96bce5a-00c9-46a4-8b05-98c05bf23893"
+                hx-target="#dynamic-plans"
+                hx-swap="innerHTML"
+                hx-trigger="load,click"
+                value="c96bce5a-00c9-46a4-8b05-98c05bf23893"
+              >
+                valheim
+              </option>
+            </select>
+          </div>
+          <section id="dynamic-plans"></section>
+          <button
+            type="submit"
+            class="w-full p-3 bg-green-500 hover:bg-green-500 text-[#1e1e2e] font-bold shadow-lg shadow-blue-600/30 transition"
+            hx-post="/register"
+            hx-trigger="click"
+            hx-target="body"
+          >
+            Create My Server (24h free)
+          </button>
+        </form>
 
-                    <p class="mt-4 text-xs text-center text-gray-400">
-                    </p>
-                </div>
-            </div>
+        <p class="mt-4 text-xs text-center text-gray-400"></p>
+      </div>
+    </div>
+  </div>
+  <!-- Features Section -->
+  <div id="features" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Why Choose <span class="text-blue-400">BlockForge</span>
+        </h2>
+        <p class="text-gray-400">
+          We've optimized every aspect of server hosting so you can focus on
+          what matters: dominating the game.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div
+          class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20"
+          >
+            <i class="fas fa-bolt text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Instant Setup</h3>
+          <p class="text-gray-400">
+            Your server is ready in 60 seconds. No technical knowledge required.
+            Just click and play.
+          </p>
         </div>
-        <!-- Features Section -->
-        <div id="features" class="py-20 bg-gray-900">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold  mb-4">Why Choose <span class="text-blue-400">BlockForge</span></h2>
-                    <p class="text-gray-400">We've optimized every aspect of server hosting so you can focus on what matters: dominating the game.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Feature 1 -->
-                    <div class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50">
-                        <div class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
-                            <i class="fas fa-bolt text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Instant Setup</h3>
-                        <p class="text-gray-400">Your server is ready in 60 seconds. No technical knowledge required. Just click and play.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50">
-                        <div class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
-                            <i class="fas fa-server text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Anti-Lag Technology</h3>
-                        <p class="text-gray-400">Our servers use NVMe SSDs and optimized configurations to eliminate lag spikes. Smooth gameplay guaranteed.</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50">
-                        <div class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
-                            <i class="fas fa-shield-alt text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">DDoS Protection</h3>
-                        <p class="text-gray-400">Enterprise-grade protection keeps your server safe from attacks, ensuring uninterrupted gameplay.</p>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50">
-                        <div class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
-                            <i class="fas fa-puzzle-piece text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">One-Click Mod Installation</h3>
-                        <p class="text-gray-400">Install popular mods and modpacks with a single click. No more fighting with config files.</p>
-                    </div>
-                    <!-- Feature 5 -->
-                    <div class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50">
-                        <div class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
-                            <i class="fas fa-users text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Unlimited Players</h3>
-                        <p class="text-gray-400">Scale your server as your community grows. Our infrastructure handles player counts from small groups to massive communities.</p>
-                    </div>
-                    <!-- Feature 6 -->
-                    <div class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50">
-                        <div class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
-                            <i class="fas fa-headset text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">24/7 Gamer Support</h3>
-                        <p class="text-gray-400">Our support team is made up of actual gamers who understand your needs. Get help when you need it.</p>
-                    </div>
-                </div>
-            </div>
+        <!-- Feature 2 -->
+        <div
+          class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20"
+          >
+            <i class="fas fa-server text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Anti-Lag Technology</h3>
+          <p class="text-gray-400">
+            Our servers use NVMe SSDs and optimized configurations to eliminate
+            lag spikes. Smooth gameplay guaranteed.
+          </p>
         </div>
-        <!-- FAQ Section -->
-        <div id="faq" class="py-20 bg-gray-800">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold  mb-4">Frequently Asked <span class="text-blue-400">Questions</span></h2>
-                    <p class="text-gray-400">Got questions? We've got answers.</p>
-                </div>
-                <div class="max-w-3xl mx-auto">
-                    <div class="space-y-6">
-                        <!-- FAQ Item 1 -->
-                        <div class="bg-gray-900 rounded-lg p-6">
-                            <h3 class="text-xl font-bold mb-4">How quickly can I get my server up and running?</h3>
-                            <p class="text-gray-400">Our deployment process is fully automated. After completing your order, your server will be ready in about 60 seconds. You'll receive an email with your server details and control panel login.</p>
-                        </div>
-                        <!-- FAQ Item 2 -->
-                        <div class="bg-gray-900 rounded-lg p-6">
-                            <h3 class="text-xl font-bold mb-4">Can I switch between different Minecraft versions?</h3>
-                            <p class="text-gray-400">Absolutely! Our control panel allows you to switch between any Minecraft version with just a few clicks. Your world data will be safely preserved during version changes.</p>
-                        </div>
-                        <!-- FAQ Item 3 -->
-                        <div class="bg-gray-900 rounded-lg p-6">
-                            <h3 class="text-xl font-bold mb-4">How do I invite friends to my server?</h3>
-                            <p class="text-gray-400">Once your server is running, you'll get a unique IP address that you can share with your friends. They can connect directly through their Minecraft client by entering this IP in the multiplayer section.</p>
-                        </div>
-                        <!-- FAQ Item 4 -->
-                        <div class="bg-gray-900 rounded-lg p-6">
-                            <h3 class="text-xl font-bold mb-4">Can I upgrade my plan later?</h3>
-                            <p class="text-gray-400">Yes! You can upgrade your plan at any time through the control panel. The upgrade process takes only a few minutes, and your world data will be automatically transferred to your new server.</p>
-                        </div>
-                        <!-- FAQ Item 5 -->
-                        <div class="bg-gray-900 rounded-lg p-6">
-                            <h3 class="text-xl font-bold mb-4">Do you offer a money-back guarantee?</h3>
-                            <p class="text-gray-400">Yes, we offer a 7-day money-back guarantee on all our plans. If you're not satisfied with our service for any reason, simply contact our support team within 7 days of your purchase for a full refund.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Feature 3 -->
+        <div
+          class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20"
+          >
+            <i class="fas fa-shield-alt text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">DDoS Protection</h3>
+          <p class="text-gray-400">
+            Enterprise-grade protection keeps your server safe from attacks,
+            ensuring uninterrupted gameplay.
+          </p>
         </div>
-        {% include 'footer.html' %}
-    </main>
-    <!-- Schema.org Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
+        <!-- Feature 4 -->
+        <div
+          class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20"
+          >
+            <i class="fas fa-puzzle-piece text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">One-Click Mod Installation</h3>
+          <p class="text-gray-400">
+            Install popular mods and modpacks with a single click. No more
+            fighting with config files.
+          </p>
+        </div>
+        <!-- Feature 5 -->
+        <div
+          class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20"
+          >
+            <i class="fas fa-users text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Unlimited Players</h3>
+          <p class="text-gray-400">
+            Scale your server as your community grows. Our infrastructure
+            handles player counts from small groups to massive communities.
+          </p>
+        </div>
+        <!-- Feature 6 -->
+        <div
+          class="bg-gray-800/80 rounded-xl p-8 transition duration-300 transform hover:-translate-y-2 border border-gray-700/50"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-[#313244] to-[#1e1e2e] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20"
+          >
+            <i class="fas fa-headset text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">24/7 Gamer Support</h3>
+          <p class="text-gray-400">
+            Our support team is made up of actual gamers who understand your
+            needs. Get help when you need it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FAQ Section -->
+  <div id="faq" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Frequently Asked <span class="text-blue-400">Questions</span>
+        </h2>
+        <p class="text-gray-400">Got questions? We've got answers.</p>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-6">
+          <!-- FAQ Item 1 -->
+          <div class="bg-gray-900 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">
+              How quickly can I get my server up and running?
+            </h3>
+            <p class="text-gray-400">
+              Our deployment process is fully automated. After completing your
+              order, your server will be ready in about 60 seconds. You'll
+              receive an email with your server details and control panel login.
+            </p>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="bg-gray-900 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">
+              Can I switch between different Minecraft versions?
+            </h3>
+            <p class="text-gray-400">
+              Absolutely! Our control panel allows you to switch between any
+              Minecraft version with just a few clicks. Your world data will be
+              safely preserved during version changes.
+            </p>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="bg-gray-900 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">
+              How do I invite friends to my server?
+            </h3>
+            <p class="text-gray-400">
+              Once your server is running, you'll get a unique IP address that
+              you can share with your friends. They can connect directly through
+              their Minecraft client by entering this IP in the multiplayer
+              section.
+            </p>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div class="bg-gray-900 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Can I upgrade my plan later?</h3>
+            <p class="text-gray-400">
+              Yes! You can upgrade your plan at any time through the control
+              panel. The upgrade process takes only a few minutes, and your
+              world data will be automatically transferred to your new server.
+            </p>
+          </div>
+          <!-- FAQ Item 5 -->
+          <div class="bg-gray-900 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">
+              Do you offer a money-back guarantee?
+            </h3>
+            <p class="text-gray-400">
+              Yes, we offer a 7-day money-back guarantee on all our plans. If
+              you're not satisfied with our service for any reason, simply
+              contact our support team within 7 days of your purchase for a full
+              refund.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'footer.html' %}
+</main>
+<!-- Schema.org Structured Data for SEO -->
+<script type="application/ld+json">
+  {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "BlockForge Minecraft Server Hosting",
     "description": "Premium Minecraft server hosting with instant setup, lag-free gameplay, and 24/7 support.",
     "offers": {
-    "@type": "AggregateOffer",
-    "lowPrice": "4.99",
-    "highPrice": "24.99",
-    "priceCurrency": "USD"
+      "@type": "AggregateOffer",
+      "lowPrice": "4.99",
+      "highPrice": "24.99",
+      "priceCurrency": "USD"
     },
     "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "1245"
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1245"
     }
-    }
-    </script>
+  }
+</script>
 {% endblock %}

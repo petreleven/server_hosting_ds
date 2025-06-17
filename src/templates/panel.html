@@ -355,6 +355,98 @@
     }
   }
 
+  // Function to set button states based on server status (without triggering operations)
+  function setButtonStatesForStatus(status) {
+    const restartBtn = document.getElementById("restart-button");
+    const stopBtn = document.getElementById("stop-button");
+    const statusElement = document.getElementById("server-status");
+
+    // Clear any existing polling first
+    if (pollInterval) {
+      clearInterval(pollInterval);
+      pollInterval = null;
+    }
+
+    switch (status) {
+      case "running":
+        // Server is running - both buttons should be enabled
+        if (restartBtn) {
+          restartBtn.disabled = false;
+          restartBtn.classList.remove("cursor-not-allowed", "opacity-50");
+        }
+        if (stopBtn) {
+          stopBtn.disabled = false;
+          stopBtn.classList.remove("cursor-not-allowed", "opacity-50");
+        }
+        if (statusElement) {
+          statusElement.innerText = "Running";
+          statusElement.className =
+            "px-2 py-1 rounded bg-green-600 text-white text-sm";
+        }
+        break;
+
+      case "stopped":
+        // Server is stopped - both buttons should be enabled
+        if (restartBtn) {
+          restartBtn.disabled = false;
+          restartBtn.classList.remove("cursor-not-allowed", "opacity-50");
+        }
+        if (stopBtn) {
+          stopBtn.disabled = false;
+          stopBtn.classList.remove("cursor-not-allowed", "opacity-50");
+        }
+        if (statusElement) {
+          statusElement.innerText = "Stopped";
+          statusElement.className =
+            "px-2 py-1 rounded bg-red-600 text-white text-sm";
+        }
+        break;
+
+      case "restarting":
+        // Server is restarting - show spinner on restart button, disable stop button
+        showButtonSpinner("restart-button");
+        disableOppositeButton("restart");
+        if (statusElement) {
+          statusElement.innerText = "Restarting...";
+          statusElement.className =
+            "px-2 py-1 rounded bg-yellow-600 text-white text-sm";
+        }
+        // Start polling to track the restart process
+        startPollingServerStatus("restart");
+        break;
+
+      case "stopping":
+        // Server is stopping - show spinner on stop button, disable restart button
+        showButtonSpinner("stop-button");
+        disableOppositeButton("stop");
+        if (statusElement) {
+          statusElement.innerText = "Stopping...";
+          statusElement.className =
+            "px-2 py-1 rounded bg-orange-600 text-white text-sm";
+        }
+        // Start polling to track the stop process
+        startPollingServerStatus("stop");
+        break;
+
+      default:
+        // Unknown status - enable both buttons but show error
+        if (restartBtn) {
+          restartBtn.disabled = false;
+          restartBtn.classList.remove("cursor-not-allowed", "opacity-50");
+        }
+        if (stopBtn) {
+          stopBtn.disabled = false;
+          stopBtn.classList.remove("cursor-not-allowed", "opacity-50");
+        }
+        if (statusElement) {
+          statusElement.innerText = "Unknown";
+          statusElement.className =
+            "px-2 py-1 rounded bg-gray-600 text-white text-sm";
+        }
+        break;
+    }
+  }
+
   // Restart server function
   function restartServer() {
     showButtonSpinner("restart-button");
@@ -411,6 +503,7 @@
         const statusElement = document.getElementById("server-status");
         if (data.status === "running") {
           clearInterval(pollInterval);
+          pollInterval = null;
 
           // Update status display
           if (statusElement) {
@@ -432,6 +525,7 @@
           console.log(`Server ${operation} completed successfully`);
         } else if (data.status === "stopped") {
           clearInterval(pollInterval);
+          pollInterval = null;
 
           // Update status display
           if (statusElement) {
@@ -476,6 +570,7 @@
 
         if (startPollingServerStatus.failCount >= 5) {
           clearInterval(pollInterval);
+          pollInterval = null;
 
           // Reset appropriate button
           if (operation === "restart") {
@@ -499,4 +594,31 @@
       }
     }, 10000); // poll every 10 seconds
   }
+
+  /* // Initialize on page load - multiple event listeners for different scenarios
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM loaded, initializing button states");
+    initializeButtonStates();
+  });
+
+  // For browser back/forward navigation
+  window.addEventListener("pageshow", function (event) {
+    console.log("Page show event, initializing button states");
+    initializeButtonStates();
+  });
+
+  // Cleanup polling when page is hidden/unloaded
+  window.addEventListener("pagehide", function () {
+    if (pollInterval) {
+      clearInterval(pollInterval);
+      pollInterval = null;
+    }
+  });
+
+  window.addEventListener("beforeunload", function () {
+    if (pollInterval) {
+      clearInterval(pollInterval);
+      pollInterval = null;
+    }
+  });*/
 </script>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block title %} Dashboard {% endblock %} {% block
+content %}
+<section
+  class="min-h-screen flex items-center justify-center py-20 bg-gray-900"
+>
+  <div class="glass-card rounded-2xl p-10 shadow-xl w-full max-w-md">
+    <h2 class="text-3xl font-bold mb-6 text-center text-blue-400">
+      Order New Server
+    </h2>
+    <form class="space-y-4" method="post" action="/register" id="register-form">
+      <div>
+        <label class="block text-gray-400 text-sm mb-1">Plan</label>
+        <select
+          name="game_id"
+          class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white"
+        >
+          <option
+            hx-get="/get_order_form?game_id=c96bce5a-00c9-46a4-8b05-98c05bf23893"
+            hx-target="#dynamic-plans"
+            hx-swap="innerHTML"
+            hx-trigger="load,click"
+            value="c96bce5a-00c9-46a4-8b05-98c05bf23893"
+          >
+            valheim
+          </option>
+        </select>
+      </div>
+      <section id="dynamic-plans"></section>
+      <button
+        type="submit"
+        class="w-full p-3 bg-green-500 hover:bg-green-500 text-[#1e1e2e] font-bold shadow-lg shadow-blue-600/30 transition"
+        hx-post="/register"
+        hx-trigger="click"
+        hx-target="body"
+      >
+        Create My Server (24h free)
+      </button>
+    </form>
+  </div>
+</section>
+{% endblock %}

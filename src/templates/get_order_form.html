@@ -1,0 +1,11 @@
+<div>
+  <label class="block text-gray-400 text-sm mb-1">Plan</label>
+  <select
+    name="plan_id"
+    class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white"
+  >
+    {% for p in plans_list %}
+    <option value="{{p.id}}">{{p.plan_name}} -{{p.price_monthly}}/month</option>
+    {% endfor %}
+  </select>
+</div>

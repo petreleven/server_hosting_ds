@@ -169,19 +169,13 @@
 <script type="text/javascript">
   // Function to initialize button states based on server status
   function initializeButtonStates() {
+    // Get server status from template variable
     const serverStatus = "{{server_status}}";
+    console.log("Initializing button states for status:", serverStatus);
 
-    if (serverStatus === "restarting") {
-      restartServer();
-    } else if (serverStatus === "stopping") {
-      stopServer();
+    if (serverStatus && serverStatus !== "") {
+      setButtonStatesForStatus(serverStatus);
     }
   }
-
-  // Initialize on page load
-  {% if server_status %}
-  document.addEventListener("htmx:afterSwap", function () {
-    initializeButtonStates();
-  });
-  {% endif %}
+  initializeButtonStates();
 </script>
