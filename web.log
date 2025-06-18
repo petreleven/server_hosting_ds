@@ -1227,3 +1227,226 @@ asyncpg.exceptions.UndefinedColumnError: column "exhausted_free" of relation "us
 2025-06-17 15:35:50,754 - backendlogger - INFO - Database connection pool created
 2025-06-17 15:35:50,756 - backendlogger - INFO - All database tables created successfully
 2025-06-17 15:35:50,758 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:39:19,408 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:39:19,420 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:39:19,428 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:39:59,147 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:39:59,151 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:39:59,159 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:45:34,462 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:45:34,465 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:45:34,467 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:47:38,743 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:47:38,746 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:47:38,748 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:48:18,585 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:48:18,587 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:48:18,588 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:49:19,654 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:49:19,657 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:49:19,658 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:49:41,658 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:49:41,660 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:49:41,661 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:52:58,583 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:52:58,606 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:52:58,617 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:54:50,133 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:54:50,136 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:54:50,138 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:56:00,356 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:56:00,358 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:56:00,359 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:56:19,795 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:56:19,797 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:56:19,798 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:56:37,152 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:56:37,155 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:56:37,157 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-17 15:57:11,116 - backendlogger - INFO - Database connection pool created
+2025-06-17 15:57:11,119 - backendlogger - INFO - All database tables created successfully
+2025-06-17 15:57:11,120 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 10:54:03,279 - backendlogger - INFO - Database connection pool created
+2025-06-18 10:54:03,487 - backendlogger - INFO - All database tables created successfully
+2025-06-18 10:54:03,488 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 12:17:45,536 - backendlogger - INFO - Database connection pool created
+2025-06-18 12:17:45,538 - backendlogger - INFO - All database tables created successfully
+2025-06-18 12:17:45,539 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 12:24:26,818 - backendlogger - INFO - Database connection pool created
+2025-06-18 12:24:26,820 - backendlogger - INFO - All database tables created successfully
+2025-06-18 12:24:26,822 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 12:25:39,081 - backendlogger - INFO - Database connection pool created
+2025-06-18 12:25:39,084 - backendlogger - INFO - All database tables created successfully
+2025-06-18 12:25:39,085 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 12:30:21,469 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:31:04,173 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:31:37,004 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:31:48,239 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:32:03,860 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:32:31,072 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:32:47,072 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:33:04,478 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:33:47,690 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:34:01,964 - backendlogger - INFO - Database connection pool created
+2025-06-18 12:34:01,966 - backendlogger - INFO - All database tables created successfully
+2025-06-18 12:34:01,967 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 12:34:16,182 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:35:03,846 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:35:26,348 - backendlogger - INFO - Database connection pool created
+2025-06-18 12:35:26,350 - backendlogger - INFO - All database tables created successfully
+2025-06-18 12:35:26,351 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 12:35:47,701 - server - ERROR - Exception on request POST /p_hook
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/server.py", line 73, in p_hook
+    from paddle_billing import Req
+ImportError: cannot import name 'Req' from 'paddle_billing' (/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/paddle_billing/__init__.py)
+2025-06-18 12:54:37,938 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 12:55:27,046 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done()(), Task.task_wakeup()] created at /usr/lib64/python3.13/asyncio/base_events.py:459> created at /home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/hypercorn/asyncio/run.py:83> took 0.108 seconds
+2025-06-18 12:55:27,371 - backendlogger - INFO - Database connection pool created
+2025-06-18 12:55:27,391 - backendlogger - INFO - All database tables created successfully
+2025-06-18 12:55:27,393 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=18, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000)>,)> is serving
+2025-06-18 12:55:27,393 - hypercorn.error - INFO - Running on http://127.0.0.1:5000 (CTRL + C to quit)
+2025-06-18 12:55:34,155 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 598, in read_response
+    response = await self._parser.read_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        disable_decoding=disable_decoding
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/_parsers/hiredis.py", line 211, in read_response
+    await self.read_from_socket()
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/_parsers/hiredis.py", line 189, in read_from_socket
+    buffer = await self._stream.read(self._read_size)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/usr/lib64/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-19' coro=<Lifespan.handle_lifespan() running at /home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/hypercorn/asyncio/lifespan.py:55>> got Future <Future pending created at /usr/lib64/python3.13/asyncio/base_events.py:459> attached to a different loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 49, in connect
+    if await redis_Client.json().get("pending_servers", "$") is None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/client.py", line 678, in execute_command
+    return await conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/retry.py", line 71, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/client.py", line 653, in _send_command_parse_response
+    return await self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/client.py", line 699, in parse_response
+    response = await connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 618, in read_response
+    await self.disconnect(nowait=True)
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/redis/asyncio/connection.py", line 474, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/asyncio/streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/asyncio/selector_events.py", line 1205, in close
+    super().close()
+    ~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/asyncio/selector_events.py", line 865, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 833, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/asyncio/base_events.py", line 556, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2025-06-18 12:55:36,159 - backendlogger - INFO - Database connection pool created
+2025-06-18 12:55:36,163 - backendlogger - INFO - All database tables created successfully
+2025-06-18 12:55:36,165 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=18, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000)>,)> is serving
+2025-06-18 12:55:36,165 - hypercorn.error - INFO - Running on http://127.0.0.1:5000 (CTRL + C to quit)
+2025-06-18 12:56:02,642 - backendlogger - INFO - Database connection pool created
+2025-06-18 12:56:02,644 - backendlogger - INFO - All database tables created successfully
+2025-06-18 12:56:02,645 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 12:56:06,362 - backendlogger - INFO - Database connection pool created
+2025-06-18 12:56:06,364 - backendlogger - INFO - All database tables created successfully
+2025-06-18 12:56:06,365 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-18 12:56:17,228 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:56:17,228 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:56:17,228 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:32,215 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:32,215 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:32,215 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:32,248 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:32,248 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:32,248 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:32,517 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:32,517 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:32,518 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:32,770 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:32,770 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:32,771 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:46,736 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:46,737 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:46,737 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:46,995 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:46,995 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:46,995 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:47,253 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:47,253 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:47,254 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:47,612 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:47,612 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:47,612 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:47,773 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:47,774 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:47,774 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:48,285 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:48,285 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:48,285 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:56,676 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:56,676 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:56,676 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:56,688 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:56,688 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:56,688 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:57,315 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:57,315 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:57,316 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:57,495 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:57,495 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:57,496 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:57,774 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:57,775 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:57,775 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:58,967 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:58,967 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:58,968 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:59,234 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:59,234 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:59,235 - paddle_billing - INFO - Paddle signature integrity failed
+2025-06-18 12:58:59,314 - paddle_billing - INFO - Attempting to verify the authenticity of a request
+2025-06-18 12:58:59,314 - paddle_billing - INFO - Verifying Paddle signature integrity against one secret key
+2025-06-18 12:58:59,314 - paddle_billing - INFO - Paddle signature integrity failed

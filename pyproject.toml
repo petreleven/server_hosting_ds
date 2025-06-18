@@ -9,6 +9,7 @@ dependencies = [
     "bcrypt>=4.3.0",
     "dotenv>=0.9.9",
     "jsonschema>=4.23.0",
+    "paddle-python-sdk>=1.6.1",
     "passlib>=1.7.4",
     "pydantic>=2.11.4",
     "quart>=0.20.0",

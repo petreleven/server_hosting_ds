@@ -1,0 +1,242 @@
+<!-- Pricing Container -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<div class="max-w-6xl mx-auto px-4 py-8">
+  <!-- Billing Toggle -->
+  <div class="text-center mb-8">
+    <div class="inline-flex items-center bg-gray-100 rounded-lg p-1">
+      <button
+        id="monthlyBtn"
+        class="px-4 py-2 rounded-md text-sm bg-white"
+        onclick="updateBillingCycle('month')"
+      >
+        Monthly
+      </button>
+      <<!-- button
+        id="yearlyBtn"
+        class="px-4 py-2 rounded-md text-sm"
+        onclick="updateBillingCycle('year')"
+      >
+        Yearly (Save 20%)
+      </button> -->
+    </div>
+  </div>
+
+  <!-- Pricing Grid -->
+  <div class="grid md:grid-cols-3 gap-8">
+    <!-- Starter Plan -->
+    <div class="bg-white rounded-lg shadow-lg p-8">
+      <h3 class="text-xl font-semibold mb-4">Starter</h3>
+      <div class="mb-4">
+        <span id="starter-price" class="text-4xl font-bold">$10.00</span>
+        <span class="text-gray-500 ml-1">/month</span>
+      </div>
+      <button
+        onclick="openCheckout('starter')"
+        class="w-full bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700 transition-colors"
+      >
+        Get started
+      </button>
+    </div>
+
+    <!-- Pro Plan -->
+    <div
+      class="bg-white rounded-lg shadow-lg p-8 border-2 border-blue-500 relative"
+    >
+      <div
+        class="absolute -top-3 right-12 bg-blue-500 text-white px-3 py-1 rounded-full text-sm"
+      >
+        Popular
+      </div>
+      <h3 class="text-xl font-semibold mb-4">Pro</h3>
+      <div class="mb-4">
+        <span id="pro-price" class="text-4xl font-bold">$30.00</span>
+        <span class="text-gray-500 ml-1">/month</span>
+      </div>
+      <button
+        onclick="openCheckout('pro')"
+        class="w-full bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700 transition-colors"
+      >
+        Get started
+      </button>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="bg-white rounded-lg shadow-lg p-8">
+      <h3 class="text-xl font-semibold mb-4">Enterprise</h3>
+      <div class="mb-4">
+        <span class="text-4xl font-bold">Contact us</span>
+      </div>
+      <button
+        onclick="window.location.href='mailto:sales@example.com'"
+        class="w-full bg-gray-600 text-white rounded-lg px-4 py-2 hover:bg-gray-700 transition-colors"
+      >
+        Let's talk
+      </button>
+    </div>
+  </div>
+
+  <!-- Country Selector -->
+  <!-- Remove from live implementations -->
+  <div class="mt-12 p-6 bg-blue-50 border border-blue-200 rounded-lg">
+    <div class="md:flex md:items-center md:justify-between">
+      <div class="md:flex-1 md:pr-8">
+        <h3 class="text-lg font-semibold mb-2">
+          Explore customer localization
+        </h3>
+        <p class="mb-4 md:mb-0 text-sm text-gray-600">
+          Test how price localization works by changing the country. You can
+          pass a country, IP address, or existing customer ID to
+          <code class="bg-blue-100 px-1 py-0.5 rounded"
+            >Paddle.PricePreview()</code
+          >
+          to get localized prices. In live implementations, we recommend using
+          an IP address.
+        </p>
+      </div>
+
+      <div class="text-center md:text-right md:flex-shrink-0">
+        <select
+          id="countrySelect"
+          class="px-4 py-2 rounded-lg border border-gray-300"
+        >
+          <option value="US">🇺🇸 United States</option>
+          <option value="GB">🇬🇧 United Kingdom</option>
+          <option value="DE">🇩🇪 Germany</option>
+          <option value="FR">🇫🇷 France</option>
+          <option value="AU">🇦🇺 Australia</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  // Configuration
+  // Replace with values from your sandbox account
+  const CONFIG = {
+    clientToken: "test_8e35f531dede314767d42eaf000",
+    prices: {
+      starter: {
+        month: "pri_01jy0z84t8pvrmre5mfam6x3pq",
+        //year: "pri_01gsz8s48pyr4mbhvv2xfggesg",
+      },
+      pro: {
+        month: "pri_01jy0z8xqp3gs30m815mxapfmj",
+        //year: "pri_01gsz8z1q1n00f12qt82y31smh",
+      },
+    },
+  };
+
+  // UI elements
+  const monthlyBtn = document.getElementById("monthlyBtn");
+  //const yearlyBtn = document.getElementById("yearlyBtn");
+  const countrySelect = document.getElementById("countrySelect");
+  const starterPrice = document.getElementById("starter-price");
+  const proPrice = document.getElementById("pro-price");
+
+  // State
+  let currentBillingCycle = "month";
+  let currentCountry = "US";
+  let paddleInitialized = false;
+
+  // Initialize Paddle
+  function initializePaddle() {
+    try {
+      Paddle.Environment.set("sandbox");
+      Paddle.Initialize({
+        token: CONFIG.clientToken,
+        eventCallback: function (event) {
+          console.log("Paddle event:", event);
+        },
+      });
+      paddleInitialized = true;
+      updatePrices();
+    } catch (error) {
+      console.error("Initialization error:", error);
+    }
+  }
+
+  // Update billing cycle
+  function updateBillingCycle(cycle) {
+    currentBillingCycle = cycle;
+    monthlyBtn.classList.toggle("bg-white", cycle === "month");
+    //yearlyBtn.classList.toggle("bg-white", cycle === "year");
+    updatePrices();
+  }
+
+  // Update prices
+  async function updatePrices() {
+    if (!paddleInitialized) {
+      console.log("Paddle not initialized yet");
+      return;
+    }
+
+    try {
+      const request = {
+        items: [
+          {
+            quantity: 1,
+            priceId: CONFIG.prices.starter[currentBillingCycle],
+          },
+          {
+            quantity: 1,
+            priceId: CONFIG.prices.pro[currentBillingCycle],
+          },
+        ],
+        address: {
+          countryCode: currentCountry,
+        },
+      };
+
+      console.log("Fetching prices:", request);
+      const result = await Paddle.PricePreview(request);
+
+      result.data.details.lineItems.forEach((item) => {
+        const price = item.formattedTotals.subtotal;
+        if (item.price.id === CONFIG.prices.starter[currentBillingCycle]) {
+          starterPrice.textContent = price;
+        } else if (item.price.id === CONFIG.prices.pro[currentBillingCycle]) {
+          proPrice.textContent = price;
+        }
+      });
+      console.log("Prices updated:", result);
+    } catch (error) {
+      console.error(`Error fetching prices: ${error.message}`);
+    }
+  }
+
+  // Open checkout
+  function openCheckout(plan) {
+    if (!paddleInitialized) {
+      console.log("Paddle not initialized yet");
+      return;
+    }
+
+    try {
+      Paddle.Checkout.open({
+        items: [
+          {
+            priceId: CONFIG.prices[plan][currentBillingCycle],
+            quantity: 1,
+          },
+        ],
+        settings: {
+          theme: "light",
+          displayMode: "overlay",
+          variant: "one-page",
+        },
+      });
+    } catch (error) {
+      console.error(`Checkout error: ${error.message}`);
+    }
+  }
+
+  // Event Listeners
+  countrySelect.addEventListener("change", (e) => {
+    currentCountry = e.target.value;
+    updatePrices();
+  });
+
+  // Initialize on page load
+  document.addEventListener("DOMContentLoaded", initializePaddle);
+</script>

@@ -2,10 +2,11 @@ import asyncio
 import logging
 import os
 from pathlib import Path
+from pprint import pp
 import sys
 
 from dotenv import load_dotenv
-from quart import Quart
+from quart import Quart, abort, render_template, request
 from quart_auth import QuartAuth
 from quart_schema import QuartSchema
 
@@ -61,6 +62,53 @@ async def check_pending_servers():
     while True:
         await pv.job_repeating_check_pending_servers()
         await asyncio.sleep(30)
+
+@app.route("/test")
+async def test():
+    return await render_template("test.html")
+
+import pprint
+from typing import Optional
+from paddle_billing.Notifications import Verifier, Secret
+from paddle_billing.Notifications.Requests import Request
+from paddle_billing.Notifications.Requests.Headers import Headers
+
+
+class QuartRequestAdapter:
+    """Adapter to make Quart request compatible with Paddle Request protocol"""
+
+    def __init__(self, quart_request, raw_body: bytes):
+        self.body: Optional[bytes] = raw_body
+        self.content: Optional[bytes] = raw_body  # Same as body
+        self.data: Optional[bytes] = raw_body     # Same as body
+        self.headers: Headers = quart_request.headers
+
+@app.route("/p_hook", methods=["POST"])
+async def p_hook():
+    # 1. Grab the raw body
+    raw_body = await request.get_data()  # Get raw bytes from Quart
+
+    # 2. Create adapter that satisfies the Request protocol
+    paddle_request = QuartRequestAdapter(request, raw_body)
+
+    try:
+        # 3. Verify signature using the adapter
+        integrity_check = Verifier().verify(
+            paddle_request,
+            Secret('apikey_01jy129070xndw3whgzcbgw1pe')
+        )
+    except Exception as e:
+        print(f"Signature verification failed: {e}")
+        abort(403)
+
+    # 4. Now it's safe to parse JSON
+    data = await request.get_json()
+    pprint.pprint(data)
+
+    # 5. Process your webhook data here
+    # e.g. fulfill an order, update your DB, etc.
+
+    return "OK", 200
 
 
 app.run(
