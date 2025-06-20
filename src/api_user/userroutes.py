@@ -94,7 +94,7 @@ async def register():
         user_record, err = await db.db_insert_user(data)
 
         if not user_record:
-            errors["email_errors"].append(err)
+            errors["email_errors"].append(str(err))
             logger.error(f"Failed to create user for email: {data.email}")
             return await render_template("home.html", errors=errors)
 

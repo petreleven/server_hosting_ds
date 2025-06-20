@@ -45,7 +45,7 @@ app.register_blueprint(serverActionsBlueprint)
 
 
 @app.before_serving
-async def connect():
+async def connect()->None:
     try:
         redis_Client = db.get_redis_client()
         if await redis_Client.json().get("pending_servers", "$") is None:
