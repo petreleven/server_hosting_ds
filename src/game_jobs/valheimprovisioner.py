@@ -3,8 +3,9 @@ import json
 import os
 import secrets
 import sys
-from typing import Dict, Any
+from typing import Dict, Any, List
 
+from flask import config
 import jsonschema
 
 from game_jobs.abstract_provisioner import AbstractProvisioner
@@ -167,6 +168,21 @@ class ValheimProvisioner(AbstractProvisioner):
             "required": ["name", "port", "world"],
         }
 
+    def parse_check_boxes(self, form_dict) -> Dict:
+        check_box_keys = [
+            "nobuildcost",
+            "passivemobs",
+            "playerevents",
+            "nomap",
+            "crossplay",
+        ]
+        for key in check_box_keys:
+            if key not in form_dict.keys():
+                form_dict[key] = "off"
+            form_dict[key] = True if form_dict[key] == "on" else False
+
+        return form_dict
+
     async def job_update_config(
         self,
         game_server_ip: str,
@@ -175,6 +191,7 @@ class ValheimProvisioner(AbstractProvisioner):
         config_values: dict,
     ) -> None:
         """Implementation of configuration update for Valheim servers."""
+
         if not await self.validate_config(config_values):
             return
 

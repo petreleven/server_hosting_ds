@@ -6,15 +6,16 @@ from pprint import pp
 import sys
 
 from dotenv import load_dotenv
-from quart import Quart, abort, render_template, request
+from quart import Quart
 from quart_auth import QuartAuth
 from quart_schema import QuartSchema
-
-from api import apiblueprint
 from db import db
 from game_jobs import mainProvisioner
-from userroutes import userblueprint
-from create_order import orderBlueprint
+
+from api_internal.api import apiblueprint
+from api_user.userroutes import userblueprint
+from api_user.create_order import orderBlueprint
+from api_user.server_actions import serverActionsBlueprint
 
 # envs
 load_dotenv()
@@ -40,6 +41,7 @@ QuartSchema(app)
 app.register_blueprint(apiblueprint)
 app.register_blueprint(userblueprint)
 app.register_blueprint(orderBlueprint)
+app.register_blueprint(serverActionsBlueprint)
 
 
 @app.before_serving
@@ -48,7 +50,7 @@ async def connect():
         redis_Client = db.get_redis_client()
         if await redis_Client.json().get("pending_servers", "$") is None:
             await redis_Client.json().set("pending_servers", "$", [])
-        await db.db_createalldbs()
+        # await db.db_createalldbs()
         await redis_Client.ping()
         # app.add_background_task(check_pending_servers)
     except Exception as e:
@@ -62,53 +64,6 @@ async def check_pending_servers():
     while True:
         await pv.job_repeating_check_pending_servers()
         await asyncio.sleep(30)
-
-@app.route("/test")
-async def test():
-    return await render_template("test.html")
-
-import pprint
-from typing import Optional
-from paddle_billing.Notifications import Verifier, Secret
-from paddle_billing.Notifications.Requests import Request
-from paddle_billing.Notifications.Requests.Headers import Headers
-
-
-class QuartRequestAdapter:
-    """Adapter to make Quart request compatible with Paddle Request protocol"""
-
-    def __init__(self, quart_request, raw_body: bytes):
-        self.body: Optional[bytes] = raw_body
-        self.content: Optional[bytes] = raw_body  # Same as body
-        self.data: Optional[bytes] = raw_body     # Same as body
-        self.headers: Headers = quart_request.headers
-
-@app.route("/p_hook", methods=["POST"])
-async def p_hook():
-    # 1. Grab the raw body
-    raw_body = await request.get_data()  # Get raw bytes from Quart
-
-    # 2. Create adapter that satisfies the Request protocol
-    paddle_request = QuartRequestAdapter(request, raw_body)
-
-    try:
-        # 3. Verify signature using the adapter
-        integrity_check = Verifier().verify(
-            paddle_request,
-            Secret('apikey_01jy129070xndw3whgzcbgw1pe')
-        )
-    except Exception as e:
-        print(f"Signature verification failed: {e}")
-        abort(403)
-
-    # 4. Now it's safe to parse JSON
-    data = await request.get_json()
-    pprint.pprint(data)
-
-    # 5. Process your webhook data here
-    # e.g. fulfill an order, update your DB, etc.
-
-    return "OK", 200
 
 
 app.run(

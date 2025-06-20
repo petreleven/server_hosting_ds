@@ -1,9 +1,9 @@
 import datetime
 import logging
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, List
 import json
 import asyncpg
-import custom_dataclass as cdata
+import helper_classes.custom_dataclass as cdata
 from db import db
 from game_jobs.provisioner_factory import ProvisionerFactory
 
@@ -57,7 +57,7 @@ class MainProvisioner:
         """
         # Implementation for admin notifications
 
-    async def job_order_new_server(self, data: cdata.RegisterUserData) -> None:
+    async def job_order_new_trial_server(self, data: cdata.RegisterUserData) -> None:
         """Orchestrates the provisioning of a new game server for a registered user.
 
         Args:
@@ -67,14 +67,17 @@ class MainProvisioner:
         if user is None:
             self.logger.warning("User not found for email %s", data.email)
             return
-        user_id = user.get("id")
-
+        user_id = str(user.get("id", ""))
+        expires_at = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(
+            hours=8, minutes=10
+        )
         subscription, _ = await db.db_insert_subscription(
-            user_id,
-            data.plan_id,
-            "provisioning",
-            datetime.datetime.now(),
-            datetime.datetime.now(),
+            user_id=user_id,
+            plan_id=data.plan_id,
+            status="provisioning",
+            expires_at=expires_at,
+            next_billing_date=expires_at,
+            is_trial=True,
         )
 
         if subscription is None:
@@ -86,11 +89,11 @@ class MainProvisioner:
             self.logger.error("Plan %s not found", data.plan_id)
             return
 
-        game, _ = await db.db_select_game_by_id(str(plan.get("game_id")))
+        game, _ = await db.db_select_game_by_id(str(plan.get("parent_id")))
         if not game:
             self.logger.error("Game not found for plan %s", data.plan_id)
             return
-        game_name = game.get("game_name")
+        game_name = game.get("name", "")
 
         # Get the provisioner for this game
         provisioner = ProvisionerFactory.get_provisioner(game_name)
@@ -111,11 +114,8 @@ class MainProvisioner:
             # Update subscription status to unavailable
             record, err = await db.db_update_subscription_status(
                 sub_id,
-                "unavailable",
-                last_billing_date=datetime.datetime.now(),
-                next_billing_date=datetime.datetime.now(),
+                db.SUBSCRIPTION_STATUS.UNAVAILABLE.value,
             )
-
             if err:
                 self.logger.warning(f"Unable to update subscription {sub_id}: {err}")
 
@@ -131,6 +131,7 @@ class MainProvisioner:
                 await self.update_exhausted_free_status(user_id)
             return
 
+        await db.db_update_subscription_is_trial(str(subscription.get("id")), True)
         await self._provision_server(
             subscription_id=str(subscription.get("id")),
             baremetal=baremetal,
@@ -140,8 +141,6 @@ class MainProvisioner:
             cfg=cfg,
         )
         await self.update_exhausted_free_status(user_id)
-
-
 
     async def _add_order_to_queue(
         self,
@@ -153,7 +152,7 @@ class MainProvisioner:
         """Add a server order to the pending queue."""
         payload = {
             "subscription_id": subscription_id,
-            "game_name": game_name,
+            "name": game_name,
             "ram_gb": ram_gb,
             "plan_id": plan_id,
             "order_time": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -246,7 +245,7 @@ class MainProvisioner:
         subscription_id = str(pending_job.get("subscription_id"))
         ram_needed = pending_job.get("ram_gb")
         plan_id = str(pending_job.get("plan_id"))
-        game_name = pending_job.get("game_name")
+        game_name = pending_job.get("name")
 
         # Validate required fields
         if not all([subscription_id, plan_id, game_name]):
@@ -343,21 +342,15 @@ class MainProvisioner:
             self.logger.error("Baremetal record missing IP")
             return
 
-        # Get required ports from the game provisioner
-        ports = provisioner.get_required_ports()
-
         await db.db_update_subscription_status(
-            subscription_id,
-            "provisioning",
-            datetime.datetime.now(datetime.timezone.utc),
-            datetime.datetime.now(datetime.timezone.utc),
+            subscription_id, db.SUBSCRIPTION_STATUS.PROVISIONING.value
         )
 
         server, _ = await db.db_insert_server(
             subscription_id=subscription_id,
             status="provisioning",
             ip_address=ip,
-            ports=",".join(str(p) for p in ports),
+            ports="",
             docker_container_id="-",
             cfg=cfg,
         )
@@ -370,10 +363,9 @@ class MainProvisioner:
 
         payload = self._build_payload(
             user_id=subscription_id,
-            ports=ports,
             game_name=game_name,
-            ram_gb=plan.get("ram_gb"),
-            cpu_cores=plan.get("cpu_cores"),
+            ram_gb=plan.get("ram_gb", 2),
+            cpu_cores=plan.get("cpu_cores", 2),
         )
         queue = f"badger:pending:{ip}"
         await self.redisClient.lpush(queue, payload)
@@ -382,15 +374,13 @@ class MainProvisioner:
     def _build_payload(
         self,
         user_id: str,
-        ports: list[int],
         game_name: str,
         ram_gb: int,
         cpu_cores: int,
     ) -> str:
         """Build the payload for the provisioning job."""
-        port_args = " ".join(str(p) for p in ports)
         return (
-            f"python3 setup_server.py -u {user_id} -p {port_args}"
+            f"python3 setup_server.py -u {user_id}"
             f" -g {game_name} -m {ram_gb}g -c {cpu_cores} start"
         )
 
@@ -410,11 +400,11 @@ class MainProvisioner:
             self.logger.error("Plan %s not found", plan_id)
             return
 
-        game, _ = await db.db_select_game_by_id(str(plan.get("game_id")))
+        game, _ = await db.db_select_game_by_id(str(plan.get("parent_id")))
         if not game:
             self.logger.error("Game not found for plan %s", plan_id)
             return
-        game_name = game.get("game_name")
+        game_name = game.get("name")
         provisioner = ProvisionerFactory.get_provisioner(game_name=game_name)
         if not provisioner:
             return None
@@ -423,10 +413,18 @@ class MainProvisioner:
         data["subscription_id"] = subscription_id
         return data
 
-    async def update_exhausted_free_status(self,user_id):
+    async def update_exhausted_free_status(self, user_id):
         pool = await db.get_pool()
         if not pool:
             return
         async with pool.acquire() as conn:
-            await conn.execute("UPDATE  users SET exhausted_free=$1 WHERE id=$2",
-                                True,user_id)
+            await conn.execute(
+                "UPDATE  users SET exhausted_free=$1 WHERE id=$2", True, user_id
+            )
+
+    def parse_check_boxes(self, form_dict, game_name) -> Optional[Dict]:
+        provisioner = ProvisionerFactory.get_provisioner(game_name=game_name)
+        if not provisioner:
+            return None
+        newform_dict = provisioner.parse_check_boxes(form_dict=form_dict)
+        return newform_dict

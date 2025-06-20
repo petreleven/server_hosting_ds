@@ -1,6 +1,6 @@
 import logging
 from abc import ABC, abstractmethod
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 from db import db
 
@@ -70,4 +70,10 @@ class AbstractProvisioner(ABC):
             cfg : json loaded config values from db
         Returns:
             Dict[str, Any] a dictionary of the schema
+        """
+
+    @abstractmethod
+    def parse_check_boxes(self, form_dict) -> Dict:
+        """
+        converts checkbox from frontend from on to False and off to True
         """

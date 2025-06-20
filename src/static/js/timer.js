@@ -37,6 +37,7 @@ function updateCountdown(expiresAtStr, countdownElementId, status) {
 // Handle HTMX content replacement
 document.body.addEventListener('htmx:afterSwap', (event) => {
     // Only proceed if a server card was updated
+    console.log("called")
     const newContent = event.target;
     const countdowns = newContent.querySelectorAll('[id^="countdown-"]');
 

@@ -1,0 +1,36 @@
+<section id="allservers">
+  <div class="max-w-4xl mx-auto px-4 py-10" id="servers-container">
+    <h1 class="text-4xl font-bold mb-10 text-lime-400 glow flex items-center">
+      <!-- icon -->
+      Your Servers
+    </h1>
+    <div class="container mx-auto px-4 py-8">
+      {% for sub in subscriptions %} {% set current_sub=sub %} {% include
+      'single_subscription.html' with context %} {% endfor %} {% if not
+      subscriptions %}
+      <div
+        class="glass-card rounded-lg p-10 text-center border border-gray-700 backdrop-blur-md shadow-xl"
+      >
+        <!-- icon -->
+        <h2 class="text-2xl font-bold mb-4">No Servers Yet</h2>
+        <p class="text-gray-400 mb-8 max-w-md mx-auto">
+          Create your first server and start playing with friends in minutes!
+        </p>
+        <button
+          class="bg-gradient-to-r from-lime-600 to-green-700 hover:from-lime-500 hover:to-green-600 text-white text-lg px-8 py-4 rounded-lg transition shadow-lg hover:shadow-lime-500/30 inline-flex items-center transform hover:-translate-y-1"
+          hx-get="/create-server"
+          hx-target="main"
+          hx-swap="innerHTML"
+        >
+          <!-- icon -->
+          Create Server
+        </button>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='js/timer.js') }}"
+  ></script>
+</section>

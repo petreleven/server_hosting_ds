@@ -1,3 +1,4 @@
+import asyncio
 import datetime
 import logging
 import re
@@ -14,7 +15,7 @@ from pathlib import Path
 import enum
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-import custom_dataclass as cdata
+import helper_classes.custom_dataclass as cdata
 
 dotenv.load_dotenv()
 
@@ -30,6 +31,33 @@ SQL_QUERIES: Dict[str, str] = {}
 
 pool: Pool | None = None
 _conn_lock = threading.Lock()
+
+
+class QUERY_TYPE(enum.Enum):
+    EXECUTE = 0
+    FETCH = 1
+    FETCHROW = 2
+
+
+class SUBSCRIPTION_STATUS(enum.Enum):
+    PROVISIONING = "provisioning"
+    UNAVAILABLE = "unavailable"  # RESOURCES FULL
+    TRIAL = "trial"  # free trial
+    ACTIVE = "active"  # paying and active
+    EXPIRED = "expired"
+    FAILED = "failed"  # can handles also miscenallnious failures
+
+
+class SERVER_STATUS(enum.Enum):
+    PROVISIONING = "provisioning"
+    RESTARTING = "restarting"
+    RUNNING = "running"
+    STOPPING = "stopping"
+    STOPPED = "stopped"
+    CONFIGURED = "configured"
+    # the rest should ideally not happen
+    FAILED = "failed"
+    NOT_FOUND = "not_found"
 
 
 def get_redis_client() -> Redis:
@@ -50,9 +78,8 @@ def get_redis_client() -> Redis:
 def load_sql_queries() -> None:
     """Load SQL queries from files into memory."""
     try:
-        models_path = str(Path(__file__).parent) + "/schema/models.sql"
         queries_path = str(Path(__file__).parent) + "/query/query.sql"
-        all_paths = [models_path, queries_path]
+        all_paths = [queries_path]
 
         for p in all_paths:
             if not Path(p).exists():
@@ -92,12 +119,6 @@ async def get_pool() -> Pool | None:
     return pool
 
 
-class QUERY_TYPE(enum.Enum):
-    EXECUTE = 0
-    FETCH = 1
-    FETCHROW = 2
-
-
 async def conn_manager(qt: QUERY_TYPE, transaction=False, *args) -> Any:
     pool = await get_pool()
     if not pool:
@@ -119,6 +140,12 @@ async def conn_manager(qt: QUERY_TYPE, transaction=False, *args) -> Any:
         else:
             async with conn.transaction():
                 return await run(conn)
+
+
+async def create_tables():
+    models_path = str(Path(__file__).parent) + "/schema/models.sql"
+    p = await get_pool()
+    await conn_manager(QUERY_TYPE.EXECUTE, True, Path(models_path).read_text())
 
 
 async def db_createalldbs() -> bool:
@@ -168,6 +195,7 @@ async def db_insert_subscription(
     status: str,
     expires_at: datetime.datetime,
     next_billing_date: datetime.datetime,
+    is_trial=False,
 ) -> Tuple[asyncpg.Record | None, str | None]:
     """Insert a new subscription and return its record."""
     try:
@@ -180,6 +208,7 @@ async def db_insert_subscription(
             status,
             expires_at,
             next_billing_date,
+            is_trial,
         ), None
     except asyncpg.ForeignKeyViolationError:
         logger.warning(
@@ -272,6 +301,7 @@ async def db_select_all_subscriptions(
     except Exception as e:
         logger.error(f"Error selecting all subscriptions: {str(e)}")
         return [], f"Database error: {str(e)}"
+
 
 async def db_select_all_plans_by_game(
     game_id: str,
@@ -413,8 +443,6 @@ async def db_update_server_status(
 async def db_update_subscription_status(
     subscription_id: str,
     status: str,
-    last_billing_date: datetime.datetime,
-    next_billing_date: datetime.datetime,
 ) -> Tuple[asyncpg.Record | None, str | None]:
     """Update subscription status and billing dates."""
     try:
@@ -426,8 +454,6 @@ async def db_update_subscription_status(
             False,
             SQL_QUERIES["UpdateSubscriptionStatus"],
             status,
-            last_billing_date,
-            next_billing_date,
             subscription_id,
         )
         if not result:
@@ -435,6 +461,29 @@ async def db_update_subscription_status(
         return result, None
     except Exception as e:
         logger.error(f"Error updating subscription status: {str(e)}")
+        return None, f"Database error: {str(e)}"
+
+
+async def db_update_subscription_is_trial(
+    subscription_id: str, is_trial: bool
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Update subscription status and billing dates."""
+    try:
+        if not subscription_id:
+            return None, "Subscription ID is required"
+
+        result = await conn_manager(
+            QUERY_TYPE.FETCHROW,
+            False,
+            SQL_QUERIES["UpdateSubscriptionIsTrial"],
+            is_trial,
+            subscription_id,
+        )
+        if not result:
+            return None, "Subscription not found"
+        return result, None
+    except Exception as e:
+        logger.error(f"Error updating subscription trial: {str(e)}")
         return None, f"Database error: {str(e)}"
 
 
@@ -489,3 +538,6 @@ try:
 except Exception as e:
     logger.critical(f"Failed to load SQL queries: {str(e)}")
     sys.exit(1)
+# loop = asyncio.get_event_loop()
+# loop.run_until_complete(create_tables())
+# print("done")

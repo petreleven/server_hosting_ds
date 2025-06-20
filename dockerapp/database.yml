@@ -4,7 +4,7 @@ services:
     container_name: redis-server
     restart: always
     volumes:
-      - "redis_data:/data"
+      - "redis_data3:/data"
     ports:
       - "6379:6379"
     env_file:
@@ -20,8 +20,23 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - "postgres_data:/var/lib/postgresql/data"
+      - "postgres_data3:/var/lib/postgresql/data"
 
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "True"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - postgres-db
 volumes:
-  redis_data:
-  postgres_data:
+  redis_data3:
+  postgres_data3:
+  pgadmin-data:

@@ -1,21 +1,15 @@
 -- name: InsertUser
 INSERT INTO users (email, password)
 VALUES ($1,
-        $2) RETURNING id,
-            email,
-            created_at;
+        $2) RETURNING *
 -- name: InsertSubscription
-INSERT INTO subscriptions (user_id, plan_id, status, expires_at, next_billing_date)
+INSERT INTO subscriptions (user_id, plan_id, status, expires_at, next_billing_date, is_trial)
 VALUES ($1,
         $2,
         $3,
         $4,
-        $5) RETURNING id,
-            user_id,
-            plan_id,
-            status,
-            expires_at,
-            next_billing_date;
+        $5,
+        $6) RETURNING *
 -- name: InsertServer
 INSERT INTO servers (subscription_id, status, ip_address, ports, docker_container_id, config)
 VALUES ($1,
@@ -46,15 +40,15 @@ FROM subscriptions
 WHERE user_id = $1;
 -- name: SelectAllPlansByGame
 SELECT *
-FROM plans
-WHERE game_id = $1;
+FROM catalog
+WHERE parent_id = $1;
 -- name: SelectPlanById
 SELECT *
-FROM plans
+FROM catalog
 WHERE id = $1;
 -- name: SelectGameById
 SELECT *
-FROM games
+FROM catalog
 WHERE id = $1;
 -- name: SelectSubscriptionById
 SELECT *
@@ -77,10 +71,12 @@ SET status = $1,
 WHERE subscription_id = $4 RETURNING *;
 -- name: UpdateSubscriptionStatus
 UPDATE subscriptions
-SET status = $1,
-             last_billing_date = $2,
-                                 next_billing_date = $3
-WHERE id = $4 RETURNING *;
+SET status = $1
+WHERE id = $2 RETURNING *;
+-- name: UpdateSubscriptionIsTrial
+UPDATE subscriptions
+SET is_trial = $1
+WHERE id = $2 RETURNING *;
 -- name: UpdateServerConfig
 UPDATE servers
 SET config = $1
