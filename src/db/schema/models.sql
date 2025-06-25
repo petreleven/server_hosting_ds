@@ -27,11 +27,14 @@ FOREIGN KEY (parent_id) REFERENCES catalog(id)
 );
 
 -- 3. Subscriptions table
+CREATE TYPE subscription_payment_status AS ENUM ('active', 'cancelled', 'paused', 'expired')
+CREATE TYPE subscription_internal_status AS ENUM ('on', 'provisioning', 'unavailable', 'failed')
 CREATE TABLE subscriptions (
 id                  UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
 user_id             UUID NOT NULL,
 plan_id             UUID NOT NULL,
-status              VARCHAR(50) DEFAULT 'trial',   -- e.g. 'provisioning', 'unavailable','trial', 'active', 'expired'
+status              subscription_payment_status,
+internal_status     subscription_internal_status,
 is_trial            BOOLEAN DEFAULT FALSE,
 trial_starts_at     TIMESTAMP WITH TIME ZONE,
 trial_expires_at    TIMESTAMP WITH TIME ZONE,
@@ -43,8 +46,9 @@ paddle_subscription_id VARCHAR(255),
 paddle_customer_id  VARCHAR(255),
 FOREIGN KEY (user_id) REFERENCES users(id),
 FOREIGN KEY (plan_id) REFERENCES catalog(id)
+CONSTRAINT unique_paddle_sub_customer
+UNIQUE (paddle_subscription_id, paddle_customer_id);
 );
-
 -- 4. Transactions table
 CREATE TABLE transactions (
 id                     UUID PRIMARY KEY DEFAULT uuid_generate_v4(),

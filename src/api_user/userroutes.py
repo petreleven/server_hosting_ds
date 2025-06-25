@@ -346,3 +346,9 @@ async def mods_n_backups():
     return await render_template(
         "mods_n_backups.html", sftp_username=sftp_username, sftp_password=sftp_password
     )
+
+
+@userblueprint.route("/order_server")
+@login_required
+async def order_server():
+    return await render_template("test.html")

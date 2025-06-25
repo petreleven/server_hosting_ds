@@ -2,7 +2,6 @@ import asyncio
 import logging
 import os
 from pathlib import Path
-from pprint import pp
 import sys
 
 from dotenv import load_dotenv
@@ -16,6 +15,7 @@ from api_internal.api import apiblueprint
 from api_user.userroutes import userblueprint
 from api_user.create_order import orderBlueprint
 from api_user.server_actions import serverActionsBlueprint
+from api_payments.payments import paymentBluePrint
 
 # envs
 load_dotenv()
@@ -42,10 +42,11 @@ app.register_blueprint(apiblueprint)
 app.register_blueprint(userblueprint)
 app.register_blueprint(orderBlueprint)
 app.register_blueprint(serverActionsBlueprint)
+app.register_blueprint(paymentBluePrint)
 
 
 @app.before_serving
-async def connect()->None:
+async def connect() -> None:
     try:
         redis_Client = db.get_redis_client()
         if await redis_Client.json().get("pending_servers", "$") is None:

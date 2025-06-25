@@ -42,7 +42,7 @@ class RegisterHandler:
         return await self.registry[action](data)
 
     @staticmethod
-    def map_server_status_to_subscription(server_status: str, is_trial: bool) -> str:
+    def map_server_status_to_subscription(server_status: str) -> str:
         """
         The cron worker from the distributed
         baremetals report status of servers
@@ -51,28 +51,22 @@ class RegisterHandler:
         handled by the backend application code
         """
 
-        def trial_or_active() -> str:
-            if is_trial:
-                return db.SUBSCRIPTION_STATUS.TRIAL.value
-            else:
-                return db.SUBSCRIPTION_STATUS.ACTIVE.value
-
         match server_status:
             case "running":
-                return trial_or_active()
+                return db.INTERNAL_SUBSCRIPTION_STATUS.ON.value
             case "stop":
-                return trial_or_active()
+                return db.INTERNAL_SUBSCRIPTION_STATUS.ON.value
             case "restart":
-                return trial_or_active()
+                return db.INTERNAL_SUBSCRIPTION_STATUS.ON.value
             case "stopped":
-                return trial_or_active()
+                return db.INTERNAL_SUBSCRIPTION_STATUS.ON.value
             case "configured":
-                return trial_or_active()
+                return db.INTERNAL_SUBSCRIPTION_STATUS.ON.value
             case "failed":
-                return db.SUBSCRIPTION_STATUS.FAILED.value
+                return db.INTERNAL_SUBSCRIPTION_STATUS.FAILED.value
             case "not_found":
-                return db.SUBSCRIPTION_STATUS.FAILED.value
-        return "failed"
+                return db.INTERNAL_SUBSCRIPTION_STATUS.FAILED.value
+        return db.INTERNAL_SUBSCRIPTION_STATUS.FAILED.value
 
     @staticmethod
     def _check_fields(
@@ -150,11 +144,9 @@ class RegisterHandler:
                 "message": "Database error slecting subscription",
             }
         try:
-            await db.db_update_subscription_status(
+            await db.db_update_subscription_internal_status(
                 subscription_id=data["subscription_id"],
-                status=self.map_server_status_to_subscription(
-                    data["status"], subscription.get("is_trial", False)
-                ),
+                internal_status=self.map_server_status_to_subscription(data["status"]),
             )
             logger.info(f"Subscription updated for ID: {data['subscription_id']}")
         except Exception as e:

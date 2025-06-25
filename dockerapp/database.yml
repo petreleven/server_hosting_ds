@@ -20,7 +20,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - "postgres_data3:/var/lib/postgresql/data"
+      - "postgres_data4:/var/lib/postgresql/data"
 
   pgadmin:
     image: dpage/pgadmin4:latest
@@ -38,5 +38,5 @@ services:
       - postgres-db
 volumes:
   redis_data3:
-  postgres_data3:
+  postgres_data4:
   pgadmin-data:

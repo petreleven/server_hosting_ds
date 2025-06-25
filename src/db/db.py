@@ -1,4 +1,4 @@
-import asyncio
+from pickle import FALSE
 import datetime
 import logging
 import re
@@ -39,13 +39,29 @@ class QUERY_TYPE(enum.Enum):
     FETCHROW = 2
 
 
-class SUBSCRIPTION_STATUS(enum.Enum):
-    PROVISIONING = "provisioning"
+class INTERNAL_SUBSCRIPTION_STATUS(enum.Enum):
+    """
+    Defines the subscription flags for servers
+    only used internally for showing/hiding panel button and
+    user error reporting incase they see failed
+    on the frontend
+    """
+
+    ON = "on"  # game server is running
+    PROVISIONING = "provisioning"  # game server is being provisioned
     UNAVAILABLE = "unavailable"  # RESOURCES FULL
-    TRIAL = "trial"  # free trial
-    ACTIVE = "active"  # paying and active
+    FAILED = "failed"  # can handles unexpected errors
+
+
+class SUBSCRIPTION_STATUS(enum.Enum):
+    """
+    Defines the subscription payment flags
+    """
+
+    ACTIVE = "active"
+    CANCELLED = "cancelled"  # RESOURCES FULL
+    PAUSED = "paused"  # can handles also miscenallnious failures
     EXPIRED = "expired"
-    FAILED = "failed"  # can handles also miscenallnious failures
 
 
 class SERVER_STATUS(enum.Enum):
@@ -144,7 +160,6 @@ async def conn_manager(qt: QUERY_TYPE, transaction=False, *args) -> Any:
 
 async def create_tables():
     models_path = str(Path(__file__).parent) + "/schema/models.sql"
-    p = await get_pool()
     await conn_manager(QUERY_TYPE.EXECUTE, True, Path(models_path).read_text())
 
 
@@ -192,6 +207,7 @@ async def db_insert_user(
 async def db_insert_subscription(
     user_id: str,
     plan_id: str,
+    internal_status: str,
     status: str,
     expires_at: datetime.datetime,
     next_billing_date: datetime.datetime,
@@ -205,7 +221,43 @@ async def db_insert_subscription(
             SQL_QUERIES["InsertSubscription"],
             user_id,
             plan_id,
+            internal_status,
             status,
+            expires_at,
+            next_billing_date,
+            is_trial,
+        ), None
+    except asyncpg.ForeignKeyViolationError:
+        logger.warning(
+            f"Foreign key violation on subscription insert: user_id={user_id}, plan_id={plan_id}"
+        )
+        return None, "User or plan does not exist"
+    except Exception as e:
+        logger.error(f"Error inserting subscription: {str(e)}")
+        return None, f"Database error: {str(e)}"
+
+
+async def db_insert_subscription_with_payment(
+    user_id: str,
+    plan_id: str,
+    status: str,
+    paddle_subscription_id: str,
+    paddle_customer_id: str,
+    expires_at: datetime.datetime,
+    next_billing_date: datetime.datetime,
+    is_trial=False,
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Insert a new subscription and return its record."""
+    try:
+        return await conn_manager(
+            QUERY_TYPE.FETCHROW,
+            False,
+            SQL_QUERIES["InsertSubscriptionWithPayment"],
+            user_id,
+            plan_id,
+            status,
+            paddle_subscription_id,
+            paddle_customer_id,
             expires_at,
             next_billing_date,
             is_trial,
@@ -464,6 +516,30 @@ async def db_update_subscription_status(
         return None, f"Database error: {str(e)}"
 
 
+async def db_update_subscription_internal_status(
+    subscription_id: str,
+    internal_status: str,
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Update subscription status and billing dates."""
+    try:
+        if not subscription_id:
+            return None, "Subscription ID is required"
+
+        result = await conn_manager(
+            QUERY_TYPE.FETCHROW,
+            False,
+            SQL_QUERIES["UpdateSubscriptionInternalStatus"],
+            internal_status,
+            subscription_id,
+        )
+        if not result:
+            return None, "Subscription not found"
+        return result, None
+    except Exception as e:
+        logger.error(f"Error updating subscription internal status: {str(e)}")
+        return None, f"Database error: {str(e)}"
+
+
 async def db_update_subscription_is_trial(
     subscription_id: str, is_trial: bool
 ) -> Tuple[asyncpg.Record | None, str | None]:
@@ -532,12 +608,184 @@ async def db_update_server_sftp(
         return None, f"Database error: {str(e)}"
 
 
+async def db_cancel_subscription(
+    paddle_subscription_id: str,
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Update subscription status and billing dates."""
+    try:
+        if not paddle_subscription_id:
+            return None, "paddle_subscription_id  is required"
+
+        result = await conn_manager(
+            QUERY_TYPE.FETCHROW,
+            False,
+            SQL_QUERIES["CancelSubscription"],
+            SUBSCRIPTION_STATUS.CANCELLED.value,
+            paddle_subscription_id,
+        )
+        if not result:
+            return None, "paddle_subscription_id not found"
+        return result, None
+    except Exception as e:
+        logger.error(f"Error in db_cancel_subscription : {str(e)}")
+        return None, f"Database error: {str(e)}"
+
+
+async def db_mark_subscription_expired(
+    paddle_subscription_id: str, user_id: str
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Update subscription status and billing dates."""
+    try:
+        if not paddle_subscription_id:
+            return None, "paddle_subscription_id  is required"
+
+        result = await conn_manager(
+            QUERY_TYPE.FETCHROW,
+            False,
+            SQL_QUERIES["MarkExpired"],
+            SUBSCRIPTION_STATUS.EXPIRED.value,
+            paddle_subscription_id,
+            user_id,
+        )
+        if not result:
+            return None, "paddle_subscription_id not found"
+        return result, None
+    except Exception as e:
+        logger.error(f"Error in db_mark_subscription_expired : {str(e)}")
+        return None, f"Database error: {str(e)}"
+
+
+async def db_mark_subscription_paused(
+    paddle_subscription_id: str, user_id: str
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Update subscription status and billing dates."""
+    try:
+        if not paddle_subscription_id:
+            return None, "paddle_subscription_id  is required"
+
+        result = await conn_manager(
+            QUERY_TYPE.FETCHROW,
+            False,
+            SQL_QUERIES["MarkPaused"],
+            SUBSCRIPTION_STATUS.PAUSED.value,
+            paddle_subscription_id,
+            user_id,
+        )
+        if not result:
+            return None, "paddle_subscription_id not found"
+        return result, None
+    except Exception as e:
+        logger.error(f"Error in db_mark_subscription_expired : {str(e)}")
+        return None, f"Database error: {str(e)}"
+
+
+async def db_update_subscription(
+    paddle_subscription_id: str,
+    user_id: str,
+    plan_id: str,
+    status: str,
+    next_billing_date: datetime.datetime,
+    expires_at: datetime.datetime,
+) -> Tuple[asyncpg.Record | None, str | None]:
+    """Update subscription status and billing dates."""
+    try:
+        result = await conn_manager(
+            QUERY_TYPE.FETCHROW,
+            False,
+            SQL_QUERIES["UpdateSubscription"],
+            status,
+            plan_id,
+            next_billing_date,
+            expires_at,
+            paddle_subscription_id,
+            user_id,
+        )
+        if not result:
+            return None, "paddle_subscription_id + user_id not found"
+        return result, None
+    except Exception as e:
+        logger.error(f"Error in db_update_subscription: {str(e)}")
+        return None, f"Database error: {str(e)}"
+
+
+async def db_select_subscription_by_paddle_subscription_id(
+    paddle_subscription_id: str,
+) -> Tuple[Optional[asyncpg.Record], Optional[str]]:
+    """
+    Fetch a subscription from the database using the Paddle subscription ID.
+
+    Args:
+        paddle_subscription_id (str): The Paddle subscription ID.
+
+    Returns:
+        dict: The subscription record if found, otherwise None.
+        str: An error message if an error occurs, otherwise None.
+    """
+    try:
+        result = await conn_manager(
+            QUERY_TYPE.FETCHROW,
+            False,
+            SQL_QUERIES["SelcetSubByPaddleSubID"],
+            paddle_subscription_id,
+        )
+
+        if result:
+            return result, None
+        else:
+            return None, "Subscription not found"
+
+    except Exception as e:
+        logger.exception(
+            f"Error fetching subscription with paddle_subscription_id {paddle_subscription_id}: {e}"
+        )
+        return None, str(e)
+
+
+async def db_insert_transaction(
+    user_id: str,
+    subscription_id: str,
+    amount: int,
+    description: str,
+    payment_method: str,
+    payment_status: str,
+    created_at: datetime.datetime,
+    paddle_transaction_id: str,
+):
+    try:
+        result = await conn_manager(
+            QUERY_TYPE.FETCHROW,
+            False,
+            SQL_QUERIES["INSERTTRANSACTION"],
+            user_id,
+            subscription_id,
+            amount,
+            description,
+            payment_method,
+            payment_status,
+            created_at,
+            paddle_transaction_id,
+        )
+
+        if result:
+            return result, None
+        else:
+            return None, "transaction not found"
+
+    except Exception as e:
+        logger.exception(
+            f"Error inserting transaction with paddle_subscription_id {paddle_transaction_id}: {e}"
+        )
+        return None, str(e)
+
+
 # Initialize SQL queries on module load
 try:
     load_sql_queries()
 except Exception as e:
     logger.critical(f"Failed to load SQL queries: {str(e)}")
     sys.exit(1)
+# import asyncio
+
 # loop = asyncio.get_event_loop()
 # loop.run_until_complete(create_tables())
 # print("done")

@@ -1,7 +1,9 @@
 import logging
 import asyncpg
 import datetime
-from typing import Dict , Any
+from typing import Dict, Any
+
+
 async def extract_single_sub_record(record: asyncpg.Record) -> Dict[str, Any]:
     """
     Extract subscription data from database record.

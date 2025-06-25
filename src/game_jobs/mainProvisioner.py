@@ -74,7 +74,8 @@ class MainProvisioner:
         subscription, _ = await db.db_insert_subscription(
             user_id=user_id,
             plan_id=data.plan_id,
-            status="provisioning",
+            internal_status=db.INTERNAL_SUBSCRIPTION_STATUS.PROVISIONING.value,
+            status=db.SUBSCRIPTION_STATUS.ACTIVE.value,
             expires_at=expires_at,
             next_billing_date=expires_at,
             is_trial=True,
@@ -112,9 +113,9 @@ class MainProvisioner:
                 return
 
             # Update subscription status to unavailable
-            record, err = await db.db_update_subscription_status(
+            record, err = await db.db_update_subscription_internal_status(
                 sub_id,
-                db.SUBSCRIPTION_STATUS.UNAVAILABLE.value,
+                db.INTERNAL_SUBSCRIPTION_STATUS.UNAVAILABLE.value,
             )
             if err:
                 self.logger.warning(f"Unable to update subscription {sub_id}: {err}")
@@ -182,7 +183,8 @@ class MainProvisioner:
 
             # Process orders from the front of the queue (FIFO)
             processed_count = 0
-            for i in range(queue_length):
+            for _ in range(queue_length):
+                pending_job = {}
                 try:
                     # Get the first item in the queue
                     pending_job_json = await self.redisClient.json().get(
@@ -245,7 +247,7 @@ class MainProvisioner:
         subscription_id = str(pending_job.get("subscription_id"))
         ram_needed = pending_job.get("ram_gb")
         plan_id = str(pending_job.get("plan_id"))
-        game_name = pending_job.get("name")
+        game_name = pending_job.get("name", "")
 
         # Validate required fields
         if not all([subscription_id, plan_id, game_name]):
@@ -342,13 +344,9 @@ class MainProvisioner:
             self.logger.error("Baremetal record missing IP")
             return
 
-        await db.db_update_subscription_status(
-            subscription_id, db.SUBSCRIPTION_STATUS.PROVISIONING.value
-        )
-
         server, _ = await db.db_insert_server(
             subscription_id=subscription_id,
-            status="provisioning",
+            status=db.SERVER_STATUS.PROVISIONING.value,
             ip_address=ip,
             ports="",
             docker_container_id="-",
@@ -404,7 +402,7 @@ class MainProvisioner:
         if not game:
             self.logger.error("Game not found for plan %s", plan_id)
             return
-        game_name = game.get("name")
+        game_name = game.get("name", "")
         provisioner = ProvisionerFactory.get_provisioner(game_name=game_name)
         if not provisioner:
             return None
