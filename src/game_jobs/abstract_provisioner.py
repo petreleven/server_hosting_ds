@@ -1,6 +1,6 @@
 import logging
 from abc import ABC, abstractmethod
-from typing import Dict, Any, List
+from typing import Dict, Any
 
 from db import db
 

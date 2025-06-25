@@ -3,9 +3,8 @@ import json
 import os
 import secrets
 import sys
-from typing import Dict, Any, List
+from typing import Dict, Any
 
-from flask import config
 import jsonschema
 
 from game_jobs.abstract_provisioner import AbstractProvisioner

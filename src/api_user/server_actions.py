@@ -23,7 +23,7 @@ async def restart_server():
         return create_error_response("Missing subscription_id", 400)
 
     try:
-        server, err = await db.db_select_server_by_subscription(subscription_id)
+        server, err = await db.db_select_server_by_subscription_id(subscription_id)
         if not server:
             logger.error(
                 f"Server not found for subscription_id {subscription_id}: {err}"
@@ -75,7 +75,7 @@ async def stop_server():
         return create_error_response("Missing subscription_id", 400)
 
     try:
-        server, err = await db.db_select_server_by_subscription(subscription_id)
+        server, err = await db.db_select_server_by_subscription_id(subscription_id)
         if not server:
             return create_error_response("Server not found", 404)
 
@@ -119,7 +119,7 @@ async def backup_server():
         return create_error_response("Missing subscription_id", 400)
 
     try:
-        server, err = await db.db_select_server_by_subscription(subscription_id)
+        server, err = await db.db_select_server_by_subscription_id(subscription_id)
         if not server:
             return create_error_response("Server not found", 404)
 
@@ -163,7 +163,7 @@ async def save_config():
     error_html = "<p>Error updating the configuration</p>"
     success_html = "<p>Success</p>"
 
-    server, err = await db.db_select_server_by_subscription(
+    server, err = await db.db_select_server_by_subscription_id(
         subscription_id=subscription_id
     )
 
@@ -176,7 +176,9 @@ async def save_config():
         log_error(err)
         return error_html
 
-    subscription, err = await db.db_select_subscription_by_id(sub_id=subscription_id)
+    subscription, err = await db.db_select_subscription_by_id(
+        subscription_id=subscription_id
+    )
     if not subscription:
         log_error(err)
         return error_html

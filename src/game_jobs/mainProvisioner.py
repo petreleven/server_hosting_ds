@@ -1,6 +1,6 @@
 import datetime
 import logging
-from typing import Any, Dict, Optional, List
+from typing import Any, Dict, Optional
 import json
 import asyncpg
 import helper_classes.custom_dataclass as cdata
@@ -132,7 +132,10 @@ class MainProvisioner:
                 await self.update_exhausted_free_status(user_id)
             return
 
-        await db.db_update_subscription_is_trial(str(subscription.get("id")), True)
+        await db.db_update_subscription_is_trial(
+            True,
+            str(subscription.get("id")),
+        )
         await self._provision_server(
             subscription_id=str(subscription.get("id")),
             baremetal=baremetal,
@@ -350,7 +353,7 @@ class MainProvisioner:
             ip_address=ip,
             ports="",
             docker_container_id="-",
-            cfg=cfg,
+            config=cfg,
         )
         if not server:
             self.logger.error(
@@ -385,7 +388,9 @@ class MainProvisioner:
     async def generate_config_view_schema(
         self, cfg: Dict[str, Any], subscription_id: str
     ) -> Optional[Dict[str, Any]]:
-        record, err = await db.db_select_subscription_by_id(sub_id=subscription_id)
+        record, err = await db.db_select_subscription_by_id(
+            subscription_id=subscription_id
+        )
         if not record:
             self.logger.info(
                 "Unable to get subscription_record id:%s err:%s", record, err

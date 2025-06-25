@@ -11,9 +11,8 @@ from typing import Dict, Optional, List, Any
 from urllib.parse import parse_qs
 
 import asyncpg
-from passlib.context import CryptContext
 from quart import Blueprint, current_app, redirect, render_template, request, url_for
-from quart_auth import AuthUser, current_user, login_required, login_user, logout_user
+from quart_auth import AuthUser, current_user, login_required, login_user
 
 import helper_classes.custom_dataclass as cdata
 from db import db
@@ -27,7 +26,6 @@ logger = logging.getLogger(__name__)
 userblueprint = Blueprint("userroute", __name__)
 
 # Password hashing configuration
-pwd_context = CryptContext(schemes=["bcrypt"])
 
 # TODO: Remove hardcoded secret and use environment variable
 SECRET = "ygQpJHb0MNDCK0Loa1OeN.wiJH0cuiGOdZnAwW4fQlw5iqo6luZrS"
@@ -84,7 +82,7 @@ async def register():
         # Create user data object
         data = cdata.RegisterUserData(
             email=fields["email"][0],
-            password=pwd_context.hash(fields["password"][0]),
+            password=fields["password"][0],
             game_id=fields["game_id"][0],
             plan_id=fields["plan_id"][0],
         )
@@ -156,7 +154,7 @@ async def allsubscriptions():
         return await render_template("allsubscriptions.html", subscriptions=[])
 
     try:
-        all_subs, err = await db.db_select_all_subscriptions(user_id=user_id)
+        all_subs, err = await db.db_select_subscriptions_by_user(user_id=user_id)
 
         subscriptions = []
         for record in all_subs:
@@ -236,7 +234,7 @@ async def monitoring():
         return "Missing subscription_id", 400
 
     # Fetch server linked to this subscription
-    res = await db.db_select_server_by_subscription(subscription_id)
+    res = await db.db_select_server_by_subscription_id(subscription_id)
     server: Optional[asyncpg.Record] = res[0] if res else None
     if not server:
         return "Invalid subscription or server not found", 404
@@ -275,7 +273,7 @@ async def monitoring():
 async def server_status():
     args = request.args
     subscription_id = args.get("subscription_id", "")
-    server, err = await db.db_select_server_by_subscription(subscription_id)
+    server, err = await db.db_select_server_by_id(subscription_id)
     if not server:
         return "Error getting server status"
 
@@ -303,7 +301,7 @@ async def configure():
                 "configure.html", config=None, error="Missing subscription ID"
             )
 
-        record, err = await db.db_select_server_by_subscription(subscription_id)
+        record, err = await db.db_select_server_by_subscription_id(subscription_id)
         if not record:
             logger.warning(f"No servers found for subscription: {subscription_id}")
             return await render_template(
@@ -335,7 +333,7 @@ async def configure():
 @login_required
 async def mods_n_backups():
     subscription_id = request.args.get("subscription_id", "")
-    server, err = await db.db_select_server_by_subscription(subscription_id)
+    server, err = await db.db_select_server_by_subscription_id(subscription_id)
     if not server:
         return await render_template(
             "mods_n_backups.html", sftp_username=None, sftp_password=None

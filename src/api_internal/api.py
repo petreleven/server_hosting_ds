@@ -5,11 +5,8 @@ This module provides API routes for game servers to report their status
 and update subscription information in the database.
 """
 
-import datetime
 import logging
 from typing import Callable, Dict, Any, Optional, Tuple, List
-
-import asyncpg
 from quart import Blueprint, request, Response
 from db import db
 
@@ -91,7 +88,7 @@ class RegisterHandler:
 
         # Update server status in the database
         try:
-            server, err = await db.db_select_server_by_subscription(
+            server, err = await db.db_select_server_by_subscription_id(
                 data["subscription_id"]
             )
             ports = ""
@@ -168,7 +165,9 @@ class RegisterHandler:
                 "message": f"Missing required field: {missing_field}",
             }
 
-        server, err = await db.db_select_server_by_subscription(data["subscription_id"])
+        server, err = await db.db_select_server_by_subscription_id(
+            data["subscription_id"]
+        )
         if err or not server:
             logger.warning(
                 f"Error when selecting server by subscription_id {data['subscription_id']} :{err}"

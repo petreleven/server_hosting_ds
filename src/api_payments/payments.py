@@ -1,5 +1,4 @@
 import datetime
-from enum import verify
 import logging
 from typing import Dict
 from quart import Blueprint, abort
@@ -97,13 +96,13 @@ async def subscription_updated(rq: Dict):
         status = data["attributes"]["status"]
         renews_at = data["attributes"]["renews_at"]
         renews_at_dt = datetime.datetime.fromisoformat(renews_at.replace("Z", "+00:00"))
-        s = await db.db_update_subscription(
-            paddle_subscription_id=str(paddle_subscription_id),
-            user_id=user_id,
-            plan_id=plan_id,
+        await db.db_update_subscription(
             status=status,
+            plan_id=plan_id,
             next_billing_date=renews_at_dt,
             expires_at=renews_at_dt,
+            paddle_subscription_id=str(paddle_subscription_id),
+            user_id=user_id,
         )
 
         logger.info(f"Subscription updated successfully for user_id: {user_id}")
@@ -183,61 +182,6 @@ async def subscription_paused(rq: Dict):
 
     except Exception as e:
         logger.exception(f"Error processing subscription_paused webhook: {e}")
-        return {"error": "Internal server error"}, 500
-
-
-async def invoice_paid(rq: Dict):
-    logger = logging.getLogger("backendlogger")
-    try:
-        data = rq["data"]
-        meta = rq["meta"]
-        custom_data = meta.get("custom_data", {})
-
-        user_id = custom_data.get("user_id")
-        paddle_subscription_id = data["attributes"]["first_subscription_item"][
-            "subscription_id"
-        ]
-
-        # Fetch additional attributes from the Lemon Squeezy payload
-        amount = data["attributes"]["amount_total"]  # Total amount paid
-        description = data["attributes"].get(
-            "description", "Invoice Payment"
-        )  # Description of the payment
-        payment_method = data["attributes"]["payment_method"]  # Payment method used
-        payment_status = data["attributes"]["status"]  # Payment status
-        created_at = data["attributes"]["created_at"]  # Payment creation timestamp
-        paddle_transaction_id = data["attributes"]["id"]  # Unique transaction ID
-
-        # Fetch the subscription from the database
-        subscription, err = await db.db_select_subscription_by_paddle_subscription_id(
-            paddle_subscription_id
-        )
-        if not subscription:
-            logger.error(
-                f"Subscription not found for paddle_subscription_id: {paddle_subscription_id} err:",
-                err,
-            )
-            return {"error": "Subscription not found"}, 404
-
-        # Insert the transaction into the database
-        await db.db_insert_transaction(
-            user_id=user_id,
-            subscription_id=str(subscription.get("id", "")),
-            amount=amount,
-            description=description,
-            payment_method=payment_method,
-            payment_status=payment_status,
-            created_at=created_at,
-            paddle_transaction_id=paddle_transaction_id,
-        )
-
-        logger.info(
-            f"Invoice paid successfully for user_id: {user_id}, subscription_id: {subscription.get('id')}"
-        )
-        return {"message": "Invoice processed successfully"}, 200
-
-    except Exception as e:
-        logger.exception(f"Error processing invoice_paid webhook: {e}")
         return {"error": "Internal server error"}, 500
 
 

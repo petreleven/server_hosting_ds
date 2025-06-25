@@ -1,4 +1,3 @@
-from ast import arg
 from typing import Dict, List
 from quart import Blueprint, request, render_template
 from quart_auth import login_required
@@ -11,7 +10,7 @@ orderBlueprint = Blueprint("orderBlueprint", __name__)
 async def get_order_form():
     args = request.args
     game_id = args.get("game_id", "")
-    plans, err = await db.db_select_all_plans_by_game(game_id=game_id)
+    plans, err = await db.db_select_plans_by_game(game_id=game_id)
     print(plans)
     plans_list: List[Dict] = []
     for p in plans:
