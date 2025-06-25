@@ -16,3 +16,4 @@ wheels/
 *.env
 GAMES/
 dump.rdb
+*.lemon_env
