@@ -1,11 +1,11 @@
 <!-- Navigation Tabs -->
-<div class="mb-8">
-  <nav class="flex space-x-8 border-b border-gray-700">
+<div class="mb-8 max-w-4xl mx-auto px-4">
+  <nav class="flex space-x-8 border-b border-border">
     <button
       hx-get="/monitoring?subscription_id={{ subscription_id }}"
       hx-target="#content-area"
       hx-trigger="load,click"
-      class="tab-active py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer"
+      class="tab-active"
     >
       Control & Monitoring
     </button>
@@ -13,7 +13,7 @@
       hx-get="/configure?subscription_id={{ subscription_id }}"
       hx-target="#content-area"
       hx-trigger="click"
-      class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer"
+      class="tab-inactive"
     >
       Configuration
     </button>
@@ -23,19 +23,20 @@
       hx-trigger="click"
       hx-indicator="#panel-spinner"
       hx-disabled-elt="this"
-      class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer"
+      class="tab-inactive"
     >
       Mods and Backups
     </button>
     <button
       hx-get="/billing"
       hx-target="#content-area"
-      class="tab-inactive py-2 px-1 font-medium text-sm transition-colors duration-200 cursor-pointer"
+      class="tab-inactive"
     >
       Billing
     </button>
   </nav>
 </div>
+
 <!-- Content Area -->
 <section class="flex justify-center w-full flex-col">
   <div id="content-area" class="w-full mx-auto px-4">
@@ -43,37 +44,12 @@
   </div>
   <div class="flex justify-center">
     <div class="loading-blocks ml-2 htmx-indicator" id="panel-spinner">
-      <div class="loading-block bg-gray-400"></div>
-      <div class="loading-block bg-gray-400"></div>
-      <div class="loading-block bg-gray-400"></div>
+      <div class="loading-block"></div>
+      <div class="loading-block"></div>
+      <div class="loading-block"></div>
     </div>
   </div>
 </section>
-
-<style>
-  .glow {
-    text-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
-  }
-
-  .status-dot.provisioning {
-    width: 0.75rem;
-    height: 0.75rem;
-    background-color: #22c55e;
-    border-radius: 9999px;
-    animation: pulse 2s infinite;
-    margin-right: 0.5rem;
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-</style>
 
 <script>
   class SchemaFormGenerator {
@@ -110,10 +86,10 @@
       advanced.className = "mb-6";
       const details = document.createElement("details");
       details.className = "border border-gray-700 rounded-lg";
+      details.className = "border border-emerald-700 rounded-lg backdrop-blur bg-emerald-950/10";
 
       const summary = document.createElement("summary");
-      summary.className =
-        "bg-gray-800 px-4 py-3 font-medium text-emerald-400 cursor-pointer hover:bg-gray-700";
+      summary.className = "px-4 py-3 font-medium text-primary-theme cursor-pointer bg-surface hover:bg-surface-hover transition-colors rounded-t-lg";
       summary.textContent = "Advanced Settings";
 
       const content = document.createElement("div");
@@ -143,7 +119,8 @@
 
       const label = document.createElement("label");
       label.setAttribute("for", name);
-      label.className = "block font-medium text-gray-200";
+      label.className = "flex items-center space-x-2 text-gray-200";
+
       label.textContent = this.formatLabel(name) + ":";
       wrapper.appendChild(label);
 
@@ -155,9 +132,7 @@
       }
 
       let input;
-      const baseClasses =
-        "w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-600 focus:ring-2 focus:ring-emerald-500";
-
+      const baseClasses = "input-primary";
       if (prop.type === "integer" || prop.type === "number") {
         input = document.createElement("input");
         input.type = "number";
@@ -193,12 +168,14 @@
       const container = document.createElement("div");
       const label = document.createElement("label");
       label.className = "flex items-center space-x-2 text-gray-200";
+      label.className = "flex items-center space-x-2 text-text-primary";
+
 
       const input = document.createElement("input");
       input.type = "checkbox";
       input.name = name;
       input.id = name;
-      input.className = "h-5 w-5 text-emerald-500 rounded";
+      input.className = "h-5 w-5 accent-primary rounded";
       input.checked = prop.value ?? prop.default === true;
 
       const span = document.createElement("span");
@@ -212,11 +189,12 @@
 
     createObjectField(name, prop) {
       const container = document.createElement("div");
-      container.className =
-        "p-4 border border-gray-600 rounded-lg bg-gray-800 space-y-4";
+      container.className = "p-4 space-y-4 rounded-lg border bg-surface border-border";
+
 
       const heading = document.createElement("h3");
-      heading.className = "text-emerald-400 font-semibold";
+      heading.className = "text-primary-theme font-semibold";
+
       heading.textContent = this.formatLabel(name);
       container.appendChild(heading);
 
@@ -595,30 +573,5 @@
     }, 10000); // poll every 10 seconds
   }
 
-  /* // Initialize on page load - multiple event listeners for different scenarios
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM loaded, initializing button states");
-    initializeButtonStates();
-  });
 
-  // For browser back/forward navigation
-  window.addEventListener("pageshow", function (event) {
-    console.log("Page show event, initializing button states");
-    initializeButtonStates();
-  });
-
-  // Cleanup polling when page is hidden/unloaded
-  window.addEventListener("pagehide", function () {
-    if (pollInterval) {
-      clearInterval(pollInterval);
-      pollInterval = null;
-    }
-  });
-
-  window.addEventListener("beforeunload", function () {
-    if (pollInterval) {
-      clearInterval(pollInterval);
-      pollInterval = null;
-    }
-  });*/
 </script>

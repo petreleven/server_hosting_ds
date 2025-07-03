@@ -15,7 +15,7 @@ class MainProvisioner:
 
     def __init__(self) -> None:
         self.logger = logging.getLogger("backendlogger")
-        self.redisClient = db.get_redis_client()
+
         # Load all available provisioners
         ProvisionerFactory.load_provisioners()
 
@@ -68,21 +68,22 @@ class MainProvisioner:
             self.logger.warning("User not found for email %s", data.email)
             return
         user_id = str(user.get("id", ""))
-        expires_at = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(
-            hours=8, minutes=10
-        )
-        subscription, _ = await db.db_insert_subscription(
+        now = datetime.datetime.now(datetime.timezone.utc)
+        expires_at = now + datetime.timedelta(hours=8, minutes=10)
+        subscription, err = await db.db_insert_free_subscription(
             user_id=user_id,
             plan_id=data.plan_id,
             internal_status=db.INTERNAL_SUBSCRIPTION_STATUS.PROVISIONING.value,
             status=db.SUBSCRIPTION_STATUS.ACTIVE.value,
+            trial_starts_at=now,
+            trial_expires_at=expires_at,
             expires_at=expires_at,
             next_billing_date=expires_at,
             is_trial=True,
         )
 
         if subscription is None:
-            self.logger.error("Failed to create subscription for user %d", user_id)
+            self.logger.error("Failed to create subscription  err:", err)
             return
 
         plan, _ = await db.db_select_plan_by_id(data.plan_id)
@@ -165,6 +166,7 @@ class MainProvisioner:
         self.logger.debug(f"Adding order to queue: {payload}")
 
         try:
+            self.redisClient = await db.get_redis_client()
             await self.redisClient.json().arrappend(
                 "pending_servers", "$", json.dumps(payload)
             )
@@ -173,7 +175,7 @@ class MainProvisioner:
             self.logger.error(f"Failed to add order to queue: {e}")
 
     async def job_repeating_check_pending_servers(self) -> None:
-        print("called")
+        self.redisClient = await db.get_redis_client()
         """Process pending server requests in FIFO order using Redis array operations."""
         try:
             # Get the length of the pending servers array
@@ -342,22 +344,23 @@ class MainProvisioner:
             cfg: The default configuration for the game
 
         """
+        self.redisClient = await db.get_redis_client()
         ip = baremetal.get("ip_address")
         if not ip:
             self.logger.error("Baremetal record missing IP")
             return
 
-        server, _ = await db.db_insert_server(
+        server, err = await db.db_insert_server(
             subscription_id=subscription_id,
             status=db.SERVER_STATUS.PROVISIONING.value,
             ip_address=ip,
-            ports="",
+            ports="{}",
             docker_container_id="-",
             config=cfg,
         )
         if not server:
             self.logger.error(
-                "Failed to record server in DB for subscription %d",
+                f"Failed to record server in DB for  err{err}",
                 subscription_id,
             )
             return

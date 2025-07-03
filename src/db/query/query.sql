@@ -3,9 +3,9 @@ INSERT INTO users (email, password)
 VALUES ($1, $2)
 RETURNING id, email, created_at, updated_at, exhausted_free, paddle_customer_id;
 
--- name: InsertSubscription
-INSERT INTO subscriptions (user_id, plan_id, status, internal_status, expires_at, next_billing_date, is_trial)
-VALUES ($1, $2, $3, $4, $5, $6, $7)
+-- name: InsertFreeSubscription
+INSERT INTO subscriptions (user_id, plan_id, status, internal_status, trial_starts_at, trial_expires_at,expires_at, next_billing_date, is_trial)
+VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
 RETURNING *;
 
 -- name: InsertSubscriptionWithPayment

@@ -1,24 +1,23 @@
 <!-- CONFIGURATION HEADER -->
-<section class="mb-8 max-w-4xl mx-auto px-4">
-  <h1
-    class="text-3xl font-bold text-emerald-500 mb-3 border-b border-emerald-600 pb-2 tracking-wide"
-  >
+<section class="mb-10 max-w-4xl mx-auto px-4">
+  <h1 class="text-3xl font-bold text-emerald-500 tracking-wide mb-3 border-b border-emerald-600 pb-2">
     <span id="config-title">Game Server Configuration</span>
   </h1>
-  <p class="text-gray-300 text-lg leading-relaxed mb-6">
-    Below you can edit the settings of your game server. Make any changes you
-    need and then save the configuration.
+  <p class="text-gray-300 text-lg leading-relaxed">
+    Below you can edit the settings of your game server. Make the changes you need, then click save.
   </p>
 </section>
 
-<!-- FORM -->
+<!-- CONFIGURATION FORM -->
 <form
   hx-post="/save-config?subscription_id={{subscription_id}}"
   hx-target="#form-response"
-  class="glass-card shadow-xl rounded-2xl p-8 space-y-10 bg-gray-900/80 backdrop-blur-md border border-emerald-700 max-w-4xl mx-auto px-4"
+  class="glass-card rounded-2xl border border-emerald-700 shadow-xl p-8 space-y-10 max-w-4xl mx-auto"
 >
+  <!-- Dynamically generated fields -->
   <div id="form-container" class="space-y-8"></div>
 
+  <!-- Submit -->
   <div class="pt-6">
     <button
       type="submit"
@@ -27,16 +26,17 @@
       Save Configuration
     </button>
   </div>
+
+  <!-- Response Message -->
   <div id="form-response" class="pt-4 text-sm text-gray-400"></div>
 </form>
 
-<!-- SCRIPT -->
 <script type="text/javascript">
   (function () {
-    //console.log(`{{config | tojson}}`);
-    const serverConfig = JSON.parse(`{{ config | tojson | safe  }}`);
+    const serverConfig = JSON.parse(`{{ config | tojson | safe }}`);
     const container = document.getElementById("form-container");
     const formGen = new SchemaFormGenerator(serverConfig, container);
     formGen.init();
   })();
 </script>
+

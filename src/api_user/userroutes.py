@@ -57,7 +57,7 @@ async def register():
 
     errors = {
         "email_errors": [],
-        "password_error": [],
+        "password_errors": [],
         "game_id_errors": [],
         "plan_id_errors": [],
         "general_errors": [],

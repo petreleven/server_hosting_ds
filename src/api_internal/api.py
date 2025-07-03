@@ -5,6 +5,7 @@ This module provides API routes for game servers to report their status
 and update subscription information in the database.
 """
 
+import json
 import logging
 from typing import Callable, Dict, Any, Optional, Tuple, List
 from quart import Blueprint, request, Response
@@ -91,18 +92,18 @@ class RegisterHandler:
             server, err = await db.db_select_server_by_subscription_id(
                 data["subscription_id"]
             )
-            ports = ""
+            ports = {}
             if "ports" in data.keys():
-                for p in data["ports"]:
-                    ports += str(p) + ","
-            if ports == "":  # restart
+                ports = data["ports"]
+            if ports == {}:  # restart
                 if server:
                     ports = server.get("ports", "")
+            print(f"******ports:{ports}")
             server, err = await db.db_update_server_status(
                 status=data["status"],
                 docker_container_id=data["container_id"],
                 subscription_id=data["subscription_id"],
-                ports=ports,
+                ports=json.dumps(ports),
             )
             if err or not server:
                 return False, {"status": "error", "message": err}
@@ -180,7 +181,7 @@ class RegisterHandler:
             status=data["status"],
             docker_container_id=server.get("docker_container_id", ""),
             subscription_id=data["subscription_id"],
-            ports=server.get("ports", ""),
+            ports=server.get("ports", "{}"),
         )
         if err or not server:
             logger.warning(

@@ -4,6 +4,7 @@ import os
 import secrets
 import sys
 from typing import Dict, Any
+from db import db
 
 import jsonschema
 
@@ -205,6 +206,7 @@ class ValheimProvisioner(AbstractProvisioner):
             f"--cfg-json {encoded} "
             f"updateConfig"
         )
+        self.redisClient = await db.get_redis_client()
         await self.redisClient.lpush(queue, payload)
 
     async def get_default_config(self) -> str:

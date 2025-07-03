@@ -964,3 +964,309 @@ HINT:  Check the query against the passed list of arguments.
 2025-06-24 23:34:31,614 - backendlogger - INFO - subscription_updated
 2025-06-24 23:34:32,234 - backendlogger - INFO - Subscription updated successfully for user_id: 11e216bf-4770-4568-bf16-1105337170c7
 2025-06-24 23:34:32,234 - backendlogger - INFO - data
+2025-06-26 11:03:43,255 - server - ERROR - Exception
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/home/peter/Code/quartApp/src/server.py", line 52, in connect
+    if await redis_Client.json().get("pending_servers", "$") is None:
+             ^^^^^^^^^^^^^^^^^
+AttributeError: 'coroutine' object has no attribute 'json'
+2025-06-26 11:11:18,556 - backendlogger - INFO - Redis connection established
+2025-06-26 11:11:18,588 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 11:20:23,600 - backendlogger - INFO - Redis connection established
+2025-06-26 11:20:23,603 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 11:26:59,985 - backendlogger - INFO - Redis connection established
+2025-06-26 11:26:59,988 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 11:27:40,151 - backendlogger - INFO - Database connection pool created
+2025-06-26 11:27:41,131 - backendlogger - ERROR - Database error in SelectAllPlansByGame: relation "catalog" does not exist
+2025-06-26 11:27:41,131 - backendlogger - ERROR - Error selecting plans: relation "catalog" does not exist
+2025-06-26 11:41:41,986 - backendlogger - INFO - Redis connection established
+2025-06-26 11:41:42,033 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 11:41:50,389 - backendlogger - INFO - Database connection pool created
+2025-06-26 11:41:51,974 - backendlogger - ERROR - Database error in SelectAllPlansByGame: relation "catalog" does not exist
+2025-06-26 11:41:51,974 - backendlogger - ERROR - Error selecting plans: relation "catalog" does not exist
+2025-06-26 11:43:21,442 - backendlogger - INFO - Redis connection established
+2025-06-26 11:43:21,445 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 11:43:27,304 - backendlogger - INFO - Database connection pool created
+2025-06-26 11:43:28,339 - backendlogger - ERROR - Database error in SelectAllPlansByGame: relation "catalog" does not exist
+2025-06-26 11:43:28,339 - backendlogger - ERROR - Error selecting plans: relation "catalog" does not exist
+2025-06-26 11:46:10,105 - backendlogger - INFO - Redis connection established
+2025-06-26 11:46:10,108 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 11:46:26,973 - backendlogger - INFO - Database connection pool created
+2025-06-26 11:46:27,944 - backendlogger - ERROR - Database error in SelectAllPlansByGame: relation "catalog" does not exist
+2025-06-26 11:46:28,010 - backendlogger - ERROR - Error selecting plans: relation "catalog" does not exist
+2025-06-26 11:49:22,896 - backendlogger - INFO - Redis connection established
+2025-06-26 11:49:22,900 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 11:49:36,361 - backendlogger - INFO - Database connection pool created
+2025-06-26 11:49:37,181 - backendlogger - ERROR - Database error in SelectAllPlansByGame: relation "catalog" does not exist
+2025-06-26 11:49:37,181 - backendlogger - ERROR - Error selecting plans: relation "catalog" does not exist
+2025-06-26 11:58:06,333 - backendlogger - INFO - Redis connection established
+2025-06-26 11:58:06,337 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:07:41,045 - backendlogger - INFO - Redis connection established
+2025-06-26 12:07:41,049 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:10:21,031 - backendlogger - INFO - Redis connection established
+2025-06-26 12:10:21,034 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:10:38,483 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:11:14,045 - backendlogger - INFO - Redis connection established
+2025-06-26 12:11:14,049 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:11:25,658 - backendlogger - INFO - Redis connection established
+2025-06-26 12:11:25,662 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:11:28,125 - backendlogger - INFO - Redis connection established
+2025-06-26 12:11:28,129 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:11:32,951 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:11:35,656 - server - ERROR - Exception on request POST /register
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/.venv/lib64/python3.13/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/peter/Code/quartApp/src/api_user/userroutes.py", line 66, in register
+    provisioner = MainProvisioner()
+TypeError: __init__() should return None, not 'coroutine'
+2025-06-26 12:12:24,219 - backendlogger - INFO - Redis connection established
+2025-06-26 12:12:24,222 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:12:46,930 - backendlogger - INFO - Redis connection established
+2025-06-26 12:12:46,933 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:13:02,588 - backendlogger - INFO - Redis connection established
+2025-06-26 12:13:02,591 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:13:31,370 - backendlogger - INFO - Redis connection established
+2025-06-26 12:13:31,373 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:14:06,352 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 12:14:06,617 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:14:24,197 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 12:14:24,199 - api_user.userroutes - ERROR - Exception during registration: 'password_errors'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/api_user/userroutes.py", line 79, in register
+    errors[f"{field}_errors"].append(f"Missing required field: {field}")
+    ~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'password_errors'
+2025-06-26 12:15:09,876 - backendlogger - INFO - Redis connection established
+2025-06-26 12:15:09,880 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:15:22,893 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 12:15:23,116 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:20:29,659 - backendlogger - INFO - Redis connection established
+2025-06-26 12:20:29,663 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:20:31,489 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:24:05,732 - backendlogger - INFO - Redis connection established
+2025-06-26 12:24:05,735 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:24:24,722 - backendlogger - INFO - Redis connection established
+2025-06-26 12:24:24,726 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:24:40,129 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:27:03,841 - backendlogger - INFO - Redis connection established
+2025-06-26 12:27:03,845 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:27:05,968 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:40:29,252 - backendlogger - INFO - Redis connection established
+2025-06-26 12:40:29,255 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:40:32,618 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:41:33,286 - backendlogger - INFO - Redis connection established
+2025-06-26 12:41:33,290 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:41:34,870 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:41:47,315 - backendlogger - INFO - Redis connection established
+2025-06-26 12:41:47,319 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:41:49,484 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:42:02,892 - backendlogger - INFO - Redis connection established
+2025-06-26 12:42:02,895 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:42:09,024 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:42:58,723 - backendlogger - INFO - Redis connection established
+2025-06-26 12:42:58,727 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:43:01,163 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:46:13,191 - backendlogger - INFO - Redis connection established
+2025-06-26 12:46:13,194 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:46:15,398 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:48:22,468 - backendlogger - INFO - Redis connection established
+2025-06-26 12:48:22,472 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:48:25,960 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:50:47,163 - backendlogger - INFO - Redis connection established
+2025-06-26 12:50:47,166 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:50:51,645 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:51:01,596 - backendlogger - INFO - Redis connection established
+2025-06-26 12:51:01,600 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:51:03,054 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:52:34,038 - backendlogger - INFO - Redis connection established
+2025-06-26 12:52:34,042 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:52:49,981 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:55:17,596 - backendlogger - INFO - Redis connection established
+2025-06-26 12:55:17,600 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:55:48,998 - backendlogger - INFO - Redis connection established
+2025-06-26 12:55:49,001 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:55:55,567 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:56:01,516 - backendlogger - INFO - Redis connection established
+2025-06-26 12:56:01,520 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:56:03,548 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:56:17,283 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 12:56:23,155 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 12:57:06,453 - backendlogger - INFO - Redis connection established
+2025-06-26 12:57:06,457 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:57:07,896 - backendlogger - INFO - Database connection pool created
+2025-06-26 12:57:51,212 - backendlogger - INFO - Redis connection established
+2025-06-26 12:57:51,215 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 12:57:53,183 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:00:51,566 - backendlogger - INFO - Redis connection established
+2025-06-26 13:00:51,570 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:00:54,454 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:01:15,880 - backendlogger - INFO - Redis connection established
+2025-06-26 13:01:15,883 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:01:23,535 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:07:44,597 - backendlogger - INFO - Redis connection established
+2025-06-26 13:07:44,601 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:07:51,512 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:08:21,528 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 13:08:21,529 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 13:08:22,487 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-06-26 13:08:22,554 - backendlogger - ERROR - Database error in InsertSubscription: new row for relation "subscriptions" violates check constraint "trial_dates_check"
+DETAIL:  Failing row contains (65b09ef3-8160-4a50-bd1f-46e064a87e8b, 13aab1fd-c33b-4442-8fcb-612957ec1ee8, 60887e59-10aa-4fb0-9a0f-63192cb2dde7, active, provisioning, t, null, null, 2025-06-26 10:08:22.495188+00, 2025-06-26 10:08:22.495188+00, 2025-06-26 18:18:22.494815+00, 2025-06-26 10:08:22.495188+00, 2025-06-26 18:18:22.494815+00, null, null).
+2025-06-26 13:08:22,554 - backendlogger - ERROR - Error inserting subscription: new row for relation "subscriptions" violates check constraint "trial_dates_check"
+DETAIL:  Failing row contains (65b09ef3-8160-4a50-bd1f-46e064a87e8b, 13aab1fd-c33b-4442-8fcb-612957ec1ee8, 60887e59-10aa-4fb0-9a0f-63192cb2dde7, active, provisioning, t, null, null, 2025-06-26 10:08:22.495188+00, 2025-06-26 10:08:22.495188+00, 2025-06-26 18:18:22.494815+00, 2025-06-26 10:08:22.495188+00, 2025-06-26 18:18:22.494815+00, null, null).
+2025-06-26 13:11:41,357 - backendlogger - INFO - Redis connection established
+2025-06-26 13:11:41,360 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:12:00,022 - backendlogger - INFO - Redis connection established
+2025-06-26 13:12:00,026 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:12:04,663 - backendlogger - INFO - Redis connection established
+2025-06-26 13:12:04,666 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:12:09,563 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:12:55,367 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 13:13:08,895 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 13:13:59,847 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 13:13:59,848 - api_user.userroutes - INFO - RegisterUserData(email='eng.peter.ndungu@gmail.com', password='99999', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 13:14:00,327 - api_user.userroutes - INFO - User registered successfully: eng.peter.ndungu@gmail.com
+2025-06-26 13:14:00,334 - backendlogger - ERROR - Database error in InsertSubscription: new row for relation "subscriptions" violates check constraint "trial_dates_check"
+DETAIL:  Failing row contains (7964ef60-6bfa-4989-a3fb-d9ea600e8e29, 47e6dae1-ce4d-49c9-92c4-289222f145b2, 60887e59-10aa-4fb0-9a0f-63192cb2dde7, active, provisioning, t, null, null, 2025-06-26 10:14:00.331789+00, 2025-06-26 10:14:00.331789+00, 2025-06-26 18:24:00.331618+00, 2025-06-26 10:14:00.331789+00, 2025-06-26 18:24:00.331618+00, null, null).
+2025-06-26 13:14:00,335 - backendlogger - ERROR - Error inserting subscription: new row for relation "subscriptions" violates check constraint "trial_dates_check"
+DETAIL:  Failing row contains (7964ef60-6bfa-4989-a3fb-d9ea600e8e29, 47e6dae1-ce4d-49c9-92c4-289222f145b2, 60887e59-10aa-4fb0-9a0f-63192cb2dde7, active, provisioning, t, null, null, 2025-06-26 10:14:00.331789+00, 2025-06-26 10:14:00.331789+00, 2025-06-26 18:24:00.331618+00, 2025-06-26 10:14:00.331789+00, 2025-06-26 18:24:00.331618+00, null, null).
+2025-06-26 13:15:44,804 - backendlogger - INFO - Redis connection established
+2025-06-26 13:15:44,807 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:16:03,421 - backendlogger - INFO - Redis connection established
+2025-06-26 13:16:03,424 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:20:38,585 - backendlogger - INFO - Redis connection established
+2025-06-26 13:20:38,588 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:20:41,157 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:21:16,629 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 13:21:16,629 - api_user.userroutes - INFO - RegisterUserData(email='peterndugunjoroge909@x.com', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 13:21:17,089 - api_user.userroutes - INFO - User registered successfully: peterndugunjoroge909@x.com
+2025-06-26 13:21:17,639 - backendlogger - WARNING - No baremetal with enough capacity
+2025-06-26 13:21:18,459 - backendlogger - INFO - Added subscription 8d126a7f-3d13-4328-87ab-476f26f8ef5c to pending queue
+2025-06-26 13:32:31,715 - backendlogger - INFO - Redis connection established
+2025-06-26 13:32:31,722 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:32:34,902 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:35:02,120 - backendlogger - INFO - Redis connection established
+2025-06-26 13:35:02,124 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:35:06,589 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:41:26,616 - backendlogger - INFO - Redis connection established
+2025-06-26 13:41:26,620 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:41:28,064 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:46:32,758 - backendlogger - INFO - Redis connection established
+2025-06-26 13:46:32,764 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:46:37,581 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:48:17,125 - backendlogger - INFO - Redis connection established
+2025-06-26 13:48:17,128 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:48:18,573 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:48:29,667 - backendlogger - INFO - Redis connection established
+2025-06-26 13:48:29,672 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:48:40,982 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:51:12,356 - backendlogger - INFO - Redis connection established
+2025-06-26 13:51:12,360 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:51:21,724 - backendlogger - INFO - Database connection pool created
+2025-06-26 13:56:47,844 - backendlogger - INFO - Redis connection established
+2025-06-26 13:56:47,848 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 13:56:49,152 - backendlogger - INFO - Database connection pool created
+2025-06-26 14:21:56,793 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 14:21:56,794 - api_user.userroutes - INFO - RegisterUserData(email='pp@c.com', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 14:21:57,256 - api_user.userroutes - INFO - User registered successfully: pp@c.com
+2025-06-26 14:21:57,266 - backendlogger - ERROR - Database error in InsertFreeSubscription: syntax error at or near "$"
+2025-06-26 14:21:57,266 - backendlogger - ERROR - Error inserting subscription: syntax error at or near "$"
+2025-06-26 14:25:16,191 - backendlogger - INFO - Redis connection established
+2025-06-26 14:25:16,195 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:25:24,661 - backendlogger - INFO - Database connection pool created
+2025-06-26 14:25:42,296 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 14:25:42,296 - api_user.userroutes - INFO - RegisterUserData(email='kamui@g.com', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 14:25:42,749 - api_user.userroutes - INFO - User registered successfully: kamui@g.com
+2025-06-26 14:25:43,223 - backendlogger - ERROR - Database error in InsertServer: invalid input syntax for type json
+DETAIL:  The input string ended unexpectedly.
+2025-06-26 14:25:43,224 - backendlogger - ERROR - Error inserting server: invalid input syntax for type json
+DETAIL:  The input string ended unexpectedly.
+2025-06-26 14:27:03,443 - backendlogger - INFO - Redis connection established
+2025-06-26 14:27:03,447 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:27:05,165 - backendlogger - INFO - Database connection pool created
+2025-06-26 14:27:15,307 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 14:27:15,308 - api_user.userroutes - INFO - RegisterUserData(email='aa@c.com', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 14:27:15,788 - api_user.userroutes - INFO - User registered successfully: aa@c.com
+2025-06-26 14:27:16,410 - backendlogger - ERROR - Database error in InsertServer: invalid input syntax for type json
+DETAIL:  The input string ended unexpectedly.
+2025-06-26 14:27:16,410 - backendlogger - ERROR - Error inserting server: invalid input syntax for type json
+DETAIL:  The input string ended unexpectedly.
+2025-06-26 14:37:56,907 - backendlogger - INFO - Redis connection established
+2025-06-26 14:37:56,911 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:38:04,537 - backendlogger - INFO - Database connection pool created
+2025-06-26 14:38:33,746 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 14:38:33,747 - api_user.userroutes - INFO - RegisterUserData(email='pp@c.zom', password='12349', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 14:38:34,371 - api_user.userroutes - INFO - User registered successfully: pp@c.zom
+2025-06-26 14:38:35,671 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 80d90a31-65ec-417b-b614-47a8ffb95002 -g valheim -m 6.0g -c 4.0 start
+2025-06-26 14:39:36,065 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '80d90a31-65ec-417b-b614-47a8ffb95002', 'status': 'running', 'container_id': '3e6ac392c6345d00d90b51c86f93a26b888b0305aeec4cbd077ee63d6518ac65', 'container_ip': '172.22.0.2', 'metrics': {'username': '80d9', 'password': 'fjTrwjYVRSpj', 'mount_path': '/home/80d90a31-65ec-417b-b614-47a8ffb95002/valheim', 'server_path': '/srv/allservers/80d90a31-65ec-417b-b614-47a8ffb95002'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-06-26 14:39:36,076 - backendlogger - ERROR - Database error in UpdateServerStatus: invalid input syntax for type json
+DETAIL:  Token "main_port" is invalid.
+2025-06-26 14:39:36,077 - backendlogger - ERROR - Error updating server status: invalid input syntax for type json
+DETAIL:  Token "main_port" is invalid.
+2025-06-26 14:44:49,726 - backendlogger - INFO - Redis connection established
+2025-06-26 14:44:49,828 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:44:51,319 - backendlogger - INFO - Database connection pool created
+2025-06-26 14:45:02,707 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 14:45:02,707 - api_user.userroutes - INFO - RegisterUserData(email='admin@admin.com', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 14:45:03,696 - api_user.userroutes - INFO - User registered successfully: admin@admin.com
+2025-06-26 14:45:04,972 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 0c81f26f-1a5e-485d-a59b-adb10e5618f6 -g valheim -m 6.0g -c 4.0 start
+2025-06-26 14:46:07,662 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '0c81f26f-1a5e-485d-a59b-adb10e5618f6', 'status': 'running', 'container_id': '7783d1a2ed615b539a4e510fd2067b6bc000c32046ac1c345e712d57e464884a', 'container_ip': '172.23.0.2', 'metrics': {'username': '0c81', 'password': 'Z2yXynZQqMIR', 'mount_path': '/home/0c81f26f-1a5e-485d-a59b-adb10e5618f6/valheim', 'server_path': '/srv/allservers/0c81f26f-1a5e-485d-a59b-adb10e5618f6'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-06-26 14:46:07,665 - backendlogger - ERROR - Database error in UpdateServerStatus: invalid input syntax for type json
+DETAIL:  Token "'" is invalid.
+2025-06-26 14:46:07,666 - backendlogger - ERROR - Error updating server status: invalid input syntax for type json
+DETAIL:  Token "'" is invalid.
+2025-06-26 14:51:19,747 - backendlogger - INFO - Redis connection established
+2025-06-26 14:51:19,824 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:51:28,060 - backendlogger - INFO - Database connection pool created
+2025-06-26 14:51:38,798 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 14:51:38,799 - api_user.userroutes - INFO - RegisterUserData(email='petrel1even@proton.me', password='11', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 14:51:39,962 - api_user.userroutes - INFO - User registered successfully: petrel1even@proton.me
+2025-06-26 14:51:41,102 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 682808f9-cd57-485a-b5e5-eec4af7c322c -g valheim -m 6.0g -c 4.0 start
+2025-06-26 14:52:25,111 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '682808f9-cd57-485a-b5e5-eec4af7c322c', 'status': 'running', 'container_id': 'a9f573980898dc3b91998bac461dcecf4308cb420acae0c1f5fc996e9f549b10', 'container_ip': '172.24.0.2', 'metrics': {'username': '6828', 'password': 'mU6oQfwlgHLo', 'mount_path': '/home/682808f9-cd57-485a-b5e5-eec4af7c322c/valheim', 'server_path': '/srv/allservers/682808f9-cd57-485a-b5e5-eec4af7c322c'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-06-26 14:52:25,114 - backendlogger - ERROR - Database error in UpdateServerStatus: invalid input syntax for type json
+DETAIL:  Token "'" is invalid.
+2025-06-26 14:52:25,114 - backendlogger - ERROR - Error updating server status: invalid input syntax for type json
+DETAIL:  Token "'" is invalid.
+2025-06-26 14:53:41,064 - backendlogger - INFO - Redis connection established
+2025-06-26 14:53:41,067 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:54:01,789 - backendlogger - INFO - Redis connection established
+2025-06-26 14:54:01,793 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:54:09,910 - backendlogger - INFO - Redis connection established
+2025-06-26 14:54:09,914 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:54:12,067 - backendlogger - INFO - Database connection pool created
+2025-06-26 14:54:31,531 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 14:54:31,531 - api_user.userroutes - INFO - RegisterUserData(email='admi1n@admin.com', password='11', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-06-26 14:54:31,978 - api_user.userroutes - INFO - User registered successfully: admi1n@admin.com
+2025-06-26 14:54:32,926 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 36503e54-b98a-4275-bbf7-15226301e44b -g valheim -m 6.0g -c 4.0 start
+2025-06-26 14:55:17,854 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '36503e54-b98a-4275-bbf7-15226301e44b', 'status': 'running', 'container_id': '3e40135fa4b81f9d48061b082646f3c356b83b6057342c2f6d994d439694ba64', 'container_ip': '172.25.0.2', 'metrics': {'username': '3650', 'password': 'T8ZIxZeLM8OU', 'mount_path': '/home/36503e54-b98a-4275-bbf7-15226301e44b/valheim', 'server_path': '/srv/allservers/36503e54-b98a-4275-bbf7-15226301e44b'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-06-26 14:55:19,386 - backendlogger - INFO - Server status updated for subscription: 36503e54-b98a-4275-bbf7-15226301e44b
+2025-06-26 14:55:20,474 - backendlogger - INFO - Subscription updated for ID: 36503e54-b98a-4275-bbf7-15226301e44b
+2025-06-26 14:56:40,861 - backendlogger - INFO - Redis connection established
+2025-06-26 14:56:40,869 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:56:43,428 - backendlogger - INFO - Database connection pool created
+2025-06-26 14:58:50,758 - backendlogger - INFO - Redis connection established
+2025-06-26 14:58:50,765 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-06-26 14:58:53,301 - backendlogger - INFO - Database connection pool created
+2025-06-26 14:59:13,548 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 14:59:54,019 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 15:00:12,071 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 15:12:04,981 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-06-26 15:12:29,895 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '36503e54-b98a-4275-bbf7-15226301e44b', 'status': 'running', 'container_id': 'b02683c6e1b62f8b40dbad173181f2339c57318b81111733e8c86cbd9a53c552', 'container_ip': '172.25.0.2'}
+2025-06-26 15:12:30,319 - backendlogger - INFO - Server status updated for subscription: 36503e54-b98a-4275-bbf7-15226301e44b
+2025-06-26 15:12:30,631 - backendlogger - INFO - Subscription updated for ID: 36503e54-b98a-4275-bbf7-15226301e44b
+2025-06-26 15:13:08,801 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '36503e54-b98a-4275-bbf7-15226301e44b', 'status': 'stopped'}
+2025-06-26 15:13:08,960 - backendlogger - INFO - Server stoped for subscription: 36503e54-b98a-4275-bbf7-15226301e44b

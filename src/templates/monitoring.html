@@ -1,181 +1,118 @@
-<div class="mb-8 max-w-4xl mx-auto px-4">
+<div class="mb-8 max-w-4xl mx-auto px-4 space-y-6">
   <!-- CONNECTION DETAILS CARD -->
-  <section class="flex flex-col justify-center px-4 mb-2">
-    <div
-      class="bg-gray-900/70 backdrop-blur-md border border-emerald-700 rounded-2xl shadow-xl p-2 mb-2 space-y-4 max-w-4xl mx-auto"
-    >
-      <h3
-        class="text-2xl font-bold text-emerald-400 tracking-wide flex items-center mb-2"
-      >
+  <section>
+    <div class="glass-card rounded-2xl p-6 shadow-xl space-y-4 border border-border">
+      <h3 class="text-2xl font-bold text-primary-theme flex items-center">
         <i class="fas fa-plug mr-3"></i> Your Connection Details
       </h3>
-      <p class="text-gray-300 leading-relaxed">
+      <p class="text-text-muted">
         To join your game server, open the game, go to the
-        <strong>Join Server</strong> section, and enter the IP address and port
-        below.
+        <strong>Join Server</strong> section, and enter the IP address and port below.
       </p>
 
-      <div class="grid md:grid-cols-2 gap-4 mt-6 text-sm text-gray-300">
-        <div
-          class="bg-gray-800 border border-gray-700 rounded-lg px-5 py-3 flex justify-between items-center"
-        >
-          <span class="font-semibold text-emerald-300">IP Address:</span>
-          <span id="server-ip" class="ml-2 select-all cursor-pointer">
-            {{ip_address}}
-          </span>
-          <button
-            onclick="copyToClipboard('server-ip')"
-            class="text-xs text-emerald-400 hover:underline ml-3"
-          >
-            Copy
-          </button>
+      <div class="grid md:grid-cols-2 gap-4 mt-4 text-sm text-text-muted">
+        <div class="bg-surface border border-border rounded-lg px-5 py-3 flex items-center justify-between">
+          <span class="font-semibold text-primary-theme">IP Address:</span>
+          <div class="flex items-center gap-2">
+            <span id="server-ip" class="select-all cursor-pointer">{{ ip_address }}</span>
+            <button onclick="copyToClipboard('server-ip')" class="text-xs text-primary-theme hover:underline">Copy</button>
+          </div>
         </div>
-        <div
-          class="bg-gray-800 border border-gray-700 rounded-lg px-5 py-3 flex justify-between items-center"
-        >
-          <span class="font-semibold text-emerald-300">Port:</span>
-          <span id="server-port" class="ml-2 select-all cursor-pointer">
-            {{main_port}}
-          </span>
-          <button
-            onclick="copyToClipboard('server-port')"
-            class="text-xs text-emerald-400 hover:underline ml-3"
-          >
-            Copy
-          </button>
+        <div class="bg-surface border border-border rounded-lg px-5 py-3 flex items-center justify-between">
+          <span class="font-semibold text-primary-theme">Port:</span>
+          <div class="flex items-center gap-2">
+            <span id="server-port" class="select-all cursor-pointer">{{ main_port }}</span>
+            <button onclick="copyToClipboard('server-port')" class="text-xs text-primary-theme hover:underline">Copy</button>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Actions + Status -->
-  <div
-    class="mb-2 bg-gray-900/80 backdrop-blur-md border border-emerald-700 rounded-xl shadow-lg p-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4"
-  >
-    <div class="flex items-center space-x-2">
-      <span class="text-lg font-bold text-emerald-400">Server Status:</span>
-      {% if server_status == 'running' %}
-      <span
-        class="px-2 py-1 rounded bg-green-600 text-white text-sm"
-        id="server-status"
-      >
-        Running
+
+  <!-- SERVER STATUS & ACTIONS -->
+  <section class="glass-card rounded-xl p-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-6 border border-border">
+    <div class="flex items-center gap-2">
+      <span class="text-lg font-bold text-primary-theme">Server Status:</span>
+      <span id="server-status" class="px-2 py-1 rounded text-bg-primary text-sm
+        {% if server_status == 'running' %}
+          bg-accent-success
+        {% elif server_status == 'stopped' %}
+          bg-accent-error
+        {% else %}
+          bg-accent-warning
+        {% endif %}
+      ">
+        {{ server_status | capitalize }}
       </span>
-      {% elif server_status == 'stopped' %}
-      <span
-        class="px-2 py-1 rounded bg-red-600 text-white text-sm"
-        id="server-status"
-      >
-        Stopped
-      </span>
-      {% else%}
-      <span
-        class="px-2 py-1 rounded bg-yellow-600 text-white text-sm"
-        id="server-status"
-      >
-        {{server_status | capitalize}}
-      </span>
-      {% endif %}
     </div>
-    <div class="flex space-x-3">
+
+    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
       <button
+        id="restart-button"
+        onclick="restartServer()"
         hx-post="/restart_server?subscription_id={{ subscription_id }}"
         hx-target="#server-status"
-        hx-trigger="click"
-        onclick="restartServer()"
-        id="restart-button"
-        class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded shadow"
+        class="bg-accent-warning hover:bg-yellow-500 text-bg-primary font-semibold px-4 py-2 rounded shadow transition"
       >
         Restart
       </button>
       <button
+        id="backup-button"
         onclick="backupServer()"
         hx-post="/backup_server?subscription_id={{ subscription_id }}"
         hx-target="#server-status"
-        hx-trigger="click"
-        id="backup-button"
-        class="bg-orange-700 hover:bg-orange-800 text-white font-semibold py-2 px-4 rounded shadow"
+        class="bg-tertiary hover:bg-tertiary-hover text-bg-primary font-semibold px-4 py-2 rounded shadow transition"
       >
         Backup
       </button>
       <button
+        id="stop-button"
+        onclick="stopServer()"
         hx-post="/stop_server?subscription_id={{ subscription_id }}"
         hx-target="#server-status"
-        hx-trigger="click"
-        onclick="stopServer()"
-        id="stop-button"
-        class="bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-4 rounded shadow"
+        class="bg-accent-error hover:bg-red-800 text-bg-primary font-semibold px-4 py-2 rounded shadow transition"
       >
         Stop
       </button>
     </div>
-  </div>
+  </section>
 
-  <!-- Vital Stats Snapshot -->
-  <div
-    class="bg-gray-800/90 backdrop-blur-sm border border-gray-700 rounded-xl shadow-lg p-6 space-y-6"
-  >
-    <h3 class="text-lg font-bold text-emerald-300">Server Snapshot</h3>
+  <!-- SERVER SNAPSHOT -->
+  <section class="glass-card border border-border rounded-xl p-6 space-y-6">
+    <h3 class="text-lg font-bold text-secondary-theme">Server Snapshot</h3>
+
     <!-- CPU Usage -->
     <div>
-      <label class="block text-sm font-medium text-gray-300 mb-1"
-        >CPU Usage</label
-      >
-      <div class="w-full bg-gray-700 rounded h-4 overflow-hidden">
-        <div
-          class="bg-emerald-500 h-full"
-          style="width: {{ cpu_usage_percent }}%;"
-        ></div>
+      <label class="block text-sm font-medium text-text-muted mb-1">CPU Usage</label>
+      <div class="w-full bg-surface-hover rounded h-4 overflow-hidden">
+        <div class="bg-primary h-full transition-all duration-500" style="width: {{ cpu_usage_percent }}%;"></div>
       </div>
-      <p class="text-right text-sm text-gray-400 mt-1">
-        {{ cpu_usage_percent }}%
-      </p>
+      <p class="text-right text-sm text-muted mt-1">{{ cpu_usage_percent }}%</p>
     </div>
+
     <!-- Memory Usage -->
     <div>
-      <label class="block text-sm font-medium text-gray-300 mb-1"
-        >Memory Usage</label
-      >
-      <div class="w-full bg-gray-700 rounded h-4 overflow-hidden">
-        <div
-          class="bg-emerald-400 h-full"
-          style="width: {{ memory_usage_percent }}%;"
-        ></div>
+      <label class="block text-sm font-medium text-text-muted mb-1">Memory Usage</label>
+      <div class="w-full bg-surface-hover rounded h-4 overflow-hidden">
+        <div class="bg-secondary h-full transition-all duration-500" style="width: {{ memory_usage_percent }}%;"></div>
       </div>
-      <p class="text-right text-sm text-gray-400 mt-1">
-        {{ memory_usage_percent }}%
-      </p>
+      <p class="text-right text-sm text-muted mt-1">{{ memory_usage_percent }}%</p>
     </div>
-    <!-- Simple Stats at Bottom -->
-    <div
-      class="bg-gray-900/80 backdrop-blur-md border border-gray-700 rounded-xl shadow-lg p-4 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm space-y-2 md:space-y-0 md:space-x-6"
-    >
+
+    <!-- Basic Info -->
+    <div class="bg-surface border border-border rounded-xl p-4 flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary space-y-2 md:space-y-0 md:space-x-6">
       <div>
-        <span class="font-semibold text-gray-300">Subscription Status:</span>
+        <span class="font-semibold text-text-primary">Subscription Status:</span>
         {{ subscription.status }}
       </div>
       <div>
-        <span class="font-semibold text-gray-300">Created:</span>
+        <span class="font-semibold text-text-primary">Created:</span>
         {{ subscription.created_at.strftime('%Y-%m-%d') }}
       </div>
       <div>
-        <span class="font-semibold text-gray-300">Expires:</span>
-        {{ subscription.expires_at.strftime('%Y-%m-%d') if
-        subscription.expires_at else 'N/A' }}
+        <span class="font-semibold text-text-primary">Expires:</span>
+        {{ subscription.expires_at.strftime('%Y-%m-%d') if subscription.expires_at else 'N/A' }}
       </div>
     </div>
-  </div>
+  </section>
 </div>
-
-<script type="text/javascript">
-  // Function to initialize button states based on server status
-  function initializeButtonStates() {
-    // Get server status from template variable
-    const serverStatus = "{{server_status}}";
-    console.log("Initializing button states for status:", serverStatus);
-
-    if (serverStatus && serverStatus !== "") {
-      setButtonStatesForStatus(serverStatus);
-    }
-  }
-  initializeButtonStates();
-</script>

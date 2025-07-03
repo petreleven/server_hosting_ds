@@ -2,8 +2,6 @@ import logging
 from abc import ABC, abstractmethod
 from typing import Dict, Any
 
-from db import db
-
 
 class AbstractProvisioner(ABC):
     """Abstract base class for all game provisioners.
@@ -12,7 +10,6 @@ class AbstractProvisioner(ABC):
 
     def __init__(self) -> None:
         self.logger = logging.getLogger("backendlogger")
-        self.redisClient = db.get_redis_client()
 
     @abstractmethod
     async def job_update_config(

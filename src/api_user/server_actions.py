@@ -16,7 +16,7 @@ def create_error_response(message, status_code=400):
 @serverActionsBlueprint.route("/restart_server", methods=["POST"])
 @login_required
 async def restart_server():
-    redis_Client = db.get_redis_client()
+    redis_Client = await db.get_redis_client()
     logger = logging.getLogger("backendlogger")
     subscription_id = request.args.get("subscription_id", "")
     if not subscription_id:
@@ -69,7 +69,7 @@ async def restart_server():
 @serverActionsBlueprint.route("/stop_server", methods=["POST"])
 @login_required
 async def stop_server():
-    redis_Client = db.get_redis_client()
+    redis_Client = await db.get_redis_client()
     subscription_id = request.args.get("subscription_id", "")
     if not subscription_id:
         return create_error_response("Missing subscription_id", 400)
@@ -113,7 +113,7 @@ async def stop_server():
 @serverActionsBlueprint.route("/backup_server", methods=["POST"])
 @login_required
 async def backup_server():
-    redis_Client = db.get_redis_client()
+    redis_Client = await db.get_redis_client()
     subscription_id = request.args.get("subscription_id", "")
     if not subscription_id:
         return create_error_response("Missing subscription_id", 400)

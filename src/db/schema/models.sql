@@ -118,9 +118,7 @@ CREATE TABLE baremetal (
     created_at       TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at       TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     last_health_check TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- 6. Servers table
+);-- 6. Servers table
 CREATE TABLE servers (
     id                   UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     subscription_id      UUID NOT NULL REFERENCES subscriptions(id) ON DELETE CASCADE,
@@ -149,6 +147,8 @@ CREATE TABLE servers (
     -- Ensure one server per subscription
     CONSTRAINT unique_subscription_server UNIQUE (subscription_id)
 );
+
+
 
 -- Performance Indexes
 CREATE INDEX idx_users_email ON users(email);

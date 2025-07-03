@@ -21,20 +21,13 @@ async def extract_single_sub_record(record: asyncpg.Record) -> Dict[str, Any]:
 
     try:
         expires_at = record.get("expires_at")
-        now = datetime.datetime.now(datetime.timezone.utc)
-
-        if expires_at:
-            timediff = expires_at - now
-            is_expiring_soon = timediff.total_seconds() < (8 * 60 * 60)
-        else:
-            is_expiring_soon = False
 
         subscription = {
             "id": record.get("id"),
-            "is_expiring_soon": is_expiring_soon,
             "status": record.get("status"),
             "created_at": record.get("created_at"),
             "expires_at": expires_at,
+            "internal_status": record.get("internal_status"),
             "last_billing_date": record.get("last_billing_date"),
             "next_billing_date": record.get("next_billing_date"),
         }

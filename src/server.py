@@ -48,7 +48,7 @@ app.register_blueprint(paymentBluePrint)
 @app.before_serving
 async def connect() -> None:
     try:
-        redis_Client = db.get_redis_client()
+        redis_Client = await db.get_redis_client()
         if await redis_Client.json().get("pending_servers", "$") is None:
             await redis_Client.json().set("pending_servers", "$", [])
         # await db.db_createalldbs()

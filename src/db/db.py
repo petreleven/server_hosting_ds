@@ -14,6 +14,10 @@ from asyncpg import Pool, Record
 from redis.asyncio import Redis
 from pathlib import Path
 import enum
+
+
+sys.path.append(str(Path(__file__).parent.parent))
+
 import helper_classes.custom_dataclass as cdata
 
 dotenv.load_dotenv()
@@ -50,7 +54,7 @@ class INTERNAL_SUBSCRIPTION_STATUS(enum.Enum):
     ON = "on"
     PROVISIONING = "provisioning"
     UNAVAILABLE = "unavailable"
-    FAILED = "failed"
+    FAILED = "failed" #will need user to report this can be miscellanious or important
 
 
 class SUBSCRIPTION_STATUS(enum.Enum):
@@ -308,10 +312,12 @@ async def db_select_user_by_email(email: str) -> Tuple[Optional[Record], Optiona
 
 
 # SUBSCRIPTION OPERATIONS
-async def db_insert_subscription(
+async def db_insert_free_subscription(
     user_id: str,
     plan_id: str,
     internal_status: str,
+    trial_starts_at,
+    trial_expires_at,
     status: str,
     expires_at: datetime.datetime,
     next_billing_date: datetime.datetime,
@@ -321,11 +327,13 @@ async def db_insert_subscription(
     try:
         result = await execute_query(
             QUERY_TYPE.FETCHROW,
-            "InsertSubscription",
+            "InsertFreeSubscription",
             user_id,
             plan_id,
             status,
             internal_status,
+            trial_starts_at,
+            trial_expires_at,
             expires_at,
             next_billing_date,
             is_trial,
@@ -717,6 +725,9 @@ async def initialize_database():
 
         # Test connection
         pool = await get_pool()
+        # models_path = Path(__file__).parent / "schema" / "models.sql"
+        # async with pool.acquire() as conn:
+        #     await conn.execute(models_path.read_text())
 
         logger.info("Database initialized successfully")
         return True
@@ -725,6 +736,9 @@ async def initialize_database():
         logger.error(f"Failed to initialize database: {str(e)}")
         raise
 
+
+# loop = asyncio.new_event_loop()
+# loop.run_until_complete(initialize_database())
 
 # Initialize on module load
 try:
