@@ -1270,3 +1270,362 @@ DETAIL:  Token "'" is invalid.
 2025-06-26 15:12:30,631 - backendlogger - INFO - Subscription updated for ID: 36503e54-b98a-4275-bbf7-15226301e44b
 2025-06-26 15:13:08,801 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '36503e54-b98a-4275-bbf7-15226301e44b', 'status': 'stopped'}
 2025-06-26 15:13:08,960 - backendlogger - INFO - Server stoped for subscription: 36503e54-b98a-4275-bbf7-15226301e44b
+2025-07-04 11:39:17,992 - backendlogger - INFO - Redis connection established
+2025-07-04 11:39:18,020 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 11:39:21,954 - backendlogger - INFO - Database connection pool created
+2025-07-04 11:40:18,239 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 11:40:18,241 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 11:40:18,724 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 11:40:20,013 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u d2c907fd-1c73-427f-8589-5a272cab31ed -g valheim -m 6.0g -c 4.0 start
+2025-07-04 11:42:28,352 - backendlogger - INFO - Redis connection established
+2025-07-04 11:42:28,356 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 11:42:39,615 - backendlogger - INFO - Database connection pool created
+2025-07-04 11:42:47,095 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 11:42:47,095 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 11:42:47,488 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 11:42:47,900 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 76d9fca6-3e5f-4b9a-9b8c-724dff871ebd -g valheim -m 6.0g -c 4.0 start
+2025-07-04 11:46:38,654 - backendlogger - INFO - Redis connection established
+2025-07-04 11:46:38,657 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 11:46:40,207 - backendlogger - INFO - Database connection pool created
+2025-07-04 11:46:53,573 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 11:46:53,573 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 11:46:53,981 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 11:46:54,383 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 23c78bfc-3fbb-4eb8-9ae5-6a9922bda7c4 -g valheim -m 6.0g -c 4.0 start
+2025-07-04 11:46:59,141 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '23c78bfc-3fbb-4eb8-9ae5-6a9922bda7c4', 'status': 'failed', 'error': "Failed to start server: unable to get image 'petreleven11/valheim_server:v0.0.1': Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?\n"}
+2025-07-04 11:46:59,141 - backendlogger - ERROR - Server error reported: Failed to start server: unable to get image 'petreleven11/valheim_server:v0.0.1': Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+2025-07-04 11:48:00,918 - api_user.userroutes - WARNING - Subscription not found: 23c78bfc-3fbb-4eb8-9ae5-6a9922bda7c4
+2025-07-04 11:51:09,641 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 11:51:09,642 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 11:51:10,116 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 11:51:10,429 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 29df4d84-2f14-4f9b-bc69-b01fa07c404c -g valheim -m 6.0g -c 4.0 start
+2025-07-04 11:51:34,787 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '29df4d84-2f14-4f9b-bc69-b01fa07c404c', 'status': 'running', 'container_id': 'fe696168a1ee9cbb271bb2b396bf79aa8aaf9f650f813d53de7b7f427bb7437f', 'container_ip': '172.25.0.2', 'metrics': {'username': '29df', 'password': 'spuWsIgzfUQo', 'mount_path': '/home/29df4d84-2f14-4f9b-bc69-b01fa07c404c/valheim', 'server_path': '/srv/allservers/29df4d84-2f14-4f9b-bc69-b01fa07c404c'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-07-04 11:51:35,102 - backendlogger - INFO - Server status updated for subscription: 29df4d84-2f14-4f9b-bc69-b01fa07c404c
+2025-07-04 11:51:35,313 - backendlogger - INFO - Subscription updated for ID: 29df4d84-2f14-4f9b-bc69-b01fa07c404c
+2025-07-04 11:52:53,541 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 11:58:10,944 - backendlogger - INFO - Redis connection established
+2025-07-04 11:58:10,953 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 11:58:12,432 - backendlogger - INFO - Database connection pool created
+2025-07-04 11:58:17,845 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 11:59:31,837 - backendlogger - INFO - Redis connection established
+2025-07-04 11:59:31,842 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 11:59:33,286 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:00:25,717 - backendlogger - INFO - Redis connection established
+2025-07-04 12:00:25,721 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:00:29,264 - backendlogger - INFO - Redis connection established
+2025-07-04 12:00:29,269 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:00:58,965 - backendlogger - INFO - Redis connection established
+2025-07-04 12:00:58,969 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:01:03,534 - backendlogger - INFO - Redis connection established
+2025-07-04 12:01:03,537 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:01:25,034 - backendlogger - INFO - Redis connection established
+2025-07-04 12:01:25,039 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:01:27,735 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:01:34,367 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:09:18,928 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:09:18,929 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 12:09:19,411 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 12:09:20,080 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u aa92d714-1587-477d-920a-3907c449a183 -g valheim -m 6.0g -c 4.0 start
+2025-07-04 12:10:03,489 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'aa92d714-1587-477d-920a-3907c449a183', 'status': 'running', 'container_id': '160fb69b25fbf0400dbd6e9a04e9be553b15b89a954433b6f16a58c0767c586c', 'container_ip': '172.26.0.2', 'metrics': {'username': 'aa92', 'password': 'HtCAxucBQyRi', 'mount_path': '/home/aa92d714-1587-477d-920a-3907c449a183/valheim', 'server_path': '/srv/allservers/aa92d714-1587-477d-920a-3907c449a183'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-07-04 12:10:04,045 - backendlogger - INFO - Server status updated for subscription: aa92d714-1587-477d-920a-3907c449a183
+2025-07-04 12:10:04,321 - backendlogger - INFO - Subscription updated for ID: aa92d714-1587-477d-920a-3907c449a183
+2025-07-04 12:11:22,915 - api_user.userroutes - WARNING - Subscription not found: aa92d714-1587-477d-920a-3907c449a183
+2025-07-04 12:11:37,381 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:11:37,381 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 12:11:38,219 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 12:11:40,133 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u adabe098-2581-4a7d-a1d3-cd215caab9df -g valheim -m 6.0g -c 4.0 start
+2025-07-04 12:12:18,383 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'adabe098-2581-4a7d-a1d3-cd215caab9df', 'status': 'running', 'container_id': '5bed2ad6fcb28390655afae41d408768a87368b659561dff935ff3c193a689d9', 'container_ip': '172.27.0.2', 'metrics': {'username': 'adab', 'password': 'BSbcmX5Xj1M8', 'mount_path': '/home/adabe098-2581-4a7d-a1d3-cd215caab9df/valheim', 'server_path': '/srv/allservers/adabe098-2581-4a7d-a1d3-cd215caab9df'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-07-04 12:12:19,229 - backendlogger - INFO - Server status updated for subscription: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 12:12:19,773 - backendlogger - INFO - Subscription updated for ID: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 12:13:54,568 - backendlogger - INFO - Redis connection established
+2025-07-04 12:13:54,572 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:13:57,707 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:14:00,561 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:14:34,411 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:14:45,976 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:14:50,629 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:23:23,908 - backendlogger - INFO - Redis connection established
+2025-07-04 12:23:23,912 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:23:27,734 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:23:33,097 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:24:07,683 - backendlogger - INFO - Redis connection established
+2025-07-04 12:24:07,688 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:24:12,368 - backendlogger - INFO - Redis connection established
+2025-07-04 12:24:12,372 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:24:57,271 - backendlogger - INFO - Redis connection established
+2025-07-04 12:24:57,275 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:25:02,536 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:25:05,797 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:36:01,182 - backendlogger - INFO - Redis connection established
+2025-07-04 12:36:01,187 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:36:03,070 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:36:07,440 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:38:00,587 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:38:26,427 - backendlogger - INFO - Redis connection established
+2025-07-04 12:38:26,431 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:38:28,482 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:38:31,974 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:38:49,956 - backendlogger - INFO - Redis connection established
+2025-07-04 12:38:49,961 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:38:51,916 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:38:55,744 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:39:16,297 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:39:21,540 - backendlogger - INFO - Redis connection established
+2025-07-04 12:39:21,544 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:39:23,871 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:39:25,932 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:42:12,686 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:43:37,336 - backendlogger - INFO - Redis connection established
+2025-07-04 12:43:37,340 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:43:39,450 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:43:42,293 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:44:01,411 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:44:09,204 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:44:16,249 - backendlogger - INFO - Redis connection established
+2025-07-04 12:44:16,253 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:44:18,739 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:45:37,191 - backendlogger - INFO - Redis connection established
+2025-07-04 12:45:37,195 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:45:40,758 - backendlogger - INFO - Redis connection established
+2025-07-04 12:45:40,761 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:45:45,618 - backendlogger - INFO - Redis connection established
+2025-07-04 12:45:45,622 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:45:49,884 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:45:52,498 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:47:20,699 - backendlogger - INFO - Redis connection established
+2025-07-04 12:47:20,702 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:47:23,965 - backendlogger - INFO - Redis connection established
+2025-07-04 12:47:23,969 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:47:25,763 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:47:30,503 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:48:25,996 - backendlogger - INFO - Redis connection established
+2025-07-04 12:48:26,001 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:48:31,900 - backendlogger - INFO - Redis connection established
+2025-07-04 12:48:31,904 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:48:37,640 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:48:41,890 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:49:11,721 - backendlogger - INFO - Redis connection established
+2025-07-04 12:49:11,724 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:49:15,854 - backendlogger - INFO - Redis connection established
+2025-07-04 12:49:15,860 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:49:18,392 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:49:24,070 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:49:27,435 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:49:55,496 - backendlogger - INFO - Redis connection established
+2025-07-04 12:49:55,499 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:50:06,845 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:50:07,028 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:51:07,359 - backendlogger - INFO - Redis connection established
+2025-07-04 12:51:07,363 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:51:09,909 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:51:16,738 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:51:16,742 - api_user.userroutes - ERROR - Error loading server configuration: 'ports'
+Traceback (most recent call last):
+  File "/home/peter/Code/quartApp/src/api_user/userroutes.py", line 319, in configure
+    del config["properties"]["ports"]
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'ports'
+2025-07-04 12:51:34,260 - backendlogger - INFO - Redis connection established
+2025-07-04 12:51:34,264 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:51:35,781 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:51:38,805 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:51:49,211 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:55:37,314 - backendlogger - INFO - Redis connection established
+2025-07-04 12:55:37,320 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:55:41,462 - backendlogger - INFO - Redis connection established
+2025-07-04 12:55:41,466 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:55:48,074 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:55:51,615 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:56:01,401 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:57:14,355 - backendlogger - INFO - Redis connection established
+2025-07-04 12:57:14,360 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 12:57:15,428 - backendlogger - INFO - Database connection pool created
+2025-07-04 12:57:19,848 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:57:22,100 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 12:57:22,829 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': 'adabe098-2581-4a7d-a1d3-cd215caab9df', 'status': 'configured'}
+2025-07-04 12:57:22,830 - backendlogger - INFO - Server config update done for subscription: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 13:02:01,003 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'adabe098-2581-4a7d-a1d3-cd215caab9df', 'status': 'running', 'container_id': '8e75974d27d806741e525a4e552248a4e9134b6532cf0b2df9ab8e1e1badd009', 'container_ip': '172.27.0.2'}
+2025-07-04 13:02:01,147 - backendlogger - INFO - Server status updated for subscription: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 13:02:01,379 - backendlogger - INFO - Subscription updated for ID: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 13:06:32,848 - backendlogger - INFO - Redis connection established
+2025-07-04 13:06:32,853 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:07:09,952 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:07:38,706 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'adabe098-2581-4a7d-a1d3-cd215caab9df', 'status': 'running', 'container_id': '223d60fe75d0f7022cc41a1db6817bcf747a59c8f5d754c55078acc2d45bb5dd', 'container_ip': '172.27.0.2'}
+2025-07-04 13:07:38,924 - backendlogger - INFO - Server status updated for subscription: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 13:07:39,579 - backendlogger - INFO - Subscription updated for ID: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 13:11:13,710 - backendlogger - INFO - Redis connection established
+2025-07-04 13:11:13,715 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:11:14,936 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:11:21,003 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:11:44,393 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'adabe098-2581-4a7d-a1d3-cd215caab9df', 'status': 'running', 'container_id': '4f9293d92f02e12eb40ec397d10479e10b2a4262b5c7e0da62e5dc08bef1bfd6', 'container_ip': '172.27.0.2'}
+2025-07-04 13:11:44,540 - backendlogger - INFO - Server status updated for subscription: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 13:11:44,727 - backendlogger - INFO - Subscription updated for ID: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 13:15:49,312 - backendlogger - INFO - Redis connection established
+2025-07-04 13:15:49,316 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:15:51,539 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:15:56,140 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:16:11,907 - api_user.userroutes - WARNING - None
+2025-07-04 13:16:19,103 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'adabe098-2581-4a7d-a1d3-cd215caab9df', 'status': 'running', 'container_id': 'a1913dd1d427a6c0cb078ac1e2b6b745d6811aa00efdcf7979aa849e7e171c13', 'container_ip': '172.27.0.2'}
+2025-07-04 13:16:19,213 - backendlogger - INFO - Server status updated for subscription: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 13:16:19,302 - backendlogger - INFO - Subscription updated for ID: adabe098-2581-4a7d-a1d3-cd215caab9df
+2025-07-04 13:16:21,905 - api_user.userroutes - WARNING - None
+2025-07-04 13:16:31,899 - api_user.userroutes - WARNING - None
+2025-07-04 13:16:41,899 - api_user.userroutes - WARNING - None
+2025-07-04 13:16:51,898 - api_user.userroutes - WARNING - None
+2025-07-04 13:17:47,289 - backendlogger - INFO - Redis connection established
+2025-07-04 13:17:47,293 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:17:48,929 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:18:26,652 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:18:26,653 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 13:18:27,174 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 13:18:27,753 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 53dfd553-ca95-4d9d-9dc5-6f058102c6bf -g valheim -m 6.0g -c 4.0 start
+2025-07-04 13:18:56,774 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '53dfd553-ca95-4d9d-9dc5-6f058102c6bf', 'status': 'running', 'container_id': '685601ae52164f603e446481bab7d6406a9f11b8193935b7142741156f590e49', 'container_ip': '172.28.0.2', 'metrics': {'username': '53df', 'password': 'TuLjRkRfMLm7', 'mount_path': '/home/53dfd553-ca95-4d9d-9dc5-6f058102c6bf/valheim', 'server_path': '/srv/allservers/53dfd553-ca95-4d9d-9dc5-6f058102c6bf'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-07-04 13:18:57,816 - backendlogger - INFO - Server status updated for subscription: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:18:58,351 - backendlogger - INFO - Subscription updated for ID: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:19:43,744 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:20:01,078 - api_user.userroutes - WARNING - None
+2025-07-04 13:20:03,981 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '53dfd553-ca95-4d9d-9dc5-6f058102c6bf', 'status': 'running', 'container_id': '162520b5d5c26490c903a432681297dd38259d92def798d9ad892df307b49530', 'container_ip': '172.28.0.2'}
+2025-07-04 13:20:04,114 - backendlogger - INFO - Server status updated for subscription: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:20:04,249 - backendlogger - INFO - Subscription updated for ID: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:20:11,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:20:21,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:20:31,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:20:41,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:20:51,070 - api_user.userroutes - WARNING - None
+2025-07-04 13:21:01,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:21:11,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:21:21,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:21:31,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:21:41,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:21:45,717 - backendlogger - INFO - Redis connection established
+2025-07-04 13:21:45,721 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:21:51,245 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:21:51,258 - api_user.userroutes - WARNING - None
+2025-07-04 13:22:01,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:22:10,388 - backendlogger - INFO - Redis connection established
+2025-07-04 13:22:10,391 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:22:11,242 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:22:11,255 - api_user.userroutes - WARNING - None
+2025-07-04 13:22:14,938 - backendlogger - INFO - Redis connection established
+2025-07-04 13:22:14,941 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:22:21,243 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:22:21,260 - api_user.userroutes - WARNING - None
+2025-07-04 13:22:31,070 - api_user.userroutes - WARNING - None
+2025-07-04 13:22:41,069 - api_user.userroutes - WARNING - None
+2025-07-04 13:22:48,683 - backendlogger - INFO - Redis connection established
+2025-07-04 13:22:48,688 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:22:50,230 - backendlogger - INFO - Redis connection established
+2025-07-04 13:22:50,234 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:22:51,252 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:23:06,902 - backendlogger - INFO - Redis connection established
+2025-07-04 13:23:06,906 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:23:23,827 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:23:31,458 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '53dfd553-ca95-4d9d-9dc5-6f058102c6bf', 'status': 'stopped'}
+2025-07-04 13:23:31,558 - backendlogger - INFO - Server stoped for subscription: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:23:45,464 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '53dfd553-ca95-4d9d-9dc5-6f058102c6bf', 'status': 'running', 'container_id': '3cbf127d354a1ab57ec593056137bcc88fcd0f9c0d7b42f6d8c7abf10e48dd9b', 'container_ip': '172.28.0.2'}
+2025-07-04 13:23:45,559 - backendlogger - INFO - Server status updated for subscription: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:23:45,880 - backendlogger - INFO - Subscription updated for ID: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:23:56,828 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:24:07,235 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '53dfd553-ca95-4d9d-9dc5-6f058102c6bf', 'status': 'running', 'container_id': 'f08538586ac30acb33573989624eea6843403e724d9afa55e0e1aa7f1613f6c3', 'container_ip': '172.28.0.2'}
+2025-07-04 13:24:07,304 - backendlogger - INFO - Server status updated for subscription: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:24:07,571 - backendlogger - INFO - Subscription updated for ID: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:24:16,288 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:24:20,591 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '53dfd553-ca95-4d9d-9dc5-6f058102c6bf', 'status': 'stopped'}
+2025-07-04 13:24:20,661 - backendlogger - INFO - Server stoped for subscription: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:24:27,998 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '53dfd553-ca95-4d9d-9dc5-6f058102c6bf', 'status': 'running', 'container_id': '2252820b177c64b51fcf38dbb0d0e9c2a279177c2833501bd93eb896557a8ed7', 'container_ip': '172.28.0.2'}
+2025-07-04 13:24:28,083 - backendlogger - INFO - Server status updated for subscription: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:24:28,360 - backendlogger - INFO - Subscription updated for ID: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:31:04,087 - backendlogger - INFO - Redis connection established
+2025-07-04 13:31:04,092 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:31:10,674 - backendlogger - INFO - Redis connection established
+2025-07-04 13:31:10,677 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:31:12,687 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:31:49,567 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '53dfd553-ca95-4d9d-9dc5-6f058102c6bf', 'status': 'running', 'container_id': '0d0fea801dfbd21f029dd0f5c7d5d4b381f421382fc6d0a6323075889d5d1067', 'container_ip': '172.28.0.2'}
+2025-07-04 13:31:49,727 - backendlogger - INFO - Server status updated for subscription: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:31:49,849 - backendlogger - INFO - Subscription updated for ID: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:32:19,190 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '53dfd553-ca95-4d9d-9dc5-6f058102c6bf', 'status': 'stopped'}
+2025-07-04 13:32:19,304 - backendlogger - INFO - Server stoped for subscription: 53dfd553-ca95-4d9d-9dc5-6f058102c6bf
+2025-07-04 13:33:11,128 - backendlogger - INFO - Redis connection established
+2025-07-04 13:33:11,132 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:33:12,690 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:33:58,155 - backendlogger - INFO - Redis connection established
+2025-07-04 13:33:58,159 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:34:02,361 - backendlogger - INFO - Redis connection established
+2025-07-04 13:34:02,365 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:34:04,089 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:34:17,697 - backendlogger - INFO - Redis connection established
+2025-07-04 13:34:17,701 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:35:47,585 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:36:27,368 - backendlogger - INFO - Redis connection established
+2025-07-04 13:36:27,371 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:36:31,620 - backendlogger - INFO - Redis connection established
+2025-07-04 13:36:31,624 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:36:33,269 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:36:55,378 - backendlogger - INFO - Redis connection established
+2025-07-04 13:36:55,385 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:36:57,197 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:37:30,226 - backendlogger - INFO - Redis connection established
+2025-07-04 13:37:30,230 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:37:32,625 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:38:33,481 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:38:33,482 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 13:38:34,669 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 13:38:35,392 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 4ca1ec0f-081a-4f02-b353-406c2542778e -g valheim -m 6.0g -c 4.0 start
+2025-07-04 13:39:39,303 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '4ca1ec0f-081a-4f02-b353-406c2542778e', 'status': 'running', 'container_id': '9a97e47cfcd58f518bbb4a35b13dabb8cc03763010260e753c4dd3deae7b73a7', 'container_ip': '172.28.0.2', 'metrics': {'username': '4ca1', 'password': 'iAIlB0Ak1lj3', 'mount_path': '/home/4ca1ec0f-081a-4f02-b353-406c2542778e/valheim', 'server_path': '/srv/allservers/4ca1ec0f-081a-4f02-b353-406c2542778e'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-07-04 13:39:40,325 - backendlogger - INFO - Server status updated for subscription: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:39:40,802 - backendlogger - INFO - Subscription updated for ID: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:42:44,376 - backendlogger - INFO - Redis connection established
+2025-07-04 13:42:44,386 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:43:08,278 - backendlogger - INFO - Redis connection established
+2025-07-04 13:43:08,290 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:43:12,070 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:43:51,093 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '4ca1ec0f-081a-4f02-b353-406c2542778e', 'status': 'running', 'container_id': '1c602c69d79fd49db8ee7465ab911a463e12e091e72822e65a50bdf7fec47797', 'container_ip': '172.28.0.2'}
+2025-07-04 13:43:51,471 - backendlogger - INFO - Server status updated for subscription: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:43:51,812 - backendlogger - INFO - Subscription updated for ID: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:44:10,729 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:44:57,931 - backendlogger - INFO - Redis connection established
+2025-07-04 13:44:57,944 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:45:07,592 - backendlogger - INFO - Redis connection established
+2025-07-04 13:45:07,606 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:45:12,345 - backendlogger - INFO - Redis connection established
+2025-07-04 13:45:12,356 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:45:33,538 - backendlogger - INFO - Redis connection established
+2025-07-04 13:45:33,550 - hypercorn.error - INFO - Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-07-04 13:45:34,381 - backendlogger - INFO - Database connection pool created
+2025-07-04 13:45:38,660 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:45:53,180 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:45:54,109 - backendlogger - INFO - Server report received: {'action': 'updateConfig', 'subscription_id': '4ca1ec0f-081a-4f02-b353-406c2542778e', 'status': 'configured'}
+2025-07-04 13:45:54,109 - backendlogger - INFO - Server config update done for subscription: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:46:21,828 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:46:25,896 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:47:15,846 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '4ca1ec0f-081a-4f02-b353-406c2542778e', 'status': 'stopped'}
+2025-07-04 13:47:16,049 - backendlogger - INFO - Server stoped for subscription: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:47:45,442 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '4ca1ec0f-081a-4f02-b353-406c2542778e', 'status': 'running', 'container_id': '4cc7e7d09b4f6ec89c3349288663fb7cc5431636bea0a970840d1d00dfbba5c0', 'container_ip': '172.28.0.2'}
+2025-07-04 13:47:45,732 - backendlogger - INFO - Server status updated for subscription: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:47:45,959 - backendlogger - INFO - Subscription updated for ID: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:48:03,408 - backendlogger - INFO - Server report received: {'action': 'stop', 'subscription_id': '4ca1ec0f-081a-4f02-b353-406c2542778e', 'status': 'stopped'}
+2025-07-04 13:48:03,544 - backendlogger - INFO - Server stoped for subscription: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:58:24,865 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '4ca1ec0f-081a-4f02-b353-406c2542778e', 'status': 'running', 'container_id': '99e1ccd4593f579b4c98ca093eb4d1198299b0e16943fbfc13a972702c9ec04f', 'container_ip': '172.28.0.2'}
+2025-07-04 13:58:24,992 - backendlogger - INFO - Server status updated for subscription: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:58:25,137 - backendlogger - INFO - Subscription updated for ID: 4ca1ec0f-081a-4f02-b353-406c2542778e
+2025-07-04 13:59:13,364 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 13:59:13,364 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 13:59:13,864 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 13:59:14,231 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u fad06c61-2761-420d-9cd1-baf2c0ec119a -g valheim -m 6.0g -c 4.0 start
+2025-07-04 14:00:02,509 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'fad06c61-2761-420d-9cd1-baf2c0ec119a', 'status': 'running', 'container_id': '004f666e90e6e5c71a4203ea0d4823d7156461131f1240c9573a0220a9fde36e', 'container_ip': '172.29.0.2', 'metrics': {'username': 'fad0', 'password': 'xYnR5Hsc67dT', 'mount_path': '/home/fad06c61-2761-420d-9cd1-baf2c0ec119a/valheim', 'server_path': '/srv/allservers/fad06c61-2761-420d-9cd1-baf2c0ec119a'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-07-04 14:00:02,947 - backendlogger - INFO - Server status updated for subscription: fad06c61-2761-420d-9cd1-baf2c0ec119a
+2025-07-04 14:00:03,158 - backendlogger - INFO - Subscription updated for ID: fad06c61-2761-420d-9cd1-baf2c0ec119a
+2025-07-04 14:05:30,987 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 14:05:30,988 - api_user.userroutes - INFO - RegisterUserData(email='petreleven@proton.me', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 14:05:31,959 - api_user.userroutes - INFO - User registered successfully: petreleven@proton.me
+2025-07-04 14:05:34,420 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u a371d015-18c0-4150-901e-3933c8817ff7 -g valheim -m 6.0g -c 4.0 start
+2025-07-04 14:06:26,309 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': 'a371d015-18c0-4150-901e-3933c8817ff7', 'status': 'running', 'container_id': '518efddb52f6e65aa59297d0230be224267e60d1f407c1a9dfd7692e2b6e872c', 'container_ip': '172.30.0.2', 'metrics': {'username': 'a371', 'password': 'jZBrpJHiYjg4', 'mount_path': '/home/a371d015-18c0-4150-901e-3933c8817ff7/valheim', 'server_path': '/srv/allservers/a371d015-18c0-4150-901e-3933c8817ff7'}, 'ports': {'main_port': 2300, 'misc1': 2301}}
+2025-07-04 14:06:26,866 - backendlogger - INFO - Server status updated for subscription: a371d015-18c0-4150-901e-3933c8817ff7
+2025-07-04 14:06:27,187 - backendlogger - INFO - Subscription updated for ID: a371d015-18c0-4150-901e-3933c8817ff7
+2025-07-04 14:08:20,886 - backendlogger - INFO - Registered provisioner for game: valheim
+2025-07-04 14:08:20,886 - api_user.userroutes - INFO - RegisterUserData(email='admin@admin.com', password='1234', game_id='006fa2d1-a7f0-472f-beaa-bd97a6f94b3c', plan_id='60887e59-10aa-4fb0-9a0f-63192cb2dde7')
+2025-07-04 14:08:21,448 - api_user.userroutes - INFO - User registered successfully: admin@admin.com
+2025-07-04 14:08:22,158 - backendlogger - INFO - Server provisioning queued: python3 setup_server.py -u 58c15ed3-3b87-43ab-92c3-34fc3311ddc0 -g valheim -m 6.0g -c 4.0 start
+2025-07-04 14:09:17,581 - backendlogger - INFO - Server report received: {'action': 'start', 'subscription_id': '58c15ed3-3b87-43ab-92c3-34fc3311ddc0', 'status': 'running', 'container_id': '3514d89dc512e9052e03cbb4119484e91604fc797ca7e04744e4e477fb485b6a', 'container_ip': '172.31.0.2', 'metrics': {'username': '58c1', 'password': 'dqmIRCL6Iphg', 'mount_path': '/home/58c15ed3-3b87-43ab-92c3-34fc3311ddc0/valheim', 'server_path': '/srv/allservers/58c15ed3-3b87-43ab-92c3-34fc3311ddc0'}, 'ports': {'main_port': 2302, 'misc1': 2303}}
+2025-07-04 14:09:18,652 - backendlogger - INFO - Server status updated for subscription: 58c15ed3-3b87-43ab-92c3-34fc3311ddc0
+2025-07-04 14:09:19,129 - backendlogger - INFO - Subscription updated for ID: 58c15ed3-3b87-43ab-92c3-34fc3311ddc0

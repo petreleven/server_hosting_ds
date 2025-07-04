@@ -239,8 +239,8 @@ async def monitoring():
     if not server:
         return "Invalid subscription or server not found", 404
     ip_address = server.get("ip_address", None)
-    ports = server.get("ports", "")
-    main_port = ports.split(",")[0]
+    saved_ports = server.get("ports", "{}")
+    saved_ports = json.loads(saved_ports)
 
     # Fetch subscription
     res = await db.db_select_subscription_by_id(subscription_id)
@@ -258,7 +258,7 @@ async def monitoring():
 
     return await render_template(
         "monitoring.html",
-        main_port=main_port,
+        ports=saved_ports,
         ip_address=ip_address,
         subscription_id=subscription_id,
         cpu_usage_percent=cpu_usage_percent,
@@ -273,9 +273,10 @@ async def monitoring():
 async def server_status():
     args = request.args
     subscription_id = args.get("subscription_id", "")
-    server, err = await db.db_select_server_by_id(subscription_id)
+    server, err = await db.db_select_server_by_subscription_id(subscription_id)
     if not server:
-        return "Error getting server status"
+        logger.warning(err)
+        return {"status": "Error getting server status"}
 
     data = {"status": server.get("status", "")}
     return data
@@ -310,7 +311,9 @@ async def configure():
 
         provisioner = MainProvisioner()
         db_cfg: Dict[str, Any] = json.loads(record.get("config", "{}"))
-        config = await provisioner.generate_config_view_schema(db_cfg, subscription_id)
+        config: Optional[
+            Dict[str, Any]
+        ] = await provisioner.generate_config_view_schema(db_cfg, subscription_id)
 
         return await render_template(
             "configure.html",

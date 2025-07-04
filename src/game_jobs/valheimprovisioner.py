@@ -16,6 +16,15 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 class ValheimProvisioner(AbstractProvisioner):
     def __init__(self):
         super().__init__()
+        """
+         "ports": {
+                    "type": "object",
+                    "properties": {
+                        "main_port": {"type": "integer", "default": 3300},
+                        "misc_1": {"type": "integer", "default": 3311},
+                    },
+                },
+        """
         self.schema = {
             "$schema": "http://json-schema.org/draft-07/schema#",
             "$id": "https://example.com/schemas/valheim.json",
@@ -28,13 +37,6 @@ class ValheimProvisioner(AbstractProvisioner):
                     "minLength": 1,
                     "description": "The display name for your server (-name)",
                     "default": "My server",
-                },
-                "port": {
-                    "type": "integer",
-                    "minimum": 1024,
-                    "maximum": 65535,
-                    "default": 2456,
-                    "description": "UDP port the server listens on (-port)",
                 },
                 "world": {
                     "type": "string",
@@ -165,7 +167,7 @@ class ValheimProvisioner(AbstractProvisioner):
                     "description": "Disable build costs (setkey nobuildcost)",
                 },
             },
-            "required": ["name", "port", "world"],
+            "required": ["name", "world"],
         }
 
     def parse_check_boxes(self, form_dict) -> Dict:

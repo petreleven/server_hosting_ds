@@ -97,8 +97,8 @@ class RegisterHandler:
                 ports = data["ports"]
             if ports == {}:  # restart
                 if server:
-                    ports = server.get("ports", "")
-            print(f"******ports:{ports}")
+                    ports = server.get("ports", "{}")
+                    ports = json.loads(ports)
             server, err = await db.db_update_server_status(
                 status=data["status"],
                 docker_container_id=data["container_id"],
@@ -222,7 +222,6 @@ class RegisterHandler:
         return True, None
 
     async def _update_config_handler(self, data: Dict) -> Tuple[bool, Optional[Dict]]:
-        print("update called")
         required_fields = ["subscription_id", "status"]
         pass_check, missing_field = self._check_fields(required_fields, data)
         if not pass_check:

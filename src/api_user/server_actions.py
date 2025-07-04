@@ -58,7 +58,7 @@ async def restart_server():
         queueName = f"badger:pending:{ip}"
         payload = f"python3 setup_server.py -u {subscription_id} -g {game_name} restart"
         await redis_Client.lpush(queueName, payload)
-        return jsonify({"message": "Server is restarting"}), 200
+        return "restarting", 200
     except Exception as e:
         logger.exception(
             f"Unexpected error when restarting server for subscription_id {subscription_id}: {e}"
@@ -102,7 +102,7 @@ async def stop_server():
         queueName = f"badger:pending:{ip}"
         payload = f"python3 setup_server.py -u {subscription_id} -g {game_name} stop"
         await redis_Client.lpush(queueName, payload)
-        return jsonify({"message": "Server is stopping"}), 200
+        return "stopping", 200
     except Exception as e:
         logging.exception(
             f"Unexpected error when stopping server for subscription_id {subscription_id}: {e}"
@@ -146,7 +146,7 @@ async def backup_server():
         queueName = f"badger:pending:{ip}"
         payload = f"python3 setup_server.py -u {subscription_id} -g {game_name} backup"
         await redis_Client.lpush(queueName, payload)
-        return jsonify({"message": "Server is backing up"}), 200
+        return "backing up", 200
     except Exception as e:
         logging.exception(
             f"Unexpected error when backing up server for subscription_id {subscription_id}: {e}"
@@ -198,9 +198,7 @@ async def save_config():
 
     # take care of nestings of 1 level and ints
     raw_config_values = await request.form
-    import pprint
 
-    pprint.pprint(raw_config_values)
     config_values = {}
     for key, value in raw_config_values.items():
         v = value

@@ -57,7 +57,7 @@
       this.config = config;
       this.formContainer = formContainer;
       this.advancedFields = [];
-      this.basicFields = ["name", "port", "world", "password"];
+      this.basicFields = ["name", "world", "password"];
     }
 
     init() {
@@ -115,7 +115,7 @@
       const wrapper = document.createElement("div");
       wrapper.className = "mb-4 space-y-1";
 
-      if (prop.type === "boolean") return this.createCheckboxField(name, prop);
+      if (prop.type === "boolean" ) return this.createCheckboxField(name, prop);
 
       const label = document.createElement("label");
       label.setAttribute("for", name);
@@ -256,87 +256,30 @@
 <script type="text/javascript">
   let pollInterval = null;
 
-  // Generic function to show spinner on any button
-  function showButtonSpinner(buttonId) {
-    const button = document.getElementById(buttonId);
-    if (!button) return;
-
-    // Store original content
-    button.setAttribute("data-original-content", button.innerHTML);
-    button.setAttribute("data-original-classes", button.className);
-
-    // Add spinner
-    button.innerHTML = `<div class="loader"></div>`;
-    // Disable button and update styles
-    button.disabled = true;
-    button.classList.add("opacity-75", "cursor-not-allowed");
-    // Remove hover classes
-    button.classList.remove(
-      "hover:bg-yellow-700",
-      "hover:bg-orange-800",
-      "hover:bg-red-800",
-    );
+  // Function to hide all buttons
+  function hideAllButtons() {
+    const buttons = ['restart-button', 'stop-button', 'backup-button'];
+    buttons.forEach(buttonId => {
+      const button = document.getElementById(buttonId);
+      if (button) {
+        button.style.display = 'none';
+      }
+    });
   }
 
-  // Generic function to reset button
-  function resetButton(buttonId) {
-    const button = document.getElementById(buttonId);
-    console.log(button);
-    if (!button) return;
-
-    const originalContent = button.getAttribute("data-original-content");
-    const originalClasses = button.getAttribute("data-original-classes");
-
-    if (originalContent) {
-      button.innerHTML = originalContent;
-    }
-    if (originalClasses) {
-      button.className = originalClasses;
-    }
-
-    button.disabled = false;
-    button.removeAttribute("data-original-content");
-    button.removeAttribute("data-original-classes");
-  }
-
-  // Function to disable the opposite button
-  function disableOppositeButton(operation) {
-    if (operation === "stop") {
-      const restartBtn = document.getElementById("restart-button");
-      if (restartBtn) {
-        restartBtn.disabled = true;
-        restartBtn.classList.add("cursor-not-allowed", "opacity-50");
+  // Function to show all buttons
+  function showAllButtons() {
+    const buttons = ['restart-button', 'stop-button', 'backup-button'];
+    buttons.forEach(buttonId => {
+      const button = document.getElementById(buttonId);
+      if (button) {
+        button.style.display = '';
       }
-    } else if (operation === "restart") {
-      const stopBtn = document.getElementById("stop-button");
-      if (stopBtn) {
-        stopBtn.disabled = true;
-        stopBtn.classList.add("cursor-not-allowed", "opacity-50");
-      }
-    }
-  }
-
-  // Function to enable the opposite button
-  function enableOppositeButton(operation) {
-    if (operation === "stop") {
-      const restartBtn = document.getElementById("restart-button");
-      if (restartBtn) {
-        restartBtn.disabled = false;
-        restartBtn.classList.remove("cursor-not-allowed", "opacity-50");
-      }
-    } else if (operation === "restart") {
-      const stopBtn = document.getElementById("stop-button");
-      if (stopBtn) {
-        stopBtn.disabled = false;
-        stopBtn.classList.remove("cursor-not-allowed", "opacity-50");
-      }
-    }
+    });
   }
 
   // Function to set button states based on server status (without triggering operations)
   function setButtonStatesForStatus(status) {
-    const restartBtn = document.getElementById("restart-button");
-    const stopBtn = document.getElementById("stop-button");
     const statusElement = document.getElementById("server-status");
 
     // Clear any existing polling first
@@ -347,15 +290,8 @@
 
     switch (status) {
       case "running":
-        // Server is running - both buttons should be enabled
-        if (restartBtn) {
-          restartBtn.disabled = false;
-          restartBtn.classList.remove("cursor-not-allowed", "opacity-50");
-        }
-        if (stopBtn) {
-          stopBtn.disabled = false;
-          stopBtn.classList.remove("cursor-not-allowed", "opacity-50");
-        }
+        // Server is running - show all buttons
+        showAllButtons();
         if (statusElement) {
           statusElement.innerText = "Running";
           statusElement.className =
@@ -364,15 +300,8 @@
         break;
 
       case "stopped":
-        // Server is stopped - both buttons should be enabled
-        if (restartBtn) {
-          restartBtn.disabled = false;
-          restartBtn.classList.remove("cursor-not-allowed", "opacity-50");
-        }
-        if (stopBtn) {
-          stopBtn.disabled = false;
-          stopBtn.classList.remove("cursor-not-allowed", "opacity-50");
-        }
+        // Server is stopped - show all buttons
+        showAllButtons();
         if (statusElement) {
           statusElement.innerText = "Stopped";
           statusElement.className =
@@ -381,9 +310,8 @@
         break;
 
       case "restarting":
-        // Server is restarting - show spinner on restart button, disable stop button
-        showButtonSpinner("restart-button");
-        disableOppositeButton("restart");
+        // Server is restarting - hide all buttons
+        hideAllButtons();
         if (statusElement) {
           statusElement.innerText = "Restarting...";
           statusElement.className =
@@ -394,9 +322,8 @@
         break;
 
       case "stopping":
-        // Server is stopping - show spinner on stop button, disable restart button
-        showButtonSpinner("stop-button");
-        disableOppositeButton("stop");
+        // Server is stopping - hide all buttons
+        hideAllButtons();
         if (statusElement) {
           statusElement.innerText = "Stopping...";
           statusElement.className =
@@ -407,15 +334,8 @@
         break;
 
       default:
-        // Unknown status - enable both buttons but show error
-        if (restartBtn) {
-          restartBtn.disabled = false;
-          restartBtn.classList.remove("cursor-not-allowed", "opacity-50");
-        }
-        if (stopBtn) {
-          stopBtn.disabled = false;
-          stopBtn.classList.remove("cursor-not-allowed", "opacity-50");
-        }
+        // Unknown status - show all buttons
+        showAllButtons();
         if (statusElement) {
           statusElement.innerText = "Unknown";
           statusElement.className =
@@ -427,8 +347,7 @@
 
   // Restart server function
   function restartServer() {
-    showButtonSpinner("restart-button");
-    disableOppositeButton("restart"); // Disable stop button
+    hideAllButtons();
 
     // Update server status immediately
     const statusElement = document.getElementById("server-status");
@@ -443,17 +362,30 @@
 
   // Backup server function
   function backupServer() {
-    showButtonSpinner("backup-button");
+    hideAllButtons();
+
+    // Update status to show backing up
+    const statusElement = document.getElementById("server-status");
+    if (statusElement) {
+      statusElement.innerText = "Backing up...";
+      statusElement.className =
+        "px-2 py-1 rounded bg-blue-600 text-white text-sm";
+    }
 
     setTimeout(() => {
-      resetButton("backup-button");
+      showAllButtons();
+      // Reset status back to previous state
+      if (statusElement) {
+        statusElement.innerText = "Running"; // or whatever the previous status was
+        statusElement.className =
+          "px-2 py-1 rounded bg-green-600 text-white text-sm";
+      }
     }, 3000);
   }
 
   // Stop server function
   function stopServer() {
-    showButtonSpinner("stop-button");
-    disableOppositeButton("stop"); // Disable restart button
+    hideAllButtons();
 
     // Update server status immediately
     const statusElement = document.getElementById("server-status");
@@ -489,16 +421,9 @@
             statusElement.className =
               "px-2 py-1 rounded bg-green-600 text-white text-sm";
           }
-          // Reset appropriate button based on operation
-          console.log("operation===restart", operation === "restart");
-          if (operation === "restart") {
-            resetButton("restart-button");
-          } else if (operation === "stop") {
-            resetButton("stop-button");
-          }
 
-          // Re-enable the opposite button
-          enableOppositeButton(operation);
+          // Show all buttons again
+          showAllButtons();
 
           console.log(`Server ${operation} completed successfully`);
         } else if (data.status === "stopped") {
@@ -512,26 +437,19 @@
               "px-2 py-1 rounded bg-red-600 text-white text-sm";
           }
 
-          // Reset appropriate button
-          if (operation === "stop") {
-            resetButton("stop-button");
-          } else if (operation === "restart") {
-            resetButton("restart-button");
-          }
-
-          // Re-enable the opposite button
-          enableOppositeButton(operation);
+          // Show all buttons again
+          showAllButtons();
 
           console.log(`Server ${operation} completed successfully`);
         } else if (data.status === "restarting") {
-          // Keep showing restarting status
+          // Keep showing restarting status and buttons hidden
           if (statusElement) {
             statusElement.innerText = "Restarting...";
             statusElement.className =
               "px-2 py-1 rounded bg-yellow-600 text-white text-sm";
           }
         } else if (data.status === "stopping") {
-          // Keep showing stopping status
+          // Keep showing stopping status and buttons hidden
           if (statusElement) {
             statusElement.innerText = "Stopping...";
             statusElement.className =
@@ -541,24 +459,17 @@
       } catch (error) {
         console.error("Error polling server status:", error);
 
-        // After 5 failed attempts, reset the button
+        // After 20 failed attempts, show buttons again
         if (!startPollingServerStatus.failCount)
           startPollingServerStatus.failCount = 0;
         startPollingServerStatus.failCount++;
 
-        if (startPollingServerStatus.failCount >= 5) {
+        if (startPollingServerStatus.failCount >= 20) {
           clearInterval(pollInterval);
           pollInterval = null;
 
-          // Reset appropriate button
-          if (operation === "restart") {
-            resetButton("restart-button");
-          } else if (operation === "stop") {
-            resetButton("stop-button");
-          }
-
-          // Re-enable the opposite button
-          enableOppositeButton(operation);
+          // Show all buttons again
+          showAllButtons();
 
           const statusElement = document.getElementById("server-status");
           if (statusElement) {
@@ -572,6 +483,4 @@
       }
     }, 10000); // poll every 10 seconds
   }
-
-
 </script>
